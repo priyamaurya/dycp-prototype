@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form method="post" action="dashboard">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do devolved regulations apply to your organisation?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="devolved-ni" name="devolved" type="radio" value="ni">
+              <label class="govuk-label govuk-radios__label" for="devolved-ni">
+                Yes, Northern Ireland
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="devolved-scotland" name="devolved" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="devolved-scotland">
+                Yes, Scotland
+              </label>
+            </div>
+          
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="devolved-wales" name="devolved" type="radio" value="wales">
+            <label class="govuk-label govuk-radios__label" for="devolved-wales">
+              Yes, Wales
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="devolved-na" name="devolved" type="radio" value="na">
+            <label class="govuk-label govuk-radios__label" for="devolved-na">
+              No
+            </label>
+
+          </div>
+        </div>
+        </fieldset>
+      </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

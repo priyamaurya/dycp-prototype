@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form method="post" action="supplier-buyer-determination4">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Has your organisation been awarded contracts or directly contracted to provide goods, works, or services?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sbd3" name="sbd3" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="sbd3">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sbd3-2" name="sbd3" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="sbd3-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

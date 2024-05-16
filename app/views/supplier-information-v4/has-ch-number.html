@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form method="post">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Does the organisation have a Companies House number?
+                    </h1>
+                </legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="chno" name="chno" type="radio" value="chno" data-aria-controls="conditional-chno">
+                        <label class="govuk-label govuk-radios__label" for="chno">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="chno-input">
+                            Companies House number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="chno-input" name="chnoInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="noChno" name="chno" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for="noChno">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

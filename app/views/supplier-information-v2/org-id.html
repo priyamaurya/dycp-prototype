@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form method="post" action="org-details">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Choose which identification number you want to enter
+                    </h1>
+                </legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="chno" name="orgid" type="radio" value="chno" data-aria-controls="conditional-chno">
+                        <label class="govuk-label govuk-radios__label" for="chno">
+                        Companies House
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="chno-input">
+                            Companies House number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="chno-input" name="chnoInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="chew" name="orgid" type="radio" value="chew" data-aria-controls="conditional-chew">
+                        <label class="govuk-label govuk-radios__label" for="chew">
+                            Charity Commission for England and Wales
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chew">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="chew-input">
+                            Charity Commission for England and Wales number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="chew-input" name="chewInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="scr" name="orgid" type="radio" value="scr" data-aria-controls="conditional-scr">
+                        <label class="govuk-label govuk-radios__label" for="scr">
+                            Scottish Charity Regulator
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-scr">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="scr-input">
+                            Scottish Charity Regulator number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="scr-input" name="scrInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="ccni" name="orgid" type="radio" value="ccni" data-aria-controls="conditional-ccni">
+                        <label class="govuk-label govuk-radios__label" for="ccni">
+                            Charity Commission for Northern Ireland
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ccni">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="ccni-input">
+                            Charity Commission for Northern Ireland number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="ccni-input" name="ccniInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="mpr" name="orgid" type="radio" value="mpr" data-aria-controls="conditional-mpr">
+                        <label class="govuk-label govuk-radios__label" for="mpr">
+                            Mutuals Public Register
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-mpr">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="mpr-input">
+                            Mutuals Public Register number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="mpr-input" name="mprInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="gr" name="orgid" type="radio" value="gr" data-aria-controls="conditional-gr">
+                        <label class="govuk-label govuk-radios__label" for="gr">
+                            Guernsey Registry
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-gr">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="gr-input">
+                            Guernsey Registry number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="gr-input" name="grInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="jrfscr" name="orgid" type="radio" value="jrfscr" data-aria-controls="conditional-jrfscr">
+                        <label class="govuk-label govuk-radios__label" for="jrfscr">
+                            Jersey Financial Services Commission Registry
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-jrfscr">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="jrfscr-input">
+                            Jersey Financial Services Commission Registry number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="jrfscr-input" name="jrfscrInput">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="iomcr" name="orgid" type="radio" value="iomcr" data-aria-controls="conditional-iomcr">
+                        <label class="govuk-label govuk-radios__label" for="iomcr">
+                            Isle of Man Companies Registry
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-iomcr">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="iomcr-input">
+                            Isle of Man Companies Registry number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="iomcr-input" name="iomcrInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="nhsods" name="orgid" type="radio" value="nhsods" data-aria-controls="conditional-nhsods">
+                        <label class="govuk-label govuk-radios__label" for="nhsods">
+                            NHS Organisation Data Service (ODS)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-nhsods">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="nhsods-input">
+                            National Health Service Organisation Data Service number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="nhsods-input" name="nhsodsInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="UKPRN" name="orgid" type="radio" value="UKPRN" data-aria-controls="conditional-UKPRN">
+                        <label class="govuk-label govuk-radios__label" for="UKPRN">
+                            UK Register of Learning Providers (UKPRN)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-UKPRN">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="UKPRN-input">
+                            UK Register of Learning Providers (UKPRN)number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="UKPRN-input" name="UKPRNInput">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="vat" name="orgid" type="radio" value="vat" data-aria-controls="conditional-vat">
+                        <label class="govuk-label govuk-radios__label" for="vat">
+                            VAT number
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-vat">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="vat-input">
+                            VAT number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="vat-input" name="vatInput">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="none" name="none" type="radio" value="none">
+                        <label class="govuk-label govuk-radios__label" for="none">
+                            None
+                        </label>
+                    </div>
+                </div> -->
+
+            </fieldset>
+        </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

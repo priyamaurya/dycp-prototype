@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form method="post" action="org-details">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                What category does your organisation fall under?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="subType-2" name="subType" type="radio" value="">
+              <label class="govuk-label govuk-radios__label" for="subType-2">
+                Enquirer
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="subType-4" name="subType" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="subType-4">
+                    Interested party
+                </label>
+              </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="subType-3" name="subType" type="radio" value="">
+              <label class="govuk-label govuk-radios__label" for="subType-3">
+                Payee
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="subType" name="subType" type="radio" value="">
+                <label class="govuk-label govuk-radios__label" for="subType">
+                  Tenderer
+                </label>
+              </div>
+
+      </div>
+        </fieldset>
+      </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form method="post">
+        
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What do you want to register your organisation as?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="orgType" name="orgType" type="radio" value="buyer" aria-describedby="hint-buyer">
+              <label class="govuk-label govuk-radios__label" for="orgType">
+                A buyer
+              </label>
+              <div id="hint-buyer" class="govuk-hint govuk-radios__hint">
+                You are involved with managing, paying for, or procuring contracts for goods, works, or services.
+              </div>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="orgType-2" name="orgType" type="radio" value="supplier" aria-describedby="hint-supplier">
+              <label class="govuk-label govuk-radios__label" for="orgType-2">
+                A supplier
+              </label>
+              <div id="hint-supplier" class="govuk-hint govuk-radios__hint">
+                You look at contracts to supply, have enquired about supplying, have submitted tenders, or have been paid to supply goods, works, or services.
+              </div>
+            </div>
+            <!-- <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="orgType-3" name="orgType" type="radio" value="both">
+              <label class="govuk-label govuk-radios__label" for="orgType-3">
+                Both a buyer and a supplier
+              </label>
+            </div> -->
+          </div>
+        </fieldset>
+      </div>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
