@@ -1,5 +1,14 @@
 {% extends "layouts/main.html" %}
 
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -20,7 +29,7 @@
                 A buyer
               </label>
               <div id="hint-buyer" class="govuk-hint govuk-radios__hint">
-                You are involved with managing, paying for, or procuring contracts for goods, works, or services.
+                You're involved with managing, or procuring contracts for goods, works, services, and utilities.
               </div>
             </div>
             <div class="govuk-radios__item">
@@ -29,7 +38,7 @@
                 A supplier
               </label>
               <div id="hint-supplier" class="govuk-hint govuk-radios__hint">
-                You look at contracts to supply, have enquired about supplying, have submitted tenders, or have been paid to supply goods, works, or services.
+                You search for tenders and submit bids for contracts to supply, goods, works, services, and utilities.
               </div>
             </div>
             <!-- <div class="govuk-radios__item">

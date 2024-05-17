@@ -1,5 +1,14 @@
 {% extends "layouts/main.html" %}
 
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -17,6 +26,43 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
+          Registering as
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Supplier</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> registering as</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Companies House Number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">No</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Identification number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Charity Commission for England and Wales</p>
+          <p class="govuk-body">12345678</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
           Organisation name
         </dt>
         <dd class="govuk-summary-list__value">
@@ -27,18 +73,7 @@
         </dd>
       </div>
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Organisation identifier
-        </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Companies House</p>
-          <p class="govuk-body">12345677</p>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
-        </dd>
-      </div>
+      
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -88,7 +123,7 @@
         </dd>
       </div>
       
-    </dl> -->
+    </dl> 
 
     <h2 class="govuk-heading-m govuk-!-margin-top-9">Organisation users</h2>
     
@@ -108,8 +143,15 @@
       </div>
       
     </dl>
+   
 
-    <a href="dashboard" class="govuk-link govuk-link--no-visited-state">Back to all organisations</a>
+    
+ -->
+
+  <form action="dashboard">
+    <input class="govuk-button" type="submit" value="Submit" />
+  </form>
+
 
   </div>
 </div>

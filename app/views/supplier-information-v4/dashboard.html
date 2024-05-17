@@ -1,8 +1,11 @@
 {% extends "layouts/main.html" %}
 
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
 {% block beforeContent %}
     {% include("includes/phase-banner.html") %}
-    {% include("includes/back-link.html") %}
 {% endblock %}
 
 {% block content %}
@@ -28,12 +31,12 @@
             Random Limited
             <span class="govuk-hint govuk-!-display-block">10 Downing Street</span>
           </th>
-          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="org-overview">Select</a></td>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="org-dashboard">Select</a></td>
         </tr>
       </tbody>
     </table>
 
-    <a href="org-type" class="govuk-button">Add organisation</a>
+    <a class="govuk-link govuk-link--no-visited-state" href="org-type">Add another organisation</a>
 
   </div>
 </div>

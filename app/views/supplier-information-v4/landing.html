@@ -1,5 +1,9 @@
 {% extends "layouts/main.html" %}
 
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
 {% block beforeContent %}
     {% include("includes/phase-banner.html") %}
 {% endblock %}
@@ -14,11 +18,15 @@
         <fieldset class="govuk-fieldset" aria-describedby="privacy-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Agree to privacy policy before continuing
+              Agree to the privacy policy before you continue
             </h1>
           </legend>
           <p>
-            Before you can continue, you need to read and agree to the <a class="govuk-link" href="#">Central Digital Platform service privacy policy (opens in new tab)</a>.
+            The privacy policy explains how we process your data, how we use it, and who it's shared with.
+          </p>
+
+          <p>
+            To use the service, you need to read and <a href="#">agree to the privacy policy (opens in new tab)</a>
           </p>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">

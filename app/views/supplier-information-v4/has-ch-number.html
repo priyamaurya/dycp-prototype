@@ -1,5 +1,14 @@
 {% extends "layouts/main.html" %}
 
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -22,10 +31,10 @@
                     </div>
                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
                         <div class="govuk-form-group">
-                        <label class="govuk-label" for="chno-input">
+                        <label class="govuk-label" for="chnoInput">
                             Companies House number
                         </label>
-                        <input class="govuk-input govuk-!-width-one-third" id="chno-input" name="chnoInput">
+                        <input class="govuk-input govuk-!-width-one-third" id="chnoInput" name="chnoInput">
                         </div>
                     </div>
                 </div>

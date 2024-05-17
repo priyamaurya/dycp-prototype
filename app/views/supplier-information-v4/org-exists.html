@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <h1 class="govuk-heading-l">Contact your organisation's administrator</h1>
+    <p>The organisation’s details are already registered with the service.</p>
+    <p>Ask the administrator to send you a link so you can add yourself as a user.</p>
+    <a href="dashboard-no-org" class="govuk-link govuk-link--no-visited-state">Return to home page</a>
+  </div>
+</div>
+
+{% endblock %}
