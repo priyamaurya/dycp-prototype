@@ -393,7 +393,12 @@
           <a class="govuk-link govuk-link--no-visited-state" href="user/add-another-user">Users</a>
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['userCount'] }} Users
+          {{ data['userCount'] }} 
+          {% if data['userArray']|length == "1" %} 
+            user 
+          {% else %}
+            users
+          {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
           &nbsp;

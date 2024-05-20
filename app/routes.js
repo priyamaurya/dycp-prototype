@@ -118,8 +118,29 @@ router.post('/supplier-information-v4/manage-users/update-user', function (req, 
 
 // hack
 router.get('/supplier-information-v4/org-dashboard', function (req, res) {
+
   req.session.data.startQuestion = "Company"; // adding this line as there's no page that tells that the user is an individual
-  res.render('supplier-information-v4/org-dashboard');
+  
+  var sessionData = req.session.data;
+  var userArray = sessionData.userArray || [];
+
+  if (userArray.length == 0){
+      var user = {
+        id: "1",
+        firstName: "Laura", 
+        lastName: "Brown",
+        emailAddress: "laura.brown@capita.com",
+        userType: "Admin"
+      }
+      userArray.push(user);
+      sessionData.userArray = userArray;
+      sessionData.userCount = userArray.length;
+
+      res.redirect('org-dashboard');
+  } else {
+    res.render('supplier-information-v4/org-dashboard');
+  }
+  
 });
 
 

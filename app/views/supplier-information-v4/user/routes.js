@@ -9,9 +9,7 @@ const axios = require('axios');
 
 
 router.post('/user-details', function (req, res) {
-
     res.redirect('check-answers');
-
 })
 
 
@@ -82,13 +80,17 @@ router.get('/:index/check-answers', function (req, res) {
     res.redirect('../check-answers');
 })
 
+
 router.post('/check-answers', function (req, res) {
+
+
     const data = req.session.data;
     const users = data.userArray || [];
 
     const user = {
-        user: data.user,
-        userSecond: data.eventSubUser
+        firstName: data.firstName,
+        lastName: data.lastName,
+        emailAddress: data.emailAddress
     };
 
     if (data.editUser) {
@@ -105,6 +107,8 @@ router.post('/check-answers', function (req, res) {
     res.redirect('add-another-user');
 })
 
+
+
 router.post('/add-another-user-route', function (req, res) {
     var sessionData = req.session.data;
     var userArray = sessionData.userArray || [];
@@ -114,11 +118,6 @@ router.post('/add-another-user-route', function (req, res) {
         "User": sessionData.user,
     };
 
-    var userSecond = {
-        "id": userArray.length + 2,
-        "UserSecond": sessionData.userSecond,
-    };
-
     userArray.push(user);
     sessionData.userArray = userArray;
     sessionData.userCount = userArray.length;
@@ -126,8 +125,11 @@ router.post('/add-another-user-route', function (req, res) {
     res.redirect('add-another-user');
 })
 
+
 router.post('/add-another-user', function (req, res) {
     delete req.session.data.editUser;
+
+    
 
     if (req.session.data.addAnotherUser == 'Yes') {
         res.redirect('user-details');
@@ -157,7 +159,9 @@ router.post('/add-another-user', function (req, res) {
     else {
         res.redirect('user-details');
     }
-})
+});
+
+
 
 module.exports = router
 
