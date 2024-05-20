@@ -5,8 +5,11 @@
 
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
+const axios = require('axios');
 
 // Add your routes here
+
+
 
 // Route index page
   
@@ -31,63 +34,6 @@ router.post('/supplier-information-v1/contracting-authority', function (req, res
   else
     res.redirect('/supplier-information-v1/org-number')
 });
-
-  
-  /*
-router.post('/supplier-information-v3/org-type', function (req, res) {
-    var orgType = req.body.orgType;
-    req.session.orgType = orgType;
-  
-    // if(orgType == 'buyer')
-    //   res.redirect('/supplier-information-v3/buyer-type');
-    // else
-    res.redirect('/supplier-information-v3/has-org-id');
-  });
-  
-
-  router.post('/supplier-information-v3/has-ch-number', function (req, res) {
-    if(req.body.chno == 'no')
-      res.redirect('/supplier-information-v3/org-id');
-    else
-      res.redirect('/supplier-information-v3/org-name');
-  });
-  
-  
-  router.get('/supplier-information-v3/has-org-id', function (req, res) {
-    res.render('supplier-information-v3/has-org-id', {orgType: req.session.orgType});
-  });
-  
-  
-  router.post('/supplier-information-v3/has-org-id', function (req, res) {
-    if ( req.body.hasOrgId ){
-      if (req.body.hasOrgId == 'yes')
-        res.redirect('/supplier-information-v3/has-ch-number');
-      else
-        res.redirect('/supplier-information-v3/org-name')
-    } else 
-      res.redirect('/supplier-information-v3/has-org-id');
-  });
-  
-  
-  router.get('/supplier-information-v3/org-address-uk', function (req, res) {
-    res.render('supplier-information-v3/org-address-uk', {orgType: req.session.orgType});
-  });
-  
-  
-  router.post('/supplier-information-v3/org-address-uk', function (req, res) {
-  
-    if (req.body.addressLine1){
-      if (req.session.orgType  == 'buyer'){
-        res.redirect('/supplier-information-v3/buyer-type');
-      } else {
-        res.redirect('/supplier-information-v3/org-overview'); 
-      }
-    } else {
-      res.render('supplier-information-v3/org-address-uk', {orgType: req.session.orgType});
-    }
-
-  
-  });    */
 
 
 router.get('/supplier-information-v4/start', function (req, res) {
@@ -170,6 +116,22 @@ router.post('/supplier-information-v4/manage-users/update-user', function (req, 
 
 /* connected persons */
 
+// hack
+router.get('/supplier-information-v4/org-dashboard', function (req, res) {
+  req.session.data.startQuestion = "Company"; // adding this line as there's no page that tells that the user is an individual
+  res.render('supplier-information-v4/org-dashboard');
+});
+
+
+
+router.use('/supplier-information-v4/connected', require('./views/supplier-information-v4/connected/routes'))
+router.use('/supplier-information-v4/mandatory', require('./views/supplier-information-v4/mandatory/routes'))
+router.use('/supplier-information-v4/discretionary', require('./views/supplier-information-v4/discretionary/routes'))
+router.use('/supplier-information-v4/financial', require('./views/supplier-information-v4/financial/routes'))
+router.use('/supplier-information-v4/economical', require('./views/supplier-information-v4/economical/routes'))
+router.use('/supplier-information-v4/user', require('./views/supplier-information-v4/user/routes'))
+
+/*
 router.post('/supplier-information-v4/connected-persons/connected-question', function (req, res) {
   res.redirect('/supplier-information-v4/connected-persons/companies-question');
 });
@@ -316,3 +278,4 @@ router.post('/supplier-information-v4/connected-persons/date-registered-gov', fu
 router.post('/supplier-information-v4/connected-persons/gov-register', function (req, res) {
   res.redirect('check-answers-connected-person');
 })
+*/

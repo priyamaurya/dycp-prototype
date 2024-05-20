@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Economic and Financial Standing
+        </h2>
+        <span class="govuk-caption-l">
+            Upload the latest financial accounts for the most recent year
+        </span>
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Select the type of file you are uploading"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            What type of financial information are you uploading?
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="fileType" name="fileType" type="radio"
+                                value="Accounts">
+                            <label class="govuk-label govuk-radios__label" for="fileType">
+                                Accounts
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="fileType-2" name="fileType" type="radio"
+                                value="Financial statements">
+                            <label class="govuk-label govuk-radios__label" for="fileType-2">
+                                Financial statements
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

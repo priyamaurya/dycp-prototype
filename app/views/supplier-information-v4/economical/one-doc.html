@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Economic and Financial Standing
+        </h2>
+        <span class="govuk-caption-l">
+            Upload the latest financial accounts for the most recent year
+        </span>
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Upload the latest accounts"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Upload the latest financial accounts for the most recent year
+                        </h1>
+                    </legend>
+                    <div id="file-hint" class="govuk-hint">
+                        Give the file a descriptive name. For example, financial-accounts-2020-2021.pdf
+                    </div>
+
+                    <label class="govuk-label govuk-!-margin-top-6" for="fileUpload">
+                        Upload a file
+                    </label>
+                    <input class="govuk-file-upload" id="file-Upload1" name="fileUpload" type="file">
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

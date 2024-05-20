@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h2 class="govuk-heading-m" style="color: #1d70b8;">
+      Economic and Financial Standing
+    </h2>
+
+    <form class="form" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="financialStandIn-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Were the last year`s accounts needed to be audited or the last two years?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="financialStandInTwo" name="financialStandInTwo" type="radio"
+                value="One">
+              <label class="govuk-label govuk-radios__label" for="financialStandInTwo">
+                One
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="financialStandInTwo-2" name="financialStandInTwo" type="radio"
+                value="Two">
+              <label class="govuk-label govuk-radios__label" for="financialStandInTwo-2">
+                Two
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+  </div>
+  </form>
+
+
+</div>
+</div>
+
+{% endblock %}
