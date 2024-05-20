@@ -91,7 +91,7 @@
         </dd>
       </div>
 
-      <div class="govuk-summary-list__row">
+      <!-- <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Qualifications
         </dt>
@@ -142,13 +142,56 @@
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
         </dd>
-      </div>
+      </div> -->
 
 
     </dl>
 
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-9">Connected persons</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Supplier information</h2>
+
+    {% if data.company.registered_office_address.address_line_1 is defined %}
+
+      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set value = "" %}
+      {% set status = "In progress" %}
+      
+    {% elif data['legalForm'] | length != "0" %}
+
+      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set value = "" %}
+      {% set status = "Completed" %}
+
+    {% elif data['addressTypeBasic'] | length != "0" %}
+
+      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set value = "" %}
+      {% set status = "In progress" %}
+
+    {% else %}
+    
+      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set value = "" %}
+      {% set status = "Not started" %}
+    
+    {% endif %}
+
+    
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Basic information</a>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ value }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+            <strong class="govuk-tag">{{ status }}</strong>
+        </dd>
+      </div>
+      
+    </dl> 
 
     {% if (data['connectedPersonCount'] == "1") %}
 
@@ -198,8 +241,6 @@
       </div>
       
     </dl> 
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-9">Mandatory exclusions</h2>
 
         
     {% if data['addAnotherExclusionMan'] | length != "0" and data['exclusionManArray'] | length >=
@@ -255,9 +296,6 @@
       
     </dl>
 
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-9">Discretionary exclusions</h2>
-
         
     {% if data['addAnotherExclusion'] | length != "0" and data['exclusionArray'] | length >= "2" %}
 
@@ -311,8 +349,6 @@
       
     </dl>
 
-
-    <h2 class="govuk-heading-m govuk-!-margin-top-9">Economic and Financial Standing</h2>
 
     {% if data['addAnotherFile'] == "No" %}
 

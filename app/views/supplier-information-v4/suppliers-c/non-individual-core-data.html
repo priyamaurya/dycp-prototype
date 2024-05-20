@@ -1,43 +1,19 @@
-{% extends "layout.html" %}
-{% set navActive = "drafts" %}
+{% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Supplier`s information - GOV.UK
-{{ data['pageTitleAddOn' ]}}
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
 {% endblock %}
-
 
 {% block beforeContent %}
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      Prototype
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a prototype of a service in development.
-  </p>
-</div>
-
-<div class="govuk-breadcrumbs">
-  <ol class="govuk-breadcrumbs__list">
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="/">Prototype Home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="account-home">Account home</a>
-    </li>
-    <li class="govuk-breadcrumbs__list-item">
-      <a class="govuk-breadcrumbs__link" href="#">Manage basic information</a>
-    </li>
-  </ol>
-</div>
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
 {% endblock %}
+
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full-width">
+  <div class="govuk-grid-column-full">
 
     <span class="govuk-heading-l govuk-!-margin-bottom-6" style="color: #1d70b8;">{{ data.company.company_name }}</span>
 
@@ -45,8 +21,7 @@ Supplier`s information - GOV.UK
       Manage your basic information
     </h2>
 
-  </div>
-</div>
+
 
 <form class="form" method="post">
 

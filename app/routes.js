@@ -124,6 +124,7 @@ router.get('/supplier-information-v4/org-dashboard', function (req, res) {
 
 
 
+router.use('/supplier-information-v4/suppliers-c', require('./views/supplier-information-v4/suppliers-c/routes'))
 router.use('/supplier-information-v4/connected', require('./views/supplier-information-v4/connected/routes'))
 router.use('/supplier-information-v4/mandatory', require('./views/supplier-information-v4/mandatory/routes'))
 router.use('/supplier-information-v4/discretionary', require('./views/supplier-information-v4/discretionary/routes'))

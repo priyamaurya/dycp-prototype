@@ -37,7 +37,7 @@ router.get('/registered-address', function (req, res) {
 })
 
 router.post('/non-individual-core-data', function (req, res) {
-  res.redirect('account-home');
+  res.redirect('../org-dashboard');account-home
 })
 
 router.post('/registered-address', function (req, res) {
@@ -96,6 +96,7 @@ router.post('/postal-uk-address', function (req, res) {
 })
 
 router.post('/vat-question', function (req, res) {
+  
 
   let vatReg = req.session.data.vatReg;
 
@@ -196,7 +197,7 @@ router.post('/formation-date', function (req, res) {
 })
 
 router.post('/non-individual-core-data', function (req, res) {
-  res.redirect('account-home');
+  res.redirect('../org-dashboard'); //account-home
 })
 
 router.get('/:index/remove-qualification', function (req, res) {
