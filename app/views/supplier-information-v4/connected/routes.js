@@ -1002,7 +1002,7 @@ router.post('/find-address-dir', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-address-dir')
+    res.redirect('find-address-dir')
   }
 
 })
@@ -1052,7 +1052,7 @@ router.post('/find-reg-address-dir', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-reg-address-dir')
+    res.redirect('find-reg-address-dir')
   }
 
 })
@@ -1102,7 +1102,7 @@ router.post('/find-address-dir-ni', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-address-dir-ni')
+    res.redirect('find-address-dir-ni')
   }
 
 })
@@ -1152,7 +1152,7 @@ router.post('/find-reg-address-dir-ni', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-reg-address-dir-ni')
+    res.redirect('find-reg-address-dir-ni')
   }
 
 })
@@ -1202,7 +1202,7 @@ router.post('/find-address-parent', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-address-parent')
+    res.redirect('find-address-parent')
   }
 
 })
@@ -1252,7 +1252,7 @@ router.post('/find-reg-address-parent', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-reg-address-parent')
+    res.redirect('find-reg-address-parent')
   }
 
 })
@@ -1302,7 +1302,7 @@ router.post('/find-reg-address-psc', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-reg-address-psc')
+    res.redirect('find-reg-address-psc')
   }
 
 })
@@ -1402,7 +1402,7 @@ router.post('/find-reg-address-pred', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-reg-address-pred')
+    res.redirect('find-reg-address-pred')
   }
 
 })
@@ -1452,7 +1452,7 @@ router.post('/find-address-pred', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-address-pred')
+    res.redirect('find-address-pred')
   }
 
 })
@@ -1502,7 +1502,7 @@ router.post('/find-address-gov', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-address-gov')
+    res.redirect('find-address-gov')
   }
 
 })
@@ -1552,7 +1552,7 @@ router.post('/find-reg-address-gov', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-reg-address-gov')
+    res.redirect('find-reg-address-gov')
   }
 
 })
@@ -1602,7 +1602,7 @@ router.post('/find-address-psc-ni', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-address-psc-ni')
+    res.redirect('find-address-psc-ni')
   }
 
 })
@@ -1659,7 +1659,7 @@ router.post('/find-address-right', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-address-right')
+    res.redirect('find-address-right')
   }
 
 })
@@ -1709,7 +1709,7 @@ router.post('/find-reg-address-right', function (req, res) {
     }
 
   } else {
-    res.redirect('/find-reg-address-right')
+    res.redirect('find-reg-address-right')
   }
 
 })

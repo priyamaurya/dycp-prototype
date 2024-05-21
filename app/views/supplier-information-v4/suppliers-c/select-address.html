@@ -24,7 +24,7 @@
             <p>{{ data['addresses'] | length }} {% if (data['addresses'] | length > 1) %}addresses{% else %}address{%
                 endif %} found for {{ data['postcode'] }}. <a href="find-address">Search again</a></p>
 
-            <form class="form" method="post" action="/suppliers-c/submit-address" novalidate>
+            <form class="form" method="post" novalidate>
                 <div class="govuk-form-group">
 
                     <div class="govuk-radios">
