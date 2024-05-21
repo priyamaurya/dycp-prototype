@@ -13,6 +13,7 @@ router.post('/download', function (req, res) {
 })
 
 router.post('/declaration', function (req, res) {
+    req.session.data.download = 'Download code and extract';
     res.redirect('declaration-person');
 })
 
