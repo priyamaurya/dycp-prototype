@@ -152,6 +152,7 @@ router.use('/supplier-information-v4/discretionary', require('./views/supplier-i
 router.use('/supplier-information-v4/financial', require('./views/supplier-information-v4/financial/routes'))
 router.use('/supplier-information-v4/economical', require('./views/supplier-information-v4/economical/routes'))
 router.use('/supplier-information-v4/user', require('./views/supplier-information-v4/user/routes'))
+router.use('/supplier-information-v4/download', require('./views/supplier-information-v4/download/routes'))
 
 /*
 router.post('/supplier-information-v4/connected-persons/connected-question', function (req, res) {
