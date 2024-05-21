@@ -223,7 +223,9 @@ router.post('/add-another-exclusion', function (req, res) {
         else {
             res.redirect('../suppliers-d/account-home');
         }
-        res.redirect('../suppliers-d/account-home');
+
+        // wtf is this?
+        //res.redirect('../suppliers-d/account-home');
     }
 })
 
