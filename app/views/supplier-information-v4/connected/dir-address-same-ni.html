@@ -27,12 +27,12 @@
                 <fieldset class="govuk-fieldset" aria-describedby="addressSameDirNi-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Is the service address the same as the registered address?
+                            Is {{ data['connectedPerson'] }}'s service address the same as their registered address?
                         </h1>
                     </legend>
-                    <div id="addressSameDirNi-hint" class="govuk-hint">
+                    <!--<div id="addressSameDirNi-hint" class="govuk-hint">
                         Preferred service address for the supplier.
-                    </div>
+                    </div>-->
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="addressSameDirNi" name="addressSameDirNi"

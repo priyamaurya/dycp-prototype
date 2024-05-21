@@ -22,11 +22,11 @@
 
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter {{ data['connectedPerson'] }}’s address manually
+                    Enter {{ data['connectedPerson'] }}'s address manually
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
-                    Address not found, enter {{ data['connectedPerson'] }}’s address manually
+                    Address not found, enter {{ data['connectedPerson'] }}'s address manually
                 </h1>
                 {% endif %}
             </legend>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="govPublicUk-address-postcode">
-                            Post code
+                            Postcode
                         </label>
                         <input class="govuk-input govuk-input--width-10" id="govPublicUk-address-postcode"
                             name="govPublicUk-address-postcode" type="text" autocomplete="govPublicUk-postal-code">
