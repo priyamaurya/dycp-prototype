@@ -63,7 +63,11 @@ router.post('/supplier-information-v4/has-ch-number', function (req, res) {
 });
 
 router.post('/supplier-information-v4/org-name', function (req, res) {
-  if(req.body.orgName.toLowerCase() == "capita plc"){
+
+    console.log(req.session);
+  if(req.session.orgType == "supplier" && req.body.orgName.toLowerCase() == "capita plc"){
+    res.redirect('/supplier-information-v4/org-exists');
+  } else if(req.session.orgType == "buyer" && req.body.orgName.toLowerCase() == "defra"){
     res.redirect('/supplier-information-v4/org-exists');
   } else {
     res.redirect('/supplier-information-v4/org-email');
