@@ -80,7 +80,7 @@ router.get('/supplier-information-v4/org-address-uk', function (req, res) {
 });
   
 router.post('/supplier-information-v4/org-address-uk', function (req, res) {
-  if (req.session.orgType  == 'buyer'){
+  if (req.session.orgType.toLowerCase()  == 'buyer'){
     res.redirect('/supplier-information-v4/buyer-type');
   } else {
     res.redirect('/supplier-information-v4/org-overview'); 
