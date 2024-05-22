@@ -29,7 +29,7 @@ router.post('/supplier-information-v1/org-number', function (req, res) {
 
 
 router.post('/supplier-information-v1/contracting-authority', function (req, res) {
-  if(req.body.contractingAuthority == 'yes')
+  if(req.body.contractingAuthority.toLowerCase() == 'yes')
     res.redirect('/supplier-information-v1/contracting-authority-type')
   else
     res.redirect('/supplier-information-v1/org-number')
@@ -51,7 +51,7 @@ router.post('/supplier-information-v4/org-type', function (req, res) {
 });
 
 router.post('/supplier-information-v4/has-ch-number', function (req, res) {
-  if(req.body.chno == 'no'){
+  if(req.body.chno.toLowerCase() == 'no'){
     res.redirect('/supplier-information-v4/org-id');
   } else {
     if(req.body.chnoInput == "12345678"){
