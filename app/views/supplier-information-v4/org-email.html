@@ -16,12 +16,12 @@
     <form action="org-address-uk">
         <div class="govuk-form-group">
           <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="org-email">
+            <label class="govuk-label govuk-label--l" for="emailAddress">
               Enter the organisation's contact email address
             </label>
           </h1>
           <div id="hint" class="govuk-hint">It should be a shared inbox managed by your team, not your own email address. This will be displayed on notices.</div>
-          <input class="govuk-input govuk-!-width-two-thirds" id="org-email" name="orgEmail" type="text" aria-describedby="hint">
+          <input class="govuk-input govuk-!-width-two-thirds" id="emailAddress" name="emailAddress" type="text" aria-describedby="hint" value="{{ data['emailAddress'] }}">
         </div>
         
         <button type="submit" class="govuk-button" data-module="govuk-button">

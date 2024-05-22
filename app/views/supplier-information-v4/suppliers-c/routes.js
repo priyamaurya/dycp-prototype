@@ -447,13 +447,13 @@ router.post('/find-registered-uk-address', function (req, res) {
         })
         .catch(error => {
           console.log(error);
-          res.redirect('/suppliers-c/registered-uk-address')
+          res.redirect('registered-uk-address')
         });
 
     }
 
   } else {
-    res.redirect('/find-registered-uk-address')
+    res.redirect('find-registered-uk-address')
   }
 
 })
@@ -497,13 +497,13 @@ router.post('/find-postal-uk-address', function (req, res) {
         })
         .catch(error => {
           console.log(error);
-          res.redirect('/suppliers-c/postal-uk-address')
+          res.redirect('postal-uk-address')
         });
 
     }
 
   } else {
-    res.redirect('/find-postal-uk-address')
+    res.redirect('find-postal-uk-address')
   }
 
 })

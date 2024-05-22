@@ -14,6 +14,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">
     <form method="post">
+      <input type="hidden" id="addressTypeBasic" name="addressTypeBasic" value="Yes">
       <fieldset class="govuk-fieldset" aria-describedby="hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
           <h1 class="govuk-fieldset__heading">
@@ -30,25 +31,25 @@
           <label class="govuk-label" for="address-line-1">
             Address line 1
           </label>
-          <input class="govuk-input" id="address-line-1" name="addressLine1" type="text" autocomplete="address-line1">
+          <input class="govuk-input" id="address-line-1" name="postal-address-line-1" type="text" value="{{ data['postal-address-line-1'] }}">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-line-2">
             Address line 2 (optional)
           </label>
-          <input class="govuk-input" id="address-line-2" name="addressLine2" type="text" autocomplete="address-line2">
+          <input class="govuk-input" id="address-line-2" name="postal-address-line-2" type="text" value="{{ data['postal-address-line-2'] }}">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-town">
             Town or city
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="addressTown" type="text" autocomplete="address-level2">
+          <input class="govuk-input govuk-!-width-two-thirds" id="addressTown" name="postal-address-town" type="text" value="{{ data['postal-address-town'] }}">
         </div>
         <div class="govuk-form-group">
           <label class="govuk-label" for="address-postcode">
             Postcode
           </label>
-          <input class="govuk-input govuk-input--width-10" id="address-postcode" name="addressPostcode" type="text" autocomplete="postal-code">
+          <input class="govuk-input govuk-input--width-10" id="addressPostcode" name="postal-address-postcode" type="text" value="{{ data['postal-address-postcode'] }}">
         </div>
       </fieldset>
 

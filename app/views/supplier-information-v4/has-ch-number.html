@@ -24,7 +24,7 @@
 
                 <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="chno" name="chno" type="radio" value="chno" data-aria-controls="conditional-chno">
+                        <input class="govuk-radios__input" id="chno" name="chno" type="radio" value="Yes" data-aria-controls="conditional-chno" {% if data['chno'] == 'Yes' %} checked {% endif %} >
                         <label class="govuk-label govuk-radios__label" for="chno">
                             Yes
                         </label>
@@ -34,14 +34,14 @@
                         <label class="govuk-label" for="chnoInput">
                             Companies House number
                         </label>
-                        <input class="govuk-input govuk-!-width-one-third" id="chnoInput" name="chnoInput">
+                        <input class="govuk-input govuk-!-width-one-third" id="chnoInput" name="chnoInput" value="{{ data['chnoInput'] }}" >
                         </div>
                     </div>
                 </div>
 
                 <div class="govuk-radios" data-module="govuk-radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="noChno" name="chno" type="radio" value="no">
+                        <input class="govuk-radios__input" id="noChno" name="chno" type="radio" value="No" {% if data['chno'] == 'No' %} checked {% endif %}>
                         <label class="govuk-label govuk-radios__label" for="noChno">
                             No
                         </label>
