@@ -34,7 +34,7 @@
             <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio"
               value="Limited liability partnership" data-aria-controls="conditional-legalForm-2">
             <label class="govuk-label govuk-radios__label" for="legalForm-2">
-              Limited liability partnership
+              Limited company
             </label>
           </div>
 
@@ -42,8 +42,60 @@
             <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited company"
               data-aria-controls="conditional-legalForm-2">
             <label class="govuk-label govuk-radios__label" for="legalForm-2">
-              Limited company
+              Limited liability partnership (LLP)
             </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio"
+              value="Limited liability partnership" data-aria-controls="conditional-legalForm-2">
+            <label class="govuk-label govuk-radios__label" for="legalForm-2">
+              Community Interest Company (CIC)
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited company"
+              data-aria-controls="conditional-legalForm-2">
+            <label class="govuk-label govuk-radios__label" for="legalForm-2">
+              Charitable Incorporated Organisation (CIO)
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio"
+              value="Limited liability partnership" data-aria-controls="conditional-legalForm-2">
+            <label class="govuk-label govuk-radios__label" for="legalForm-2">
+              Industrial and Provident Society 
+            </label>
+            <div id="hint-industrial-and-provident" class="govuk-hint govuk-radios__hint">
+              For example, Co-operative Society (Co-op) or Community Benefit Society (BenCom)
+            </div>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited company"
+              data-aria-controls="conditional-legalForm-2">
+            <label class="govuk-label govuk-radios__label" for="legalForm-2">
+              Financial Mutual
+            </label>
+          </div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="legalForm-3" name="legalForm" type="radio" value="Other :"
+              data-aria-controls="conditional-legalForm-3">
+            <label class="govuk-label govuk-radios__label" for="legalForm-3">
+              Other
+            </label>
+          </div>
+          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-legalForm-3">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="legalForm-by-text">
+                Provide more detail
+              </label>
+              <input class="govuk-input" id="legalForm-by-text" name="legalFormByText"
+                value="{{ data['legalFormByText'] }}" type="tel" autocomplete="tel">
+            </div>
           </div>
 
           {% else %}
@@ -58,9 +110,45 @@
               <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Partnership"
                 data-aria-controls="conditional-legalForm-2">
               <label class="govuk-label govuk-radios__label" for="legalForm-2">
-                Partnership
+                Sole trader
               </label>
             </div>
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Partnership"
+                  data-aria-controls="conditional-legalForm-2">
+                <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                  Unincorporated association
+                </label>
+              </div>
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Partnership"
+                    data-aria-controls="conditional-legalForm-2">
+                  <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                    Partnership
+                  </label>
+                </div>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Partnership"
+                      data-aria-controls="conditional-legalForm-2">
+                    <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                      Limited partnership
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Partnership"
+                        data-aria-controls="conditional-legalForm-2">
+                      <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                        Trust
+                      </label>
+                    </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="legalForm-3" name="legalForm" type="radio" value="Other :"

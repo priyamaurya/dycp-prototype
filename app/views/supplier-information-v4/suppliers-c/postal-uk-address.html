@@ -18,11 +18,11 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 {% if data['addressSecond'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter the supplier’s service address manually
+                    Enter your contact postal address manually
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
-                    Address not found, enter the supplier’s service address manually
+                    Address not found, enter your contact postal address manually
                 </h1>
                 {% endif %}
             </legend>
@@ -66,7 +66,7 @@
                     </div>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="postal-uk-address-postcode">
-                            Post code
+                            Postcode
                         </label>
                         <input class="govuk-input govuk-input--width-10" id="postal-uk-address-postcode"
                             name="postal-uk-address-postcode" type="text"

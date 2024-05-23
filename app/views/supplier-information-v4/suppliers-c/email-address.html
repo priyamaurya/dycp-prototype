@@ -20,9 +20,11 @@
         <fieldset class="govuk-fieldset" data-required data-error="Enter the email address"
           aria-required="true">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-heading-l">Enter the email address</h1>
+            <h1 class="govuk-heading-l">Enter your email address</h1>
           </legend>
-
+          <div id="organisation-email-hint" class="govuk-hint">
+            It should be a shared inbox managed by your team, not your own email address. This will be displayed on notices.
+          </div>
           <input class="govuk-input govuk-input--width-20" name="emailAddress" id="emailAddress"
             type="email" aria-describedby="emailAddress" value="{{ data['emailAddress'] }}">
         </fieldset>
