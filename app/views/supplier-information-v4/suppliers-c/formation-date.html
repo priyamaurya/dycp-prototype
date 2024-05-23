@@ -23,8 +23,12 @@
           {% if data['ca-question'] == 'Yes' %}
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-heading-l">Date your company was registered under the Companies Act 2006</h1>
+            <h1 class="govuk-heading-l">What date was your company registered under the Companies Act 2006?</h1>
           </legend>
+
+          <div id="date-registered-hint" class="govuk-hint">
+            For example, 27 3 2007.
+          </div>
 
           <div class="govuk-date-input" id="formation">
             <div class="govuk-date-input__item">
@@ -58,9 +62,13 @@
             {% else %}
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-heading-l"> Equivalent date your company was registered under the Companies Act 2006, or the
-                date you began trading</h1>
+              <h1 class="govuk-heading-l">What is the equivalent date your company registered under the Companies Act 2006, or the
+                date you began trading?</h1>
             </legend>
+
+            <div id="equivalent-date-registered-hint" class="govuk-hint">
+              For example, 27 3 2007.
+            </div>
 
             <div class="govuk-date-input" id="formation">
               <div class="govuk-date-input__item">
