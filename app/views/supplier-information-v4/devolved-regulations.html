@@ -19,38 +19,39 @@
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Do devolved regulations apply to your organisation?
+              Do devolved regulations apply to the organisation?
             </h1>
           </legend>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="devolved-ni" name="devolved" type="radio" value="ni">
-              <label class="govuk-label govuk-radios__label" for="devolved-ni">
+          <div id="waste-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
                 Yes, Northern Ireland
               </label>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="devolved-scotland" name="devolved" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="devolved-scotland">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                 Yes, Scotland
               </label>
             </div>
-          
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="devolved-wales" name="devolved" type="radio" value="wales">
-            <label class="govuk-label govuk-radios__label" for="devolved-wales">
-              Yes, Wales
-            </label>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Yes, Wales
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                No
+              </label>
+            </div>
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="devolved-na" name="devolved" type="radio" value="na">
-            <label class="govuk-label govuk-radios__label" for="devolved-na">
-              No
-            </label>
-
-          </div>
-        </div>
         </fieldset>
       </div>
 
