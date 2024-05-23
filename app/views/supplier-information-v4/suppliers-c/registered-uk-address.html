@@ -20,11 +20,11 @@
 
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter the supplier’s Registered or Principle address
+                    Enter the registered or principle address
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
-                    Address not found, enter the supplier’s Registered or Principle address manually
+                    Address not found, enter the registered or principle address manually
                 </h1>
                 {% endif %}
             </legend>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="postal-address-postcode">
-                            Post code
+                            Postcode
                         </label>
                         <input class="govuk-input govuk-input--width-10" id="postal-address-postcode"
                             name="postal-address-postcode" type="text" value="{{ data['postal-address-postcode'] }}"
