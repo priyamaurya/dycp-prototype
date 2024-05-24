@@ -14,7 +14,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
-
+      {% if data['caQuestion'] == 'Yes' %}
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" data-required data-error="Select the organisation's registered legal form"
           aria-required="true" aria-describedby="legalForm-hint">
@@ -24,7 +24,7 @@
             </h1>
           </legend>
 
-          {% if data['caQuestion'] == 'Yes' %}
+          
 
           <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
             Legal form is the organisation type as defined in the Companies Act.
@@ -97,11 +97,13 @@
                 value="{{ data['legalFormByText'] }}" type="tel" autocomplete="tel">
             </div>
           </div>
+        </fieldset>
+      </div>
 
           {% else %}
 
 
-          <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
+          <!-- <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
             Legal form is the organisation equivalent to the Companies Act.
           </div>
 
@@ -156,22 +158,21 @@
               <label class="govuk-label govuk-radios__label" for="legalForm-3">
                 Other
               </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-legalForm-3">
+            </div> -->
               <div class="govuk-form-group">
-                <label class="govuk-label" for="legalForm-by-text">
-                  Provide more detail
-                </label>
-                <input class="govuk-input" id="legalForm-by-text" name="legalFormByText"
-                  value="{{ data['legalFormByText'] }}" type="tel" autocomplete="tel">
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--l" for="legalForm-by-text">
+                    What is your organisation's registered legal form?
+                  </label>
+                </h1>
+                <input class="govuk-input" id="legalForm-by-text" name="legalForm"
+                  value="{{ data['legalForm'] }}">
               </div>
-            </div>
 
             {% endif %}
 
 
-        </fieldset>
-      </div>
+
 
 
       <button class="govuk-button" type="submit">Save and continue</button>
