@@ -41,7 +41,7 @@
       </dd>
     </div>
 
-
+  
   {% if data.company.registered_office_address.address_line_1 is defined %}
   
   
@@ -158,6 +158,8 @@
     </div>
 
   {% endif %}
+
+  {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
 
     {% if data['address'] | length != "0" and data['addressSame'] == "Yes" %}
 
@@ -387,6 +389,7 @@
 
               {% endif %}
          {% endif %}
+    {% endif %}
   {% endif %}
 
             {% if data['vatReg'] == "No" %}
