@@ -32,13 +32,20 @@ router.post('/signin-success', function (req, res) {
 
 router.get('/registered-address', function (req, res) {
   res.render(path.resolve(__dirname, 'registered-address'), {
-    countries: require('../../data/data').countries
+    countries: require('../../../data/data').countries
   })
 })
 
-router.post('/non-individual-core-data', function (req, res) {
-  res.redirect('../org-dashboard');account-home
+
+router.post('/individual-or-org', function (req, res) {
+  res.redirect('non-individual-core-data');
 })
+
+
+
+// router.post('/non-individual-core-data', function (req, res) {
+//   res.redirect('../org-dashboard');//account-home
+// })
 
 router.post('/registered-address', function (req, res) {
   res.redirect('non-individual-core-data');
@@ -49,7 +56,7 @@ router.post('/address-type', function (req, res) {
   let addressTypeBasic = req.session.data.addressTypeBasic;
 
   if (addressTypeBasic == "Yes") {
-    res.redirect('find-registered-uk-address');
+    res.redirect('registered-uk-address'); //find-registered-uk-address
   } else {
     res.redirect('registered-address');
   }
@@ -57,7 +64,7 @@ router.post('/address-type', function (req, res) {
 
 router.get('/postal-address', function (req, res) {
   res.render(path.resolve(__dirname, 'postal-address'), {
-    countries: require('../../data/data').countries
+    countries: require('../../../data/data').countries
   })
 })
 
@@ -70,7 +77,7 @@ router.post('/postal-address-type', function (req, res) {
   let addressTypePos = req.session.data.addressTypePos;
 
   if (addressTypePos == "Yes") {
-    res.redirect('find-postal-uk-address');
+    res.redirect('postal-uk-address'); //find-postal-uk-address
   } else {
     res.redirect('postal-address');
   }
@@ -507,5 +514,21 @@ router.post('/find-postal-uk-address', function (req, res) {
   }
 
 })
+
+router.get('/non-individual-core-data', function (req, res) {
+  console.log(req.session.data)
+  res.render(path.resolve(__dirname, 'non-individual-core-data'));
+});
+
+
+
+router.get('/is-the-address-same', function (req, res) {
+  if (req.session.data.individualOrOrg && req.session.data.individualOrOrg == 'Individual'){
+    res.redirect('postal-address-type')
+  } else {
+    res.render(path.resolve(__dirname, 'is-the-address-same'));
+  }
+});
+
 
 module.exports = router

@@ -95,25 +95,25 @@
 
     {% if data.company.registered_office_address.address_line_1 is defined %}
 
-      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set href="suppliers-c/individual-or-org" %}
       {% set value = "" %}
       {% set status = "In progress" %}
       
     {% elif data['legalForm'] | length != "0" %}
 
-      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set href="suppliers-c/individual-or-org" %}
       {% set value = "" %}
       {% set status = "Completed" %}
 
     {% elif data['addressTypeBasic'] | length != "0" %}
 
-      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set href="suppliers-c/individual-or-org" %}
       {% set value = "" %}
       {% set status = "In progress" %}
 
     {% else %}
     
-      {% set href="suppliers-c/non-individual-core-data" %}
+      {% set href="suppliers-c/individual-or-org" %}
       {% set value = "" %}
       {% set status = "Not started" %}
     
