@@ -803,7 +803,7 @@ router.post('/right', function (req, res) {
     res.redirect('right-reg-address-type');
   }
   else {
-    res.redirect('right-residency');
+    res.redirect('right-address-type'); //'right-residency'
   }
 })
 
@@ -865,7 +865,7 @@ router.post('/right-address-type', function (req, res) {
     res.redirect('right-address');
   }
   else {
-    res.redirect('find-address-right');
+    res.redirect('right-address-uk'); //find-address-right
   }
 })
 
