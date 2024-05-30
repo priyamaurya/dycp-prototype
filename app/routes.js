@@ -6,6 +6,8 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 const axios = require('axios');
+const path = require('node:path')
+
 
 // Add your routes here
 
@@ -117,6 +119,15 @@ router.post('/supplier-information-v4/manage-users/update-user', function (req, 
   res.redirect('/supplier-information-v4/manage-users?n=userUpdated');
 });
 
+router.post('/supplier-information-v4/do-devolved-regulations-apply', function (req, res) {
+  if(req.body.devoledRegsApply == 'Yes'){
+    res.redirect('/supplier-information-v4/devolved-regulations');
+  } else {
+    res.redirect('/supplier-information-v4/org-overview');
+  }
+  
+});
+
 
 /* connected persons */
 
@@ -146,6 +157,13 @@ router.get('/supplier-information-v4/org-dashboard', function (req, res) {
   }
   
 });
+
+
+router.get('/supplier-information-v4/org-address-overseas', function (req, res) {
+  res.render('supplier-information-v4/org-address-overseas', {
+    countries: require(__dirname+'/data/data').countries
+  })
+})
 
 
 

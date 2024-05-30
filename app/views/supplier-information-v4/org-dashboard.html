@@ -86,10 +86,49 @@
         </dd>
       </div>
 
+      {% if data['orgType'] == 'Buyer' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Organisation type
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Central government, public authority: UK, Scottish, Welsh and Northern Irish Executive
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="buyer-type">Change<span class="govuk-visually-hidden"> organisation type</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do devolved regulations apply to the organisation?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="do-devolved-regulations-apply">Change<span class="govuk-visually-hidden"> do devolved regulations apply to the organisation?</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Which devolved regulations apply to the organisation?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Nothern Ireland, Scotland
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="devolved-regulations">Change<span class="govuk-visually-hidden"> which devolved regulations apply to the organisation?</span></a>
+        </dd>
+      </div>
+    {% endif %}
+
     </dl>
 
 
-
+    {% if data['orgType'] == 'Supplier' %}
+    
 
     <h2 class="govuk-heading-m govuk-!-margin-top-9">Supplier information</h2>
 
@@ -327,7 +366,7 @@
       </div>
     </dl>
 
-
+    {% endif %}
     <h2 class="govuk-heading-m govuk-!-margin-top-9">Users</h2>
     
     <dl class="govuk-summary-list">
