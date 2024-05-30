@@ -15,11 +15,11 @@
     <div class="govuk-grid-column-three-quarters">
 
         <!--
-<h2 class="govuk-heading-m" style="color: #1d70b8;">
+ <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Connected persons
-        </h2>
+        </h2> -->
         <span class="govuk-caption-xl"> {{ data['connectedPersons'] }}</span>
--->
+
 
         <form class="form" method="post">
 
@@ -65,7 +65,7 @@
 {% endblock %}
 
 
-<!-- unused 
+<!-- unused
 
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                             id="conditional-addressSameParent-2">
@@ -120,7 +120,7 @@
                                 Country
                             </label>
 
-                            <select class="govuk-input autocomplete" id="selectData" name="selectData">
+                            <select class="govuk-select autocomplete" id="selectData" name="selectData">
 
                                 <option value=""></option>
                                 {% for country in countries %}
@@ -180,4 +180,4 @@
 
                     </div>
 
-                    {% endif %}
+                    {% endif %} -->

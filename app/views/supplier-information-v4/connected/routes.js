@@ -18,7 +18,7 @@ router.post('/director-reg-address-type-ni', function (req, res) {
   if (addressTypeRegDirNi == "No") {
     res.redirect('dir-reg-address-ni');
   } else {
-    res.redirect('find-reg-address-dir-ni');
+    res.redirect('dir-reg-address-uk-ni');
   }
 })
 
@@ -153,7 +153,7 @@ router.post('/director-address-type', function (req, res) {
   if (addressTypeDir == "No") {
     res.redirect('dir-address');
   } else {
-    res.redirect('find-address-dir');
+    res.redirect('dir-address-uk');
   }
 })
 
@@ -275,7 +275,7 @@ router.post('/gov-reg-address-type', function (req, res) {
   if (addressTypeGovReg == "No") {
     res.redirect('gov-reg-address');
   } else {
-    res.redirect('find-reg-address-gov');
+    res.redirect('gov-reg-address-uk');
   }
 })
 
@@ -286,7 +286,7 @@ router.post('/gov-address-type', function (req, res) {
   if (addressTypeGov == "No") {
     res.redirect('gov-service-address');
   } else {
-    res.redirect('find-address-gov');
+    res.redirect('gov-address-uk');
   }
 })
 
@@ -504,7 +504,11 @@ router.get('/psc-individual', function (req, res) {
 })
 
 router.post('/psc-individual', function (req, res) {
-  res.redirect('address-type');
+  res.redirect('psc-reg-address-uk');
+})
+
+router.post('/psc-reg-address-uk', function (req, res) {
+  res.redirect('psc-address-same');
 })
 
 router.post('/address-reg-type', function (req, res) {
@@ -546,7 +550,7 @@ router.post('/address-type', function (req, res) {
   if (addressType == "No") {
     res.redirect('psc-address');
   } else {
-    res.redirect('find-address-psc');
+    res.redirect('psc-address-uk');
   }
 })
 
@@ -635,7 +639,7 @@ router.post('/parent-reg-address-type', function (req, res) {
     res.redirect('parent-reg-address');
   }
   else {
-    res.redirect('find-reg-address-parent');
+    res.redirect('parent-reg-address-uk');
   }
 })
 
@@ -668,7 +672,7 @@ router.post('/parent-address-type', function (req, res) {
     res.redirect('parent-address');
   }
   else {
-    res.redirect('find-address-parent');
+    res.redirect('parent-address-uk');
   }
 })
 
@@ -714,7 +718,7 @@ router.post('/pred-reg-address-type', function (req, res) {
     res.redirect('pred-reg-address');
   }
   else {
-    res.redirect('find-reg-address-pred');
+    res.redirect('pred-reg-address-uk');
   }
 })
 
@@ -803,7 +807,7 @@ router.post('/right', function (req, res) {
     res.redirect('right-reg-address-type');
   }
   else {
-    res.redirect('right-residency');
+    res.redirect('right-address-type'); //'right-residency'
   }
 })
 
@@ -825,7 +829,7 @@ router.post('/right-reg-address-type', function (req, res) {
     res.redirect('right-reg-address');
   }
   else {
-    res.redirect('find-reg-address-right');
+    res.redirect('right-reg-address-uk');
   }
 })
 
@@ -865,7 +869,7 @@ router.post('/right-address-type', function (req, res) {
     res.redirect('right-address');
   }
   else {
-    res.redirect('find-address-right');
+    res.redirect('right-address-uk'); //find-address-right
   }
 })
 
@@ -932,7 +936,7 @@ router.post('/right-nature-of-control', function (req, res) {
     res.redirect('right-date-registered');
   }
   else {
-    res.redirect('check-answers-connected-person');
+    res.redirect('date-registered-psc');
   }
 })
 router.post('/right-date-registered', function (req, res) {
@@ -1002,7 +1006,7 @@ router.post('/find-address-dir', function (req, res) {
     }
 
   } else {
-    res.redirect('find-address-dir')
+    res.redirect('dir-address-uk')
   }
 
 })
@@ -1202,7 +1206,7 @@ router.post('/find-address-parent', function (req, res) {
     }
 
   } else {
-    res.redirect('find-address-parent')
+    res.redirect('parent-address-uk')
   }
 
 })
@@ -1252,9 +1256,13 @@ router.post('/find-reg-address-parent', function (req, res) {
     }
 
   } else {
-    res.redirect('find-reg-address-parent')
+    res.redirect('parent-reg-address-uk')
   }
 
+})
+
+router.post('/parent-reg-address-uk', function (req, res) {
+  res.redirect('parent-address-same');
 })
 
 router.post('/select-reg-address-psc', function (req, res) {
@@ -1352,7 +1360,7 @@ router.post('/find-address-psc', function (req, res) {
     }
 
   } else {
-    res.redirect('find-address-psc')
+    res.redirect('psc-address-uk')
   }
 
 })
@@ -1502,7 +1510,7 @@ router.post('/find-address-gov', function (req, res) {
     }
 
   } else {
-    res.redirect('find-address-gov')
+    res.redirect('gov-address-uk')
   }
 
 })
@@ -1552,7 +1560,7 @@ router.post('/find-reg-address-gov', function (req, res) {
     }
 
   } else {
-    res.redirect('find-reg-address-gov')
+    res.redirect('gov-reg-address-uk')
   }
 
 })
