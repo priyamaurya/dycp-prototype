@@ -504,7 +504,11 @@ router.get('/psc-individual', function (req, res) {
 })
 
 router.post('/psc-individual', function (req, res) {
-  res.redirect('address-type');
+  res.redirect('psc-reg-address-uk');
+})
+
+router.post('/psc-reg-address-uk', function (req, res) {
+  res.redirect('psc-address-same');
 })
 
 router.post('/address-reg-type', function (req, res) {
