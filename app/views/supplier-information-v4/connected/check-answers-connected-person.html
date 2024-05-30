@@ -23,6 +23,7 @@
       {% if data['connectedPersons'] == "An organisation with the right to exercise control" and data['personQuestion']
       == "organisation" %}
 
+      
       <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
@@ -450,6 +451,7 @@
         {% if data['connectedPersons'] == "Right to exercise control" and data['personQuestion'] == "person" or
         data['personQuestion'] == "trust" %}
 
+
         <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
         <h1 class="govuk-heading-l">Check your answers</h1>
@@ -840,6 +842,9 @@
           {% if data['connectedPersons'] == "A predecessor company of the supplier" and data['predNumberQuestion'] |
           length != "0" %}
 
+          <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Connected persons
+        </h2> -->
           <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
           <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1102,6 +1107,9 @@
             {% if data['connectedPersons'] == "A parent undertaking or a subsidiary undertaking of the supplier" and
             data['numberQuestion'] | length != "0" %}
 
+            <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+              Connected persons
+          </h2> -->
             <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
             <h1 class="govuk-heading-l">Check your answers</h1>
             <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -1340,7 +1348,9 @@
               %}
 
               <!-- PSC (Person of significant control) organisation or Public Authority  -->
-
+              <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                Connected persons
+            </h2> -->
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -1510,6 +1520,9 @@
 
               {% if data['connectedPersons'] == "A relevant legal entity (registrable)" and data['govPublicLaw'] |
               length != "0" %}
+              <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                Connected persons
+            </h2> -->
 
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1841,6 +1854,9 @@
 
               <!-- PSC (Person of significant control) registerable  -->
 
+              <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                Connected persons
+            </h2> -->
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -2120,7 +2136,9 @@
 
 
               <!-- Director or Shadow Director, Individual  -->
-
+              <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                Connected persons
+            </h2> -->
               <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
               <h1 class="govuk-heading-l">Check your answers</h1>
               <dl class="govuk-summary-list govuk-!-margin-bottom-3">
@@ -2342,7 +2360,9 @@
                 data['addressTypeRegDirNi'] | length != "0" %}
 
                 <!-- Director or Shadow Director, organisation  -->
-
+                <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+                  Connected persons
+              </h2> -->
                 <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
                 <h1 class="govuk-heading-l">Check your answers</h1>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-3">
