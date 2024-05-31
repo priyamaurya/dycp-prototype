@@ -44,7 +44,7 @@ router.post('/individual-or-org', function (req, res) {
 
 
 // router.post('/non-individual-core-data', function (req, res) {
-//   res.redirect('../org-dashboard');//account-home
+//   res.redirect('../supplier-information');//account-home
 // })
 
 router.post('/registered-address', function (req, res) {
@@ -204,7 +204,7 @@ router.post('/formation-date', function (req, res) {
 })
 
 router.post('/non-individual-core-data', function (req, res) {
-  res.redirect('../org-dashboard'); //account-home
+  res.redirect('../supplier-information'); //account-home
 })
 
 router.get('/:index/remove-qualification', function (req, res) {

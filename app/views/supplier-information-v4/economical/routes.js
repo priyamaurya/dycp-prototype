@@ -150,7 +150,7 @@ router.post('/add-another-file', function (req, res) {
     } else {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
-            res.redirect('../org-dashboard'); //../suppliers-c/account-home
+            res.redirect('../supplier-information'); //../suppliers-c/account-home
         } else if (startQuestion == 'Trust') {
             res.redirect('../suppliers-b/account-home');
         }

@@ -207,7 +207,7 @@ router.post('/connected-question', function (req, res) {
   if (connectedPsc == "Yes") {
     res.redirect('companies-question');
   } else {
-    res.redirect('../org-dashboard');
+    res.redirect('../supplier-information');
   }
 
 })
@@ -473,7 +473,7 @@ router.post('/add-another-connected-person', function (req, res) {
     res.redirect('../connected/connected-question');
   }
   else if (req.session.data.startQuestion == "Company") {
-    res.redirect('../org-dashboard'); //'../suppliers-c/account-home'
+    res.redirect('../supplier-information'); //'../suppliers-c/account-home'
   }
   else if (req.session.data.startQuestion == "Trust") {
     res.redirect('../suppliers-b/account-home');

@@ -36,7 +36,7 @@ router.post('/exclusion-grounds', function (req, res) {
         res.redirect('improperly');
 
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Company') {
-        res.redirect('../org-dashboard'); ///suppliers-c/account-home
+        res.redirect('../supplier-information'); ///suppliers-c/account-home
 
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Individual') {
         res.redirect('/suppliers-d/account-home');
@@ -56,7 +56,7 @@ router.post('/event-subject', function (req, res) {
     if (eventSubDis == 'Not listed') {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
-            res.redirect('../org-dashboard'); //../suppliers-c/account-home
+            res.redirect('../supplier-information'); //../suppliers-c/account-home
         }
         else {
             res.redirect('../suppliers-d/account-home');
@@ -222,7 +222,7 @@ router.post('/add-another-exclusion', function (req, res) {
 
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
-            res.redirect('../org-dashboard'); //../suppliers-c/account-home
+            res.redirect('../supplier-information'); //../suppliers-c/account-home
         }
         /* disabled by Z - reinstate 
         else if (startQuestion == 'Trust') {
