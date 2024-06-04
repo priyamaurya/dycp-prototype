@@ -32,7 +32,7 @@ router.post('/exclusion-grounds', function (req, res) {
     } else if (exclusionMan == 'None of the above' && startQuestion == 'Individual') {
         res.redirect('/suppliers-d/account-home');
     } else if (exclusionMan == 'None of the above' && startQuestion == 'Company') {
-        res.redirect('../org-dashboard'); ///suppliers-c/account-home
+        res.redirect('../supplier-information'); ///suppliers-c/account-home
     } else if (exclusionMan == 'None of the above' && startQuestion == 'Trust') {
         res.redirect('/suppliers-b/account-home');
     } else {
@@ -76,7 +76,7 @@ router.post('/event-subject', function (req, res) {
     if (eventSubMan == 'Not listed') {
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
-            res.redirect('../org-dashboard'); //../suppliers-c/account-home
+            res.redirect('../supplier-information'); //../suppliers-c/account-home
         }
         else if (startQuestion == 'Trust') {
             res.redirect('../suppliers-b/account-home');
@@ -215,7 +215,7 @@ router.post('/add-another-exclusion', function (req, res) {
 
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
-            res.redirect('../org-dashboard');//../suppliers-c/account-home
+            res.redirect('../supplier-information');//../suppliers-c/account-home
         }
         else if (startQuestion == 'Trust') {
             res.redirect('../suppliers-b/account-home');

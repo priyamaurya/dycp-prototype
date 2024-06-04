@@ -28,8 +28,9 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
-            {{ data['orgName'] }}
-            <span class="govuk-hint govuk-!-display-block">{{ data['postal-address-line-1'] }}</span>
+            {{ data['orgName'] }} <span class="govuk-hint govuk-!-font-size-16">{% if data['orgType'] == 'Buyer' %}(Pending approval){% endif %}</span>
+            <div class="govuk-!-font-weight-regular">{{ data['postal-address-line-1'] }}</div>
+            
           </th>
           <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="org-dashboard">Select</a></td>
         </tr>

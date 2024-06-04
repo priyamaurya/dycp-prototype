@@ -57,7 +57,7 @@ router.post('/check-answers', function (req, res) {
     let startQuestion = req.session.data.startQuestion;
 
     if (startQuestion == 'Company') {
-        res.redirect('../org-dashboard'); ///suppliers-c/account-home
+        res.redirect('../supplier-information'); ///suppliers-c/account-home
     } else {
         res.redirect('/suppliers-d/account-home');
     }

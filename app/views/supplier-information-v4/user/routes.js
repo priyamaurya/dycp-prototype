@@ -20,7 +20,7 @@ router.post('/user-details', function (req, res) {
 //     if (eventSubUser == 'Not listed') {
 //         let startQuestion = req.session.data.startQuestion;
 //         if (startQuestion == 'Company') {
-//             res.redirect('../org-dashboard'); //../suppliers-c/account-home
+//             res.redirect('../supplier-information'); //../suppliers-c/account-home
 //         }
 //         else if (startQuestion == 'Trust') {
 //             res.redirect('../suppliers-b/account-home');
@@ -138,7 +138,7 @@ router.post('/add-another-user', function (req, res) {
 
         let startQuestion = req.session.data.startQuestion;
         if (startQuestion == 'Company') {
-            res.redirect('../org-dashboard');//../suppliers-c/account-home
+            res.redirect('../supplier-information');//../suppliers-c/account-home
         }
         // else if (startQuestion == 'Trust') {
         //     res.redirect('../suppliers-b/account-home');
