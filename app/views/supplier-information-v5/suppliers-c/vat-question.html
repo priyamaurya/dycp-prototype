@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" data-required data-error="Select yes if you are registered for VAT"
+          aria-required="true">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are you registered for VAT?
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="vatReg" name="vatReg" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="vatReg">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="vatReg-2" name="vatReg" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="vatReg">
+                No
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+  </div>
+  </form>
+
+
+</div>
+</div>
+
+{% endblock %}

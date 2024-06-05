@@ -1,0 +1,104 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% set manageUsersActive="true" %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+
+    {% if prompt %}
+    <div class="govuk-notification-banner" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Request to join
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Laura Brown has requested to join Defra
+        </h3>
+        <ul class="govuk-list">
+          <li><a class="govuk-link govuk-link--no-visited-state" href="#">Accept Laura's request to join Defra</a></li>
+          <li><a class="govuk-link govuk-link--no-visited-state" href="#">Decline request</a></li>
+        </ul>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if notification %}
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          {% if notification == "userAdded" %}
+            Mo Farah was added to the service, and an email notification was sent.
+          {% elseif notification == "userRemoved" %}
+            Laura Brown was removed from the service, and an email notification was sent.
+          {% elseif notification == "userUpdated" %}
+            Details of Laura Brown was updated, and an email notification was sent.
+          {% elseif notification == "userUpdatedCurrent" %}
+            Your details were updated.
+          {% endif %}
+
+        </h3>
+      </div>
+    </div>
+    {% endif %}
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-label--l">Manage users</span>
+    </h1>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">List of users</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">User's name</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Joe Blogg (You)
+            <span class="govuk-hint govuk-!-display-block">Admin</span>
+          </th>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="manage-users/update-user-admin">Select</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">
+            Laura Brown
+            <span class="govuk-hint govuk-!-display-block">Defra</span>
+          </th>
+          <td class="govuk-table__cell"><a class="govuk-link govuk-link--no-visited-state" href="manage-users/update-user">Select</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+
+    <a class="govuk-link govuk-link--no-visited-state" href="manage-users/add-user">Add a user</a>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+
+
+      

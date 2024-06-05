@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <h1 class="govuk-heading-l">
+            The financial information you'll need
+        </h1>
+        <p>
+                    To participate in public procurement under the Procurement Act 2006 you 
+        need to upload some financial information.
+        </p>
+        <p>
+            You can upload copies of your company's audited accounts covering the 
+            most recent 1 or 2 financial years.
+        </p>
+        <p>
+            If your accounts did not require an audit, you can upload accounts or 
+            financial statements covering your most recent financial year.
+        </p>
+        <p>
+            You'll need to know the financial year end covered by the information you 
+            give us.
+        </p>
+
+        <a href="financial-question" class="govuk-button">Continue</a>
+
+    </div>
+</div>
+
+{% endblock %}

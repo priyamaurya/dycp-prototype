@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %}
+
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <h1 class="govuk-heading-l">Cannot manage users</h1>
+    <p>This is because you need to add at least one organisation before you can add a user.</p>
+
+  </div>
+</div>
+
+{% endblock %}

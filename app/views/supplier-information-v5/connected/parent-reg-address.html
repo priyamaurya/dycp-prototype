@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    What is {{ data['connectedPerson'] }}'s address?
+                </h1>
+            </legend>
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+
+                    <div class="govuk-form-group govuk-!-margin-top-3">
+                        <label class="govuk-label" for="connectedPersonsRegParent-address-line-1">
+                            Address line 1
+                        </label>
+                        <input class="govuk-input" id="connectedPersonsRegParent-address-line-1"
+                            name="connectedPersonsRegParent-address-line-1" type="text"
+                            autocomplete="connectedPersonsRegParent-address-line1">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegParent-address-line-2">
+                            Address line 2 (optional)
+                        </label>
+                        <input class="govuk-input" id="connectedPersonsRegParent-address-line-2"
+                            name="connectedPersonsRegParent-address-line-2" type="text"
+                            autocomplete="connectedPersonsRegParent-address-line-2">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegParent-address-town">
+                            Town or city
+                        </label>
+                        <input class="govuk-input govuk-!-width-two-thirds" id="connectedPersonsRegParent-address-town"
+                            name="connectedPersonsRegParent-address-town" type="text"
+                            autocomplete="connectedPersonsRegParent-address-town">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegParent-address-postcode">
+                            County, State or Province (optional)
+                        </label>
+                        <input class="govuk-input govuk-input--width-20" id="connectedPersonsRegParent-address-county"
+                            name="connectedPersonsRegParent-address-county" type="text"
+                            autocomplete="connectedPersonsRegParent-address-county">
+                    </div>
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="connectedPersonsRegParent-address-postcode">
+                            Postal or ZIP Code
+                        </label>
+                        <input class="govuk-input govuk-input--width-10" id="connectedPersonsRegParent-address-postcode"
+                            name="connectedPersonsRegParent-address-postcode" type="text"
+                            autocomplete="connectedPersonsRegParent-postal-code">
+                    </div>
+                    <label class="govuk-label govuk-!-margin-top-6" for="connectedPersonsRegParent-address-country">
+                        Country
+                    </label>
+
+                    <select class="govuk-select autocomplete" id="selectData" name="selectData">
+
+                        <option value=""></option>
+                        {% for country in countries %}
+                        <option value="{{ country.value }}">{{ country.value }}</option>
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+                <div class="govuk-form-group">
+                    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+                        Save and continue
+                    </button>
+                </div>
+
+            </form>
+        </fieldset>
+
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/script.js"></script>
+<script src="/public/javascripts/data.js"></script>
+{% endblock %}
