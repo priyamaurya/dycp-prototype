@@ -23,7 +23,7 @@
       {% if data['connectedPersons'] == "An organisation with the right to exercise control" and data['personQuestion']
       == "organisation" %}
 
-      
+
       <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
 
       <h1 class="govuk-heading-l">Check your answers</h1>
@@ -1518,7 +1518,7 @@
 
               <!-- GOV / Public  -->
 
-              {% if data['connectedPersons'] == "A relevant legal entity (registrable)" and data['govPublicLaw'] |
+              {% if data['connectedPersons'] == "Registered company" and data['govPublicLaw'] |
               length != "0" %}
               <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
                 Connected persons
@@ -2707,16 +2707,15 @@
   </div>
   <div class="govuk-grid-column-two-thirds">
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-9">Submit your connected person's details</h3>
+    <h3 class="govuk-heading-m govuk-!-margin-top-9">Add 'connected person' details</h3>
 
     <p class="govuk-body">
-      By submitting this data you are confirming that, to the best of your knowledge, the details you are providing are
-      correct.
+      By adding this information you are confirming that it is correct to the best of your knowledge.
     </p>
 
     <div class="govuk-button-group govuk-!-margin-top-9">
       <button class="govuk-button" data-module="govuk-button">
-        Confirm and submit
+        Add
       </button>
     </div>
 

@@ -28,7 +28,7 @@
       {% set href="suppliers-c/individual-or-org" %}
       {% set value = "" %}
       {% set status = "In progress" %}
-      
+
     {% elif data['legalForm'] | length != "0" %}
 
       {% set href="suppliers-c/individual-or-org" %}
@@ -42,14 +42,14 @@
       {% set status = "In progress" %}
 
     {% else %}
-    
+
       {% set href="suppliers-c/individual-or-org" %}
       {% set value = "" %}
       {% set status = "Not started" %}
-    
+
     {% endif %}
 
-    
+
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
@@ -63,8 +63,8 @@
             <strong class="govuk-tag">{{ status }}</strong>
         </dd>
       </div>
-      
-    </dl> 
+
+    </dl>
 
     {% if (data['connectedPersonCount'] == "1") %}
 
@@ -99,11 +99,11 @@
 
     {% endif %}
 
-    
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Connected persons</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Who has influence or control over your organisation?</a>
         </dt>
         <dd class="govuk-summary-list__value">
           {{ value }}
@@ -112,48 +112,48 @@
             <strong class="govuk-tag">{{ status }}</strong>
         </dd>
       </div>
-      
-    </dl> 
 
-        
+    </dl>
+
+
     {% if data['addAnotherExclusionMan'] | length != "0" and data['exclusionManArray'] | length >=
     "2" %}
 
       {% set href="mandatory/add-another-exclusion" %}
       {% set value = data ['exclusionManCount'] + " mandatory exclusions" %}
       {% set status = "Completed" %}
-      
+
 
     {% elif data['addAnotherExclusionMan'] | length != "0" %}
 
       {% set href="mandatory/add-another-exclusion" %}
       {% set value = data ['exclusionManCount'] + " mandatory exclusion" %}
       {% set status = "Completed" %}
-      
+
 
     {% elif data['exclusionMan'] == 'None of the above' %}
 
       {% set href="mandatory/exclusion-grounds" %}
       {% set value = "No mandatory exclusions" %}
       {% set status = "Completed" %}
-      
+
 
     {% elif data['eventSub'] | length != "0" %}
 
       {% set href="mandatory/mandatory/check-answers" %}
       {% set value = "" %}
       {% set status = "In progress" %}
-      
-      
+
+
     {% else %}
 
       {% set href="mandatory/exclusion-grounds" %}
       {% set value = "" %}
       {% set status = "Not started" %}
-      
+
 
     {% endif %}
-    
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -166,47 +166,47 @@
           <strong class="govuk-tag">{{ status }}</strong>
         </dd>
       </div>
-      
+
     </dl>
 
-        
+
     {% if data['addAnotherExclusion'] | length != "0" and data['exclusionArray'] | length >= "2" %}
 
       {% set href="discretionary/add-another-exclusion" %}
       {% set value = data ['exclusionCount'] + " discretionary exclusions" %}
       {% set status = "Completed" %}
-      
+
 
     {% elif data['addAnotherExclusion'] | length != "0" %}
 
       {% set href="discretionary/add-another-exclusion" %}
       {% set value = data ['exclusionCount'] + " discretionary exclusion" %}
       {% set status = "Completed" %}
-      
+
 
       {% elif data['exclusionDis'] == 'None of the above' %}
 
       {% set href="discretionary/exclusion-grounds" %}
       {% set value = "No discretionary exclusions" %}
       {% set status = "Completed" %}
-      
+
 
       {% elif data['eventSubDis'] | length != "0" %}
 
       {% set href="discretionary/check-answers" %}
       {% set value = "" %}
       {% set status = "In progress" %}
-      
-      
+
+
     {% else %}
 
       {% set href="discretionary/exclusion-grounds" %}
       {% set value = "" %}
       {% set status = "Not started" %}
-      
+
 
     {% endif %}
-    
+
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
@@ -219,7 +219,7 @@
           <strong class="govuk-tag">{{ status }}</strong>
         </dd>
       </div>
-      
+
     </dl>
 
 
@@ -228,7 +228,7 @@
       {% set href="economical/check-answers" %}
       {% set value = "" %}
       {% set status = "Completed" %}
-      
+
     {% elif data['financialStandIn'] | length != "0" and data['financialsYear'] | length == "0" %}
 
       {% set href="economical/financial-question" %}
@@ -240,13 +240,13 @@
       {% set href="economical/financial-question" %}
       {% set value = "" %}
       {% set status = "Not started" %}
-      
+
     {% endif %}
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Economic and Financial Standing</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Financial information</a>
         </dt>
         <dd class="govuk-summary-list__value">
           {{ value }}
@@ -257,7 +257,7 @@
       </div>
     </dl>
 
-    
+
 
     <a href="download/declaration" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-5"
             data-module="govuk-button">
@@ -271,7 +271,7 @@
       <div class="govuk-!-margin-top-3">
         <a class="govuk-link" href="org-dashboard">Back to organisation details</a>
       </div>
-   
+
   </div>
 </div>
 

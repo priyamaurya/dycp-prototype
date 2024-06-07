@@ -181,7 +181,7 @@ router.post('/connected-question', function (req, res) {
 
   let connectedPsc = req.session.data.connectedPsc;
 
-  
+
 
   /*
 
@@ -201,9 +201,9 @@ router.post('/connected-question', function (req, res) {
   }
   */
 
-  // temp 
+  // temp
 
-  
+
   if (connectedPsc == "Yes") {
     res.redirect('companies-question');
   } else {
@@ -240,7 +240,7 @@ router.post('/persons', function (req, res) {
   } else if (connectedPersons == 'A director or shadow director of the supplier (org)') {
     res.redirect('director-individual-ni');
 
-  } else if (connectedPersons == 'A relevant legal entity (registrable)') {
+  } else if (connectedPersons == 'Registered company') {
     res.redirect('gov-organisation');
 
   } else if (connectedPersons == 'PSC (Person of significant control) organisation or Public Authority') {
@@ -309,9 +309,9 @@ router.post('/gov-service-same', function (req, res) {
   let serviceSame = req.session.data.serviceSame;
 
   if (serviceSame == "Yes") {
-    res.redirect('gov-law-register');
-  } else {
     res.redirect('gov-address-type');
+  } else {
+    res.redirect('gov-law-register');
   }
 })
 
@@ -1723,5 +1723,3 @@ router.post('/find-reg-address-right', function (req, res) {
 })
 
 module.exports = router
-
-

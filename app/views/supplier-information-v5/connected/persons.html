@@ -21,19 +21,21 @@
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Select the connected person's function
+                            Select the category that best describes the organisation
                         </h1>
                     </legend>
-
+                    <div id="connected-hint" class="govuk-hint">
+                    The ‘connected person’ that has control or influence over your organisation, in this case another organisation, should fall into one of these categories.
+                    </div>
                     {% if data['companiesQuestion'] == 'Yes' and data['personQuestion'] == 'organisation' %}
 
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
-                                value="A relevant legal entity (registrable)">
+                                value="Registered company">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                Relevant legal entity (registrable)
+                                registered company
                             </label>
                         </div>
 
@@ -41,7 +43,7 @@
                             <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
                                 value="A director or shadow director of the supplier (org)">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                Director or shadow director
+                                director or with the same responsibilities
                             </label>
                         </div>
 
@@ -49,7 +51,7 @@
                             <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
                                 value="A parent undertaking or a subsidiary undertaking of the supplier">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                Parent undertaking or subsidiary undertaking
+                                parent or subsidiary company
                             </label>
                         </div>
 
@@ -57,7 +59,7 @@
                             <input class="govuk-radios__input" id="connectedPersons" name="connectedPersons"
                                 type="radio" value="A predecessor company of the supplier">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                Predecessor company
+                                a company your organisation has taken over
                             </label>
                         </div>
 
@@ -66,9 +68,7 @@
                             <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
                                 value="An organisation with the right to exercise control">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                Organisation with the right to exercise, or who actually exercises,
-                                significant influence or control, or over which the supplier has the
-                                right to exercise, or actually exercises, significant influence or control
+                                any other organisation with significant influence or control
                             </label>
                         </div>
                     </div>
@@ -114,9 +114,9 @@
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
-                                value="Equivalent to a relevant legal entity (registrable)">
+                                value="Equivalent to Registered company">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                Equivalent to a relevant legal entity (registrable)
+                                Equivalent to Registered company
                             </label>
                         </div>
 
@@ -165,7 +165,7 @@
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
-                                value="Equivalent to a relevant legal entity (registrable)">
+                                value="Equivalent to Registered company">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
                                 Equivalent to a person of significant control
                             </label>
@@ -197,9 +197,9 @@
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
-                                value="Equivalent to a relevant legal entity (registrable)">
+                                value="Equivalent to Registered company">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                Equivalent to a relevant legal entity (registrable)
+                                Equivalent to Registered company
                             </label>
                         </div>
 
