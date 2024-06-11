@@ -68,7 +68,7 @@
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Registered or principal office address:
+          Registered address
         </dt>
         {% if data ['registered-address-line-2'] | length == "0" and data ['registered-address-county'] | length == "0"
         %}
@@ -100,7 +100,7 @@
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Registered or principal office address
+          Registered address
         </dt>
         {% if data ['postal-address-line-2'] | length == "0" and data ['postal-address-county'] | length == "0" %}
         <dd class="govuk-summary-list__value">
@@ -129,7 +129,7 @@
           
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Registered or principal office address:
+          Registered address
         </dt>
         <dd class="govuk-summary-list__value">
           {{ data['address'] }}
@@ -146,7 +146,7 @@
     
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Registered or principal office address
+          Registered address
         </dt>
         <dd class="govuk-summary-list__value">
         </dd>
@@ -212,7 +212,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Contact postal address
+                Postal address
               </dt>
               {% if data ['registered-address-line-2'] | length == "0" and data ['registered-address-county'] | length
               ==
@@ -247,7 +247,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Contact postal address
+                Postal address
               </dt>
               {% if data ['postal-address-line-2'] | length == "0" and data['postal-address-county'] | length == "0" %}
               <dd class="govuk-summary-list__value">
@@ -278,7 +278,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Contact postal address
+                Postal address
               </dt>
               {% if data ['postal-address-line-2'] | length == "0" and data ['postal-address-county'] | length == "0" %}
               <dd class="govuk-summary-list__value">
@@ -306,7 +306,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Contact postal address
+                Postal address
               </dt>
               <dd class="govuk-summary-list__value">
                 {{ data['secondAddress'] }}
@@ -324,7 +324,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Contact postal address
+                  Postal address
                 </dt>
                 <dd class="govuk-summary-list__value">
                 </dd>
@@ -339,7 +339,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Contact postal address
+                  Postal address
                 </dt>
                 <dd class="govuk-summary-list__value">
                   {{ data.company.registered_office_address.address_line_1 }} , <br>
@@ -361,7 +361,7 @@
 
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                  Contact postal address
+                  Postal address
                 </dt>
                 <dd class="govuk-summary-list__value">
                 </dd>
@@ -376,7 +376,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Contact postal address
+                Postal address
               </dt>
               <dd class="govuk-summary-list__value">
               </dd>
@@ -397,7 +397,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                VAT Number:
+                VAT Number
               </dt>
               <dt class="govuk-summary-list__value">
                 {{ data['vatReg'] }}
@@ -450,7 +450,7 @@
 
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
-                Website address:
+                Website address
               </dt>
               <dt class="govuk-summary-list__value">
                 {{ data['webQuestion'] }}

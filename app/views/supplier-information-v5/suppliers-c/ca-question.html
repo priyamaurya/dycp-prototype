@@ -17,14 +17,16 @@
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" data-required
-          data-error="Select yes if the organisation is registered under the companies act 2006" aria-required="true"
+          data-error="Select yes if the organisation is registered on Companies House" aria-required="true"
           aria-describedby="caQuestion-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Is your organisation registered under the Companies Act 2006?
+              Is your organisation registered on Companies House?
             </h1>
           </legend>
-
+          <div id="caQuestion-hint" class="govuk-hint">
+            As required by the Companies Act 2006.
+          </div>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="ca@uestion" name="caQuestion" type="radio" value="Yes"

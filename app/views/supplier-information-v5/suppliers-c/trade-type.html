@@ -21,8 +21,11 @@
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-heading-l">Enter the name of the person or body which awarded the trade
-                            assurance registration</h1>
+                            assurance</h1>
                     </legend>
+                    <div id="trade-type-hint" class="govuk-hint">
+                        For example, Red Tractor Assurance or Feed Materials Assurance Scheme.
+                      </div>
                     <input class="govuk-input govuk-input--width-20" name="tradeType" id="tradeType" type="text"
                         aria-describedby="tradeType" value="{{ data['tradeType'] }}">
                 </div>
