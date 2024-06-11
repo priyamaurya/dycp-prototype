@@ -21,21 +21,32 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Is your organisation registered for VAT?
+              Are you registered for VAT?
             </h1>
           </legend>
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="vatReg" name="vatReg" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="vatReg" name="vatReg" type="radio" value="Yes"  data-aria-controls="conditional-vat-yes">
               <label class="govuk-label govuk-radios__label" for="vatReg">
                 Yes
               </label>
-              
-              
             </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-vat-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="vatNumber">
+                  Enter the VAT number
+                </label>
+                <div id="vat-registration-number-hint" class="govuk-hint">
+                  This is 9 numbers, sometimes with 'GB' at the start, for example 123456789 or GB123456789. You can find it
+                  on your VAT registration certificate.
+                </div>
+                <input class="govuk-input govuk-!-width-one-third" id="vatNumber" name="vatNumber" spellcheck="false" autocomplete="false" aria-describedby="vat-registration-number-hint">
+              </div>
+            </div>
+
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="vatReg-2" name="vatReg" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="vatReg">
+              <label class="govuk-label govuk-radios__label" for="vatReg-2">
                 No
               </label>
             </div>
