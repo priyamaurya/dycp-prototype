@@ -26,14 +26,22 @@
           </legend>
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="webQuestion" name="webQuestion" type="radio" value="Yes">
+              <input class="govuk-radios__input" id="webQuestion" name="webQuestion" type="radio" value="Yes" aria-controls="conditional-web-yes">
               <label class="govuk-label govuk-radios__label" for="webQuestion">
                 Yes
               </label>
             </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-web-yes">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="webAddress">
+                  What is your website address?
+                </label>
+                <input class="govuk-input" id="webAddress" name="webAddress" spellcheck="false" autocomplete="url">
+              </div>
+            </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="webQuestion-2" name="webQuestion" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="webQuestion">
+              <label class="govuk-label govuk-radios__label" for="webQuestion-2">
                 No
               </label>
             </div>

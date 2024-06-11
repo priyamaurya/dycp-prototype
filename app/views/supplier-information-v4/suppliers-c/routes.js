@@ -106,12 +106,13 @@ router.post('/vat-question', function (req, res) {
   
 
   let vatReg = req.session.data.vatReg;
+  res.redirect('non-individual-core-data');
 
-  if (vatReg == "Yes") {
-    res.redirect('vat-number');
-  } else {
-    res.redirect('non-individual-core-data');
-  }
+  // if (vatReg == "Yes") {
+  //   res.redirect('vat-number');
+  // } else {
+  //   res.redirect('non-individual-core-data');
+  // }
 })
 
 router.post('/vat-number', function (req, res) {
@@ -121,12 +122,13 @@ router.post('/vat-number', function (req, res) {
 router.post('/web-question', function (req, res) {
 
   let webQuestion = req.session.data.webQuestion;
+  res.redirect('non-individual-core-data');
 
-  if (webQuestion == "Yes") {
-    res.redirect('website-address');
-  } else {
-    res.redirect('non-individual-core-data');
-  }
+  // if (webQuestion == "Yes") {
+  //   res.redirect('website-address');
+  // } else {
+  //   res.redirect('non-individual-core-data');
+  // }
 })
 
 router.post('/website-address', function (req, res) {
