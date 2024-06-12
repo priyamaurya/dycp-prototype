@@ -22,7 +22,13 @@
 
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">Enter the organisation's name</h1>
+                        <h1 class="govuk-heading-l">
+                            {% if(data['connectedPersons']) == "Equivalent to a director or shadow director of the supplier" %}
+                                Enter their name
+                            {% else %}
+                                Enter the organisation's name
+                            {% endif %}
+                        </h1>
                     </legend>
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
                         <!--<h2 class="govuk-heading-m">Enter the organisation name</h2>-->

@@ -54,7 +54,7 @@ router.post('/director-address-type-ni', function (req, res) {
   if (addressTypeDirNi == "No") {
     res.redirect('dir-address-ni');
   } else {
-    res.redirect('find-address-dir-ni');
+    res.redirect('dir-address-uk-ni'); //find-address-dir-ni
   }
 })
 
@@ -73,7 +73,15 @@ router.post('/dir-address-uk-ni', function (req, res) {
 })
 
 router.post('/dir-law-register-ni', function (req, res) {
-  res.redirect('dir-company-number-question');
+  
+
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Equivalent to a director or shadow director of the supplier' ){
+    res.redirect('check-answers-connected-person');
+  } else {
+    res.redirect('dir-company-number-question');
+  }
 })
 
 router.post('/dir-company-number-question', function (req, res) {
@@ -231,31 +239,31 @@ router.post('/persons', function (req, res) {
 
   let connectedPersons = req.session.data.connectedPersons;
 
-  if (connectedPersons == 'A person with significant control over the supplier') {
+  if (connectedPersons == 'A person with significant control over the supplier' || connectedPersons == 'Equivalent to a person with significant control over the supplier') {
     res.redirect('psc-individual');
 
-  } else if (connectedPersons == 'A director or shadow director of the supplier') {
+  } else if (connectedPersons == 'A director or shadow director of the supplier' || connectedPersons == 'Equivalent to a director or shadow director of the supplier (individual)') {
     res.redirect('director-individual');
 
-  } else if (connectedPersons == 'A director or shadow director of the supplier (org)') {
+  } else if (connectedPersons == 'A director or shadow director of the supplier (org)' || connectedPersons == 'Equivalent to a director or shadow director of the supplier') {
     res.redirect('director-individual-ni');
 
-  } else if (connectedPersons == 'Registered company') {
+  } else if (connectedPersons == 'Registered company' || connectedPersons == 'Equivalent to Registered company') {
     res.redirect('gov-organisation');
 
   } else if (connectedPersons == 'PSC (Person of significant control) organisation or Public Authority') {
     res.redirect('psc-individual-ni');
 
-  } else if (connectedPersons == 'A parent undertaking or a subsidiary undertaking of the supplier') {
+  } else if (connectedPersons == 'A parent undertaking or a subsidiary undertaking of the supplier' || connectedPersons == 'Equivalent to a parent undertaking or a subsidiary undertaking of the supplier') {
     res.redirect('parent-sub');
 
-  } else if (connectedPersons == 'A predecessor company of the supplier') {
+  } else if (connectedPersons == 'A predecessor company of the supplier' || connectedPersons == 'Equivalent to a predecessor company of the supplier') {
     res.redirect('predecessor');
 
   } else if (connectedPersons == 'An organisation with the right to exercise control') {
     res.redirect('right');
 
-  } else if (connectedPersons == 'Right to exercise control') {
+  } else if (connectedPersons == 'Right to exercise control' || connectedPersons == 'Right to exercise control (eqv)') {
     res.redirect('right');
 
   } else {
@@ -504,7 +512,15 @@ router.get('/psc-individual', function (req, res) {
 })
 
 router.post('/psc-individual', function (req, res) {
-  res.redirect('psc-reg-address-uk');
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Equivalent to a person with significant control over the supplier' ){
+    res.redirect('address-type');
+  } else {
+    res.redirect('psc-reg-address-uk');
+  }
+
+  
 })
 
 router.post('/psc-reg-address-uk', function (req, res) {
@@ -573,7 +589,16 @@ router.post('/nature-of-control-psc', function (req, res) {
 })
 
 router.post('/date-registered-psc', function (req, res) {
-  res.redirect('psc-register');
+  
+
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Right to exercise control (eqv)' ){
+    res.redirect('right-law-register');
+  } else {
+    res.redirect('psc-register');
+  }
+  
 })
 
 router.post('/psc-register', function (req, res) {
@@ -654,7 +679,13 @@ router.post('/parent-address-same', function (req, res) {
   let addressSameParent = req.session.data.addressSameParent;
 
   if (addressSameParent == "Yes") {
-    res.redirect('parent-company-number-question');
+    let connectedPersons = req.session.data.connectedPersons;
+
+    if( connectedPersons == 'Equivalent to a parent undertaking or a subsidiary undertaking of the supplier' ){
+      res.redirect('check-answers-connected-person');
+    } else {
+      res.redirect('parent-company-number-question');
+    }
   } else {
     res.redirect('parent-address-type');
   }
@@ -677,11 +708,23 @@ router.post('/parent-address-type', function (req, res) {
 })
 
 router.post('/parent-address', function (req, res) {
-  res.redirect('parent-company-number-question');
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Equivalent to a parent undertaking or a subsidiary undertaking of the supplier' ){
+    res.redirect('check-answers-connected-person');
+  } else {
+    res.redirect('parent-company-number-question');
+  }
 })
 
 router.post('/parent-address-uk', function (req, res) {
-  res.redirect('parent-company-number-question');
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Equivalent to a parent undertaking or a subsidiary undertaking of the supplier' ){
+    res.redirect('check-answers-connected-person');
+  } else {
+    res.redirect('parent-company-number-question');
+  }
 })
 
 router.post('/parent-company-number-question', function (req, res) {
@@ -707,7 +750,13 @@ router.get('/parent-address', function (req, res) {
 })
 
 router.post('/predecessor', function (req, res) {
-  res.redirect('pred-reg-address-type');
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Equivalent to a predecessor company of the supplier' ){
+    res.redirect('pred-reg-address-uk');
+  } else {
+    res.redirect('pred-reg-address-type');
+  }
 })
 
 router.post('/pred-reg-address-type', function (req, res) {
@@ -756,7 +805,15 @@ router.post('/pred-reg-address', function (req, res) {
 })
 
 router.post('/pred-reg-address-uk', function (req, res) {
-  res.redirect('pred-company-number-question');
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Equivalent to a predecessor company of the supplier' ){
+    res.redirect('pred-date-registered');
+  } else {
+    res.redirect('pred-company-number-question');
+  }
+
+  
 })
 
 router.post('/pred-address', function (req, res) {
@@ -852,8 +909,18 @@ router.post('/right-address-same', function (req, res) {
   let addressSameRight = req.session.data.addressSameRight;
   let personQuestion = req.session.data.personQuestion;
 
+
   if (addressSameRight == "Yes" && personQuestion == "organisation") {
-    res.redirect('right-company-number-question');
+
+    let connectedPersons = req.session.data.connectedPersons;
+
+    if( connectedPersons == 'Right to exercise control (eqv)' ){
+      res.redirect('right-company-number-question-equiv');
+    } else {
+      res.redirect('right-company-number-question');
+    }
+
+    
   } else if (addressSameRight == "Yes") {
     res.redirect('right-nature-of-control');
   } else {
@@ -878,7 +945,13 @@ router.post('/right-address', function (req, res) {
   let personQuestion = req.session.data.personQuestion;
 
   if (personQuestion == "organisation") {
-    res.redirect('right-company-number-question');
+    let connectedPersons = req.session.data.connectedPersons;
+
+    if( connectedPersons == 'Right to exercise control (eqv)' ){
+      res.redirect('right-company-number-question-equiv');
+    } else {
+      res.redirect('right-company-number-question');
+    }
   }
   else {
     res.redirect('right-nature-of-control');
@@ -888,9 +961,14 @@ router.post('/right-address', function (req, res) {
 router.post('/right-address-uk', function (req, res) {
 
   let personQuestion = req.session.data.personQuestion;
+  let connectedPersons = req.session.data.connectedPersons;
 
-  if (personQuestion == "organisation") {
-    res.redirect('right-company-number-question');
+  if (personQuestion == "organisation" || personQuestion == "person" || personQuestion == "trust") {
+    if( connectedPersons == 'Right to exercise control (eqv)' ){
+      res.redirect('right-company-number-question-equiv');
+    } else {
+      res.redirect('right-company-number-question');
+    }
   }
   else {
     res.redirect('right-nature-of-control');
@@ -1162,7 +1240,13 @@ router.post('/find-reg-address-dir-ni', function (req, res) {
 })
 
 router.post('/select-address-parent', function (req, res) {
-  res.redirect('parent-company-number-question');
+  let connectedPersons = req.session.data.connectedPersons;
+
+  if( connectedPersons == 'Equivalent to a parent undertaking or a subsidiary undertaking of the supplier' ){
+    res.redirect('check-answers-connected-person');
+  } else {
+    res.redirect('parent-company-number-question');
+  }
 });
 
 router.post('/find-address-parent', function (req, res) {
@@ -1619,7 +1703,14 @@ router.post('/select-address-right', function (req, res) {
   let personQuestion = req.session.data.personQuestion;
 
   if (personQuestion == "organisation") {
-    res.redirect('right-company-number-question');
+    
+    let connectedPersons = req.session.data.connectedPersons;
+
+    if( connectedPersons == 'Right to exercise control (eqv)' ){
+      res.redirect('right-company-number-question-equiv');
+    } else {
+      res.redirect('right-company-number-question');
+    }
   }
   else {
     res.redirect('right-nature-of-control');

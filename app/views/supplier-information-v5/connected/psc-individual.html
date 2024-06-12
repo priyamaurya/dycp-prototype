@@ -27,8 +27,8 @@
       data-error="Enter the Person of significant control individual details" aria-required="true">
 
       <form class="form" method="post">
-
         <div class="govuk-form-group">
+
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-heading-l">Enter the person of significant control's details</h1>
           </legend>
@@ -38,9 +38,14 @@
           <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson" type="text"
             aria-describedby="connectedPerson">
 
+
+        {% if  data['connectedPersons'] == "Equivalent to a person with significant control over the supplier" %}
+            <!-- -->
+        {% else %}
+        
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
             <h2 class="govuk-heading-m">Date of birth</h2>
-          </legend>
+          </legend> 
 
           <div class="govuk-date-input" id="convictionDis">
             <div class="govuk-date-input__item">
@@ -87,6 +92,8 @@
             </select>
 
           </div>
+        
+        {% endif %}
         </div>
 
         <button class="govuk-button" type="submit">Save and continue</button>
