@@ -46,7 +46,6 @@
         </dl>
         {% endfor %}
 
-
         {% if (data['fileArray'].length <= 10) %} <fieldset class="govuk-fieldset" data-required
           data-error="Select yes if you need to add another exclusion" aria-required="true">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -71,12 +70,12 @@
           </fieldset>
           {% else %}
 
-          <p class="govuk-!-margin-top-9">You cannot add anymore Files</p>
+          <p class="govuk-!-margin-top-9">You cannot add anymore files</p>
           {% endif %}
 
           <div class="govuk-button-group govuk-!-margin-top-6">
             <button class="govuk-button" data-module="govuk-button">
-              Save and continue
+              Save
             </button>
           </div>
 
