@@ -44,7 +44,7 @@ router.post('/exclusion-grounds', function (req, res) {
     } else if (exclusionDis == 'None of the above' && startQuestion == 'Trust') {
         res.redirect('/suppliers-b/account-home');
     } else {
-        res.redirect('event-subject');
+        res.redirect('uk-event');
     }
 
 })
@@ -67,43 +67,57 @@ router.post('/event-subject', function (req, res) {
 })
 
 router.post('/bankruptcy', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-event');
 })
 
 router.post('/labour-market', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-event');
 })
 
 router.post('/infringement', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-event');
 })
 
 router.post('/breach', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-event');
 })
 
 router.post('/competition', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-event');
 })
 
 router.post('/misconduct', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-event');
 })
 
 router.post('/improperly', function (req, res) {
+    res.redirect('uk-event');
+})
+
+router.post('/uk-event', function (req, res) {
     res.redirect('event-subject');
 })
 
 router.post('/email-address', function (req, res) {
+    res.redirect('event-mitigation');
+})
+
+
+router.post('/event-mitigation', function (req, res) {
     res.redirect('event-documents');
 })
 
 router.post('/event-documents', function (req, res) {
-    res.redirect('event-mitigation');
+    res.redirect('event-ongoing');
 })
 
-router.post('/event-mitigation', function (req, res) {
-    res.redirect('event-date');
+router.post('/event-ongoing', function (req, res) {
+    if (req.session.data.eventOngoingDis == 'Yes'){
+        res.redirect('event-date');
+    } else {
+        res.redirect('check-answers');
+    }
+    
 })
 
 router.post('/event-date', function (req, res) {

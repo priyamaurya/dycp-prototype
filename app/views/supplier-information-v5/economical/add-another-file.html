@@ -30,7 +30,11 @@
         <dl class="govuk-summary-list ros-add-to-a-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Audited accounts - {{ file['fileState'] }}
+              {% if (file['fileState']) == 'Yes' %}
+              Audited accounts for financial year ending in 5/4/2023
+              {% else %}
+              Unaudited accounts for financial year ending in 5/4/2023
+              {% endif %}
             </dt>
             <dd class="govuk-summary-list__actions">
               <ul class="govuk-summary-list__actions-list">

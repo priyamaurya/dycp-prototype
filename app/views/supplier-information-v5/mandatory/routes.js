@@ -35,37 +35,55 @@ router.post('/exclusion-grounds', function (req, res) {
         res.redirect('../supplier-information'); ///suppliers-c/account-home
     } else if (exclusionMan == 'None of the above' && startQuestion == 'Trust') {
         res.redirect('/suppliers-b/account-home');
+    } else if (exclusionMan == 'Adjustments for tax arrangements that are abusive') {
+        res.redirect('uk-event');
+    } else if (exclusionMan == 'Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice') {
+        res.redirect('uk-event');
+    } else if (exclusionMan == 'Defeat in respect of notifiable tax arrangements') {
+        res.redirect('uk-event');
+    } else if (exclusionMan == 'Competition law infringements') {
+        res.redirect('uk-event');
+    } else if (exclusionMan == 'Failure to cooperate with investigation') {
+        res.redirect('uk-event');
     } else {
-        res.redirect('event-subject');
+        res.redirect('uk-crime');
     }
 
 })
 
 router.post('/theft-fraud-bribery', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-crime');
 })
 
 router.post('/tax-offences', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-crime');
 })
 
 router.post('/labour-market', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-crime');
 })
 
 router.post('/organised-crime', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-crime');
 })
 
 router.post('/ancillary-offences', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-crime');
 })
 
 router.post('/outside-uk', function (req, res) {
-    res.redirect('event-subject');
+    res.redirect('uk-event');
 })
 
 router.post('/vat-fraud', function (req, res) {
+    res.redirect('uk-event');
+})
+
+router.post('/uk-crime', function (req, res) {
+    res.redirect('event-subject');
+})
+
+router.post('/uk-event', function (req, res) {
     res.redirect('event-subject');
 })
 
@@ -90,20 +108,33 @@ router.post('/event-subject', function (req, res) {
 })
 
 router.post('/email-address', function (req, res) {
-    res.redirect('event-documents');
-})
-
-router.post('/event-documents', function (req, res) {
     res.redirect('event-mitigation');
 })
 
 router.post('/event-mitigation', function (req, res) {
-    res.redirect('event-date');
+    res.redirect('event-documents');
 })
+
+router.post('/event-documents', function (req, res) {
+    res.redirect('event-ongoing');
+})
+
+router.post('/event-ongoing', function (req, res) {
+    if (req.session.data.eventOngoingMan == 'Yes'){
+        res.redirect('event-date');
+    } else {
+        res.redirect('check-answers');
+    }
+})
+
+
+
 
 router.post('/event-date', function (req, res) {
     res.redirect('check-answers');
 })
+
+
 
 router.post('/address-type', function (req, res) {
     let addressType = req.session.data.addressType;
