@@ -23,11 +23,12 @@
         <fieldset class="govuk-fieldset" data-required data-error="Enter the date the organisation became registerable"
           aria-required="true">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-heading-l">What date did the organisation gain influence or control?</h1>
+            <h1 class="govuk-heading-l">What date was {{ data['connectedPerson'] }} registered as a 'connected person'?</h1>
           </legend>
 
           <div id="connectedOrganisationHint" class="govuk-hint">
-            This is the date the ‘connected person’, in this case an organisation, began to have an interest in, or influence or control over your organisation. You will have had to register this date on Companies House.
+            For example, the date a person with significant control was registerd with Companies House.
+            <br><br>
             For example, 27 03 2007
           </div>
           <div class="govuk-date-input" id="connectedOrganisation">
