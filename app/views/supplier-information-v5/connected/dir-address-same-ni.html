@@ -14,7 +14,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-       
+
 <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Connected persons
         </h2> -->
@@ -27,12 +27,12 @@
                 <fieldset class="govuk-fieldset" aria-describedby="addressSameDirNi-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Is {{ data['connectedPerson'] }}'s service address the same as their registered address?
+                            Does {{ data['connectedPerson'] }} have a different postal address?
                         </h1>
                     </legend>
-                    <!--<div id="addressSameDirNi-hint" class="govuk-hint">
-                        Preferred service address for the supplier.
-                    </div>-->
+                    <div id="addressSameDirNi-hint" class="govuk-hint">
+                        The place where an organisation receives official post can be different from its registered address. For example, a branch office.
+                    </div>
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="addressSameDirNi" name="addressSameDirNi"
@@ -65,7 +65,7 @@
 {% endblock %}
 
 
-<!-- unused 
+<!-- unused
 
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                             id="conditional-addressSameDirNi-2">

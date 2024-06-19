@@ -14,14 +14,14 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter {{ data['connectedPerson'] }}'s address manually
+                    Enter <!--{{ data['connectedPerson'] }}'s--> the address
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
@@ -76,7 +76,7 @@
                 </div>
                 <div class="govuk-form-group">
                     <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
-                        Save and continue
+                        Continue
                     </button>
                 </div>
 

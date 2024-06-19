@@ -23,9 +23,12 @@
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Is the registered or principal address in the UK?
+                            Is {{ data['connectedPerson'] }}'s registered address in the UK?
                         </h1>
                     </legend>
+                    <div id="connected-hint" class="govuk-hint">
+                      The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office.
+                      </div>
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="addressTypeRegDirNi" name="addressTypeRegDirNi"

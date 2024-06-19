@@ -21,11 +21,11 @@
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Select the category that best describes the organisation
+                            Select the category that best describes the 'connected person'
                         </h1>
                     </legend>
                     <div id="connected-hint" class="govuk-hint">
-                    The ‘connected person’ that has control or influence over your organisation, in this case another organisation, should fall into one of these categories.
+                    The ‘connected person’ that has control or influence over your organisation should fall into one of these categories.
                     </div>
                     {% if data['companiesQuestion'] == 'Yes' and data['personQuestion'] == 'organisation' %}
 
@@ -41,15 +41,15 @@
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
-                                value="A director or shadow director of the supplier (org)">
+                                value="Director or the same responsibilities ">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
-                                director or with the same responsibilities
+                                director or the same responsibilities
                             </label>
                         </div>
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-3Dis" name="connectedPersons" type="radio"
-                                value="A parent undertaking or a subsidiary undertaking of the supplier">
+                                value="Parent or subsidiary company">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
                                 parent or subsidiary company
                             </label>
@@ -130,7 +130,7 @@
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
-                                value="Equivalent to a parent undertaking or a subsidiary undertaking of the supplier">
+                                value="Equivalent to Parent or subsidiary company">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
                                 Equivalent to a parent undertaking or a subsidiary undertaking
                             </label>
@@ -213,7 +213,7 @@
 
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="eventSub-2Dis" name="connectedPersons" type="radio"
-                                value="Equivalent to a parent undertaking or a subsidiary undertaking of the supplier">
+                                value="Equivalent to Parent or subsidiary company">
                             <label class="govuk-label govuk-radios__label" for="connectedPersons">
                                 Equivalent to a parent undertaking or a subsidiary undertaking
                             </label>
@@ -246,7 +246,7 @@
                 </fieldset>
             </div>
 
-            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
     </div>
     </form>
 

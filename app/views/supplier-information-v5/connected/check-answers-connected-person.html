@@ -1104,7 +1104,7 @@
 
             <!-- Parent undertaking or a subsidiary undertaking  -->
 
-            {% if data['connectedPersons'] == "A parent undertaking or a subsidiary undertaking of the supplier" and
+            {% if data['connectedPersons'] == "Parent or subsidiary company" and
             data['numberQuestion'] | length != "0" %}
 
             <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
@@ -2356,7 +2356,7 @@
                 {% endif %}
                 {% endif %}
 
-                {% elif data['connectedPersons'] == "A director or shadow director of the supplier (org)" and
+                {% elif data['connectedPersons'] == "Director or the same responsibilities " and
                 data['addressTypeRegDirNi'] | length != "0" %}
 
                 <!-- Director or Shadow Director, organisation  -->
@@ -2705,17 +2705,17 @@
                   {% endif %}
                 </dl>
   </div>
-  <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-column-two-thirds">
 
-    <h3 class="govuk-heading-m govuk-!-margin-top-9">Add 'connected person' details</h3>
+    <!--<h3 class="govuk-heading-m govuk-!-margin-top-9">Add 'connected person' details</h3>
 
     <p class="govuk-body">
       By adding this information you are confirming that it is correct to the best of your knowledge.
-    </p>
+    </p>-->
 
     <div class="govuk-button-group govuk-!-margin-top-9">
       <button class="govuk-button" data-module="govuk-button">
-        Add
+        Save
       </button>
     </div>
 

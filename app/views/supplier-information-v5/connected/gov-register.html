@@ -22,10 +22,10 @@
 
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">What register is the organisation declared on?</h1>
+                        <h1 class="govuk-heading-l">What register is {{ data['connectedPerson'] }} declared on?</h1>
                     </legend>
                     <div id="govRegisterdHint" class="govuk-hint">
-                        For example, a person of significant control will be registered on Companies House
+                        For example, the Companies House persons with significant control register.
                     </div>
                     <input class="govuk-input" name="govRegister" id="govRegister" type="text"
                         aria-describedby="govRegister">

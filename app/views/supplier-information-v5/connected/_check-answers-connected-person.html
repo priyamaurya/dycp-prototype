@@ -1094,7 +1094,7 @@
 
             <!-- Parent undertaking or a subsidiary undertaking  -->
 
-            {% if data['connectedPersons'] == "A parent undertaking or a subsidiary undertaking of the supplier" %}
+            {% if data['connectedPersons'] == "Parent or subsidiary company" %}
 
             <span class="govuk-caption-l">{{ data['connectedPersons'] }}</span>
             <h1 class="govuk-heading-l">Check your answers</h1>
@@ -2305,7 +2305,7 @@
                 {% endif %}
                 {% endif %}
 
-                {% elif data['connectedPersons'] == "A director or shadow director of the supplier (org)" %}
+                {% elif data['connectedPersons'] == "Director or the same responsibilities " %}
 
                 <!-- Director or Shadow Director, organisation  -->
 
