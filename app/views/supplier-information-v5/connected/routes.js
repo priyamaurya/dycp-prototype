@@ -242,10 +242,10 @@ router.post('/persons', function (req, res) {
   if (connectedPersons == 'Person with significant control' || connectedPersons == 'Equivalent to person with significant control') {
     res.redirect('psc-individual');
 
-  } else if (connectedPersons == 'Director or same responsibilities' || connectedPersons == 'Equivalent to director or same responsibilities') {
+  } else if (connectedPersons == 'Director or individual with same responsibilities' || connectedPersons == 'Equivalent to director or same responsibilities') {
     res.redirect('director-individual');
 
-  } else if (connectedPersons == 'Director or same responsibilities org' || connectedPersons == 'Equivalent to director or same responsibilities org') {
+  } else if (connectedPersons == 'Director or organisation with same responsibilities' || connectedPersons == 'Equivalent to director or organisation with same responsibilities') {
     res.redirect('director-individual-ni');
 
   } else if (connectedPersons == 'Registered company' || connectedPersons == 'Equivalent to registered company') {

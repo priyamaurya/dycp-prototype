@@ -27,10 +27,12 @@
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Is {{ data['connectedPerson'] }} registered with an overseas equivalent to of Companies House?
+                            Is {{ data['connectedPerson'] }} registered with an overseas equivalent to Companies House?
                         </h1>
                     </legend>
-
+                    <div id="Companies-House-registration-number-hint" class="govuk-hint">
+                        Incorporated companies in the UK are required by the Companies Act 2006 to register with Companies House. Is the ‘connected person’ registered with a similar non-UK body that incorporates companies? 
+                    </div>
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="numberQuestionEquiv" name="numberQuestionEquiv"
