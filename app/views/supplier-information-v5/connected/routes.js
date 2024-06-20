@@ -245,7 +245,7 @@ router.post('/persons', function (req, res) {
   } else if (connectedPersons == 'Director or same responsibilities' || connectedPersons == 'Equivalent to director or same responsibilities') {
     res.redirect('director-individual');
 
-  } else if (connectedPersons == 'Director or same responsibilities' || connectedPersons == 'Equivalent to director or same responsibilities') {
+  } else if (connectedPersons == 'Director or same responsibilities org' || connectedPersons == 'Equivalent to director or same responsibilities org') {
     res.redirect('director-individual-ni');
 
   } else if (connectedPersons == 'Registered company' || connectedPersons == 'Equivalent to registered company') {
