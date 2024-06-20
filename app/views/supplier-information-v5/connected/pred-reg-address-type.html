@@ -15,7 +15,7 @@
   <div class="govuk-grid-column-three-quarters">
 
 
-    <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+    <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
     <form class="form" method="post">
       <div class="govuk-form-group">
@@ -24,9 +24,12 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Is [the organisation]'s last known registered or principal address in the UK?
+              Was {{ data['connectedPerson'] }}'s last known registered address in the UK?
             </h1>
           </legend>
+          <div id="connected-hint" class="govuk-hint">
+            The address that was registered with Companies House, or the principal address the business conducted its activities. For example, a head office.
+            </div>
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="addressRegTypePred" name="addressRegTypePred" type="radio"

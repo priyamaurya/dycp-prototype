@@ -14,8 +14,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
 
-    
-    <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+
+    <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
     <form class="form" method="post">
 
@@ -23,11 +23,12 @@
         <fieldset class="govuk-fieldset" data-required data-error="Enter the date the person became registerable"
           aria-required="true">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-heading-l">When did {{ data['connectedPerson']}} become insolvent and ceased to trade?</h1>
+            <h1 class="govuk-heading-l">When did {{ data['connectedPerson']}} become insolvent?</h1>
           </legend>
 
           <div id="dateRegisteredPredHint" class="govuk-hint">
-            For example, 27 3 2007
+            The date it stopped trading under its own name.<br><br>  
+            For example, 27 03 2007
           </div>
           <div class="govuk-date-input" id="dateRegisteredPred">
             <div class="govuk-date-input__item">

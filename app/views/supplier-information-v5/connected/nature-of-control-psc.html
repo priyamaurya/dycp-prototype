@@ -16,7 +16,7 @@
         <form class="form" method="post">
 
 
-            <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+            <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
             <fieldset class="govuk-fieldset" data-required data-error="Enter the nature of control"
                 aria-required="true">
@@ -25,55 +25,51 @@
                     <fieldset class="govuk-fieldset" aria-describedby="controlNature-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                             <h1 class="govuk-fieldset__heading">
-                                What is the nature of control?
+                                Which specified conditions of control does {{ data['connectedPerson'] }} have?
                             </h1>
                         </legend>
                         <div id="controlNature-hint" class="govuk-hint">
-                            Select which of the specified conditions in Part 1 of Schedule 1A to the Companies Act 2006
-                            applies
+                            As defined in <a href="https://www.legislation.gov.uk/ukpga/2006/46/schedule/1A/part/1?timeline=false" target="_blank">part 1 schedule 1a of the Companies Act 2006</a>. Select all that apply
                         </div>
                         <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="controlNature" name="controlNature"
-                                    type="checkbox" value="Ownership of shares">
+                                    type="checkbox" value="Owns shares">
                                 <label class="govuk-label govuk-checkboxes__label" for="controlNature">
-                                    Ownership of shares:
+                                    Owns shares
                                 </label>
                                 <div id="controlNature-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                                    holds, directly or indirectly, more than 25% of the shares in the company
+                                    Directly or indirectly holds more than 25% of the company's shares
                                 </div>
                             </div>
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="controlNature-2" name="controlNature"
-                                    type="checkbox" value="Ownership of voting rights">
+                                    type="checkbox" value="Has voting rights">
                                 <label class="govuk-label govuk-checkboxes__label" for="controlNature-2">
-                                    Ownership of voting rights:
+                                    Has voting rights
                                 </label>
                                 <div id="controlNature-2-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                                    holds, directly or indirectly, more than 25% of the voting rights in the company
+                                    Directly or indirectly holds more than 25% of the voting rights in the company
                                 </div>
                             </div>
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="controlNature-3" name="controlNature"
-                                    type="checkbox" value="Right to appoint or remove directors">
+                                    type="checkbox" value="Can appoint or remove directors">
                                 <label class="govuk-label govuk-checkboxes__label" for="controlNature-3">
-                                    Right to appoint or remove directors:
+                                    Can appoint or remove directors
                                 </label>
                                 <div id="controlNature-3-item-hint" class="govuk-hint govuk-radios__hint">
-                                    holds the right, directly or indirectly, to appoint or remove a majority of the
-                                    board of directors of the company
+                                    Directly or indirectly holds the right to appoint or remove a majority of the company’s board of directors
                                 </div>
                             </div>
                             <div class="govuk-checkboxes__item">
                                 <input class="govuk-checkboxes__input" id="controlNature-4" name="controlNature"
-                                    type="checkbox" value="Significant influence or control">
+                                    type="checkbox" value="Has other significant influence or control">
                                 <label class="govuk-label govuk-checkboxes__label" for="controlNature-4">
-                                    Significant influence or control:
+                                    Has other significant influence or control
                                 </label>
                                 <div id="controlNature-3-item-hint" class="govuk-hint govuk-radios__hint">
-                                    has the right to exercise, or actually exercises, significant influence or
-                                    control
-                                    over the company
+Has the right to exercise, or exercises, significant influence or control over company. As defined in the <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs" target="_blank">people with significant control (PSCs) guidance</a>.
                                 </div>
                             </div>
                         </div>
@@ -94,7 +90,7 @@
 
 
 
-<!--  Unused code from this file:    
+<!--  Unused code from this file:
                                     <div class="govuk-radios__item">
                                         <input class="govuk-radios__input" id="controlNature-5"
                                             name="controlNature" type="radio" value="Trusts partnerships etc"
@@ -117,5 +113,5 @@
                                 </div>
                         </fieldset>
                     </div>
-    
+
                 -->

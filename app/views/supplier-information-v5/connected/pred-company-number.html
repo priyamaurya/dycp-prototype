@@ -14,7 +14,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
         <form class="form" method="post">
 
@@ -22,17 +22,16 @@
                 <fieldset class="govuk-fieldset" data-required data-error="Enter the Companies House number"
                     aria-required="true">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">What is the registered Companies House number?</h1>
+                        <h1 class="govuk-heading-l">What is {{ data['connectedPerson'] }}'s company number?</h1>
                     </legend>
                     <div id="Companies-House-registration-number-hint" class="govuk-hint">
-                        CRNs are always 8 characters long. These can be either 8 digits or 2 letters followed by 6
-                        digits. English and Welsh companies have 8-digit CRNs beginning with 0 or 1.
+                      The number assigned when registering with Companies House, company numbers can be found on <a href="https://find-and-update.company-information.service.gov.uk/" target="_blank">Find and update company informaton</a>.
                     </div>
                     <input class="govuk-input govuk-input--width-20" name="houseNumber" id="houseNumber" type="text"
                         aria-describedby="houseNumber">
                 </fieldset>
             </div>
-            <button class="govuk-button" type="submit">Save and exit</button>
+            <button class="govuk-button" type="submit">Continue</button>
         </form>
     </div>
 

@@ -245,7 +245,7 @@ router.post('/persons', function (req, res) {
   } else if (connectedPersons == 'Director or same responsibilities' || connectedPersons == 'Equivalent to director or same responsibilities') {
     res.redirect('director-individual');
 
-  } else if (connectedPersons == 'Director or same responsibilities ' || connectedPersons == 'Equivalent to director or same responsibilities') {
+  } else if (connectedPersons == 'Director or same responsibilities' || connectedPersons == 'Equivalent to director or same responsibilities') {
     res.redirect('director-individual-ni');
 
   } else if (connectedPersons == 'Registered company' || connectedPersons == 'Equivalent to registered company') {
@@ -257,13 +257,13 @@ router.post('/persons', function (req, res) {
   } else if (connectedPersons == 'Parent or subsidiary company' || connectedPersons == 'Equivalent to parent or subsidiary company') {
     res.redirect('parent-sub');
 
-  } else if (connectedPersons == 'A predecessor company of the supplier' || connectedPersons == 'Equivalent to a predecessor company of the supplier') {
+  } else if (connectedPersons == 'Taken over company' || connectedPersons == 'Equivalent to Taken over company') {
     res.redirect('predecessor');
 
-  } else if (connectedPersons == 'An organisation with the right to exercise control') {
+  } else if (connectedPersons == 'Other organisation with control') {
     res.redirect('right');
 
-  } else if (connectedPersons == 'Right to exercise control' || connectedPersons == 'Right to exercise control (eqv)') {
+  } else if (connectedPersons == 'Other organisation with control' || connectedPersons == 'Other organisation with control (eqv)') {
     res.redirect('right');
 
   } else {
@@ -593,7 +593,7 @@ router.post('/date-registered-psc', function (req, res) {
 
   let connectedPersons = req.session.data.connectedPersons;
 
-  if( connectedPersons == 'Right to exercise control (eqv)' ){
+  if( connectedPersons == 'Other organisation with control (eqv)' ){
     res.redirect('right-law-register');
   } else {
     res.redirect('psc-register');
@@ -684,10 +684,10 @@ router.post('/parent-address-same', function (req, res) {
     if( connectedPersons == 'Equivalent to parent or subsidiary company' ){
       res.redirect('check-answers-connected-person');
     } else {
-      res.redirect('parent-company-number-question');
+      res.redirect('parent-address-type');
     }
   } else {
-    res.redirect('parent-address-type');
+    res.redirect('parent-company-number-question');
   }
 })
 
@@ -914,17 +914,17 @@ router.post('/right-address-same', function (req, res) {
 
     let connectedPersons = req.session.data.connectedPersons;
 
-    if( connectedPersons == 'Right to exercise control (eqv)' ){
+    if( connectedPersons == 'Other organisation with control (eqv)' ){
       res.redirect('right-company-number-question-equiv');
     } else {
-      res.redirect('right-company-number-question');
+      res.redirect('right-address-type');
     }
 
 
   } else if (addressSameRight == "Yes") {
     res.redirect('right-nature-of-control');
   } else {
-    res.redirect('right-address-type');
+    res.redirect('right-company-number-question');
   }
 })
 
@@ -947,7 +947,7 @@ router.post('/right-address', function (req, res) {
   if (personQuestion == "organisation") {
     let connectedPersons = req.session.data.connectedPersons;
 
-    if( connectedPersons == 'Right to exercise control (eqv)' ){
+    if( connectedPersons == 'Other organisation with control (eqv)' ){
       res.redirect('right-company-number-question-equiv');
     } else {
       res.redirect('right-company-number-question');
@@ -964,7 +964,7 @@ router.post('/right-address-uk', function (req, res) {
   let connectedPersons = req.session.data.connectedPersons;
 
   if (personQuestion == "organisation" || personQuestion == "person" || personQuestion == "trust") {
-    if( connectedPersons == 'Right to exercise control (eqv)' ){
+    if( connectedPersons == 'Other organisation with control (eqv)' ){
       res.redirect('right-company-number-question-equiv');
     } else {
       res.redirect('right-company-number-question');
@@ -1706,7 +1706,7 @@ router.post('/select-address-right', function (req, res) {
 
     let connectedPersons = req.session.data.connectedPersons;
 
-    if( connectedPersons == 'Right to exercise control (eqv)' ){
+    if( connectedPersons == 'Other organisation with control (eqv)' ){
       res.redirect('right-company-number-question-equiv');
     } else {
       res.redirect('right-company-number-question');

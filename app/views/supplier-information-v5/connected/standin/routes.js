@@ -139,7 +139,7 @@ router.post('/stand-in', function (req, res) {
   } else if (connectedPersons == 'Predecessor') {
     res.redirect('/connected/standin/predecessor');
 
-  } else if (connectedPersons == 'Right to exercise control') {
+  } else if (connectedPersons == 'Other organisation with control') {
     res.redirect('/connected/standin/right');
 
   } else {
