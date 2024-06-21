@@ -131,8 +131,9 @@ router.get('/org-dashboard', function (req, res) {
 
 
 router.get('/org-address-overseas', function (req, res) {
+  console.log(__dirname);
   res.render('supplier-information-v5/org-address-overseas', {
-    countries: require(__dirname+'/data/data').countries
+    countries: require('../../data/data').countries
   })
 })
 
