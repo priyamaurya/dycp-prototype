@@ -231,7 +231,7 @@ router.post('/persons', function (req, res) {
 
   let connectedPersons = req.session.data.connectedPersons;
 
-  if (connectedPersons == 'A person with significant control over the supplier') {
+  if (connectedPersons == 'A person with significant control') {
     res.redirect('psc-individual');
 
   } else if (connectedPersons == 'A director or shadow director of the supplier') {
