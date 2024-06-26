@@ -112,7 +112,7 @@ router.post('/event-documents', function (req, res) {
 })
 
 router.post('/event-ongoing', function (req, res) {
-    if (req.session.data.eventOngoingDis == 'Yes'){
+    if (req.session.data.eventOngoingDis == 'No'){
         res.redirect('event-date');
     } else {
         res.redirect('check-answers');

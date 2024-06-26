@@ -494,7 +494,6 @@
 
           {% endif %}
 
-
           <!--
            {% if data['addressRegTypeRight'] == "No" %}
 
@@ -1849,8 +1848,8 @@
 
               {% endif %}
 
-              {% if data['connectedPersons'] == "A person with significant control over the supplier" and
-              data['personQuestion'] == "person" and data['addressType'] | length != "0" %}
+              {% if data['connectedPersons'] == "Person with significant control" and
+              data['personQuestion'] == "person"  %}
 
               <!-- PSC (Person of significant control) registerable  -->
 
@@ -1879,7 +1878,7 @@
                   </dd>
                 </div>
 
-                <!--
+         
                 {% if data['addressRegType'] == "Yes" and data['pscRegAddress'] | length == "0" %}
 
                 <div class="govuk-summary-list__row">
@@ -1978,7 +1977,7 @@
 
                 {% else %}
 
-              -->
+            
 
                 {% if data['addressType'] == "Yes" and data['pscAddress'] | length == "0" %}
 
@@ -2131,7 +2130,7 @@
               {% endif %}
 
 
-              {% if data['connectedPersons'] == "A director or shadow director of the supplier" and
+              {% if data['connectedPersons'] == "Director or individual with same responsibilities" and
               data['selectCountry'] | length != "0" %}
 
 

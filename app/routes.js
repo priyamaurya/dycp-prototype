@@ -12,7 +12,6 @@ const path = require('node:path')
 // Add your routes here
 
 
-
 // Route index page
   
 router.get('/one-login', function (req, res) {

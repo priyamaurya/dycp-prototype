@@ -4,10 +4,18 @@ const path = require('node:path')
 
 // API
 const axios = require('axios');
+const { nextTick } = require('node:process');
 
 
 
 // Route index page
+
+router.get('/*', function(req,res, next){
+  if (!req.session.proto_version)
+    res.redirect('/one-login/?v=5');
+  else
+    return next();
+});
 
 router.get('/start', function (req, res) {
   // hack to simulate manage users page

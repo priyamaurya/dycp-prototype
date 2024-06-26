@@ -5,7 +5,12 @@ const path = require('node:path')
 // API
 const axios = require('axios');
 
-
+router.get('/*', function(req,res, next){
+  if (!req.session.proto_version)
+    res.redirect('/one-login/?v=4');
+  else
+    return next();
+});
 
 // Route index page
 
