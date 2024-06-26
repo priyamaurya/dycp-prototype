@@ -92,7 +92,7 @@ router.post('/is-the-address-same', function (req, res) {
   let addressSame = req.session.data.addressSame;
 
   if (addressSame == "No") {
-    res.redirect('postal-address-type');
+    res.redirect('postal-uk-address');
   } else {
     res.redirect('non-individual-core-data');
   }
@@ -526,7 +526,7 @@ router.get('/non-individual-core-data', function (req, res) {
 
 router.get('/is-the-address-same', function (req, res) {
   if (req.session.data.individualOrOrg && req.session.data.individualOrOrg == 'Individual'){
-    res.redirect('postal-address-type')
+    res.redirect('postal-uk-address')
   } else {
     res.render(path.resolve(__dirname, 'is-the-address-same'));
   }
