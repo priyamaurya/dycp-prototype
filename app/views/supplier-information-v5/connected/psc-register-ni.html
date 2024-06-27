@@ -26,10 +26,10 @@
 
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">What is the name of the register on which the PSC exists?</h1>
+                        <h1 class="govuk-heading-l">What register is {{ data['connectedPerson'] }} declared on? </h1>
                     </legend>
                     <div id="nameRegisterPscNiHint" class="govuk-hint">
-                        For example, Companies House
+                         If declared on Companies House, it is the persons with significant control register. 
                     </div>
                     <input class="govuk-input" name="nameRegisterPscNi" id="nameRegisterPscNi" type="text"
                         aria-describedby="nameRegisterPscNi">

@@ -14,7 +14,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
         <form class="form" method="post">
             <div class="govuk-form-group">
@@ -23,9 +23,12 @@
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Is the service address in the United Kingdom?
+                            Is {{ data['connectedPerson'] }}’s postal address in the UK?
                         </h1>
                     </legend>
+                    <div id="connected-hint" class="govuk-hint">
+                      The place they receive official post.
+                      </div>
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="addressTypeDir" name="addressTypeDir" type="radio"

@@ -16,7 +16,7 @@
         <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
             Connected persons
         </h2> -->
-                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
         <fieldset class="govuk-fieldset" data-required data-error="Enter the name of the register where the PSC exists"
             aria-required="true">
@@ -25,10 +25,10 @@
 
                 <div class="govuk-form-group">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">What is the name of the register on which the PSC exists?</h1>
+                        <h1 class="govuk-heading-l">What register is {{ data['connectedPerson'] }} declared on? </h1>
                     </legend>
                     <div id="nameRegisterdHint" class="govuk-hint">
-                        For example, Companies House
+                      If declared on Companies House, it is the persons with significant control register.    
                     </div>
                     <input class="govuk-input" name="nameRegister" id="nameRegister" type="text"
                         aria-describedby="nameRegister">
