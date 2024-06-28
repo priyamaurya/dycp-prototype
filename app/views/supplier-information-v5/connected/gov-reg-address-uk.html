@@ -22,7 +22,7 @@
 
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter <!--{{ data['connectedPerson'] }}'s--> the address
+                    Enter {{ data['connectedPerson'] }}'s address
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
@@ -49,7 +49,7 @@
                         <input class="govuk-input govuk-!-width-two-thirds" id="govPublicUk-address-town"
                             name="govPublicUk-address-town" type="text" autocomplete="govPublicUk-address-town">
                     </div>
-                    
+
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="govPublicUk-address-postcode">
                             Postcode
