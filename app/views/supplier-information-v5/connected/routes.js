@@ -260,7 +260,7 @@ router.post('/persons', function (req, res) {
   } else if (connectedPersons == 'Taken over company' || connectedPersons == 'Equivalent to taken over company') {
     res.redirect('predecessor');
 
-  } else if (connectedPersons == 'Other organisation with control') {
+  } else if (connectedPersons == 'Other individual with control' || connectedPersons == 'Equivalent to other individual with control') {
     res.redirect('right');
 
   } else if (connectedPersons == 'Other organisation with control' || connectedPersons == 'Equivalent to other organisation with control') {
