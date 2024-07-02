@@ -17,59 +17,67 @@
 
         <span class="govuk-caption-l"> {{ data['connectedPersons'] }} </span>
 
-        <fieldset class="govuk-fieldset" data-required data-error="Enter the director details" aria-required="true">
+        <h1 class="govuk-heading-l">Enter the director or shadow director's details</h1>
 
             <form class="form" method="post">
 
                 <div class="govuk-form-group">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">Enter the director or individual with same responsibilities' details</h1>
-                    </legend>
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                        <h2 class="govuk-heading-m">Full name</h2>
-                    </legend>
-                    <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson"
-                        type="text" aria-describedby="connectedPerson">
+                    <label class="govuk-label" for="firstName">First name</label>
+                    <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="firstName"
+                        type="text">
+                </div>
 
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                        <h2 class="govuk-heading-m">Date of birth</h2>
-                    </legend>
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="lastName">Last name</label>
+                    <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="lastName"
+                        type="text">
+                </div>
 
-                    <div class="govuk-date-input" id="convictionDis">
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="directorDay">
-                                    Day
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="directorDay"
-                                    name="directorDay" type="text" inputmode="numeric">>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+                      <legend class="govuk-fieldset__legend">
+                       Date of birth
+                      </legend>
+                      <div id="dob-hint" class="govuk-hint">
+                        For example, 27 3 2007
+                      </div>
+
+                        <div class="govuk-date-input" id="convictionDis">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="directorDay">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="directorDay"
+                                        name="directorDay" type="text" inputmode="numeric">>
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="directorMonth">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                                        id="directorMonth" name="directorMonth" type="text" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="directorYear">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                                        id="directorYear" name="directorYear" type="text" inputmode="numeric">
+                                </div>
                             </div>
                         </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="directorMonth">
-                                    Month
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                    id="directorMonth" name="directorMonth" type="text" inputmode="numeric">
-                            </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="directorYear">
-                                    Year
-                                </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
-                                    id="directorYear" name="directorYear" type="text" inputmode="numeric">
-                            </div>
-                        </div>
+                    </fieldset>
+                </div>
 
 
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                            <h2 class="govuk-heading-m">Nationality</h2>
-                        </legend>
 
-
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="selectNationality">Nationality</label>
                         <select class="govuk-select autocomplete" id="selectNationality"
                             name="selectNationality">
 
@@ -79,14 +87,12 @@
                             {% endfor %}
 
                         </select>
-
                     </div>
-                </div>
+
 
                 <button class="govuk-button" type="submit">Continue</button>
             </form>
 
-        </fieldset>
 
 
     </div>
