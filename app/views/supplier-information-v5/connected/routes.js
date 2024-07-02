@@ -242,7 +242,7 @@ router.post('/persons', function (req, res) {
   if (connectedPersons == 'Person with significant control' || connectedPersons == 'Equivalent to person with significant control') {
     res.redirect('psc-individual');
 
-  } else if (connectedPersons == 'Director or individual with same responsibilities' || connectedPersons == 'Equivalent to director or same responsibilities') {
+  } else if (connectedPersons == 'Director or individual with same responsibilities' || connectedPersons == 'Equivalent to director or individual with same responsibilities') {
     res.redirect('director-individual');
 
   } else if (connectedPersons == 'Director or organisation with same responsibilities' || connectedPersons == 'Equivalent to director or organisation with same responsibilities') {
@@ -257,13 +257,13 @@ router.post('/persons', function (req, res) {
   } else if (connectedPersons == 'Parent or subsidiary company' || connectedPersons == 'Equivalent to parent or subsidiary company') {
     res.redirect('parent-sub');
 
-  } else if (connectedPersons == 'Taken over company' || connectedPersons == 'Equivalent to Taken over company') {
+  } else if (connectedPersons == 'Taken over company' || connectedPersons == 'Equivalent to taken over company') {
     res.redirect('predecessor');
 
   } else if (connectedPersons == 'Other organisation with control') {
     res.redirect('right');
 
-  } else if (connectedPersons == 'Other organisation with control' || connectedPersons == 'Other organisation with control (eqv)') {
+  } else if (connectedPersons == 'Other organisation with control' || connectedPersons == 'Equivalent to other organisation with control') {
     res.redirect('right');
 
   } else {
@@ -553,7 +553,8 @@ router.post('/psc-address-same', function (req, res) {
   let addressSamePsc = req.session.data.addressSamePsc;
 
   if (addressSamePsc == "Yes") {
-    res.redirect('psc-law-register');
+    // res.redirect('psc-law-register')
+    res.redirect('nature-of-control-psc-ni');
   } else {
     res.redirect('address-type');
   }
@@ -593,7 +594,7 @@ router.post('/date-registered-psc', function (req, res) {
 
   let connectedPersons = req.session.data.connectedPersons;
 
-  if( connectedPersons == 'Other organisation with control (eqv)' ){
+  if( connectedPersons == 'Equivalent to other organisation with control' ){
     res.redirect('right-law-register');
   } else {
     res.redirect('psc-register');
@@ -914,7 +915,7 @@ router.post('/right-address-same', function (req, res) {
 
     let connectedPersons = req.session.data.connectedPersons;
 
-    if( connectedPersons == 'Other organisation with control (eqv)' ){
+    if( connectedPersons == 'Equivalent to other organisation with control' ){
       res.redirect('right-company-number-question-equiv');
     } else {
       res.redirect('right-address-type');
@@ -947,7 +948,7 @@ router.post('/right-address', function (req, res) {
   if (personQuestion == "organisation") {
     let connectedPersons = req.session.data.connectedPersons;
 
-    if( connectedPersons == 'Other organisation with control (eqv)' ){
+    if( connectedPersons == 'Equivalent to other organisation with control' ){
       res.redirect('right-company-number-question-equiv');
     } else {
       res.redirect('right-company-number-question');
@@ -964,7 +965,7 @@ router.post('/right-address-uk', function (req, res) {
   let connectedPersons = req.session.data.connectedPersons;
 
   if (personQuestion == "organisation" || personQuestion == "person" || personQuestion == "trust") {
-    if( connectedPersons == 'Other organisation with control (eqv)' ){
+    if( connectedPersons == 'Equivalent to other organisation with control' ){
       res.redirect('right-company-number-question-equiv');
     } else {
       res.redirect('right-company-number-question');
@@ -1706,7 +1707,7 @@ router.post('/select-address-right', function (req, res) {
 
     let connectedPersons = req.session.data.connectedPersons;
 
-    if( connectedPersons == 'Other organisation with control (eqv)' ){
+    if( connectedPersons == 'Equivalent to other organisation with control' ){
       res.redirect('right-company-number-question-equiv');
     } else {
       res.redirect('right-company-number-question');
