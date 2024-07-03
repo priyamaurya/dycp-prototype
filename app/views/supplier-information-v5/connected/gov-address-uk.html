@@ -25,7 +25,7 @@
 
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter <!--{{ data['connectedPerson'] }}’s--> address
+                    Enter {{ data['connectedPerson'] }}’s address
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
@@ -35,7 +35,7 @@
             </legend>
 
             <p>
-                <a href="gov-service-address">Enter an international address</a>
+                <a href="gov-service-address">Enter a non-UK address</a>
             </p>
 
             <form class="form" method="post">
@@ -48,7 +48,7 @@
                         <input class="govuk-input" id="govPublicUk-address-line-1" name="govPublicUk-address-line-1"
                             type="text" autocomplete="govPublicUk-address-line1">
                     </div>
-                    
+
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="govPublicUk-address-town">
                             Town or city
@@ -56,7 +56,7 @@
                         <input class="govuk-input govuk-!-width-two-thirds" id="govPublicUk-address-town"
                             name="govPublicUk-address-town" type="text" autocomplete="govPublicUk-address-town">
                     </div>
-                    
+
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="govPublicUk-address-postcode">
                             Postcode

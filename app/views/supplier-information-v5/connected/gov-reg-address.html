@@ -18,10 +18,12 @@
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                    Enter {{ data['connectedPerson'] }}'s address
+                    What is {{ data['connectedPerson'] }}'s registered address?
                 </h1>
             </legend>
-
+            <div id="connected-hint" class="govuk-hint">
+              The address registered with the equivalent to Companies House, or the principal address the business conducts its activities. For example, a head office.
+              </div>
 
             <form class="form" method="post">
                 <div class="govuk-form-group">
