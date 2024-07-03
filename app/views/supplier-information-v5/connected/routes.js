@@ -7,8 +7,25 @@ const axios = require('axios');
 
 // Add your routes here - above the module.exports line
 
+
+// const j1 =[
+//   {page: "abc"},
+//   {page: "def"},
+//   {page: "ghi"}
+// ];
+
+// var nextPage = 0;
+
+// router.post('/*', function (req, res, next) {
+//   var o = j1[nextPage++];
+//   console.log(o.page);
+//   //return next();
+// })
+
+
+
 router.post('/director-individual-ni', function (req, res) {
-  res.redirect('director-reg-address-type-ni');
+  res.redirect('dir-reg-address-uk-ni');
 })
 
 router.post('/director-reg-address-type-ni', function (req, res) {
@@ -40,7 +57,7 @@ router.post('/dir-address-same-ni', function (req, res) {
 
   let addressSameDirNi = req.session.data.addressSameDirNi;
   if (addressSameDirNi == "Yes") {
-    res.redirect('director-address-type-ni');
+    res.redirect('dir-address-uk-ni');
   } else {
     res.redirect('dir-law-register-ni');
   }
@@ -88,11 +105,13 @@ router.post('/dir-company-number-question', function (req, res) {
 
   let lawRegisterDirNi = req.session.data.lawRegisterDirNi;
 
-  if (lawRegisterDirNi == "Yes") {
-    res.redirect('dir-company-number');
-  } else {
-    res.redirect('check-answers-connected-person');
-  }
+  res.redirect('check-answers-connected-person');
+
+  // if (lawRegisterDirNi == "Yes") {
+  //   res.redirect('dir-company-number');
+  // } else {
+  //   res.redirect('check-answers-connected-person');
+  // }
 })
 
 router.post('/dir-company-number', function (req, res) {
@@ -110,7 +129,7 @@ router.get('/director-residency', function (req, res) {
 })
 
 router.post('/director-residency', function (req, res) {
-  res.redirect('director-address-type');
+  res.redirect('dir-address-uk');
 })
 
 router.post('/director-reg-address-type', function (req, res) {
@@ -142,7 +161,7 @@ router.post('/dir-address-same', function (req, res) {
   if (addressRegSameDir == "Yes") {
     res.redirect('check-answers-connected-person');
   } else {
-    res.redirect('director-address-type');
+    res.redirect('dir-address-uk');
   }
 })
 
@@ -273,7 +292,7 @@ router.post('/persons', function (req, res) {
 })
 
 router.post('/gov-organisation', function (req, res) {
-  res.redirect('gov-reg-address-type');
+  res.redirect('gov-reg-address-uk');
 })
 
 router.post('/gov-reg-address-type', function (req, res) {
@@ -317,7 +336,7 @@ router.post('/gov-service-same', function (req, res) {
   let serviceSame = req.session.data.serviceSame;
 
   if (serviceSame == "Yes") {
-    res.redirect('gov-address-type');
+    res.redirect('gov-address-uk');
   } else {
     res.redirect('gov-law-register');
   }
@@ -339,8 +358,13 @@ router.post('/gov-address-uk', function (req, res) {
 })
 
 router.post('/gov-law-register', function (req, res) {
+  res.redirect('gov-company-number-question');
+})
+
+router.post('/gov-company-number-question', function (req, res) {
   res.redirect('nature-of-control-gov');
 })
+
 
 router.post('/nature-of-control-gov', function (req, res) {
   res.redirect('date-registered-gov');
@@ -517,7 +541,7 @@ router.post('/psc-individual', function (req, res) {
   if( connectedPersons == 'Equivalent to person with significant control' ){
     res.redirect('address-type');
   } else {
-    res.redirect('psc-reg-address-uk');
+    res.redirect('psc-address-same');
   }
 
 
@@ -593,11 +617,16 @@ router.post('/date-registered-psc', function (req, res) {
 
 
   let connectedPersons = req.session.data.connectedPersons;
+  let companiesQuestion = req.session.data.companiesQuestion;
+
 
   if( connectedPersons == 'Equivalent to other organisation with control' ){
     res.redirect('right-law-register');
   } else {
-    res.redirect('psc-register');
+    if(companiesQuestion == 'Yes')
+      res.redirect('check-answers-connected-person');
+    else
+      res.redirect('psc-register');
   }
 
 })
@@ -865,7 +894,7 @@ router.post('/right', function (req, res) {
     res.redirect('right-reg-address-type');
   }
   else {
-    res.redirect('right-address-type'); //'right-residency'
+    res.redirect('right-address-uk'); //'right-residency'
   }
 })
 
@@ -876,7 +905,7 @@ router.get('/right-residency', function (req, res) {
 })
 
 router.post('/right-residency', function (req, res) {
-  res.redirect('right-address-type');
+  res.redirect('right-address-uk');
 })
 
 router.post('/right-reg-address-type', function (req, res) {
@@ -918,7 +947,7 @@ router.post('/right-address-same', function (req, res) {
     if( connectedPersons == 'Equivalent to other organisation with control' ){
       res.redirect('right-company-number-question-equiv');
     } else {
-      res.redirect('right-address-type');
+      res.redirect('right-address-uk');
     }
 
 
@@ -963,8 +992,9 @@ router.post('/right-address-uk', function (req, res) {
 
   let personQuestion = req.session.data.personQuestion;
   let connectedPersons = req.session.data.connectedPersons;
+  let companiesQuestion  = req.session.data.companiesQuestion;
 
-  if (personQuestion == "organisation" || personQuestion == "person" || personQuestion == "trust") {
+  if (personQuestion == "organisation" || ( personQuestion == "person" && companiesQuestion == "No") || (personQuestion == "trust" && companiesQuestion == "No")) {
     if( connectedPersons == 'Equivalent to other organisation with control' ){
       res.redirect('right-company-number-question-equiv');
     } else {
@@ -981,7 +1011,7 @@ router.post('/right-company-number-question', function (req, res) {
   let numberQuestion = req.session.data.numberQuestion;
 
   if (numberQuestion == "Yes") {
-    res.redirect('right-company-number');
+    res.redirect('right-nature-of-control');
   }
   else {
     res.redirect('right-company-number-question-equiv');
@@ -1389,7 +1419,7 @@ router.post('/find-reg-address-psc', function (req, res) {
         })
         .catch(error => {
           console.log(error);
-          res.redirect('psc-reg-address-uk')
+          res.redirect('psc-address-same')
         });
 
     }

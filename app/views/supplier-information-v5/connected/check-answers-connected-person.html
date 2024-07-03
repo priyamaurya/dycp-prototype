@@ -19,7 +19,6 @@
     <form class="form" method="post">
 
       <!-- Other organisation with control -->
-
       {% if data['connectedPersons'] == "Other organisation with control" and data['personQuestion']
       == "organisation" %}
 
@@ -2355,7 +2354,7 @@
                 {% endif %}
                 {% endif %}
 
-                {% elif data['connectedPersons'] == "Director or the same responsibilities " and
+                {% elif data['connectedPersons'] == "Director or organisation with same responsibilities" and
                 data['addressTypeRegDirNi'] | length != "0" %}
 
                 <!-- Director or Shadow Director, organisation  -->

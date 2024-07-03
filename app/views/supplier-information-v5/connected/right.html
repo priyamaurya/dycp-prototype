@@ -18,33 +18,30 @@
 
 
         <span class="govuk-caption-l"> {{ data['connectedPersons'] }} </span>
+        <h1 class="govuk-heading-l">Enter the organisation's name
+        </h1>
+        <p>
+            The name of the 'connected person' that has control or influence over your organisation.
+        </p>
 
-        <fieldset class="govuk-fieldset" data-required data-error="Enter the individual details" aria-required="true">
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="firstName">First name</label>
+                <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="firstName"
+                    type="text">
+            </div>
 
-            <form class="form" method="post">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="lastName">Last name</label>
+                <input class="govuk-input govuk-input--width-20" name="connectedPersonLastName" id="lastName"
+                    type="text">
+            </div>
 
-                <div class="govuk-form-group">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">Enter the organisation's name
-                        </h1>
-                    </legend>
-                    <div id="connected-hint" class="govuk-hint">
-                      The name of the 'connected person' that has control or influence over your organisation.
-                    </div>
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                        <!-- <h2 class="govuk-heading-m">Enter the organisation name</h2>
-                    </legend>-->
-                    <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson"
-                        type="text" aria-describedby="connectedPerson">
-
-
-
-                </div>
-
-                <button class="govuk-button" type="submit">Continue</button>
-            </form>
-
-        </fieldset>
+            <button class="govuk-button" type="submit">Continue</button>
+        </form>
+  
+  
+        
 
         {% else %}
 
@@ -52,35 +49,40 @@
             <div class="govuk-grid-column-three-quarters">
 
             <span class="govuk-caption-l"> {{ data['connectedPersons'] }} </span>
+            <h1 class="govuk-heading-l">Enter the person with the right to exercise control's details</h1>
 
-                <fieldset class="govuk-fieldset" data-required
-                    data-error="Enter the Parent undertaking or a subsidiary undertaking details" aria-required="true">
+                <form class="form" method="post">
 
-                    <form class="form" method="post">
-
-                        <div class="govuk-form-group">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                                <h1 class="govuk-heading-l">Enter the person with the right to exercise control's details
-                                </h1>
-                            </legend>
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                                <h2 class="govuk-heading-m">Full name</h2>
-                            </legend>
-                            <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="connectedPerson"
-                                type="text" aria-describedby="connectedPerson">
-
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6 govuk-!-display-none">
-                                <h2 class="govuk-heading-m">Date of birth</h2>
-                            </legend>
-
-                            <div class="govuk-date-input  govuk-!-display-none" id="convictionDis">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="firstName">First name</label>
+                        <input class="govuk-input govuk-input--width-20" name="connectedPerson" id="firstName"
+                            type="text">
+                    </div>
+    
+    
+                    <div class="govuk-form-group">
+                        <label class="govuk-label" for="lastName">Last name</label>
+                        <input class="govuk-input govuk-input--width-20" name="connectedPersonLastname" id="lastName"
+                            type="text">
+                    </div>
+    
+                    <div class="govuk-form-group govuk-!-display-none">
+                        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+                          <legend class="govuk-fieldset__legend">
+                           Date of birth
+                          </legend>
+                          <div id="dob-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                          </div>
+    
+                            <div class="govuk-date-input" id="convictionDis">
                                 <div class="govuk-date-input__item">
                                     <div class="govuk-form-group">
                                         <label class="govuk-label govuk-date-input__label" for="individualDay">
                                             Day
                                         </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2"
-                                            id="individualDay" name="individualDay" type="text" inputmode="numeric">>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="individualDay"
+                                            name="individualDay" type="text" inputmode="numeric">>
                                     </div>
                                 </div>
                                 <div class="govuk-date-input__item">
@@ -101,30 +103,29 @@
                                             id="individualYear" name="individualYear" type="text" inputmode="numeric">
                                     </div>
                                 </div>
-
-
-                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m govuk-!-margin-top-6">
-                                    <h2 class="govuk-heading-m">Nationality</h2>
-                                </legend>
-
-
-                                <select class="govuk-select autocomplete" id="selectNationality"
-                                    name="selectNationality">
-
-                                    <option value=""></option>
-                                    {% for nationality in nationalities %}
-                                    <option value="{{ nationality.value }}">{{ nationality.value }}</option>
-                                    {% endfor %}
-
-                                </select>
-
                             </div>
+                        </fieldset>
+                    </div>
+    
+    
+    
+                        <div class="govuk-form-group  govuk-!-display-none">
+                            <label class="govuk-label" for="selectNationality">Nationality</label>
+                            <select class="govuk-select autocomplete" id="selectNationality"
+                                name="selectNationality">
+    
+                                <option value=""></option>
+                                {% for nationality in nationalities %}
+                                <option value="{{ nationality.value }}">{{ nationality.value }}</option>
+                                {% endfor %}
+    
+                            </select>
                         </div>
-
-                        <button class="govuk-button" type="submit">Continue</button>
-                    </form>
-
-                </fieldset>
+    
+    
+                    <button class="govuk-button" type="submit">Continue</button>
+                </form>
+    
 
                 {% endif %}
 
