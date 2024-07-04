@@ -14,16 +14,18 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
-                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span> 
+                <span class="govuk-caption-l"> {{ data['connectedPersons'] }}</span>
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                    Enter {{ data['connectedPerson'] }}’s address
+                    What is {{ data['connectedPerson'] }}’s registered address?
                 </h1>
             </legend>
 
-
+            <div id="connected-hint" class="govuk-hint">
+              The address registered with the equivalent to Companies House, or the principal address the business conducts its activities. For example, a head office.
+              </div>
 
             <form class="form" method="post">
                 <div class="govuk-form-group">
@@ -36,7 +38,7 @@
                             name="directorRegAddress-address-line-1" type="text"
                             autocomplete="directorRegAddress-address-line1">
                     </div>
-                    
+
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="directorRegAddress-address-town">
                             Town or city
@@ -45,7 +47,7 @@
                             name="directorRegAddress-address-town" type="text"
                             autocomplete="directorRegAddress-address-town">
                     </div>
-                    
+
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="directorRegAddress-address-postcode">
                             Postal or Zip code

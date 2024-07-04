@@ -21,7 +21,7 @@
 
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter <!--{{ data['connectedPerson'] }}'s--> the address
+                    Enter {{ data['connectedPerson'] }}'s registered address
                 </h1>
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
@@ -29,7 +29,9 @@
                 </h1>
                 {% endif %}
             </legend>
-
+            <div id="connected-hint" class="govuk-hint">
+              The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office.
+              </div>
             <p>
                 <a href="#">Enter a non-UK address</a>
               </p>
@@ -45,7 +47,7 @@
                             name="dirRegAddressUkNi-address-line-1" type="text"
                             autocomplete="dirRegAddressUkNi-address-line1">
                     </div>
-                    
+
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="directorAdressUk-address-town">
                             Town or city
@@ -54,7 +56,7 @@
                             name="dirRegAddressUkNi-address-town" type="text"
                             autocomplete="dirRegAddressUkNi-address-town">
                     </div>
-                    
+
                     <div class="govuk-form-group">
                         <label class="govuk-label" for="dirRegAddressUkNi-address-postcode">
                             Postcode
