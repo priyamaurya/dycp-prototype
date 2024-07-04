@@ -891,7 +891,7 @@ router.post('/right', function (req, res) {
   let personQuestion = req.session.data.personQuestion;
 
   if (personQuestion == "organisation") {
-    res.redirect('right-reg-address-type');
+    res.redirect('right-reg-address-uk');
   }
   else {
     res.redirect('right-address-uk'); //'right-residency'

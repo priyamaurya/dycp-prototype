@@ -81,19 +81,19 @@
 
       {% elif data['connectedPsc'] == "No" %}
 
-        {% set href="connected/connected-question" %}
+        {% set href="connected/connected-start" %}
         {% set value =  "No connected persons" %}
         {% set status = "Completed" %}
 
       {% elif data['connectedPsc'] | length != "0" and data['connectedPersons'] | length != "0" %}
 
-        {% set href="connected/connected-question" %}
+        {% set href="connected/connected-start" %}
         {% set value =  "" %}
         {% set status = "In progress" %}
 
       {% else %}
 
-        {% set href="connected/connected-question" %}
+        {% set href="connected/connected-start" %}
         {% set value =  "" %}
         {% set status = "Not started" %}
 
