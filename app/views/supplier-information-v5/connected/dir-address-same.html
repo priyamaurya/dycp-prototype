@@ -19,7 +19,6 @@
             Connected persons
         </h2> -->
         <span class="govuk-caption-xl"> {{ data['connectedPersons'] }}</span>
--->
 
         <form class="form" method="post">
 
@@ -27,11 +26,10 @@
                 <fieldset class="govuk-fieldset" aria-describedby="addressRegSameDir-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Is {{ data['connectedPerson'] }}'s service address the same as their registered address?
-                        </h1>
+                          Does {{ data['connectedPerson'] }} have a different postal address?                        </h1>
                     </legend>
                     <div id="addressRegSameDir-hint" class="govuk-hint">
-                        The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office. 
+                      The place where an organisation receives official post can be different from its registered address. For example, a branch office.
                     </div>
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
@@ -65,7 +63,7 @@
 {% endblock %}
 
 
-<!-- unused 
+<!-- unused
 
       <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
                             id="conditional-addressRegSameDir-2">
