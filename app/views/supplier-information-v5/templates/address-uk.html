@@ -1,37 +1,30 @@
-
-
 <p>
-          <a href="org-address-overseas">Enter an international address</a>
-        </p>
-                <div class="govuk-form-group">
+    <a href="org-address-overseas">Enter a non-UK address</a>
+</p>
+<div class="govuk-form-group">
+    <div class="govuk-form-group govuk-!-margin-top-3">
+        <label class="govuk-label" for="address-line-1">
+            {{ label1 }}
+        </label>
+        <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+    </div>
 
-                    <div class="govuk-form-group govuk-!-margin-top-3">
-                        <label class="govuk-label" for="govPublicUk-address-line-1">
-                            {{ label1 }}
-                        </label>
-                        <input class="govuk-input" id="govPublicUk-address-line-1" name="govPublicUk-address-line-1"
-                            type="text" autocomplete="govPublicUk-address-line1">
-                    </div>
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="address-town">
+            Town or city
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+    </div>
 
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="govPublicUk-address-town">
-                            Town or city
-                        </label>
-                        <input class="govuk-input govuk-!-width-two-thirds" id="govPublicUk-address-town"
-                            name="govPublicUk-address-town" type="text" autocomplete="govPublicUk-address-town">
-                    </div>
-
-                    <div class="govuk-form-group">
-                        <label class="govuk-label" for="govPublicUk-address-postcode">
-                            Postcode
-                        </label>
-                        <input class="govuk-input govuk-input--width-10" id="govPublicUk-address-postcode"
-                            name="govPublicUk-address-postcode" type="text" autocomplete="govPublicUk-postal-code">
-                    </div>
-
-                </div>
-                <div class="govuk-form-group">
-                    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
-                        Continue
-                    </button>
-                </div>
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="address-postcode">
+            Postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+    </div>
+</div>
+<div class="govuk-form-group">
+    <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+        Continue
+    </button>
+</div>

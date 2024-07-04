@@ -785,7 +785,7 @@ router.post('/predecessor', function (req, res) {
   if( connectedPersons == 'Equivalent to predecessor company' ){
     res.redirect('pred-reg-address-uk');
   } else {
-    res.redirect('pred-reg-address-type');
+    res.redirect('pred-reg-address-uk');
   }
 })
 
@@ -858,12 +858,14 @@ router.post('/pred-company-number-question', function (req, res) {
 
   let predNumberQuestion = req.session.data.predNumberQuestion;
 
-  if (predNumberQuestion == "Yes") {
-    res.redirect('pred-company-number');
-  }
-  else {
-    res.redirect('pred-date-registered');
-  }
+  // if (predNumberQuestion == "Yes") {
+  //   res.redirect('pred-company-number');
+  // }
+  // else {
+  //   res.redirect('pred-date-registered');
+  // }
+
+  res.redirect('pred-date-registered');
 })
 
 router.post('/pred-company-number', function (req, res) {
