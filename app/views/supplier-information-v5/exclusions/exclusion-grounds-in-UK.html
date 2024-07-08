@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %} {% block header %} {%
+include("includes/header-with-nav.html") %} {% endblock %} {% block
+beforeContent %} {% include("includes/phase-banner.html") %} {%
+include("includes/back-link.html") %} {% endblock %} {% block content %}
+
+<!-- <h1 class="govuk-heading-l" style="color: #1d70b8;">
+    Mandatory exclusion grounds
+  </h1>
+
+  <span class="govuk-caption-l">
+    {{ data['mandatory'] }}
+  </span> -->
+
+<!--
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content" aria-label="title section">
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        Regulations 57(1) and (2) <br></strong>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Warning</span>
+        <br>Please indicate if, within the past five years you, your organisation or any other person who has powers of
+        representation, decision or control in the organisation has been convicted anywhere in the world of any of the
+        offences within the summary below and listed on the webpage.
+      </strong>
+    </div>
+  </section>
+
+  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </hr>
+
+  -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <fieldset
+          class="govuk-fieldset"
+          data-required
+          data-error="Select one option"
+          aria-required="true"
+        >
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Select which penalty, conviction or court ruling was received
+            </h2>
+          </legend>
+
+           <!-- Convictions - Inside UK -->
+          <h2 class="govuk-heading-m">Convictions</h2>
+          <div id="penalty-hint" class="govuk-hint">You can find details of convictions in <a
+            href="" target="_blank">Schedule 6 of the Procurement Act 2023</a>
+          </div>
+
+          <!-- Penalties - Inside UK -->
+          <h2 class="govuk-heading-m">Penalties</h2>
+          <div id="penalty-hint" class="govuk-hint">You can find details of penalties in <a
+            href="" target="_blank">Schedule 6 of the Procurement Act 2023</a>
+          </div>
+
+           <!-- Court Rulings - Inside UK -->
+           <h2 class="govuk-heading-m">Court Rulings</h2>
+           <div id="penalty-hint" class="govuk-hint">You can find details of court rulings in <a
+             href="" target="_blank">Schedule 7 of the Procurement Act 2023</a>
+           </div>
+
+        <button
+          class="govuk-button govuk-!-margin-top-9"
+          data-module="govuk-button"
+        >
+          Save and continue
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %} {% block pageScripts %} {% endblock %}
