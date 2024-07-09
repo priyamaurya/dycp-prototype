@@ -8,21 +8,6 @@ const axios = require('axios');
 // Add your routes here - above the module.exports line
 
 
-// const j1 =[
-//   {page: "abc"},
-//   {page: "def"},
-//   {page: "ghi"}
-// ];
-
-// var nextPage = 0;
-
-// router.post('/*', function (req, res, next) {
-//   var o = j1[nextPage++];
-//   console.log(o.page);
-//   //return next();
-// })
-
-
 
 router.post('/director-individual-ni', function (req, res) {
   res.redirect('dir-reg-address-uk-ni');

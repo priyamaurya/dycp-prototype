@@ -59,5 +59,7 @@ router.use('/supplier-information-v5/economical', require('./views/supplier-info
 router.use('/supplier-information-v5/user', require('./views/supplier-information-v5/user/routes'))
 router.use('/supplier-information-v5/download', require('./views/supplier-information-v5/download/routes'))
 
+router.use('/supplier-information-v5/connected-person', require('./views/supplier-information-v5/connected-person/routes'))
+
 
 
