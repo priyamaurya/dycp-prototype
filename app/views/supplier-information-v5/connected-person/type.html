@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="typeOfConnectedPerson" %}
+            {% set heading="Select the relevant option" %}
+            {% set hintText="A 'connected person' can be an individual, organisation or trustee or trust." %}
+
+            <!-- user options -->
+
+            {% set options=[] %}
+            {% set optionHints=[] %}
+
+            {% set options=(options.push("Organisation"), options) %}
+
+            {% set options=(options.push("Individual"), options) %}
+
+            {% set options=(options.push("Trustee or trust"), options) %}
+
+            {% include("../templates/radios.html") %}
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

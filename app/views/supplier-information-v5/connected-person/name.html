@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="connectedPerson" %}
+            {% set headingCaption=data['connectedPersons'] %}
+            {% set heading="Enter the organisation's name" %}
+            {% set hintText="The name of the 'connected person' that has control or influence over your organisation." %}
+
+            {% include("../templates/text-input--single.html") %}
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

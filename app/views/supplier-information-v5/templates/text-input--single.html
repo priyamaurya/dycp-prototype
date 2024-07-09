@@ -1,0 +1,22 @@
+<!--
+{*% set inputName="connectedPerson" %*}
+{*% set heading="Enter the organisation's name" %*}
+
+
+OPTIONAL:
+{*% set headingCaption="[Caption]" %*}
+{*% set hintText="[hint text here...]" %*}
+-->
+
+
+<div class="govuk-form-group">
+    {% include "./heading-caption.html" %}
+
+    <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="{{ inputName }}">{{ heading }}</label>
+    </h1>
+
+    {% include "./hint-text.html" %}
+    
+    <input class="govuk-input" name="{{ inputName }}" id="{{ inputName }}" type="text" {% if hintText %}aria-describedby="{{ inputName }}-hint"{% endif %}>
+</div>

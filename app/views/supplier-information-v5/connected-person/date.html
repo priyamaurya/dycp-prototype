@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="connectedPersonDate" %}
+            {% set headingCaption=data['connectedPersons'] %}
+            {% set heading="What date was [Org] registered as a 'connected person'?" %}
+            {% set hintText="For example, the date a person with significant control was registerd with Companies House.
+            <br><br>
+            For example, 27 03 2007" %}
+
+            {% include("../templates/date.html") %}
+            
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

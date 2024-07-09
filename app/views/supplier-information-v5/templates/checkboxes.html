@@ -1,0 +1,45 @@
+<!--
+{*% set inputName="natureOfControl" %*}
+{*% set heading="Heading" %*}
+
+---- Radio options ----
+{*% set options=[] %*}
+{*% set optionHints=[] %*}
+
+{*% set options=(options.push("Owns shares"), options) %*}
+{*% set optionHints=(optionHints.push("Directly or indirectly holds more than 25% of the company's shares"), optionHints) %*}
+---- Radio options ----
+
+Optional:
+{*% set headingCaption="Heading caption" %*}
+{*% set hintText="hint text..." %*}
+-->
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" {% if hintText %}aria-describedby="{{ inputName }}Hint"{% endif %}>
+    {% include "./fieldset-legend.html" %}
+
+    {% include "./hint-text.html" %}
+
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+      {% for i in range(0, options.length) %}
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="{{inputName}}-{{ i }}" name="{{inputName}}" type="checkbox" value="{{ options[i] }}" {% if optionHints[i] %}aria-describedby="{{inputName}}Hint-1"{% endif %}>
+        <label class="govuk-label govuk-checkboxes__label" for="{{inputName}}-{{ i }}">
+          {{ options[i] }}
+        </label>
+        {% if optionHints[i] %}
+        <div id="{{inputName}}Hint-{{ i }}" class="govuk-hint govuk-checkboxes__hint">
+          {{ optionHints[i]|safe }}
+        </div>
+        {% endif %}
+      </div>
+      
+      {% endfor %}
+      
+    </div>
+  </fieldset>
+</div>
+

@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="hasCompaniesHouseNumber" %}
+            {% set headingCaption=data['connectedPersons'] %}
+            {% set heading="Is [Org] registered with Companies House?" %}
+            {% set hintText="Is the 'connected person' registered with Companies House as required by the Companies Act 2006." %}
+            {% set revealInputLabel="Companies House number" %}
+
+            {% include("../templates/radio-yes-no.html") %}
+            
+            
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

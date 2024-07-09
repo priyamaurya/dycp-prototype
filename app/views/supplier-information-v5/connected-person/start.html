@@ -1,0 +1,37 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Connected person
+    </h1>
+
+  <p class="govuk-body">
+    A 'connected person' is someone who influences or controls your company.
+  </p>
+  <p class="govuk-body">
+    It includes <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs">people with significant control (opens in new tab)</a> and any other individual or company other than yourself that has a declarable interest in your organisation.
+  </p>
+  <p class="govuk-body">
+    For example, a director, a trust, a majority shareholder or a parent or subsidiary company.
+  </p>
+
+  <a class="govuk-button" href="has-connected-person">Continue</a>
+
+</div>
+</div>
+
+{% endblock %}

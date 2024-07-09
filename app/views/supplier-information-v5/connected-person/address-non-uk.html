@@ -1,0 +1,34 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set headingCaption=data['connectedPersons'] %}
+            {% set heading="Enter [Org]'s registered address" %}
+            {% set description="The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
+            {% set addressType="non-uk" %}
+
+            {% include("../templates/address.html") %}
+            
+            
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

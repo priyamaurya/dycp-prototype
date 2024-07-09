@@ -1,0 +1,132 @@
+<!--
+{*% set inputName="hasCompaniesHouseNumber" %*}
+{*% set heading="Is [Org] registered with Companies House?" %*}
+
+OPTIONAL:
+
+{*% set headingCaption=data['connectedPersons'] %*}
+{*% set hintText="Is the 'connected person' registered with Companies House as required by the Companies Act 2006." %*}
+{*% set revealInputLabel="Companies House number" %*}
+
+-->
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" {% if hintText %}aria-describedby="contact-hint"{% endif %}>
+      {% include "./fieldset-legend.html" %}
+
+      {% include "./hint-text.html" %}
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="{{ inputName }}" name="{{ inputName }}" type="radio" value="Yes" {% if revealInputLabel %}data-aria-controls="{{ inputName }}Conditional"{% endif %}>
+          <label class="govuk-label govuk-radios__label" for="{{ inputName }}">
+            Yes
+          </label>
+        </div>
+        {% if revealInputLabel %}
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="{{ inputName }}Conditional">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="{{ inputName }}TextInput">
+              {{ revealInputLabel }}
+            </label>
+            <input class="govuk-input govuk-!-width-one-half" id="{{ inputName }}TextInput" name="{{ inputName }}TextInput" type="number">
+          </div>
+        </div>
+        {% endif %}
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="{{ inputName }}-2" name="{{ inputName }}" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="{{ inputName }}-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+
+<!--
+
+
+<form class="form" method="post">
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                    
+                </h1>
+            </legend>
+            <div id="lawRegisterDirNiHint" class="govuk-hint">
+                
+            </div>
+            <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="lawRegisterDirNi" name="lawRegisterDirNi"
+                        type="radio" value="Yes" data-aria-controls="conditional-chno" >
+                    <label class="govuk-label govuk-radios__label" for="lawRegisterDirNi">
+                        Yes
+                    </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
+                    <div class="govuk-form-group">
+                    <label class="govuk-label" for="chnoInput">
+                        Companies House number
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-third" id="chnoInput" name="chnoInput" value="{{ data['chnoInput'] }}" >
+                    </div>
+                </div>
+                
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="lawRegisterDirNi-2" name="lawRegisterDirNi"
+                        type="radio" value="No">
+                    <label class="govuk-label govuk-radios__label" for="lawRegisterDirNi">
+                        No
+                    </label>
+                </div>
+
+            </div>
+
+        </fieldset>
+    </div>
+
+    <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
+</div>
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+                Is {{ data['connectedPerson'] }} registered with Companies House?
+            </h1>
+        </legend>
+        <div id="lawRegisterDirNiHint" class="govuk-hint">
+            Is the ‘connected person’ registered with Companies House as required by the Companies Act 2006. 
+        </div>
+        <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="lawRegisterDirNi" name="lawRegisterDirNi"
+                    type="radio" value="Yes" data-aria-controls="conditional-chno" >
+                <label class="govuk-label govuk-radios__label" for="lawRegisterDirNi">
+                    Yes
+                </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
+                <div class="govuk-form-group">
+                <label class="govuk-label" for="chnoInput">
+                    Companies House number
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="chnoInput" name="chnoInput" value="{{ data['chnoInput'] }}" >
+                </div>
+            </div>
+            
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="lawRegisterDirNi-2" name="lawRegisterDirNi"
+                    type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="lawRegisterDirNi">
+                    No
+                </label>
+            </div>
+        </div>
+    </fieldset>
+</div>-->
