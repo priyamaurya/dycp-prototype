@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Mandatory exclusion grounds
+        </h2>
+
+        <span class="govuk-caption-l">
+            {{ data['exclusionMan'] }}
+        </span> -->
+
+        <form class="form" method="post">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Do you have any supporting evidence to upload? 
+                        </h1>
+                    </legend>
+
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+                        <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="documents-2" name="documents-2" type="checkbox"
+                                value="File upload" data-aria-controls="conditional-documents-2">
+                            <label class="govuk-label govuk-checkboxes__label" for="documents-2">
+                                Document upload
+                            </label>
+                        </div>
+                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
+                            id="conditional-documents-2">
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="file-upload-1">
+                                    Your file can be JPG, BMP, PNG, TIF or PDF format.
+                                </label>
+                                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="govuk-checkboxes__divider">or</div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="cannotProve" name="cannotProve" type="checkbox"
+                            value="No, I cannot provide any documentation" data-behaviour="exclusive">
+                        <label class="govuk-label govuk-checkboxes__label" for="cannotProve">
+                            No
+                        </label>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-6" type="submit">Save and continue</button>
+
+        </form>
+
+    </div>
+</div>
+</div>
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

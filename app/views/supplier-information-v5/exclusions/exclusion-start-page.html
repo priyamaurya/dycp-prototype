@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %} {% block header %} {%
+include("includes/header-with-nav.html") %} {% endblock %} {% block
+beforeContent %} {% include("includes/phase-banner.html") %} {%
+include("includes/back-link.html") %} {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Penalties, convictions and court rulings</h1>
+
+    <p class="govuk-body">
+      Tell us if you or a connected person has received any penalties,
+      convictions or court rulings that may disqualify you from the procurement
+      process.
+    </p>
+    <div class="govuk-inset-text">
+      If someone other than yourself committed the offence, make sure you add
+      them as a connected person.
+    </div>
+    <p class="govuk-body">
+      If any non-UK offences apply, tell us the equivalent offence.
+    </p>
+
+    <!-- Penalties Details -->
+    <h2 class="govuk-heading-m">Penalties</h2>
+    <p class="govuk-body">
+      This includes HMRC findings for deliberate VAT, tax, duty and excise
+      wrongdoing such as fraud, evasion, abusive practice, failure to notify,
+      defeat in respect of notifiable tax arrangements and failure to cooperate
+      with investigation. Also, any Competition and Markets Authority decisions
+      for competition law infringement.
+    </p>
+
+    <!-- Convictions -->
+    <h2 class="govuk-heading-m">Convictions</h2>
+    <p class="govuk-body">
+      This includes corporate manslaughter, terrorism, theft, fraud and bribery,
+      labour market, slavery and human trafficking, organised crime, tax
+      offences, cartel offences and aiding, abetting and conspiring to commit
+      offences.
+    </p>
+
+    <!-- Court Rulings -->
+    <h2 class="govuk-heading-m">Court rulings</h2>
+    <p class="govuk-body">
+      This includes labour market, environmental and professional misconduct,
+      insolvency and bankruptcy, suspending or ceasing to carry on business,
+      competition law infringements, breach of contract and acting improperly in
+      procurement. You must tell us if the offence was in the UK, who the
+      offender was, their email address and provide supporting evidence such as
+      a URL or document and the date the offence last occurred.
+    </p>
+
+    <a class="govuk-button" href="exclusion-penalty-question">Continue</a>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,343 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <form class="form" method="post">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                {{ data['exclusionMan'] }}
+                            </h2>
+                        </legend>
+
+                        <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+                            In respect of paragraph 4 to 18 of Schedule 6 to the PA 2023 (Theft, Fraud. bribery,
+                            etc), has the supplier or a connected person been convicted of an offence:
+                        </div>
+
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div class="govuk-radios__item govuk-!-margin-top-6">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="At common law in Scotland of theft, fraud, extortion, robbery, theft by
+                                    housebreaking, housebreaking with intent to steal, uttering, embezzlement, or reset.">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    At common law in Scotland of theft, fraud, extortion, robbery, theft by
+                                    housebreaking, housebreaking with intent to steal, uttering, embezzlement, or reset.
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="At common law of conspiracy to defraud.">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    At common law of conspiracy to defraud.
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div id="mandatory-hint" class="govuk-hint">
+                                Under any of the following sections of the Theft Act 1968:
+                            </div>
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under the following section of the Theft Act 1968:  
+                                    (a) sections 1 to 13 (theft, robbery, burglary, etc)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (a) sections 1 to 13 (theft, robbery, burglary, etc)
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under the following section of the Theft Act 1968:  
+                                    (b) sections 17 to 21 (fraud and blackmail)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (b) sections 17 to 21 (fraud and blackmail)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under the following section of the Theft Act 1968:  
+                                    (c) sections 22 and 23 (offences relating to stolen goods)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (c) sections 22 and 23 (offences relating to stolen goods)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under the following section of the Theft Act 1968:  
+                                    (d) section 24A (dishonestly retaining a wrongful credit)s">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (d) section 24A (dishonestly retaining a wrongful credit)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under the following section of the Theft Act 1968:  
+                                    (e) section 25 (going equipped for stealing etc)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (e) section 25 (going equipped for stealing etc)
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                            <div id="mandatory-hint" class="govuk-hint">Under any of the following sections of the <a
+                                    href="https://www.legislation.gov.uk/apni/1969/16/contents" target="_blank">Theft
+                                    Act (Northern Ireland) 1969 (c. 16 (N.I.))</a>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under any of the following sections of the Theft Act (Northern Ireland) 1969  
+                                    (a) sections 1 to 13 (theft, robbery, burglary, etc)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (a) sections 1 to 13 (theft, robbery, burglary, etc)
+                                </label>
+                            </div>
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under any of the following sections of the Theft Act (Northern Ireland) 1969  
+                                    (b) sections 17 to 21 (fraud and blackmail)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (b) sections 17 to 20 (fraud and blackmail)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under any of the following sections of the Theft Act (Northern Ireland) 1969  
+                                    (c) sections 22 and 23 (offences relating to stolen goods)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (c) sections 21 and 22 (offences relating to stolen goods)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under any of the following sections of the Theft Act (Northern Ireland) 1969  
+                                    (d) section 24A (dishonestly retaining a wrongful credit)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (d) section 23A (dishonestly retaining a wrongful credit)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under any of the following sections of the Theft Act (Northern Ireland) 1969  
+                                    (e) section 25 (going equipped for stealing etc)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    (e) section 24 (going equipped for stealing etc)
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value=" Under section 3 of the Theft Act 1978 (making off without payment)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    Under section 3 of the Theft Act 1978 (making off without payment)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 5 of the Theft (Northern Ireland) Order 1978 (making off without payment)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    Under section 5 of the Theft (Northern Ireland) Order 1978 <a
+                                        href="https://www.legislation.gov.uk/nisi/1978/1407/contents"
+                                        target="_blank">(S.I. 1978/1407 (N.I. 23))</a> (making off without payment)
+                                </label>
+                            </div>
+
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio" value="Under Article 172 or 172A of the Road Traffic (Northern Ireland) Order 1981 (taking vehicle without authority
+                                    etc)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    Under Article 172 or 172A of the Road Traffic (Northern Ireland) Order 1981 <a
+                                        href="https://www.legislation.gov.uk/nisi/1981/154/contents"
+                                        target="_blank">(S.I. 1981/154 (N.I. 1))</a> (taking vehicle without authority
+                                    etc)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 58 of the Civic Government (Scotland) Act 1982 (convicted thief in possession)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    Under section 58 of the Civic Government (Scotland) Act 1982 (convicted thief in
+                                    possession)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 113 of the Representation of the People Act 1983 (bribery of electors)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft">
+                                    Under section 113 of the Representation of the People Act 1983 (bribery of electors)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 178 of the Road Traffic Act 1988 (taking motor vehicle without authority etc)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft13">
+                                    Under section 178 of the Road Traffic Act 1988 (taking motor vehicle without
+                                    authority etc)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 327, 328 or 329 of the Proceeds of Crime Act 2002 (money laundering offences)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft13">
+                                    Under section 327, 328 or 329 of the Proceeds of Crime Act 2002 (money laundering
+                                    offences)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 2, 3, 4, 6 or 7 of the Fraud Act 2006 (fraud offences)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft13">
+                                    Under section 2, 3, 4, 6 or 7 of the Fraud Act 2006 (fraud offences)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 993 of the Companies Act 2006 (fraudulent trading)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft13">
+                                    Under section 993 of the Companies Act 2006 (fraudulent trading)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 1, 2 or 6 of the Bribery Act 2010 (bribery offences)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft13">
+                                    Under section 1, 2 or 6 of the Bribery Act 2010 (bribery offences)
+                                </label>
+                            </div>
+
+
+
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="exclusionTheft" name="exclusionTheft"
+                                    type="radio"
+                                    value="Under section 49 of the Criminal Justice and Licensing (Scotland) Act 2010 (asp 13) (offences relating to articles for use in fraud)">
+                                <label class="govuk-label govuk-radios__label" for="exclusionTheft13">
+                                    Under section 49 of the Criminal Justice and Licensing <a
+                                        href="https://www.legislation.gov.uk/asp/2010/13/contents"
+                                        target="_blank">(Scotland) Act 2010 (asp 13)</a> (offences relating to articles
+                                    for use in fraud)
+                                </label>
+                            </div>
+
+                    </fieldset>
+
+                    <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                        Save and continue
+                    </button>
+
+
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
