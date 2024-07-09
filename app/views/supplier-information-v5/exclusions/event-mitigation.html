@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+    <!-- <h1 class="govuk-heading-m" style="color: #1d70b8;">
+        Mandatory exclusion grounds
+    </h1>
+
+    <span class="govuk-caption-l">
+        {{ data['exclusionMan'] }}
+    </span> -->
+
+    <form class="form" method="post">
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" data-required data-error="Provide Supporting evidence"
+                aria-required="true">
+                <h1 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--l" for="mitDetail">
+                        Tell us how you have taken the [penalty/conviction/court ruling] seriously.
+                    </label>
+                </h1>
+                <h3 class="govuk-heading-s">
+                    You must tell us:
+                </h3>
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>What you have done that proves you have taken this seriously </li>
+                    <li>What steps you have taken to prevent it from happening again </li>
+                    <li>How you are monitoring the prevention</li>
+                    <li>If the offence was publicly recorded on a website, include the website address </li>
+                </ul>
+
+                <textarea class="govuk-textarea" id="mitDetail" name="mitDetail1" rows="6"
+                    aria-describedby="mitDetail-hint"></textarea>
+
+               
+            </fieldset>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+    </form>
+
+    {% endblock %}

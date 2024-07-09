@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" data-required data-error="Select" aria-required="true">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+             Have you or a connected person ever received a penalty, conviction, or a court ruling?
+            </h1>
+          </legend>
+          <div id="penalty-hint" class="govuk-hint">Penalties and convictions are detailed in <a
+            href="" target="_blank">Schedule 6 of the Procurement Act 2023</a>
+          </div>
+          <div id="court-rulings-hint" class="govuk-hint">Court rulings and misconducts are detailed in <a
+            href="" target="_blank">Schedule 7 of the Procurement Act 2023</a>
+          </div>
+
+          <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exclusionDetailsId" name="exclusionDetails"
+                type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="exclusionDetailsId">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exclusionDetailsId-2" name="exclusionDetailsId"
+                type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="exclusionDetailsId-2">
+                No
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
+  </div>
+  </form>
+
+
+</div>
+</div>
+
+{% endblock %}

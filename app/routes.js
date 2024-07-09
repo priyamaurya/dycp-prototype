@@ -53,11 +53,9 @@ router.use('/supplier-information-v5', require('./views/supplier-information-v5/
 router.use('/supplier-information-v5/suppliers-c', require('./views/supplier-information-v5/suppliers-c/routes'))
 router.use('/supplier-information-v5/connected', require('./views/supplier-information-v5/connected/routes'))
 router.use('/supplier-information-v5/mandatory', require('./views/supplier-information-v5/mandatory/routes'))
+router.use('/supplier-information-v5/exclusions', require('./views/supplier-information-v5/exclusions/routes'))
 router.use('/supplier-information-v5/discretionary', require('./views/supplier-information-v5/discretionary/routes'))
 router.use('/supplier-information-v5/financial', require('./views/supplier-information-v5/financial/routes'))
 router.use('/supplier-information-v5/economical', require('./views/supplier-information-v5/economical/routes'))
 router.use('/supplier-information-v5/user', require('./views/supplier-information-v5/user/routes'))
 router.use('/supplier-information-v5/download', require('./views/supplier-information-v5/download/routes'))
-
-
-
