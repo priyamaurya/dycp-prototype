@@ -87,7 +87,7 @@ router.post("/exclusion-grounds-outside-UK", function (req, res) {
   } else if (exclusionMan == "Failure to cooperate with investigation") {
     res.redirect("event-subject");
   } else {
-    res.redirect("event-subject");
+    res.redirect("uk-crime");
   }
 });
 
