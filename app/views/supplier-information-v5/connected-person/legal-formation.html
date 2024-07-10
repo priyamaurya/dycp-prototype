@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="legalFormation" %}
+            {% set headingCaption=data['connectedPersons'] %}
+            {% set heading="What is [Org's] legal form?" %}
+
+            {% set label1="Legal formation"%}
+            {% set hintText1="When it was set up and registered, what structure was used. Also called trading status. For example, a limited company or limited liability partnership."%}
+            {% set label2="Which law enforces it?"%}
+            {% set hintText2="For example, Companies Act 2006."%}
+
+            {% include("../templates/two-text-inputs.html") %}
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

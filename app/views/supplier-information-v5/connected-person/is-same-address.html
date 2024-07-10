@@ -16,16 +16,14 @@
 
         <form class="form" method="post">
 
+            {% set inputName="isSameAddress" %}
             {% set headingCaption=data['connectedPersons'] %}
-            {% set heading="Enter [Org]'s registered address" %}
-            {% set description="The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
+            {% set heading="Does have a different [postal] address?" %}
+            {% set hintText="The place where an organisation receives official post can be different from its registered address. For example, a branch office." %}
 
-            {% include("../templates/address.html") %}
-            
-            
+            {% include("../templates/radio-yes-no.html") %}
+        
             {% include("../templates/button--submit.html") %}
-
-            {{ page }}
             
         </form>
 

@@ -16,16 +16,13 @@
 
         <form class="form" method="post">
 
+            {% set inputName="registerName" %}
             {% set headingCaption=data['connectedPersons'] %}
-            {% set heading="Enter [Org]'s registered address" %}
-            {% set description="The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
+            {% set heading="What register is [Org] declared on?" %}
+            {% set hintText="For example, the Companies House persons with significant control register." %}
 
-            {% include("../templates/address.html") %}
-            
-            
+            {% include("../templates/text-input--single.html") %}
             {% include("../templates/button--submit.html") %}
-
-            {{ page }}
             
         </form>
 
