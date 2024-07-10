@@ -8,7 +8,9 @@
   <h1 class="govuk-heading-l">
     Select which penalty, conviction or court ruling was received  
   </h1>
-
+  <p class="govuk-body">
+    If you need to, you can add another once you have completed this one.
+  </p>
   <span class="govuk-caption-l">
     {{ data['mandatory'] }}
   </span>
@@ -42,18 +44,17 @@
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" data-required data-error="Select one option" aria-required="true">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              <h2 class="govuk-fieldset__heading">
-                Has the supplier or a connected person has been convicted of any of the following offences, referred to
-                in Schedule 6 of the Procurement Act 2023?
-              </h2>
+              
             </legend>
 
             <!-- <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
               As this was outside the UK, select the equivalent penalty.
             </div> -->
 
-            <h2 class="govuk-heading-m">Convictions</h2>
-
+            <h2 class="govuk-heading-m">Penalties</h2>
+            <div id="penalty-hint" class="govuk-hint">You can find details of penalties in <a
+              href="" target="_blank">Schedule 6 of the Procurement Act 2023 (opens in new tab).</a>
+            </div>
             <div class="govuk-radios" data-module="govuk-radios">
 
               <div class="govuk-radios__item govuk-!-margin-top-6">
@@ -129,8 +130,10 @@
 
               
               <!--  Penalties Section -->
-              <h2 class="govuk-heading-m">Penalties</h2>
-
+              <h2 class="govuk-heading-m">Convictions</h2>
+              <div id="penalty-hint" class="govuk-hint">You can find details of penalties in <a
+                href="" target="_blank">Schedule 6 of the Procurement Act 2023 (opens in new tab).</a>
+              </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
@@ -196,7 +199,9 @@
               <!-- Court Rulings -->
 
               <h2 class="govuk-heading-m">Court rulings</h2>
-
+              <div id="penalty-hint" class="govuk-hint">You can find details of court rulings and misconducts in <a
+                href="" target="_blank">Schedule 7 of the Procurement Act 2023 (opens in new tab).</a>
+              </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
