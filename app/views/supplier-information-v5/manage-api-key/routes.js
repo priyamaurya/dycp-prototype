@@ -15,8 +15,4 @@ router.post("/manage-API-key", function (req, res) {
   res.redirect("create-new-API-key");
 });
 
-router.post("/create-new-API-key", function (req, res) {
-  res.redirect("new-API-key-details");
-});
-
 module.exports = router;
