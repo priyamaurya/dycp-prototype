@@ -1,0 +1,23 @@
+{% extends "layouts/main.html" %} {% block header %} {%
+include("includes/header-with-nav.html") %} {% endblock %} {% block
+beforeContent %} {% include("includes/phase-banner.html") %} {%
+include("includes/back-link.html") %} {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form class="form" method="post">
+      <h1 class="govuk-heading-l">Manage API keys</h1>
+      <p class="govuk-body">
+        You don't have any keys yet. When you create one, you will be able to
+        see a list of your API keys and revoke access to them on this screen.
+      </p>
+      <div class="govuk-button-group govuk-!-margin-top-6">
+        <button class="govuk-button" data-module="govuk-button">
+          Create an API key
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
