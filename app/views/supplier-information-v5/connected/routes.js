@@ -370,8 +370,21 @@ router.get('/:index/remove-connected-person', function (req, res) {
 router.post('/:index/remove-connected-person', function (req, res) {
   let removeConnectedPerson = req.session.data.removeConnectedPerson;
   const connectedPersons = req.session.data.connectedPersonArray || [];
-
   if (removeConnectedPerson == 'Yes' && connectedPersons.length) {
+    res.redirect(`../${req.params.index}/remove-connected-person-date`);
+  } else {
+    res.redirect('../add-another-connected-person');
+  }
+});
+
+router.get('/:index/remove-connected-person-date', function (req, res) {
+  res.render(path.resolve(__dirname, 'remove-connected-person-date'));
+});
+
+router.post('/:index/remove-connected-person-date', function (req, res) {
+  let removeConnectedPerson = req.session.data.removeConnectedPerson;
+  const connectedPersons = req.session.data.connectedPersonArray || [];
+
     const deleteIndex = req.params.index - 1;
     const maxIndex = connectedPersons.length || 0;
 
@@ -381,7 +394,7 @@ router.post('/:index/remove-connected-person', function (req, res) {
       req.session.data.connectedPersonArray = connectedPersons;
       req.session.data.connectedPersonCount = connectedPersons.length;
     }
-  }
+ 
 
   res.redirect('../add-another-connected-person');
 });
