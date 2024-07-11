@@ -1,0 +1,35 @@
+{% extends "layouts/main.html" %} {% block header %} {%
+include("includes/header-with-nav.html") %} {% endblock %} {% block
+beforeContent %} {% include("includes/phase-banner.html") %} {%
+include("includes/back-link.html") %} {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form class="form" method="post">
+      <h1 class="govuk-heading-l">Revoke an API key</h1>
+      <p class="govuk-body">
+        If you revoke this API key, you will no longer be able to use it request
+        data.
+      </p>
+      <p class="govuk-body">
+        You cannot re-enable a revoked API key. If you want to request data
+        again, you will need to create a new API key.
+      </p>
+      <div class="govuk-button-group govuk-!-margin-top-6">
+        <button
+          class="govuk-button govuk-button--warning"
+          data-module="govuk-button"
+        >
+          Revoke key
+        </button>
+        <a
+          class="govuk-link govuk-link--no-visited-state"
+          href="manage-API-key.html"
+          >Cancel</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
