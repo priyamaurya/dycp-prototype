@@ -9,7 +9,7 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
 
     <p class="govuk-body">
       Tell us if you or a connected person has received any penalties,
-      convictions or court rulings that may disqualify you from the procurement
+      convictions or court rulings that may exclude you from the procurement
       process.
     </p>
     <div class="govuk-inset-text">
@@ -17,7 +17,7 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
       them as a connected person.
     </div>
     <p class="govuk-body">
-      You must tell us if the offence was in the UK, who it applies to, their email address and upload any supporting evidence if you have it. If any non-UK offences apply, tell us the equivalent offence.
+      You must tell us if the offence was in the UK, who it applies to, their email address and upload any supporting documents you may have. If any non-UK offences apply, tell us the equivalent offence.
     </p>
 
     <!-- Penalties Details -->
@@ -39,6 +39,8 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
       offences.
     </p>
 
+    <p class="govuk-body">Penalties and convictions are detailed in <a href="" target="_blank">Schedule 6 of the Procurement Act 2023 (opens in new tab).</a>
+    </p>
     <!-- Court Rulings -->
     <h2 class="govuk-heading-m">Court rulings</h2>
     <p class="govuk-body">
@@ -48,7 +50,11 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
       procurement. 
     </p>
 
-    <a class="govuk-button" href="exclusion-penalty-question">Continue</a>
+    <div id="court-rulings-body" class="govuk-body">Court rulings and misconducts are detailed in <a
+    href="" target="_blank">Schedule 7 of the Procurement Act 2023 (opens in new tab).</a>
+  </div>
+    
+  <div></div><a class="govuk-button" href="exclusion-penalty-question">Continue</a>
   </div>
 </div>
 
