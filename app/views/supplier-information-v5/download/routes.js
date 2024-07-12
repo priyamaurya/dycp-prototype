@@ -14,11 +14,28 @@ router.post('/download', function (req, res) {
 
 router.post('/declaration', function (req, res) {
     req.session.data.download = 'Download code and extract';
-    res.redirect('declaration-person');
+    res.redirect('declaration-person-name');
 })
 
+router.post('/declaration-person-name', function (req, res) {
+    res.redirect('declaration-person-role');
+})
+
+router.post('/declaration-person-role', function (req, res) {
+    res.redirect('declaration-person-email');
+})
+
+// router.post('/declaration-person-email', function (req, res) {
+//     res.redirect('declaration-person-phone');
+// })
+
+router.post('/declaration-person-email', function (req, res) {
+    res.redirect('person-uk-address');
+})
+
+
 router.post('/declaration-person', function (req, res) {
-    res.redirect('is-the-address-same');
+    res.redirect('person-uk-address');
 })
 
 router.post('/is-the-address-same', function (req, res) {
