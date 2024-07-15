@@ -25,14 +25,19 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter the supplier’s declaration address manually
+                    Enter the supplier’s declaration address
                 </h1>
+                
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
                     Address not found, enter the supplier’s declaration address manually
                 </h1>
                 {% endif %}
             </legend>
+
+            <p>
+                <a href="org-address-overseas">Enter a non-UK address</a>
+              </p>
 
             <form class="form" method="post">
                 <div class="govuk-form-group">
@@ -42,7 +47,7 @@
                             Address line 1
                         </label>
                         <input class="govuk-input" id="address-line-1" name="address-line-1" type="text"
-                            value="{{ data['address-line-1'] }}" autocomplete="address-line1">
+                             autocomplete="address-line1" value="10 Downing Street">
                     </div>
 
                     <div class="govuk-form-group">
@@ -50,7 +55,7 @@
                             Town or city
                         </label>
                         <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town"
-                            type="text" value="{{ data['address-town'] }}" autocomplete="address-town">
+                            type="text" value="London" autocomplete="address-town">
                     </div>
 
                     <div class="govuk-form-group">
@@ -58,13 +63,13 @@
                             Post code
                         </label>
                         <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode"
-                            type="text" value="{{ data['address-postcode'] }}" autocomplete="declaration-postal-code">
+                            type="text" value="SW1 1AA" autocomplete="declaration-postal-code">
                     </div>
 
                 </div>
                 <div class="govuk-form-group">
                     <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
-                        Save and continue
+                        Continue
                     </button>
                 </div>
 
