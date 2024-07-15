@@ -13,7 +13,7 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
           </label>
         </h1>
         <div id="hint" class="govuk-hint">
-          The name will be shown in your list of API keys to make it easierto
+          The name will be shown in your list of API keys to make it easier to
           find. We recommend using the name of the service you will be using the
           API key to integrate with.
         </div>
@@ -26,8 +26,12 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
           value="{{ data['APIKeyName'] }}"
         />
       </div>
+      <div class="govuk-button-group govuk-!-margin-top-6">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </div>
     </form>
-    <a class="govuk-button" href="new-API-key-details">Continue</a>
   </div>
 </div>
 
