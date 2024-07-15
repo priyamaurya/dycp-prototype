@@ -32,36 +32,30 @@
                             Do you have a supporting document to upload? 
                         </h1>
                     </legend>
-                    <p class="govuk-body">For example, a decision from a public authority that was the basis for the [penalty/conviction/court ruling]. </p>
-                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-
-                        <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="documents-2" name="documents-2" type="checkbox"
-                                value="File upload" data-aria-controls="conditional-documents-2">
-                            <label class="govuk-label govuk-checkboxes__label" for="documents-2">
-                                Yes
+                    <p class="govuk-body">A decision from a public authority that was the basis for the penalty/conviction/court ruling. For example, documentation from the police, HMRC or the court. </p>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="documents-2" name="documents-2" type="radio" value="File upload" data-aria-controls="conditional-chno" {% if data['documents-2'] == 'Document upload' %} checked {% endif %} >
+                            <label class="govuk-label govuk-radios__label" for="documents-2">
+                                Document upload
                             </label>
                         </div>
-                        <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden"
-                            id="conditional-documents-2">
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="file-upload-1">
-                                    Your file can be JPG, BMP, PNG, TIF or PDF format.
-                                </label>
-                                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+                            <label class="govuk-label" for="chnoInput">
+                                Your file can be JPG, BMP, PNG, TIF or PDF format.
+                            </label>
+                            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
                             </div>
                         </div>
-
-                    </div>
-
-
-                   
-                    <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="cannotProve" name="cannotProve" type="checkbox"
-                            value="No, I cannot provide any documentation" data-behaviour="exclusive">
-                        <label class="govuk-label govuk-checkboxes__label" for="cannotProve">
-                            No
-                        </label>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="noDocuments" name="documents-2" type="radio" value="No, I cannot provide any documentation" {% if data['documents-2'] == 'No, I cannot provide any documentation' %} checked {% endif %}>
+                                <label class="govuk-label govuk-radios__label" for="noDocuments">
+                                    No
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                 </fieldset>

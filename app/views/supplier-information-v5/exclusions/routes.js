@@ -162,9 +162,9 @@ router.post("/event-documents", function (req, res) {
 
 router.post("/event-ongoing", function (req, res) {
   if (req.session.data.eventOngoingMan == "No") {
-    res.redirect("event-date");
-  } else {
     res.redirect("check-answers");
+  } else {
+    res.redirect("event-date");
   }
 });
 
@@ -274,7 +274,7 @@ router.post("/add-another-exclusion", function (req, res) {
   delete req.session.data.editExclusionMan;
 
   if (req.session.data.addAnotherExclusionMan == "Yes") {
-    res.redirect("exclusion-grounds");
+    res.redirect("exclusion-grounds-in-UK");
   } else {
     let startQuestion = req.session.data.startQuestion;
     if (startQuestion == "Company") {

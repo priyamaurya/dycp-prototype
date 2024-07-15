@@ -7,75 +7,62 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
   <div class="govuk-grid-column-full">
     <form class="form" method="post">
       <h1 class="govuk-heading-l">
-        There are 3 API keys for this organisation
+        There are 5 API keys for this organisation
       </h1>
 
       <div class="govuk-form-group">
         <dl class="govuk-summary-list ros-add-to-a-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Name</dt>
-            <dt class="govuk-summary-list__key">Date Created</dt>
+            <dt class="govuk-summary-list__key">Date created/revoked</dt>
+            <dt class="govuk-summary-list__key govuk-summary-list__actions">
+              Actions
+            </dt>
           </div>
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">API Key 1</dd>
+            <dd class="govuk-summary-list__value">API key name 1</dd>
             <dd class="govuk-summary-list__value">07/03/2024</dd>
             <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="revoke-api-key.html">Revoke</a>
-                </li>
-              </ul>
+              <a class="govuk-link" href="revoke-api-key.html">Revoke</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">API Key 2</dd>
+            <dd class="govuk-summary-list__value">API key name 2</dd>
             <dd class="govuk-summary-list__value">12/06/2024</dd>
             <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="revoke-api-key.html">Revoke</a>
-                </li>
-              </ul>
+              <a class="govuk-link" href="revoke-api-key.html">Revoke</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">API Key 3</dd>
+            <dd class="govuk-summary-list__value">API key name 3</dd>
+            <dd class="govuk-summary-list__value">12/03/2024</dd>
+            <dd class="govuk-summary-list__actions">
+              <span class="govuk-tag govuk-tag--red govuk-!-font-size-16"
+                >Revoked</span
+              >
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">API key name 4</dd>
+            <dd class="govuk-summary-list__value">08/02/2024</dd>
+            <dd class="govuk-summary-list__actions">
+              <span class="govuk-tag govuk-tag--red govuk-!-font-size-16"
+                >Revoked</span
+              >
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">API key name 5</dd>
             <dd class="govuk-summary-list__value">23/04/2024</dd>
             <dd class="govuk-summary-list__actions">
-              <ul class="govuk-summary-list__actions-list">
-                <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="revoke-api-key.html">Revoke</a>
-                </li>
-              </ul>
+              <span class="govuk-tag govuk-tag--red govuk-!-font-size-16"
+                >Revoked</span
+              >
             </dd>
           </div>
         </dl>
       </div>
 
-      <h1 class="govuk-heading-l">
-        There are 2 API keys revoked for this organisation
-      </h1>
-
-      <div class="govuk-form-group">
-        <dl class="govuk-summary-list ros-add-to-a-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Name</dt>
-            <dt class="govuk-summary-list__key">Date Revoked</dt>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">API Key 4</dd>
-            <dd class="govuk-summary-list__value">12/03/2024</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">API Key 5</dd>
-            <dd class="govuk-summary-list__value">08/02/2024</dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">API Key 3</dd>
-            <dd class="govuk-summary-list__value">23/04/2024</dd>
-          </div>
-        </dl>
-      </div>
       <div class="govuk-button-group govuk-!-margin-top-6">
         <button class="govuk-button" data-module="govuk-button">
           Create an API key

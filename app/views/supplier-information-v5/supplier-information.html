@@ -66,15 +66,15 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
 
     {% if data['addAnotherExclusionMan'] | length != "0" and
     data['exclusionManArray'] | length >= "2" %} {% set
-    href="mandatory/add-another-exclusion" %} {% set value = data
+    href="exclusions/add-another-exclusion" %} {% set value = data
     ['exclusionManCount'] + " mandatory exclusions" %} {% set status =
     "Completed" %} {% elif data['addAnotherExclusionMan'] | length != "0" %} {%
-    set href="mandatory/add-another-exclusion" %} {% set value = data
+    set href="exclusions/add-another-exclusion" %} {% set value = data
     ['exclusionManCount'] + " mandatory exclusion" %} {% set status =
     "Completed" %} {% elif data['exclusionMan'] == 'None of the above' %} {% set
     href="exclusions/exclusion-start-page" %} {% set value = "No mandatory
     exclusions" %} {% set status = "Completed" %} {% elif data['eventSub'] |
-    length != "0" %} {% set href="mandatory/mandatory/check-answers" %} {% set
+    length != "0" %} {% set href="exclusions/exclusions/check-answers" %} {% set
     value = "" %} {% set status = "In progress" %} {% else %} {% set
     href="exclusions/exclusion-start-page" %} {% set value = "" %} {% set status
     = "Not started" %} {% endif %}
