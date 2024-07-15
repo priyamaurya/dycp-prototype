@@ -3,17 +3,25 @@ include("includes/header-with-nav.html") %} {% endblock %} {% block
 beforeContent %} {% include("includes/phase-banner.html") %} {%
 include("includes/back-link.html") %} {% endblock %} {% block content %}
 
+<div class="govuk-grid-column-ful-width">
+  <div class="govuk-panel govuk-panel--confirmation">
+    <h1 class="govuk-panel__title">New API key is created</h1>
+    <div class="govuk-panel__body">
+      Your API key<br /><strong>HDJ2123FP489HJABN</strong>
+      <div class="govuk-button-group">
+        <button
+          class="govuk-button govuk-button--inverse"
+          data-module="govuk-button"
+        >
+          Copy to clipboard
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">New API key</h1>
-
-    <h2 class="govuk-heading-m">Your API key:</h2>
-    <h2 class="govuk-heading-m">jjsdhjhjheuoitr18984mnkzk01</h2>
-
-    <a class="govuk-button govuk-button--secondary" href=""
-      >Copy to clipboard</a
-    >
-
     <p class="govuk-body">
       You should keep a copy of this API key somewhere safe.
     </p>

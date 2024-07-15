@@ -162,9 +162,9 @@ router.post("/event-documents", function (req, res) {
 
 router.post("/event-ongoing", function (req, res) {
   if (req.session.data.eventOngoingMan == "No") {
-    res.redirect("event-date");
-  } else {
     res.redirect("check-answers");
+  } else {
+    res.redirect("event-date");
   }
 });
 
