@@ -32,10 +32,18 @@
                     <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="numberQuestion" name="numberQuestion" type="radio"
-                                value="Yes">
+                                value="Yes" aria-controls="conditional-chno">
                             <label class="govuk-label govuk-radios__label" for="numberQuestion">
                                 Yes
                             </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
+                            <div class="govuk-form-group">
+                            <label class="govuk-label" for="chnoInput">
+                                Companies House number
+                            </label>
+                            <input class="govuk-input govuk-!-width-one-third" id="chnoInput" name="chnoInput" value="{{ data['chnoInput'] }}" >
+                            </div>
                         </div>
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="numberQuestion-2" name="numberQuestion" type="radio"

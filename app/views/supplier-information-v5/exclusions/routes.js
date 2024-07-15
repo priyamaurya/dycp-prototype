@@ -132,20 +132,21 @@ router.post("/uk-event", function (req, res) {
 });
 
 router.post("/event-subject", function (req, res) {
-  let eventSubMan = req.session.data.eventSubMan;
+  res.redirect("event-mitigation");
+  // let eventSubMan = req.session.data.eventSubMan;
 
-  if (eventSubMan == "Not listed") {
-    let startQuestion = req.session.data.startQuestion;
-    if (startQuestion == "Company") {
-      res.redirect("../supplier-information"); //../suppliers-c/account-home
-    } else if (startQuestion == "Trust") {
-      res.redirect("../suppliers-b/account-home");
-    } else {
-      res.redirect("../suppliers-d/account-home");
-    }
-  } else {
-    res.redirect("email-address");
-  }
+  // if (eventSubMan == "Not listed") {
+  //   let startQuestion = req.session.data.startQuestion;
+  //   if (startQuestion == "Company") {
+  //     res.redirect("../supplier-information"); //../suppliers-c/account-home
+  //   } else if (startQuestion == "Trust") {
+  //     res.redirect("../suppliers-b/account-home");
+  //   } else {
+  //     res.redirect("../suppliers-d/account-home");
+  //   }
+  // } else {
+  //   res.redirect("email-address");
+  // }
 });
 
 router.post("/email-address", function (req, res) {

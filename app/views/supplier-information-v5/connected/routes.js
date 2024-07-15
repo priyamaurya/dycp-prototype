@@ -667,7 +667,7 @@ router.post('/psc-register-ni', function (req, res) {
 })
 
 router.post('/parent-sub', function (req, res) {
-  res.redirect('parent-reg-address-type');
+  res.redirect('parent-reg-address-uk');
 })
 
 router.post('/parent-reg-address-type', function (req, res) {
@@ -698,7 +698,7 @@ router.post('/parent-address-same', function (req, res) {
     if( connectedPersons == 'Equivalent to parent or subsidiary company' ){
       res.redirect('check-answers-connected-person');
     } else {
-      res.redirect('parent-address-type');
+      res.redirect('parent-address-uk');
     }
   } else {
     res.redirect('parent-company-number-question');
@@ -743,14 +743,16 @@ router.post('/parent-address-uk', function (req, res) {
 
 router.post('/parent-company-number-question', function (req, res) {
 
-  let numberQuestion = req.session.data.numberQuestion;
+  // let numberQuestion = req.session.data.numberQuestion;
 
-  if (numberQuestion == "Yes") {
-    res.redirect('parent-company-number');
-  }
-  else {
-    res.redirect('check-answers-connected-person');
-  }
+  // if (numberQuestion == "Yes") {
+  //   res.redirect('parent-company-number');
+  // }
+  // else {
+  //   res.redirect('check-answers-connected-person');
+  // }
+
+  res.redirect('check-answers-connected-person');
 })
 
 router.post('/parent-company-number', function (req, res) {
