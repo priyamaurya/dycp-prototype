@@ -16,14 +16,13 @@
 
         <form class="form" method="post">
 
+            {% set inputName="connectedPersonLocation" %}
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="Enter [Org]'s registered address" %}
-            {% set description="The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
-            {% set addressType="non-uk" %}
+            {% set heading="What country does usually live in?" %}
+            {% set options = data['listOfCountries'] %}
 
-            {% include("../templates/address.html") %}
-            
-            
+
+            {% include("../templates/select-dropdown.html") %}
             {% include("../templates/button--submit.html") %}
             
         </form>

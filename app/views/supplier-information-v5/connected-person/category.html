@@ -42,7 +42,7 @@
 
             <!-- options for individual -->
 
-            {% if page == "/category-indv-1" %}
+            {% if page == "/category-other-1" %}
 
                 {% set options=(options.push("person with significant control"), options) %}
 
@@ -51,19 +51,6 @@
                 {% set options=(options.push("any other individual with significant influence or control"), options) %}
 
             {% endif %}
-
-            <!-- options for trustee -->
-
-            {% if page == "/category-trust-1" %}
-
-                {% set options=(options.push("person with significant control"), options) %}
-
-                {% set options=(options.push("director or individual with the same responsibilities"), options) %}
-
-                {% set options=(options.push("any other individual with significant influence or control"), options) %}
-
-            {% endif %}
-
 
             <!-- -->
 

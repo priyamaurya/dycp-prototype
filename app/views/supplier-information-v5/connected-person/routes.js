@@ -19,12 +19,10 @@ var oRoute = {
     "/director-legal-form-1":"director-ch-number-1",
     "/director-ch-number-1":"check-your-answers",
 
-
     "/parent-company-name-1": "parent-company-address-1",
     "/parent-company-address-1": "is-parent-company-address-same-1",
     "/parent-company-service-address-1":"parent-company-ch-number-1",
     "/parent-company-ch-number-1":"check-your-answers",
-
 
     "/taken-over-company-name-1": "taken-over-company-address-1",
     "/taken-over-company-address-1":"taken-over-company-ch-number-1",
@@ -39,17 +37,23 @@ var oRoute = {
     "/other-org-with-control-registration-date-1":"other-org-with-control-legal-form-1",
     "/other-org-with-control-legal-form-1":"check-your-answers",
 
+    "/category-other-psc-details-1":"category-other-psc-address-1",
+    "/category-other-psc-address-1":"category-other-psc-nature-of-control-1",
+    "/category-other-psc-nature-of-control-1":"category-other-psc-registration-date-1",
+    "/category-other-psc-registration-date-1":"category-other-psc-register-1",
+    "/category-other-psc-register-1":"check-your-answers",
 
-    "/check-your-answers":"add-another-connected-person",
+    "/category-other-director-details-1":"category-other-director-residency-1",
+    "/category-other-director-residency-1":"category-other-director-address-1",
+    "/category-other-director-address-1":"check-your-answers",
 
-/*    "/is-same-address": "address-2",
-    "/address-2": "legal-formation",
-    "/legal-formation": "companies-house-number",
-    "/companies-house-number": "nature-of-control",
-    "/nature-of-control": "registerable-date",
-    "/registerable-date": "register-name",
-    "/register-name": "check-your-answers",
-    "/check-your-answers": "add-another"*/
+    "/category-other-indvidual-with-control-name-1":"category-other-indvidual-with-control-adress-1",
+    "/category-other-indvidual-with-control-adress-1":"category-other-indvidual-with-control-nature-of-control-1",
+    "/category-other-indvidual-with-control-nature-of-control-1":"category-other-indvidual-with-control-registration-date-1",
+    "/category-other-indvidual-with-control-registration-date-1":"category-other-indvidual-with-control-register-1",
+    "/category-other-indvidual-with-control-register-1":"check-your-answers",
+
+    "/check-your-answers":"add-another-connected-person"
 }
 
 var oViews = {
@@ -94,11 +98,23 @@ var oViews = {
     "/other-org-with-control-registration-date-1":"date.html",
     "/other-org-with-control-legal-form-1":"legal-formation.html",
 
+    "/category-other-1": "category.html",
 
+    "/category-other-psc-details-1":"person.html",
+    "/category-other-psc-address-1":"address.html",
+    "/category-other-psc-nature-of-control-1":"nature-of-control.html",
+    "/category-other-psc-registration-date-1":"date.html",
+    "/category-other-psc-register-1":"register-name.html",
 
-    "/category-indv-1": "category.html",
-    "/category-trust-1": "category.html",
-    "/person-name-only": "person.html"
+    "/category-other-director-details-1":"person.html",
+    "/category-other-director-residency-1":"residency.html",
+    "/category-other-director-address-1":"address.html",
+
+    "/category-other-indvidual-with-control-name-1":"person.html",
+    "/category-other-indvidual-with-control-adress-1":"address.html",
+    "/category-other-indvidual-with-control-nature-of-control-1":"nature-of-control.html",
+    "/category-other-indvidual-with-control-registration-date-1":"date.html",
+    "/category-other-indvidual-with-control-register-1":"register-name.html"
 }
 
 var listOfCountries = require('../../../data/data').nationalities;
@@ -121,10 +137,10 @@ router.post('/has-connected-person', function (req, res, next) {
 router.post('/cp-type-1', function (req, res, next) {
     switch(req.body.typeOfConnectedPerson){
         case 'Individual':
-            res.redirect("category-indv-1");
+            res.redirect("category-other-1");
             break;
         case 'Trustee or trust':
-            res.redirect("category-trust-1");
+            res.redirect("category-other-1");
             break;
         default:
             res.redirect("category-org-1");
@@ -187,15 +203,18 @@ router.post('/other-org-with-control-ch-number-1', function (req, res, next) {
 });
 
 
-
-
-// router.post('/category-other', function (req, res, next) {
-//     if ( req.body.categoryOfConnectedPerson == 'any other individual with significant influence or control' ){
-//         res.redirect('person-name-only');
-//     } else {
-//         return next();
-//     }
-// });
+router.post('/category-other-1', function (req, res, next) {
+    switch(req.body.categoryOfConnectedPerson){
+        case 'director or individual with the same responsibilities':
+            res.redirect("category-other-director-details-1");
+            break;
+        case 'any other individual with significant influence or control':
+            res.redirect("category-other-indvidual-with-control-name-1");
+            break;
+        default:
+            res.redirect("category-other-psc-details-1");
+    }
+});
 
 
 

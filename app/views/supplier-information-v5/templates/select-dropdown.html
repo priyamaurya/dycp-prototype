@@ -1,0 +1,28 @@
+<!--
+{*% set inputName="connectedPerson" %*}
+{*% set heading="Enter the organisation's name" %*}
+{*% set options=[array] %*}
+
+
+OPTIONAL:
+{*% set headingCaption="[Caption]" %*}
+{*% set hintText="[hint text here...]" %*}
+-->
+
+
+<div class="govuk-form-group">
+    {% include "./heading-caption.html" %}
+
+    <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--l" for="{{ inputName }}">{{ heading }}</label>
+    </h1>
+
+    {% include "./hint-text.html" %}
+    
+    <select class="govuk-select govuk-!-width-two-thirds"  name="{{ inputName }}" id="{{ inputName }}" {% if hintText %}aria-describedby="{{ inputName }}-hint"{% endif %}>
+        <option value="choose" selected>Select</option>
+        {% for option in options %}
+            <option value="{{ option.value }}">{{ option.value }}</option>
+        {% endfor %}
+    </select>
+</div>
