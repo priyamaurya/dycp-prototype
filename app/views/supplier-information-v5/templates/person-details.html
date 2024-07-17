@@ -1,0 +1,82 @@
+<!--
+{*% set heading="Enter the organisation's name" %*}
+
+OPTIONAL:
+{*% set hideDobAndNationality = true %*}
+-->
+
+
+{% include "./heading-caption.html" %}
+
+<h1 class="govuk-heading-l">
+    {{ heading }}
+</h1>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="firstName">
+       First name
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="firstName" name="firstName" type="text">
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="lastName">
+       Last name
+    </label>
+    <input class="govuk-input govuk-input--width-20" id="lastName" name="lastName" type="text">
+</div>
+
+{% if hideDobAndNationality %}
+
+{% else %}
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="dobHint">
+        <legend class="govuk-fieldset__legend">
+        Date of birth
+        </legend>
+        <div id="dobHint" class="govuk-hint">
+        For example, 27 3 2007
+        </div>
+        <div class="govuk-date-input" id="dob">
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dobDay">
+                    Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dobDay" name="dobDay" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dobMonth">
+                    Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dobMonth" name="dobMonth" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dobYear">
+                    Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dobYear" name="dobYear" type="text" inputmode="numeric">
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="selectNationality">
+        Nationality
+    </label>
+    <select class="govuk-select" id="selectNationality" name="selectNationality">
+        <option value=""></option>
+        {% for nationality in data['listOfCountries'] %}
+            <option value="{{ nationality.value }}">{{ nationality.value }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+{% endif %}

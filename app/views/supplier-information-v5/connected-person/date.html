@@ -19,9 +19,15 @@
             {% set inputName="connectedPersonDate" %}
             {% set headingCaption=data['connectedPersons'] %}
             {% set heading="What date was [Org] registered as a 'connected person'?" %}
-            {% set hintText="For example, the date a person with significant control was registerd with Companies House.
+            {% set hintText="For example, the date a person with significant control was registered with Companies House.
             <br><br>
             For example, 27 03 2007" %}
+
+            {% if page == '/other-org-with-control-registration-date-1' %}
+                {% set hintText="The date the organisation began to have an interest in, or influence or control over, your organisation. You will have had to register this date on Companies House or a similar register.
+                <br><br>
+                For example, 27 03 2007" %}
+            {% endif %}
 
             {% include("../templates/date.html") %}
             

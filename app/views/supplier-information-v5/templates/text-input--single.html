@@ -18,5 +18,5 @@ OPTIONAL:
 
     {% include "./hint-text.html" %}
     
-    <input class="govuk-input" name="{{ inputName }}" id="{{ inputName }}" type="text" {% if hintText %}aria-describedby="{{ inputName }}-hint"{% endif %}>
+    <input class="govuk-input govuk-!-width-two-thirds" name="{{ inputName }}" id="{{ inputName }}" type="text" {% if hintText %}aria-describedby="{{ inputName }}-hint"{% endif %}>
 </div>

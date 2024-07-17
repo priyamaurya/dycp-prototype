@@ -25,15 +25,47 @@
             {% set options=[] %}
             {% set optionHints=[] %}
 
-            {% set options=(options.push("registered company"), options) %}
+            <!-- options for org -->
+            {% if page == "/category-org-1" %}
 
-            {% set options=(options.push("director or the same responsibilities"), options) %}
+                {% set options=(options.push("registered company"), options) %}
 
-            {% set options=(options.push("parent or subsidiary company"), options) %}
+                {% set options=(options.push("director or the same responsibilities"), options) %}
 
-            {% set options=(options.push("a company your organisation has taken over"), options) %}
+                {% set options=(options.push("parent or subsidiary company"), options) %}
 
-            {% set options=(options.push("any other organisation with significant influence or control"), options) %}
+                {% set options=(options.push("a company your organisation has taken over"), options) %}
+
+                {% set options=(options.push("any other organisation with significant influence or control"), options) %}
+
+            {% endif %}
+
+            <!-- options for individual -->
+
+            {% if page == "/category-indv-1" %}
+
+                {% set options=(options.push("person with significant control"), options) %}
+
+                {% set options=(options.push("director or individual with the same responsibilities"), options) %}
+
+                {% set options=(options.push("any other individual with significant influence or control"), options) %}
+
+            {% endif %}
+
+            <!-- options for trustee -->
+
+            {% if page == "/category-trust-1" %}
+
+                {% set options=(options.push("person with significant control"), options) %}
+
+                {% set options=(options.push("director or individual with the same responsibilities"), options) %}
+
+                {% set options=(options.push("any other individual with significant influence or control"), options) %}
+
+            {% endif %}
+
+
+            <!-- -->
 
             {% include("../templates/radios.html") %}
             {% include("../templates/button--submit.html") %}
