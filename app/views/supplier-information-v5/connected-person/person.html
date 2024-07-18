@@ -19,7 +19,8 @@
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
             {% set heading="Enter the person with significant control's details" %}
 
-            {% if page == '/category-other-indvidual-with-control-name-1' %}
+            {% if page == '/category-other-indvidual-with-control-name-1'
+                or page == '/category-other-psc-details-2' %}
                 {% set hideDobAndNationality = true %}
             {% endif %}
 

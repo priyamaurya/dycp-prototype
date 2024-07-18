@@ -29,6 +29,12 @@
                 For example, 27 03 2007" %}
             {% endif %}
 
+
+            {% if page == '/taken-over-company-insolvent-date-2' %}
+                {% set heading="When did [Org] become insolvent?" %}
+                {% set hintText="The date it stopped trading under its own name." %}
+            {% endif %}
+
             {% include("../templates/date.html") %}
             
             {% include("../templates/button--submit.html") %}
