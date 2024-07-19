@@ -275,7 +275,7 @@ router.post("/add-another-exclusion", function (req, res) {
   delete req.session.data.editExclusionMan;
 
   if (req.session.data.addAnotherExclusionMan == "Yes") {
-    res.redirect("exclusion-grounds-in-UK");
+    res.redirect("uk-event");
   } else {
     let startQuestion = req.session.data.startQuestion;
     if (startQuestion == "Company") {
