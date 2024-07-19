@@ -158,6 +158,10 @@ router.post("/event-mitigation", function (req, res) {
 });
 
 router.post("/event-documents", function (req, res) {
+  res.redirect("event-link");
+});
+
+router.post("/event-link", function (req, res) {
   res.redirect("event-ongoing");
 });
 
