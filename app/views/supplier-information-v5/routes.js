@@ -28,11 +28,13 @@ router.get('/*', function(req,res, next){
 
     // console.log(req.session)
 
+  } else {
+    return next();
   }
 
   console.log(req.session)
 
-  return next();
+  
 
     
 });
