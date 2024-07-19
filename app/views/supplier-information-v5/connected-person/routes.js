@@ -180,6 +180,10 @@ var oViews = {
   "/category-other-psc-nature-of-control-1": "nature-of-control.html",
   "/category-other-psc-registration-date-1": "date.html",
   "/category-other-psc-register-1": "register-name.html",
+  //-------
+
+  "/cp-type-2": "type.html",
+  "/category-org-2": "category.html",
 
   "/category-other-director-details-1": "person.html",
   "/category-other-director-residency-1": "residency.html",
