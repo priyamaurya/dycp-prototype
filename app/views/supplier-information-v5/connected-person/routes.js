@@ -173,6 +173,7 @@ var oViews = {
     "/category-other-indvidual-with-control-register-1":"register-name.html",
 
     //-------
+    
     "/cp-type-2":"type.html",
     "/category-org-2": "category.html",
 

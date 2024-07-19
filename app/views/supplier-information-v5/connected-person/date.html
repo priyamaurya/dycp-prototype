@@ -30,9 +30,12 @@
             {% endif %}
 
 
-            {% if page == '/taken-over-company-insolvent-date-2' %}
+            {% if page == '/taken-over-company-insolvent-date-1'
+                    or page == '/taken-over-company-insolvent-date-2' %}
                 {% set heading="When did [Org] become insolvent?" %}
-                {% set hintText="The date it stopped trading under its own name." %}
+                {% set hintText="The date it stopped trading under its own name.
+                <br><br>
+                For example, 27 03 2007" %}
             {% endif %}
 
             {% include("../templates/date.html") %}
