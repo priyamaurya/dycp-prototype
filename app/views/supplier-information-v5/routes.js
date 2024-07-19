@@ -11,10 +11,30 @@ const { nextTick } = require('node:process');
 // Route index page
 
 router.get('/*', function(req,res, next){
-  if (!req.session.proto_version)
+  if (!req.session.proto_version  ){
     res.redirect('/one-login/?v=5');
-  else
-    return next();
+    // req.data = {};
+    // req.session.proto_version = req.data["v"] = 5;
+
+    
+    // req.data["emailAddress"] = 'info@random.com';
+    // req.data["password"] = '';
+    // req.data["code"] = '';
+    // req.data["firstName"] = 'Joe';
+    // req.data["lastName"] = 'Bloggs';
+    // req.data["chno"] = 'Yes';
+    // req.data["chnoInput"] = req.data["orgid"] = '93902093';
+    // req.data["orgName"] = '[Random Limited]';
+
+    // console.log(req.session)
+
+  }
+
+  console.log(req.session)
+
+  return next();
+
+    
 });
 
 router.get('/start', function (req, res) {
