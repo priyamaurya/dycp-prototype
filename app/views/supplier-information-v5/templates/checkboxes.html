@@ -13,6 +13,7 @@
 Optional:
 {*% set headingCaption="Heading caption" %*}
 {*% set hintText="hint text..." %*}
+{*% set showOr=true %*}
 -->
 
 <div class="govuk-form-group">
@@ -21,9 +22,14 @@ Optional:
 
     {% include "./hint-text.html" %}
 
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      
+      <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
       {% for i in range(0, options.length) %}
+
+      {% if showOr and i == options.length-1 %}
+        <div class="govuk-checkboxes__divider">or</div>
+      {% endif %}
 
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="{{inputName}}-{{ i }}" name="{{inputName}}" type="checkbox" value="{{ options[i] }}" {% if optionHints[i] %}aria-describedby="{{inputName}}Hint-1"{% endif %}>

@@ -16,15 +16,11 @@
 
         <form class="form" method="post">
 
-            {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="Enter the person with significant control's details" %}
+            {% set inputName="removeConnectedPerson" %}
+            {% set heading="Are you sure you want to remove this connected person?" %}
+            {% set revealLabel = "When was the connected person no longer associated to your organisation?" %}
 
-            {% if page == '/category-other-indvidual-with-control-name-1'
-                or page == '/category-other-indvidual-with-control-name-2' %}
-                {% set hideDobAndNationality = true %}
-            {% endif %}
-
-            {% include("../templates/person-details.html") %}
+            {% include("../templates/radio-yes-no-reveal-date.html") %}
         
             {% include("../templates/button--submit.html") %}
             

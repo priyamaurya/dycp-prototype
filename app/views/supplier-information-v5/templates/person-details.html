@@ -30,42 +30,10 @@ OPTIONAL:
 
 {% else %}
 
-<div class="govuk-form-group">
-    <fieldset class="govuk-fieldset" role="group" aria-describedby="dobHint">
-        <legend class="govuk-fieldset__legend">
-        Date of birth
-        </legend>
-        <div id="dobHint" class="govuk-hint">
-        For example, 27 3 2007
-        </div>
-        <div class="govuk-date-input" id="dob">
-            <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dobDay">
-                    Day
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dobDay" name="dobDay" type="text" inputmode="numeric">
-                </div>
-            </div>
-            <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dobMonth">
-                    Month
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dobMonth" name="dobMonth" type="text" inputmode="numeric">
-                </div>
-            </div>
-            <div class="govuk-date-input__item">
-                <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="dobYear">
-                    Year
-                </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dobYear" name="dobYear" type="text" inputmode="numeric">
-                </div>
-            </div>
-        </div>
-    </fieldset>
-</div>
+{% set displayHeadingAsLabel = true %}
+{% set heading = "Date of birth" %}
+{% set hintText = "For example, 27 3 2007" %}
+{% include "./date.html" %}
 
 <div class="govuk-form-group">
     <label class="govuk-label" for="selectNationality">

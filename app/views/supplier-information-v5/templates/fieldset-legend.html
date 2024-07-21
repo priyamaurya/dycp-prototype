@@ -1,3 +1,11 @@
+{% if displayHeadingAsLabel %}
+
+<legend class="govuk-fieldset__legend">
+    {{ heading }}
+</legend>
+
+{% else %}
+
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     {% include "./heading-caption.html" %}
 
@@ -5,3 +13,4 @@
         {{ heading }}
     </h1>
 </legend>
+{% endif %}

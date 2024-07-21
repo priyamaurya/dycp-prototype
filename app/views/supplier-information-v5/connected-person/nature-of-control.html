@@ -18,8 +18,9 @@
 
             {% set inputName="natureOfControl" %}
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="Which specified conditions of control does [Org] have?" %}
+            {% set heading="Which specified conditions of control does [person/Org] have?" %}
             {% set hintText="As defined in <a href=\"https://www.legislation.gov.uk/ukpga/2006/46/schedule/1A/part/1?timeline=false\" target=\"_blank\">part 1 schedule 1a of the Companies Act 2006</a>. Select all that apply." %}
+            {% set showOr = true%}
 
             <!-- user options -->
 
@@ -37,6 +38,8 @@
 
             {% set options=(options.push("Has other significant influence or control"), options) %}
             {% set optionHints=(optionHints.push("Has the right to exercise, or exercises, significant influence or control over company. As defined in the <a href=\"#\">person of significant control (PSC) guidance</a>"), optionHints) %}
+
+            {% set options=(options.push("None apply"), options) %}
 
 
             {% include("../templates/checkboxes.html") %}

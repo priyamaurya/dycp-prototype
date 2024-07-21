@@ -11,32 +11,22 @@ const { nextTick } = require('node:process');
 // Route index page
 
 router.get('/*', function(req,res, next){
+
+  console.log(req.session.data)
   if (!req.session.proto_version  ){
-    res.redirect('/one-login/?v=5');
-    // req.data = {};
-    // req.session.proto_version = req.data["v"] = 5;
-
-    
-    // req.data["emailAddress"] = 'info@random.com';
-    // req.data["password"] = '';
-    // req.data["code"] = '';
-    // req.data["firstName"] = 'Joe';
-    // req.data["lastName"] = 'Bloggs';
-    // req.data["chno"] = 'Yes';
-    // req.data["chnoInput"] = req.data["orgid"] = '93902093';
-    // req.data["orgName"] = '[Random Limited]';
-
-    // console.log(req.session)
-
-  } else {
+    req.session.proto_version = 5;
+    req.session.data["v"] = 5
+    req.session.data["firstName"] = 'Joe';
+    req.session.data["lastName"] = 'Bloggs';
+    req.session.data["chno"] = "Yes"
+    req.session.data["chnoInput"] = "93939393"
+    req.session.data["orgName"] = '[Random Limited]';
+    req.session.data["orgType"] = 'Supplier';
+    req.session.data["emailAddress"] = 'info@randomlimited.co.uk';
+  } 
+  // else {
     return next();
-  }
-
-  console.log(req.session)
-
-  
-
-    
+  // }
 });
 
 router.get('/start', function (req, res) {
