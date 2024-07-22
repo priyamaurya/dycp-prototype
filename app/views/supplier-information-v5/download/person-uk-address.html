@@ -25,15 +25,16 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 {% if data['postcode'] | length == "0" %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter the supplier’s declaration address
+                    Enter your postal address
                 </h1>
-                
+
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
                     Address not found, enter the supplier’s declaration address manually
                 </h1>
                 {% endif %}
             </legend>
+      
 
             <p>
                 <a href="org-address-overseas">Enter a non-UK address</a>
