@@ -32,14 +32,8 @@
                             Was the decision recorded on a public authority website? 
                         </h1>
                     </legend>
-                    <p class="govuk-body">
-                        <p>A decision from a public authority that was the basis for the offence. For example, documentation from the police, HMRC or the court. </p>
-                        <p>Was in the case of a conviction or other event where there is a recorded decision of a public authority which is the authoritative basis for the conviction or other event— 
-                        <br>
-                        (i) a link to the web page where the decision can be accessed, or
-                        <br>
-                        (ii) a copy of the decision</p>
-                    </p>
+                    <div id="document-hint" class="govuk-hint">
+                        For example, the outcome of a court decision for a conviction or other event.  </div>
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="documents-2" name="documents-2" type="radio" value="Yes" data-aria-controls="conditional-webiste" {% if data['documents-2'] == 'Document upload' %} checked {% endif %} >
