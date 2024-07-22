@@ -53,9 +53,7 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}"
-            >Connected persons</a
-          >
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Connected persons</a><br /><a class="govuk-link govuk-link--no-visited-state" href="connected-person/start">Connected persons (new)</a>
         </dt>
         <dd class="govuk-summary-list__value">{{ value }}</dd>
         <dd class="govuk-summary-list__actions">
@@ -161,7 +159,7 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           <a class="govuk-link govuk-link--no-visited-state" href="download/manage-codes"
-            >Share my data</a
+            >Share my information</a
           >
         </dt>
         <dd class="govuk-summary-list__value">{{ value }}</dd>

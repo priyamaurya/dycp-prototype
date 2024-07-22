@@ -17,12 +17,20 @@
         <form class="form" method="post">
 
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="Enter [Org]'s registered address" %}
+            {% set heading="Enter [person/Org]'s registered address" %}
             {% set description="The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
 
+            {% if page == "/category-other-psc-address-2" 
+                    or page == "/category-other-director-address-2"
+                    or page == "/category-other-indvidual-with-control-adress-2"
+                    or page == "/registered-company-service-address-2"
+                    or page == "/director-service-address-2"
+                    or page == "/parent-company-service-address-2"
+                    or page == "/other-org-with-control-service-address-2" %}
+                {% set heading="Enter [person/Orgs]'s postal address" %}
+            {% endif %}
+
             {% include("../templates/address.html") %}
-            
-            
             {% include("../templates/button--submit.html") %}
             
         </form>

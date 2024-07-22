@@ -18,10 +18,18 @@
 
             {% set inputName="registerName" %}
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="What register is [Org] declared on?" %}
-            {% set hintText="For example, the Companies House persons with significant control register." %}
+            {% set heading="Select where [person/Org] is registered as person with significant control" %}
 
-            {% include("../templates/text-input--single.html") %}
+            {% set options=[] %}
+            {% set options=(options.push("People with significant control register on Companies House"), options) %}
+            {% set options=(options.push("Other"), options) %}
+
+            {% set optionReveals=[false, "Enter the register name"] %}
+
+            {% include("../templates/radios.html") %}
+
+
+
             {% include("../templates/button--submit.html") %}
             
         </form>

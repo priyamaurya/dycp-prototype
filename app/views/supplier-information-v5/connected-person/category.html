@@ -26,7 +26,7 @@
             {% set optionHints=[] %}
 
             <!-- options for org -->
-            {% if page == "/category-org-1" %}
+            {% if page == "/category-org-1" or page == "/category-org-2" %}
 
                 {% set options=(options.push("registered company"), options) %}
 
@@ -40,39 +40,15 @@
 
             {% endif %}
 
-            {% if page == "/category-org-2" %}
-
-                {% set options=(options.push("equivalent to a registered company"), options) %}
-
-                {% set options=(options.push("equivalent to a director or organisation with the same responsibilities"), options) %}
-
-                {% set options=(options.push("equivalent to a parent or subsidiary company"), options) %}
-
-                {% set options=(options.push("equivalent to a company your organisation has taken over"), options) %}
-
-                {% set options=(options.push("equivalent to any other organisation with significant influence or control"), options) %}
-
-            {% endif %}
-
             <!-- options for individual -->
 
-            {% if page == "/category-other-1" %}
+            {% if page == "/category-other-1" or page == "/category-other-2" %}
 
                 {% set options=(options.push("person with significant control"), options) %}
 
                 {% set options=(options.push("director or individual with the same responsibilities"), options) %}
 
                 {% set options=(options.push("any other individual with significant influence or control"), options) %}
-
-            {% endif %}
-
-            {% if page == "/category-other-2" %}
-
-                {% set options=(options.push("equivalent to a person with significant control"), options) %}
-
-                {% set options=(options.push("equivalent to a director or individual with the same responsibilities"), options) %}
-
-                {% set options=(options.push("equivalent to a any other individual with significant influence or control"), options) %}
 
             {% endif %}
 

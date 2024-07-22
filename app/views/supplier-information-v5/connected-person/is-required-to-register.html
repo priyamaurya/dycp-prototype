@@ -16,15 +16,12 @@
 
         <form class="form" method="post">
 
-            {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="Enter the person with significant control's details" %}
+            {% set inputName="isRequiredToRegisterAsPSC" %}
+            {% set heading="Where you required to register [person/Org] as a person with significant control?" %}
+            {% set hintText="Are they [is it] registrable as defined by <a href=\"#\">section 790C(4) of the Companies Act 2006 (opens in new tab)</a>" %}
+            {% set revealLabel="On what date?" %}
 
-            {% if page == '/category-other-indvidual-with-control-name-1'
-                or page == '/category-other-indvidual-with-control-name-2' %}
-                {% set hideDobAndNationality = true %}
-            {% endif %}
-
-            {% include("../templates/person-details.html") %}
+            {% include("../templates/radio-yes-no-reveal-date.html") %}
         
             {% include("../templates/button--submit.html") %}
             

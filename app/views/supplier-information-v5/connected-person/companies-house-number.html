@@ -19,14 +19,18 @@
 
             {% set inputName="hasCompaniesHouseNumber" %}
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="Is [Org] registered with Companies House?" %}
+            {% set heading="Is [person/Org] registered with Companies House?" %}
             {% set hintText="Is the 'connected person' registered with Companies House as required by the Companies Act 2006." %}
             {% set revealInputLabel="Companies House number" %}
             
             {% if page == '/other-org-with-control-ch-equivalent-overseas-1' 
                 or page == '/other-org-with-control-ch-equivalent-overseas-2'
-                or page == '/category-other-indvidual-with-control-ch-equivalent-overseas-2' %}
-                {% set heading="Is [Org] registered with an overseas equivalent to Companies House?" %}
+                or page == '/category-other-indvidual-with-control-ch-equivalent-overseas-2'
+                or page == '/registered-company-ch-equivalent-overseas-2'
+                or page == '/director-ch-equivalent-overseas-2'
+                or page == '/parent-company-ch-equivalent-overseas-2'
+                or page == '/taken-over-company-ch-equivalent-overseas-2' %}
+                {% set heading="Is [person/Org] registered with an overseas equivalent to Companies House?" %}
                 {% set hintText="Is the 'connected person' registered with a similar non-UK body that incorporates companies?" %}
                 {% set revealInputLabel="What is the the registration number given under that Act?" %}
             {% endif %}

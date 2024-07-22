@@ -6,11 +6,11 @@
 
 
   <h1 class="govuk-heading-l">
-    Select the penalty, conviction or court ruling 
+    Select which exclusion applies
   </h1>
   <p class="govuk-body">
-    Select one. If you need to, you can add another at the end.</p>
-    <p>As this happened outside the UK, select the equivalent offence for where it took place.</p>
+    Select one. If you need to, you can add another at the end.
+    <p>As this exclusion happened outside the UK, select the equivalent offence for where it took place. 
   </p>
   <span class="govuk-caption-l">
     {{ data['mandatory'] }}
@@ -48,27 +48,22 @@
               
             </legend>
 
-            <!--<div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
+            <!-- <div id="mandatory-hint" class="govuk-hint govuk-!-margin-top-4">
               As this was outside the UK, select the equivalent penalty.
-            </div>-->
-            <h2 class="govuk-heading-m">Penalties</h2>
-            
+            </div> -->
+
+            <h2 class="govuk-heading-m">Mandatory exclusions</h2>
+            <h3 class="govuk-heading-s">Penalties and other events</h3>
+            <p>Detailed in <a
+              href="" target="_blank">Schedule 6 of the Procurement Act 2023 (opens in new tab)</a>.
+            </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
               value="Adjustments for tax arrangements that are abusive"> 
               <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-              Abusive tax arrangements
+                Adjustments for tax arrangements that are abusive
               </label>
             </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
-              value="Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice"> 
-              <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-              Abusive VAT practice finding
-              </label>
-            </div>
-
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
@@ -78,12 +73,27 @@
               </label>
             </div>
 
-            
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
               value="Defeat in respect of notifiable tax arrangements"> 
               <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
               Defeat in respect of notifiable tax arrangements
+              </label>
+            </div>
+          
+          <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
+              value="Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice"> 
+              <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
+                Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
+              value="Penalties for transactions connected with VAT fraud and evasion or tax or duty"> 
+              <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
+                Penalties for transactions connected with VAT fraud and evasion of tax or duty 
               </label>
             </div>
 
@@ -92,38 +102,27 @@
               <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
               value="Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing"> 
               <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-              Deliberate wrongdoing in tax, VAT and excise documentation and failure to notify
+                Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise
               </label>
             </div>
 
+            <p></p>
             
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
-              value="Failure to cooperate with investigation"> 
-              <label class="govuk-label govuk-radios__label" for="exclusionMan13"> 
-              Failure to cooperate with investigation
-              </label>
-            </div>
 
-            
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
-              value="Penalties for transactions connected with VAT fraud and evasion or tax or duty"> 
-              <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-              VAT fraud, tax or duty evasion
-              </label>
-            </div>
+  
               
               <!--  Penalties Section -->
-              <h2 class="govuk-heading-m">Convictions</h2>
-              
+              <h3 class="govuk-heading-s">Convictions</h2>
+              <div id="conviction-body" class="govuk-body">Detailed in <a
+                href="" target="_blank">Schedule 6 of the Procurement Act 2023 (opens in new tab)</a>.
+              </div>
               <div class="govuk-radios" data-module="govuk-radios">
 
                 <div class="govuk-radios__item govuk-!-margin-top-6">
                   <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                   value="Ancillary offences"> 
                   <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-                  Aiding, abetting, encouraging or assisting crime
+                  Ancillary offences - aiding, abetting, encouraging or assisting crime
                   </label>
                 </div>
   
@@ -169,7 +168,7 @@
                   <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                     value="Tax offences">
                   <label class="govuk-label govuk-radios__label" for="exclusionMan">
-                    Tax and National Insurance evasion
+                    Tax offences
                   </label>
                 </div>
   
@@ -191,11 +190,14 @@
                   </label>
                 </div>
   
-              
+              <p></p>
 
               <!-- Court Rulings -->
 
-              <h2 class="govuk-heading-m">Court rulings</h2>
+              <h2 class="govuk-heading-m">Discretionary exclusions</h2>
+              <div id="penalty-body" class="govuk-body">Detailed in <a
+                href="" target="_blank">Schedule 7 of the Procurement Act 2023 (opens in new tab)</a>.
+              </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
@@ -222,6 +224,12 @@
                 </label>
               </div>
 
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
+                value="Infringement of the Competition Act 1998, under Chapter II prohibition"> 
+                <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
+                Infringement of Competition Act 1998, under Chapter II prohibition
+              </div>
               
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
@@ -256,13 +264,6 @@
                 <label class="govuk-label govuk-radios__label" for="exclusionMan13"> 
                 Professional misconduct
                 </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
-                value="Prohibition infringement of the Competition Act 1998, under Chapter II, or equivalent outside the UK "> 
-                <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-                Prohibition infringement of the Competition Act 1998, under Chapter II
               </div>
 
               <div class="govuk-radios__item"> 

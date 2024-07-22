@@ -25,21 +25,23 @@
 
     <form class="form govuk-!-margin-top-7" method="post">
 
-      <button role="button" draggable="false" class="govuk-button  govuk-button--inverse" data-module="govuk-button ">
+      <!--<button role="button" draggable="false" class="govuk-button  govuk-button--inverse" data-module="govuk-button ">
         Download file
         <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
           viewBox="0 0 33 40" aria-hidden="true" focusable="false" style="rotate: 90deg;">
           <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
         </svg>
-      </button>
-  
+      </button>-->
+
     </form>
   </div>
+  <p>Some text in here... Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <p>Download your supplier information</p>
   <p><a href="../org-dashboard">Back to organisation details</a></p>
   <!-- <p class="govuk-body">We have sent you a confirmation email.</p> -->
   <!-- <h2 class="govuk-heading-m">You can now download the file.</h2> -->
 
-  
+
 
 
 </div>
@@ -111,11 +113,11 @@
   document.addEventListener("DOMContentLoaded", function () {
     // Find the "Download now" button by its ID
     const downloadButton = document.getElementById("downloadButton");
-  
+
     // Add a click event listener to the button
     downloadButton.addEventListener("click", function (e) {
       e.preventDefault(); // Prevent the default link behavior
-  
+
       // Make an AJAX request to trigger the '/download' route
       fetch('/download', {
         method: 'POST',
@@ -136,7 +138,7 @@
     });
   });
   </script>
-  
+
 
 
 {% endblock %}
