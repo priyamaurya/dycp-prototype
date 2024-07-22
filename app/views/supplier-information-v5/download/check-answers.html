@@ -24,23 +24,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Documentation type:
-                    </dt>
-
-                    <dd class="govuk-summary-list__value">
-                        {{ data['download'] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="download">
-                            Change<span class="govuk-visually-hidden">
-                                the type of documentation</span>
-                        </a>
-                    </dd>
-                </div>
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Declaration statement:
+                        Declaration:
                     </dt>
 
                     <dd class="govuk-summary-list__value">
@@ -56,12 +40,12 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Declaration person:
+                        Declared by:
                     </dt>
 
                     <dd class="govuk-summary-list__value">
-                        {{ data['declarationName'] }}</br>
-                        {{ data['declarationRole'] }}</br>
+                        {{ data['declarationName'] }}
+
                         {{ data['declarationEmail'] }}</br>
                         {{ data['declarationNumber'] }}
                     </dd>
@@ -74,8 +58,36 @@
                 </div>
 
                 {% if data['addressSame'] == "Yes" and data['addressTypeBasic'] == "No" %}
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Job title:
+                    </dt>
 
+                    <dd class="govuk-summary-list__value">
+                        {{ data['declarationRole'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="declaration.html">
+                            Change<span class="govuk-visually-hidden">
+                                the further details</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Email address:
+                    </dt>
 
+                    <dd class="govuk-summary-list__value">
+                        {{ data['declarationEmail'] }}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="declaration.html">
+                            Change<span class="govuk-visually-hidden">
+                                the further details</span>
+                        </a>
+                    </dd>
+                </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Registered or principal office address:
@@ -159,7 +171,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Person address:
+                        Postal address:
                     </dt>
                     <dd class="govuk-summary-list__value">
                         {{ data['shareAddress'] }}
@@ -176,7 +188,7 @@
 
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Person address:
+                        Postal address:
                     </dt>
                     {% if data['declaration-address-line-2'] |length != "0" and
                     data['declaration-address-county'] |
@@ -214,16 +226,11 @@
     </div>
     <div class="govuk-grid-column-two-thirds">
 
-        <h3 class="govuk-heading-m govuk-!-margin-top-9">Now submit your declaration</h3>
 
-        <p class="govuk-body">
-            By submitting this data you are confirming that, to the best of your knowledge, the details you are
-            providing are correct.
-        </p>
 
         <div class="govuk-button-group govuk-!-margin-top-9">
             <button class="govuk-button" data-module="govuk-button">
-                Submit
+                Confirm and get share code
             </button>
         </div>
 
