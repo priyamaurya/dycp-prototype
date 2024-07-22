@@ -227,11 +227,13 @@ var oViews = {
   "/taken-over-company-insolvent-date-2": "date.html",
 
   "/other-org-with-control-name-2": "name.html",
+  "/other-org-with-control-ch-number-2": "companies-house-number.html",
   "/other-org-with-control-address-2": "address.html",
   "/is-other-org-with-control-address-same-2": "is-same-address.html",
   "/other-org-with-control-service-address-2": "address.html",
   "/other-org-with-control-nature-of-control-2": "nature-of-control.html",
-  "/other-org-with-control-ch-equivalent-overseas-2": "companies-house-number",
+  "/other-org-with-control-ch-equivalent-overseas-2":
+    "companies-house-number.html",
   "/other-org-with-control-registration-date-2": "date.html",
   "/other-org-with-control-legal-form-2": "legal-formation.html",
 
