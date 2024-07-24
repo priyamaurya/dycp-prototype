@@ -21,9 +21,24 @@
             {% set description="The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
             {% set addressType="non-uk" %}
 
+            {% if page == '/registered-company-address-2-non-uk' 
+                or page == "/director-address-2-non-uk"
+                or page == "/parent-company-address-2-non-uk"
+                or page == "/taken-over-company-address-2-non-uk"
+                or page == "/other-org-with-control-address-2-non-uk" %}
+                {% set description="In the UK this is the address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
+            {% endif %}
+
+            {% if page == "/registered-company-service-address-2-non-uk"
+                    or page == "/director-service-address-2-non-uk"
+                    or page == "/parent-company-service-address-2-non-uk"
+                    or page == "/other-org-with-control-service-address-2-non-uk" %}
+                {% set heading="Enter [person/Orgs]'s postal address" %}
+                {% set description=undefined %}
+            {% endif %}
+
+
             {% include("../templates/address.html") %}
-            
-            
             {% include("../templates/button--submit.html") %}
             
         </form>

@@ -21,6 +21,10 @@
             {% set heading="Enter the organisation's name" %}
             {% set hintText="The name of the 'connected person' that has control or influence over your organisation." %}
 
+            {% if page == "/taken-over-company-name-2" %}
+                {% set hintText = undefined %}
+            {% endif %}
+
             {% include("../templates/text-input--single.html") %}
             {% include("../templates/button--submit.html") %}
             

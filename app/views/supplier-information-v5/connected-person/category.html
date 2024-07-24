@@ -28,7 +28,11 @@
             <!-- options for org -->
             {% if page == "/category-org-1" or page == "/category-org-2" %}
 
-                {% set options=(options.push("registered company"), options) %}
+                {% if page == "/category-org-2" %}
+                    {% set options=(options.push("registered company or equivalent"), options) %}
+                {% else %}
+                    {% set options=(options.push("registered company"), options) %}
+                {% endif %}
 
                 {% set options=(options.push("director or organisation with the same responsibilities"), options) %}
 
@@ -39,6 +43,8 @@
                 {% set options=(options.push("any other organisation with significant influence or control"), options) %}
 
             {% endif %}
+
+            
 
             <!-- options for individual -->
 

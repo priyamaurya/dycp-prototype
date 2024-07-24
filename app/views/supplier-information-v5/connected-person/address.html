@@ -19,15 +19,35 @@
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
             {% set heading="Enter [person/Org]'s registered address" %}
             {% set description="The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
+            {% set overseasAddressUrl = page.slice(1) + "-non-uk" %}
+
+            {% if page == '/registered-company-address-2' 
+                or page == "/director-address-2"
+                or page == "/parent-company-address-2"
+                or page == "/taken-over-company-address-2"
+                or page == "/other-org-with-control-address-2" %}
+                {% set description="In the UK this is the address registered with Companies House, or the principal address the business conducts its activities. For example, a head office." %}
+            {% endif %}
+
+            {% if page == "/registered-company-service-address-2"
+                    or page == "/director-service-address-2"
+                    or page == "/parent-company-service-address-2"
+                    or page == "/other-org-with-control-service-address-2-non-uk" %}
+                {% set heading="Enter [person/Orgs]'s postal address" %}
+                {% set description=undefined %}
+            {% endif %}
+
+            
+            {% if page == "/taken-over-company-address-2" %}
+                {% set heading = "Enter last known registered address" %}
+                {% set description = "The address that was registered with Companies House, or the principal address the business conducted its activities. For example, a head office." %}
+            {% endif %}
 
             {% if page == "/category-other-psc-address-2" 
                     or page == "/category-other-director-address-2"
-                    or page == "/category-other-indvidual-with-control-adress-2"
-                    or page == "/registered-company-service-address-2"
-                    or page == "/director-service-address-2"
-                    or page == "/parent-company-service-address-2"
-                    or page == "/other-org-with-control-service-address-2" %}
+                    or page == "/category-other-indvidual-with-control-adress-2" %}
                 {% set heading="Enter [person/Orgs]'s postal address" %}
+                {% set description="Do we need hint text for CH>No>Indv/Trust?" %}
             {% endif %}
 
             {% include("../templates/address.html") %}

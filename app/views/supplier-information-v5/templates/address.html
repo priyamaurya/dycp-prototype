@@ -19,7 +19,7 @@ OPTIONAL:
 
     {% if addressType != "non-uk" %}
     <p>
-        <a href="address-non-uk">Enter a non-UK address</a>
+        <a href="{% if overseasAddressUrl %}{{overseasAddressUrl}}{% else %}#{% endif %}">Enter a non-UK address</a>
     </p>
     {% endif %}
 

@@ -25,6 +25,12 @@
             {% set label2="Which law enforces it?"%}
             {% set hintText2="For example, Companies Act 2006."%}
 
+            {% if page == '/registered-company-legal-form-2'
+                    or page == '/director-legal-form-2' %}
+                    {% set hintText1 = "In the UK this is the business structure or trading status. For example, limited company or limited liability partnership." %}
+                    {% set hintText2 = "In the UK the law that enforces the business structure of a limited company is the Companies Act 2006." %}
+            {% endif %}
+
             {% include("../templates/two-text-inputs.html") %}
             {% include("../templates/button--submit.html") %}
             

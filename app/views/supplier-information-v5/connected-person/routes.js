@@ -5,7 +5,9 @@ const path = require("node:path");
 var oRoute = {
   "/registered-company-name-1": "registered-company-address-1",
   "/registered-company-address-1": "is-registered-company-address-same-1",
+  "/registered-company-address-1-non-uk": "is-registered-company-address-same-1",
   "/registered-company-service-address-1": "registered-company-legal-form-1",
+  "/registered-company-service-address-1-non-uk": "registered-company-legal-form-1",
   "/registered-company-legal-form-1": "registered-company-ch-number-1",
   "/registered-company-ch-number-1": "registered-company-nature-of-control-1",
   "/registered-company-nature-of-control-1":
@@ -67,36 +69,43 @@ var oRoute = {
 
   "/registered-company-name-2": "registered-company-address-2",
   "/registered-company-address-2": "is-registered-company-address-same-2",
+  "/registered-company-address-2-non-uk": "is-registered-company-address-same-2",
   "/registered-company-service-address-2": "registered-company-legal-form-2",
+  "/registered-company-service-address-2-non-uk": "registered-company-legal-form-2",
   "/registered-company-legal-form-2": "registered-company-ch-number-2",
   "/registered-company-ch-equivalent-overseas-2": "registered-company-nature-of-control-2",
-  "/registered-company-nature-of-control-2":
-    "registered-company-registration-date-2",
-  "/registered-company-registration-date-2": "registered-company-register-2",
+  "/registered-company-nature-of-control-2":"registered-company-registration-date-2",
   "/registered-company-register-2": "check-your-answers",
 
   "/director-name-2": "director-address-2",
   "/director-address-2": "is-director-address-same-2",
+  "/director-address-2-non-uk": "is-director-address-same-2",
   "/director-service-address-2": "director-legal-form-2",
+  "/director-service-address-2-non-uk": "director-legal-form-2",
   "/director-legal-form-2": "director-ch-number-2",
   "/director-ch-equivalent-overseas-2": "check-your-answers",
 
   "/parent-company-name-2": "parent-company-address-2",
   "/parent-company-address-2": "is-parent-company-address-same-2",
+  "/parent-company-address-2-non-uk": "is-parent-company-address-same-2",
   "/parent-company-service-address-2": "parent-company-ch-number-2",
+  "/parent-company-service-address-2-non-uk": "parent-company-ch-number-2",
   "/parent-company-ch-equivalent-overseas-2": "check-your-answers",
 
   "/taken-over-company-name-2": "taken-over-company-address-2",
   "/taken-over-company-address-2": "taken-over-company-ch-number-2",
+  "/taken-over-company-address-2-non-uk": "taken-over-company-ch-number-2",
   "/taken-over-company-ch-equivalent-overseas-2": "taken-over-company-insolvent-date-2",
   "/taken-over-company-insolvent-date-2": "check-your-answers",
 
   "/other-org-with-control-name-2": "other-org-with-control-address-2",
   "/other-org-with-control-address-2":"is-other-org-with-control-address-same-2",
+  "/other-org-with-control-address-2-non-uk":"is-other-org-with-control-address-same-2",
   "/other-org-with-control-service-address-2":"other-org-with-control-ch-number-2",
+  "/other-org-with-control-service-address-2-non-uk":"other-org-with-control-ch-number-2",
   "/other-org-with-control-ch-equivalent-overseas-2": "other-org-with-control-nature-of-control-2",
   "/other-org-with-control-nature-of-control-2":"other-org-with-control-registration-date-2",
-  "/other-org-with-control-registration-date-2":"other-org-with-control-legal-form-2",
+  "/other-org-with-control-register-2":"other-org-with-control-legal-form-2",
   "/other-org-with-control-legal-form-2": "check-your-answers",
 
   "/category-other-psc-details-2": "category-other-psc-address-2",
@@ -125,8 +134,10 @@ var oViews = {
 
   "/registered-company-name-1": "name.html",
   "/registered-company-address-1": "address.html",
+  "/registered-company-address-1-non-uk": "address-non-uk.html",
   "/is-registered-company-address-same-1": "is-same-address.html",
   "/registered-company-service-address-1": "address.html",
+  "/registered-company-service-address-1-non-uk": "address-non-uk.html",
   "/registered-company-legal-form-1": "legal-formation.html",
   "/registered-company-ch-number-1": "companies-house-number.html",
   "/registered-company-ch-equivalent-overseas-2":"companies-house-number.html",
@@ -195,8 +206,10 @@ var oViews = {
 
   "/registered-company-name-2": "name.html",
   "/registered-company-address-2": "address.html",
+  "/registered-company-address-2-non-uk": "address-non-uk.html",
   "/is-registered-company-address-same-2": "is-same-address.html",
   "/registered-company-service-address-2": "address.html",
+  "/registered-company-service-address-2-non-uk": "address-non-uk.html",
   "/registered-company-legal-form-2": "legal-formation.html",
   "/registered-company-ch-number-2": "companies-house-number.html",
   "/registered-company-nature-of-control-2": "nature-of-control.html",
@@ -205,32 +218,40 @@ var oViews = {
 
   "/director-name-2": "name.html",
   "/director-address-2": "address.html",
+  "/director-address-2-non-uk": "address-non-uk.html",
   "/is-director-address-same-2": "is-same-address.html",
   "/director-service-address-2": "address.html",
+  "/director-service-address-2-non-uk": "address-non-uk.html",
   "/director-legal-form-2": "legal-formation.html",
   "/director-ch-number-2": "companies-house-number.html",
   "/director-ch-equivalent-overseas-2": "companies-house-number.html",
 
   "/parent-company-name-2": "name.html",
   "/parent-company-address-2": "address.html",
+  "/parent-company-address-2-non-uk": "address-non-uk.html",
   "/is-parent-company-address-same-2": "is-same-address.html",
   "/parent-company-service-address-2": "address.html",
+  "/parent-company-service-address-2-non-uk": "address-non-uk.html",
   "/parent-company-ch-number-2": "companies-house-number.html",
 
   "/taken-over-company-name-2": "name.html",
   "/taken-over-company-address-2": "address.html",
+  "/taken-over-company-address-2-non-uk": "address-non-uk.html",
   "/taken-over-company-ch-number-2": "companies-house-number.html",
   "/taken-over-company-ch-equivalent-overseas-2":"companies-house-number.html",
   "/taken-over-company-insolvent-date-2": "date.html",
 
   "/other-org-with-control-name-2": "name.html",
   "/other-org-with-control-address-2": "address.html",
+  "/other-org-with-control-address-2-non-uk": "address-non-uk.html",
   "/is-other-org-with-control-address-same-2": "is-same-address.html",
   "/other-org-with-control-service-address-2": "address.html",
+  "/other-org-with-control-service-address-2-non-uk": "address-non-uk.html",
   "/other-org-with-control-ch-number-2":"companies-house-number.html",
   "/other-org-with-control-nature-of-control-2": "nature-of-control.html",
   "/other-org-with-control-ch-equivalent-overseas-2": "companies-house-number",
-  "/other-org-with-control-registration-date-2": "date.html",
+  "/other-org-with-control-registration-date-2": "is-required-to-register.html",
+  "/other-org-with-control-register-2": "register-name.html",
   "/other-org-with-control-legal-form-2": "legal-formation.html",
 
   "/category-other-2": "category.html",
@@ -462,7 +483,15 @@ router.post("/category-other-2", function (req, res, next) {
   }
 });
 
-//  "": "",
+router.post("/registered-company-registration-date-2",
+    function (req, res, next) {
+      if (req.body.isRequiredToRegisterAsPSC == "No")
+        res.redirect("check-your-answers");
+      else 
+      res.redirect("registered-company-register-2");
+    }
+);
+
 router.post("/category-other-psc-registration-date-2",
     function (req, res, next) {
       if (req.body.isRequiredToRegisterAsPSC == "No")
@@ -472,6 +501,17 @@ router.post("/category-other-psc-registration-date-2",
     }
 );
 
+
+router.post("/other-org-with-control-registration-date-2",
+    function (req, res, next) {
+      if (req.body.isRequiredToRegisterAsPSC == "No")
+        res.redirect("other-org-with-control-legal-form-2");
+      else 
+        res.redirect("other-org-with-control-register-2");
+    }
+);
+
+
 router.post("/add-another-connected-person",
     function (req, res, next) {
       if (req.body.addAnother == "No")
@@ -480,6 +520,7 @@ router.post("/add-another-connected-person",
       res.redirect("start");
     }
 );
+
 
 
 
