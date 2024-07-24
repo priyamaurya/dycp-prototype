@@ -45,9 +45,6 @@
 
                     <dd class="govuk-summary-list__value">
                         {{ data['declarationName'] }}
-
-                        {{ data['declarationEmail'] }}</br>
-                        {{ data['declarationNumber'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="declaration-person">
@@ -56,15 +53,14 @@
                         </a>
                     </dd>
                 </div>
-
-                {% if data['addressSame'] == "Yes" and data['addressTypeBasic'] == "No" %}
+              
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Job title:
                     </dt>
 
                     <dd class="govuk-summary-list__value">
-                        {{ data['declarationRole'] }}
+                        {{ data['declarationNameRole'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="declaration.html">
@@ -79,7 +75,7 @@
                     </dt>
 
                     <dd class="govuk-summary-list__value">
-                        {{ data['declarationEmail'] }}
+                        {{ data['declarationNameEmail'] }}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="declaration.html">
@@ -90,123 +86,21 @@
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        Registered or principal office address:
-                    </dt>
-                    {% if data ['registered-address-line-2'] | length == "0" and data ['registered-address-county']
-                    | length == "0" %}
-                    <dd class="govuk-summary-list__value">
-                        {{ data['registered-address-line-1'] }} </br>
-                        {{ data['registered-address-town'] }} </br>
-                        {{ data['registered-address-postcode'] }} </br>
-                        {{ data['selectData'] }} </br>
-                    </dd>
-                    {% else %}
-                    <dd class="govuk-summary-list__value">
-                        {{ data['registered-address-line-1'] }} </br>
-                        {{ data['registered-address-line-2'] }} </br>
-                        {{ data['registered-address-town'] }} </br>
-                        {{ data['registered-address-county'] }} </br>
-                        {{ data['registered-address-postcode'] }} </br>
-                        {{ data['selectData'] }} </br>
-                    </dd>
-                    {% endif %}
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="address-question">
-                            Change<span class="govuk-visually-hidden"> Change</span>
-                        </a>
-                    </dd>
-                </div>
-
-                {% elif data ['addressSame'] == "Yes" and data['addressTypeBasic'] == "Yes" and data['address'] | length
-                == "0" %}
-
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Registered or principal office address:
-                    </dt>
-                    {% if data ['postal-address-line-2'] | length == "0" and data ['postal-address-county'] |
-                    length == "0" %}
-                    <dd class="govuk-summary-list__value">
-                        {{ data['postal-address-line-1'] }} </br>
-                        {{ data['postal-address-town'] }} </br>
-                        {{ data['postal-address-postcode'] }} </br>
-                    </dd>
-                    {% else %}
-                    <dd class="govuk-summary-list__value">
-                        {{ data['postal-address-line-1'] }} </br>
-                        {{ data['postal-address-line-2'] }} </br>
-                        {{ data['postal-address-town'] }} </br>
-                        {{ data['postal-address-county'] }} </br>
-                        {{ data['postal-address-postcode'] }} </br>
-                    <dd class="govuk-summary-list__value">
-                    </dd>
-                    {% endif %}
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="address-question">
-                            Change<span class="govuk-visually-hidden"> Change</span>
-                        </a>
-                    </dd>
-                </div>
-
-                {% elif data ['addressSame'] == "Yes" and data['addressTypeBasic'] == "Yes" and data['address'] | length
-                !=
-                "0" %}
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Registered or principal office address:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        {{ data['address'] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="is-the-address-same">
-                            Change<span class="govuk-visually-hidden"> Change</span>
-                        </a>
-                    </dd>
-                </div>
-
-                {% elif data ['addressSame'] == "No" and data['shareAddress'] | length != "0" %}
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
-                        Postal address:
-                    </dt>
-                    <dd class="govuk-summary-list__value">
-                        {{ data['shareAddress'] }}
-                    </dd>
-                    <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="address-question">
-                            Change<span class="govuk-visually-hidden"> Change</span>
-                        </a>
-                    </dd>
-                </div>
-
-
-                {% else %}
-
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key">
                         Postal address:
                     </dt>
                     {% if data['declaration-address-line-2'] |length != "0" and
                     data['declaration-address-county'] |
                     length != "0" %}
                     <dd class="govuk-summary-list__value">
-                        {{ data['declaration-address-line-1'] }}</br>
-                        {{ data['declaration-address-line-2'] }}</br>
-                        {{ data['declaration-address-town'] }}</br>
-                        {{ data['declaration-address-county'] }}</br>
-                        {{ data['declaration-address-postcode'] }}</br>
-                        {{ data['selectData'] }}
+                        {{ data['address-line-1'] }}</br>
+                        {{ data['address-town'] }}</br>
+                        {{ data['address-postcode'] }}</br>
                     </dd>
                     {% else %}
                     <dd class="govuk-summary-list__value">
-                        {{ data['declaration-address-line-1'] }}</br>
-                        {{ data['declaration-address-town'] }}</br>
-                        {{ data['declaration-address-postcode'] }}</br>
-                        {{ data['selectData'] }}
+                        {{ data['address-line-1'] }}</br>
+                        {{ data['address-town'] }}</br>
+                        {{ data['address-postcode'] }}</br>
                     </dd>
                     {% endif %}
                     <dd class="govuk-summary-list__actions">
@@ -220,7 +114,6 @@
 
             </dl>
 
-            {% endif %}
 
 
     </div>

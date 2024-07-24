@@ -7,14 +7,17 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
   <div class="govuk-grid-column-full">
     <form class="form" method="post">
       <h1 class="govuk-heading-l">
-        There are 5 API keys for this organisation
+        You have 5 API keys
       </h1>
-
+      <p class="govuk-body">
+      View your active and cancelled API keys. You can cancel any that are no longer needed.
+      </p>
       <div class="govuk-form-group">
         <dl class="govuk-summary-list ros-add-to-a-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Name</dt>
-            <dt class="govuk-summary-list__key">Date created/revoked</dt>
+            <dt class="govuk-summary-list__key">Date created</dt>
+            <dt class="govuk-summary-list__key">Date cancelled</dt>
             <dt class="govuk-summary-list__key govuk-summary-list__actions">
               Actions
             </dt>
@@ -22,41 +25,46 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">API key name 1</dd>
             <dd class="govuk-summary-list__value">07/03/2024</dd>
+            <dd class="govuk-summary-list__value"></dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="revoke-api-key.html">Revoke</a>
+              <a class="govuk-link" href="revoke-api-key.html">Cancel</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">API key name 2</dd>
             <dd class="govuk-summary-list__value">12/06/2024</dd>
+            <dd class="govuk-summary-list__value"></dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="revoke-api-key.html">Revoke</a>
+              <a class="govuk-link" href="revoke-api-key.html">Cancel</a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">API key name 3</dd>
             <dd class="govuk-summary-list__value">12/03/2024</dd>
+            <dd class="govuk-summary-list__value">21/10/2024</dd>
             <dd class="govuk-summary-list__actions">
               <span class="govuk-tag govuk-tag--red govuk-!-font-size-16"
-                >Revoked</span
+                >Cancelled</span
               >
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">API key name 4</dd>
             <dd class="govuk-summary-list__value">08/02/2024</dd>
+            <dd class="govuk-summary-list__value">21/10/2024</dd>
             <dd class="govuk-summary-list__actions">
               <span class="govuk-tag govuk-tag--red govuk-!-font-size-16"
-                >Revoked</span
+                >Cancelled</span
               >
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">API key name 5</dd>
             <dd class="govuk-summary-list__value">23/04/2024</dd>
+            <dd class="govuk-summary-list__value">21/10/2024</dd>
             <dd class="govuk-summary-list__actions">
               <span class="govuk-tag govuk-tag--red govuk-!-font-size-16"
-                >Revoked</span
+                >Cancelled</span
               >
             </dd>
           </div>
