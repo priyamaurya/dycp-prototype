@@ -24,14 +24,14 @@
             {% set options=(options.push("People with significant control register on Companies House"), options) %}
             {% set options=(options.push("Other"), options) %}
 
-            {% set optionReveals=[false, "Enter the register name"] %}
+            {% set optionReveals=[false, "Register name"] %}
 
             {% include("../templates/radios.html") %}
 
 
 
             {% include("../templates/button--submit.html") %}
-            
+
         </form>
 
     </div>
