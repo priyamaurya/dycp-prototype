@@ -259,7 +259,7 @@ var oViews = {
   "/category-other-indvidual-with-control-adress-2": "address.html",
   "/category-other-indvidual-with-control-ch-equivalent-overseas-2": "companies-house-number",
   "/category-other-indvidual-with-control-nature-of-control-2": "nature-of-control.html",
-  "/category-other-indvidual-with-control-registration-date-2": "date.html",
+  "/category-other-indvidual-with-control-registration-date-2": "is-required-to-register.html",
   "/category-other-indvidual-with-control-legal-form-2": "legal-formation.html",
 
   //-------
