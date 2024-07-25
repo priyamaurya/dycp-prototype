@@ -24,6 +24,7 @@
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 {% if data['postcode'] | length == "0" %}
+                <span class="govuk-caption-l">Your declaration details</span>
                 <h1 class="govuk-fieldset__heading">
                     Enter your postal address
                 </h1>
@@ -34,10 +35,12 @@
                 </h1>
                 {% endif %}
             </legend>
-      
+            <div id="declarationNameEmailHint" class="govuk-hint">
+                So the contracting authority can contact you.
+            </div>
 
             <p>
-                <a href="org-address-overseas">Enter a non-UK address</a>
+                <a href="person-address">Enter a non-UK address</a>
               </p>
 
             <form class="form" method="post">
