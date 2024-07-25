@@ -70,9 +70,9 @@ var oRoute = {
   "/registered-company-name-2": "registered-company-address-2",
   "/registered-company-address-2": "is-registered-company-address-same-2",
   "/registered-company-address-2-non-uk": "is-registered-company-address-same-2",
-  "/registered-company-service-address-2": "registered-company-legal-form-2",
-  "/registered-company-service-address-2-non-uk": "registered-company-legal-form-2",
-  "/registered-company-legal-form-2": "registered-company-ch-number-2",
+  "/registered-company-service-address-2": "has-registered-company-legal-form-2",
+  "/registered-company-legal-form-2":"registered-company-ch-number-2",
+  "/registered-company-service-address-2-non-uk": "has-registered-company-legal-form-2",
   "/registered-company-ch-equivalent-overseas-2": "registered-company-nature-of-control-2",
   "/registered-company-nature-of-control-2":"registered-company-registration-date-2",
   "/registered-company-register-2": "check-your-answers",
@@ -80,8 +80,8 @@ var oRoute = {
   "/director-name-2": "director-address-2",
   "/director-address-2": "is-director-address-same-2",
   "/director-address-2-non-uk": "is-director-address-same-2",
-  "/director-service-address-2": "director-legal-form-2",
-  "/director-service-address-2-non-uk": "director-legal-form-2",
+  "/director-service-address-2": "has-director-legal-form-2",
+  "/director-service-address-2-non-uk": "has-director-legal-form-2",
   "/director-legal-form-2": "director-ch-number-2",
   "/director-ch-equivalent-overseas-2": "check-your-answers",
 
@@ -105,8 +105,8 @@ var oRoute = {
   "/other-org-with-control-service-address-2-non-uk":"other-org-with-control-ch-number-2",
   "/other-org-with-control-ch-equivalent-overseas-2": "other-org-with-control-nature-of-control-2",
   "/other-org-with-control-nature-of-control-2":"other-org-with-control-registration-date-2",
-  "/other-org-with-control-register-2":"other-org-with-control-legal-form-2",
-  "/other-org-with-control-legal-form-2": "check-your-answers",
+  "/other-org-with-control-register-2":"has-other-org-with-control-legal-form-2",
+  "/other-org-with-control-legal-form-2":"check-your-answers",
 
   "/category-other-psc-details-2": "category-other-psc-address-2",
   "/category-other-psc-address-2": "category-other-psc-nature-of-control-2",
@@ -195,14 +195,13 @@ var oViews = {
 
   "/category-other-indvidual-with-control-name-1": "person.html",
   "/category-other-indvidual-with-control-adress-1": "address.html",
-  "/category-other-indvidual-with-control-nature-of-control-1":
-    "nature-of-control.html",
+  "/category-other-indvidual-with-control-nature-of-control-1":"nature-of-control.html",
   "/category-other-indvidual-with-control-registration-date-1": "date.html",
   "/category-other-indvidual-with-control-register-1": "register-name.html",
 
   //-------
-  "/cp-type-2": "type.html",
-  "/category-org-2": "category.html",
+  //"/cp-type-2": "type.html",
+  //"/category-org-2": "category.html",
 
   "/registered-company-name-2": "name.html",
   "/registered-company-address-2": "address.html",
@@ -210,7 +209,8 @@ var oViews = {
   "/is-registered-company-address-same-2": "is-same-address.html",
   "/registered-company-service-address-2": "address.html",
   "/registered-company-service-address-2-non-uk": "address-non-uk.html",
-  "/registered-company-legal-form-2": "legal-formation.html",
+  "/has-registered-company-legal-form-2": "has-legal-form.html",
+  "/registered-company-legal-form-2":"name.html",
   "/registered-company-ch-number-2": "companies-house-number.html",
   "/registered-company-nature-of-control-2": "nature-of-control.html",
   "/registered-company-registration-date-2": "is-required-to-register.html",
@@ -222,7 +222,8 @@ var oViews = {
   "/is-director-address-same-2": "is-same-address.html",
   "/director-service-address-2": "address.html",
   "/director-service-address-2-non-uk": "address-non-uk.html",
-  "/director-legal-form-2": "legal-formation.html",
+  "/has-director-legal-form-2": "has-legal-form.html",
+  "/director-legal-form-2": "name.html",
   "/director-ch-number-2": "companies-house-number.html",
   "/director-ch-equivalent-overseas-2": "companies-house-number.html",
 
@@ -253,7 +254,8 @@ var oViews = {
   "/other-org-with-control-ch-equivalent-overseas-2": "companies-house-number",
   "/other-org-with-control-registration-date-2": "is-required-to-register.html",
   "/other-org-with-control-register-2": "register-name.html",
-  "/other-org-with-control-legal-form-2": "legal-formation.html",
+  "/has-other-org-with-control-legal-form-2": "has-legal-form.html",
+  "/other-org-with-control-legal-form-2":"name.html",
 
   "/category-other-2": "category.html",
 
@@ -287,13 +289,15 @@ var listOfCountries = require("../../../data/data").nationalities;
 router.post("/is-registered-with-companies-house", function (req, res, next) {
   if (req.body.isRegisteredWithCompaniesHouse == "No")
     res.redirect("cp-type-2");
-  else res.redirect("cp-type-1");
+  else 
+    res.redirect("cp-type-1");
 });
 
 router.post("/has-connected-person", function (req, res, next) {
   if (req.body.hasConnectedPerson == "No")
     res.redirect("../supplier-information");
-  else res.redirect("is-registered-with-companies-house");
+  else 
+    res.redirect("is-registered-with-companies-house");
 });
 
 router.post("/cp-type-1", function (req, res, next) {
@@ -408,9 +412,16 @@ router.post("/category-org-2", function (req, res, next) {
 
 router.post("/is-registered-company-address-same-2", function (req, res, next) {
   if (req.body.isSameAddress == "No")
-    res.redirect("registered-company-legal-form-2");
+    res.redirect("has-registered-company-legal-form-2");
   else 
     res.redirect("registered-company-service-address-2");
+});
+
+router.post("/has-registered-company-legal-form-2", function (req, res, next) {
+    if (req.body.hasLegalForm == "No")
+      res.redirect("registered-company-ch-number-2");
+    else 
+      res.redirect("registered-company-legal-form-2");
 });
 
 router.post("/registered-company-ch-number-2", function (req, res, next) {
@@ -422,9 +433,17 @@ router.post("/registered-company-ch-number-2", function (req, res, next) {
 
 router.post("/is-director-address-same-2", function (req, res, next) {
   if (req.body.isSameAddress == "No") 
-    res.redirect("director-legal-form-2");
+    res.redirect("has-director-legal-form-2");
   else 
     res.redirect("director-service-address-2");
+});
+
+
+router.post("/has-director-legal-form-2", function (req, res, next) {
+    if (req.body.hasLegalForm == "No")
+      res.redirect("director-ch-number-2");
+    else 
+      res.redirect("director-legal-form-2");
 });
 
 router.post("/director-ch-number-2", function (req, res, next) {
@@ -471,6 +490,14 @@ router.post("/other-org-with-control-ch-number-2", function (req, res, next) {
       res.redirect("other-org-with-control-nature-of-control-2");
 });
 
+
+router.post("/has-other-org-with-control-legal-form-2", function (req, res, next) {
+    if (req.body.hasLegalForm == "No")
+      res.redirect("check-your-answers");
+    else 
+      res.redirect("other-org-with-control-legal-form-2");
+});
+
 router.post("/category-other-2", function (req, res, next) {
   switch (req.body.categoryOfConnectedPerson) {
     case "director or individual with the same responsibilities":
@@ -506,7 +533,7 @@ router.post("/category-other-psc-registration-date-2",
 router.post("/other-org-with-control-registration-date-2",
     function (req, res, next) {
       if (req.body.isRequiredToRegisterAsPSC == "No")
-        res.redirect("other-org-with-control-legal-form-2");
+        res.redirect("has-other-org-with-control-legal-form-2");
       else 
         res.redirect("other-org-with-control-register-2");
     }

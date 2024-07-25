@@ -1,18 +1,25 @@
-{% extends "layouts/main.html" %} {% block header %} {%
-include("includes/header-with-nav.html") %} {% endblock %} {% block
-beforeContent %} {% include("includes/phase-banner.html") %} {%
-include("includes/back-link.html") %} {% endblock %} {% block content %}
+{% extends "layouts/main.html" %} 
+{% block header %} 
+  {% include("includes/header-with-nav.html") %} 
+{% endblock %} 
+
+{% block beforeContent %} 
+  {% include("includes/phase-banner.html") %} 
+  {% include("includes/back-link.html") %} 
+{% endblock %} 
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <form class="form" method="post">
-      {% set inputName="isSameAddress" %} {% set
-      headingCaption=data['categoryOfConnectedPerson'] %} {% set heading="Does
-      have a different postal address?" %} {% set hintText="The place where an
-      organisation receives official post can be different from its registered
-      address. For example, a branch office." %} {%
-      include("../templates/radio-yes-no.html") %} {%
-      include("../templates/button--submit.html") %}
+      {% set inputName="isSameAddress" %} 
+      {% set headingCaption=data['categoryOfConnectedPerson'] %} 
+      {% set heading="Does have a different postal address?" %} 
+      {% set hintText="The place where an organisation receives official post can be different from its registered address. For example, a branch office." %} 
+      
+      {% include("../templates/radio-yes-no.html") %} 
+      {% include("../templates/button--submit.html") %}
     </form>
   </div>
 </div>
