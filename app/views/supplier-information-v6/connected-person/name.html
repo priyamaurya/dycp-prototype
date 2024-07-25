@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="connectedPerson" %}
+            {% set headingCaption=data['categoryOfConnectedPerson'] %}
+            {% set heading="Enter the organisation's name" %}
+            {% set hintText="The name of the 'connected person' that has control or influence over your organisation." %}
+
+            {% if page == "/taken-over-company-name-2" %}
+                {% set hintText = undefined %}
+            {% endif %}
+
+
+            {% if page == "/registered-company-legal-form-2"
+                 or page == "/director-legal-form-2"
+                 or page == "/other-org-with-control-legal-form-2" %}
+                {% set inputName="legalForm" %}
+                {% set heading="Which law enforces [Org]'s legal form?" %}
+                {% set hintText="In the UK the Companies House Act 2006 enforces the limited company legal form." %}
+            {% endif %}
+
+
+            {% include("../templates/text-input--single.html") %}
+            {% include("../templates/button--submit.html") %}
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

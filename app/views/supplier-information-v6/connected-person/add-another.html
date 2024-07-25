@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <form class="form" method="post">
+            
+            {% set heading="You have added [x] connected persons" %}
+            {% set secondHeading="Add another connected person?" %}
+
+            {% include("../templates/add-another.html") %}
+
+            {% set buttonCaption="Continue" %}
+            {% include("../templates/button--submit.html") %}
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

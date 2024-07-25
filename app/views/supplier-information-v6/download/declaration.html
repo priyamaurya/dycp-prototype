@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-column-ful-width">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+
+          <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Share your information and associated declaration
+          </h2> -->
+
+
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="declarationStatement">
+              Declaration
+            </label>
+          </h1>
+          <br>
+          <ul class="govuk-list govuk-list--bullet">
+            <li> I am authorised to make this declaration on behalf of the supplier and declare that to the best of my knowledge the answers submitted and information contained is correct and accurate at the time of declaration.</li>
+            <br>
+            <li> I declare that, upon request from the Contracting Authority and without delay I will provide the certificates or documentary evidence referred to in this information.</li>
+            <br>
+            <li>I understand that the information is required as per the regulations of the Procurement Act 2023 and may be used in the selection process to assess my suitability to participate further in this procurement.</li>
+            <br>
+            <li>I understand that a contracting authority with whom this information is shared may request further clarity or detail on information provided in this submission.</li>
+          </ul>
+
+          <fieldset class="govuk-fieldset" data-required data-error="Check the box to agree to the above statements"
+            aria-required="true">
+
+            <div class="govuk-checkboxes__item govuk-!-margin-bottom-6">
+              <input class="govuk-checkboxes__input" id="declarationStatement" name="declarationStatement"
+                type="checkbox" value="I understand and agree to the declaration statements">
+              <label class="govuk-label govuk-checkboxes__label" for="declarationStatement">
+                I understand and agree to the above statements
+              </label>
+            </div>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="removeConnectedPerson" %}
+            {% set heading="Are you sure you want to remove this connected person?" %}
+            {% set revealLabel = "When was the connected person no longer associated to your organisation?" %}
+
+            {% include("../templates/radio-yes-no-reveal-date.html") %}
+        
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

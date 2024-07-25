@@ -1,0 +1,25 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <h1 class="govuk-heading-l">This organisation has already registered</h1>
+    <p>The organisation's details are already registered with the service.</p>
+    <p>If you know the person who registered the organisation, they can invite you to join. Or you can request to join below.</p>
+    <button class="govuk-button">Request to join</button>
+    <hr class="govuk-section-break">
+    <a href="dashboard-no-org" class="govuk-link govuk-link--no-visited-state">Return to home page</a>
+  </div>
+</div>
+
+{% endblock %}
