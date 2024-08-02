@@ -1,21 +1,4 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
-
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
-{% block footer %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-
-{{ govukFooter({
-  meta: {
-    items: [
-      {
-        href: "/manage-prototype/clear-data",
-        text: "Clear data"
-      }
-    ]
-  }
-}) }}
-{% endblock%}
+{# For guidance on how to use layouts see: https://prototype-kit.service.gov.uk/docs/how-to-use-layouts #} {% extends
+"govuk-prototype-kit/layouts/govuk-branded.njk" %} {% block footer %} {% from "govuk/components/footer/macro.njk" import govukFooter %} {{ govukFooter({ meta: {
+items: [ { href: "/manage-prototype/clear-data", text: "Clear data" }, { href: "org-dashboard-no-ch.html", text: "Dashboard - No -CH number" } ] } }) }} {%
+endblock%}
