@@ -24,14 +24,22 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Organisation identifiers</dt>
+        <dt class="govuk-summary-list__key">Company house number</dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['chno']|length > 2 %} {{ data['chnoInput'] }} {% else %}
+          <p>{{ data['orgid'].slice(5) }}</p>
+          <p>{{ data[data['orgid'].slice(0,4)+'Input'] }}</p>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="has-ch-number">Change<span class="govuk-visually-hidden"> organisation ID</span></a>
+        </dd>
+      </div>
 
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Organisation identifiers</dt>
         <dd class="govuk-summary-list__value">
           <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-            <li>
-              Companies House number <br />
-              9989898
-            </li>
             <li>
               Charity Commission for England and Wales <br />
               9989898
@@ -59,6 +67,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
           <a class="govuk-link govuk-link--no-visited-state" href="org-id">Change<span class="govuk-visually-hidden"> organisation ID</span></a>
         </dd>
       </div>
+
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Organisation name</dt>
         <dd class="govuk-summary-list__value">

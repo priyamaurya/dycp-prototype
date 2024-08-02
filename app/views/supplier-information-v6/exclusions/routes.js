@@ -35,9 +35,7 @@ router.post("/exclusion-grounds-outside-UK", function (req, res) {
 
   if (exclusionMan == "Theft, fraud, bribery etc") {
     res.redirect("theft-fraud-bribery");
-  } else if (
-    exclusionMan == "Labour market, slavery and human trafficking offences"
-  ) {
+  } else if (exclusionMan == "Labour market, slavery and human trafficking offences") {
     res.redirect("labour-market");
   } else if (exclusionMan == "Tax offences") {
     res.redirect("tax-offences");
@@ -47,40 +45,21 @@ router.post("/exclusion-grounds-outside-UK", function (req, res) {
     res.redirect("ancillary-offences");
   } else if (exclusionMan == "Equivalents outside the United Kingdom") {
     res.redirect("outside-uk");
-  } else if (
-    exclusionMan ==
-    "Penalties for transactions connected with VAT fraud and evasion or tax or duty"
-  ) {
+  } else if (exclusionMan == "Penalties for transactions connected with VAT fraud and evasion or tax or duty") {
     res.redirect("vat-fraud");
-  } else if (
-    exclusionMan ==
-    "Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing"
-  ) {
+  } else if (exclusionMan == "Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing") {
     res.redirect("vat-fraud");
-  } else if (
-    exclusionMan == "None of the above" &&
-    startQuestion == "Individual"
-  ) {
+  } else if (exclusionMan == "None of the above" && startQuestion == "Individual") {
     res.redirect("/suppliers-d/account-home");
-  } else if (
-    exclusionMan == "None of the above" &&
-    startQuestion == "Company"
-  ) {
+  } else if (exclusionMan == "None of the above" && startQuestion == "Company") {
     res.redirect("../supplier-information"); ///suppliers-c/account-home
   } else if (exclusionMan == "None of the above" && startQuestion == "Trust") {
     res.redirect("/suppliers-b/account-home");
-  } else if (
-    exclusionMan == "Adjustments for tax arrangements that are abusive"
-  ) {
+  } else if (exclusionMan == "Adjustments for tax arrangements that are abusive") {
     res.redirect("event-subject");
-  } else if (
-    exclusionMan ==
-    "Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice"
-  ) {
+  } else if (exclusionMan == "Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice") {
     res.redirect("event-subject");
-  } else if (
-    exclusionMan == "Defeat in respect of notifiable tax arrangements"
-  ) {
+  } else if (exclusionMan == "Defeat in respect of notifiable tax arrangements") {
     res.redirect("event-subject");
   } else if (exclusionMan == "Competition law infringements") {
     res.redirect("event-subject");
@@ -166,11 +145,7 @@ router.post("/event-link", function (req, res) {
 });
 
 router.post("/event-ongoing", function (req, res) {
-  if (req.session.data.eventOngoingMan == "No") {
-    res.redirect("check-answers");
-  } else {
-    res.redirect("event-date");
-  }
+  res.redirect("check-answers");
 });
 
 router.post("/event-date", function (req, res) {
@@ -319,16 +294,9 @@ router.post("/find-subject-uk-address", function (req, res) {
   if (postcodeLookup) {
     if (regex.test(postcodeLookup) === true) {
       axios
-        .get(
-          "https://api.os.uk/search/places/v1/postcode?postcode=" +
-            postcodeLookup +
-            "&key=" +
-            process.env.AXIOS_API_KEY
-        )
+        .get("https://api.os.uk/search/places/v1/postcode?postcode=" + postcodeLookup + "&key=" + process.env.AXIOS_API_KEY)
         .then((response) => {
-          var addresses = response.data.results.map(
-            (result) => result.DPA.ADDRESS
-          );
+          var addresses = response.data.results.map((result) => result.DPA.ADDRESS);
 
           const titleCaseAddresses = addresses.map((address) => {
             const parts = address.split(", ");
@@ -339,10 +307,7 @@ router.post("/find-subject-uk-address", function (req, res) {
               }
               return part
                 .split(" ")
-                .map(
-                  (word) =>
-                    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
-                )
+                .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
                 .join(" ");
             });
             return formattedParts.join(", ");

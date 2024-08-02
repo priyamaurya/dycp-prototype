@@ -33,7 +33,7 @@
                         </h1>
                     </legend>
                     <div id="document-hint" class="govuk-hint">
-                        A decision from a public authority that was the basis for the exclusion. For example, documentation from the police, HMRC or the court. </div>
+                        A decision from a public authority that was the basis for the offence. For example, documentation from the police, HMRC or the court. </div>
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="documents-2" name="documents-2" type="radio" value="Yes" data-aria-controls="conditional-chno" {% if data['documents-2'] == 'Document upload' %} checked {% endif %} >
@@ -43,9 +43,9 @@
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
                             <div class="govuk-form-group">
-                            <div id="document-hint" class="govuk-hint">
+                            <label class="govuk-label" for="chnoInput">
                                 You can upload most file types including: PDF, scans, mobile phone photos, Word, Excel and PowerPoint, multimedia and ZIP files that are smaller than 10MB.  
-                           </div><div></div> </label>
+                            </label>
                             <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
                             </div>
                         </div>
