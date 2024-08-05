@@ -31,18 +31,14 @@
               <input class="govuk-radios__input" id="eventOngoingMan" name="eventOngoingMan"
                 type="radio" value="Yes" data-aria-controls="eventOngoingMan-date" {% if data['eventOngoingMan'] == 'Yes' %} checked {% endif %}>
               <label class="govuk-label govuk-radios__label" for="eventOngoingMan">
-                Yes
-                <p></p>
-                <label class="govuk-label" for="chnoInput">
-                  Enter the date the circumstances ended  
-              </label>
-              
+                Yes            
               
             </label>
             </div>
             
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="eventOngoingMan-date">
               <div id="convictionHint" class="govuk-hint">
+                <p>Enter the date the circumstances ended</p>
                 For example, 27 3 2007
               </div>
               <div class="govuk-date-input" id="conviction">
