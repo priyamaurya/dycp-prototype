@@ -16,18 +16,15 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 class="govuk-checkboxes__input"
                 id="chew"
                 name="orgid"
-                type="radio"
+                type="checkbox"
                 value="chew|Charity Commission for England and Wales"
+                disabled
+                checked
                 data-aria-controls="conditional-chew"
               />
               <label class="govuk-label govuk-checkboxes__label" for="chew"> Charity Commission for England and Wales </label>
             </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-chew">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="chew-input"> Charity number </label>
-                <input class="govuk-input govuk-!-width-one-third" id="chew-input" name="chewInput" />
-              </div>
-            </div>
+            <div></div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -36,7 +33,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 class="govuk-checkboxes__input"
                 id="scr"
                 name="orgid"
-                type="radio"
+                type="checkbox"
                 value="Scottish Charity Regulator"
                 data-aria-controls="conditional-scr"
               />
@@ -56,7 +53,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 class="govuk-checkboxes__input"
                 id="ccni"
                 name="orgid"
-                type="radio"
+                type="checkbox"
                 value="Charity Commission for Northern Ireland"
                 data-aria-controls="conditional-ccni"
               />
@@ -72,7 +69,14 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="mpr" name="orgid" type="radio" value="Mutuals Public Register" data-aria-controls="conditional-mpr" />
+              <input
+                class="govuk-checkboxes__input"
+                id="mpr"
+                name="orgid"
+                type="checkbox"
+                value="Mutuals Public Register"
+                data-aria-controls="conditional-mpr"
+              />
               <label class="govuk-label govuk-checkboxes__label" for="mpr"> Mutuals Public Register </label>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-mpr">
@@ -85,7 +89,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="gr" name="orgid" type="radio" value="Guernsey Registry" data-aria-controls="conditional-gr" />
+              <input class="govuk-checkboxes__input" id="gr" name="orgid" type="checkbox" value="Guernsey Registry" data-aria-controls="conditional-gr" />
               <label class="govuk-label govuk-checkboxes__label" for="gr"> Guernsey Registry </label>
             </div>
             <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-gr">
@@ -103,18 +107,15 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 class="govuk-checkboxes__input"
                 id="jrfscr"
                 name="orgid"
-                type="radio"
+                type="checkbox"
                 value="Jersey Financial Services Commission Registry"
+                disabled
+                checked
                 data-aria-controls="conditional-jrfscr"
               />
               <label class="govuk-label govuk-checkboxes__label" for="jrfscr"> Jersey Financial Services Commission Registry </label>
             </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-jrfscr">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="jrfscr-input"> Registration number </label>
-                <input class="govuk-input govuk-!-width-one-third" id="jrfscr-input" name="jrfscrInput" />
-              </div>
-            </div>
+            <div></div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -123,7 +124,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 class="govuk-checkboxes__input"
                 id="iomcr"
                 name="orgid"
-                type="radio"
+                type="checkbox"
                 value="Isle of Man Companies Registry number"
                 data-aria-controls="conditional-iomcr"
               />
@@ -143,7 +144,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 class="govuk-checkboxes__input"
                 id="nhsods"
                 name="orgid"
-                type="radio"
+                type="checkbox"
                 value=" NHS Organisation Data Service (ODS)"
                 data-aria-controls="conditional-nhsods"
               />
@@ -163,7 +164,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 class="govuk-checkboxes__input"
                 id="UKPRN"
                 name="orgid"
-                type="radio"
+                type="checkbox"
                 value="UK Register of Learning Providers (UKPRN)"
                 data-aria-controls="conditional-UKPRN"
               />
@@ -180,7 +181,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
           <!--
                 <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                     <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="vat" name="orgid" type="radio" value="VAT number" data-aria-controls="conditional-vat">
+                        <input class="govuk-checkboxes__input" id="vat" name="orgid" type="checkbox" value="VAT number" data-aria-controls="conditional-vat">
                         <label class="govuk-label govuk-checkboxes__label" for="vat">
                             VAT number
                         </label>
@@ -200,7 +201,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="orgid-none" name="orgid" type="radio" value="The organisation does not have a registry number" />
+              <input class="govuk-checkboxes__input" id="orgid-none" name="orgid" type="checkbox" value="The organisation does not have a registry number" />
               <label class="govuk-label govuk-checkboxes__label" for="orgid-none"> The organisation does not have one of these identifiers </label>
             </div>
           </div>

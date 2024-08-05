@@ -24,40 +24,20 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Company house number</dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['chno']|length > 2 %} {{ data['chnoInput'] }} {% else %}
-          <p>{{ data['orgid'].slice(5) }}</p>
-          <p>{{ data[data['orgid'].slice(0,4)+'Input'] }}</p>
-          {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="has-ch-number">Change<span class="govuk-visually-hidden"> organisation ID</span></a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Organisation identifiers</dt>
+
         <dd class="govuk-summary-list__value">
           <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li>
+              Companies House number <br />
+              9989898
+            </li>
             <li>
               Charity Commission for England and Wales <br />
               9989898
             </li>
             <li>
               Jersey Financial Services Commission Registry <br />
-              9989898
-            </li>
-            <li>
-              VAT <br />
-              9989898
-            </li>
-            <li>
-              Charity Commission for England and Wales <br />
-              9989898
-            </li>
-            <li>
-              Charity Commission for England and Wales <br />
               9989898
             </li>
           </ul>
@@ -67,7 +47,6 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
           <a class="govuk-link govuk-link--no-visited-state" href="org-id">Change<span class="govuk-visually-hidden"> organisation ID</span></a>
         </dd>
       </div>
-
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Organisation name</dt>
         <dd class="govuk-summary-list__value">
@@ -242,32 +221,32 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
     </dl>
 
     <!-- <h2 class="govuk-heading-m govuk-!-margin-top-9">Users</h2>
-    
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          <a class="govuk-link govuk-link--no-visited-state" href="user/add-another-user">Users</a>
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['userCount'] }} 
-          {% if data['userArray']|length == "1" %} 
-            user 
-          {% else %}
-            users
-          {% endif %}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          &nbsp;
-        </dd>
-      </div>
-    </dl> -->
+      
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <a class="govuk-link govuk-link--no-visited-state" href="user/add-another-user">Users</a>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['userCount'] }} 
+            {% if data['userArray']|length == "1" %} 
+              user 
+            {% else %}
+              users
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            &nbsp;
+          </dd>
+        </div>
+      </dl> -->
 
     <a href="download/declaration" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-9" data-module="govuk-button">
       Share my data
       <!-- <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
-                viewBox="0 0 33 40" aria-hidden="true" focusable="false" style="rotate: 270deg;">
-                <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-            </svg> -->
+                  viewBox="0 0 33 40" aria-hidden="true" focusable="false" style="rotate: 270deg;">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+              </svg> -->
     </a>
 
     {% endif %}
