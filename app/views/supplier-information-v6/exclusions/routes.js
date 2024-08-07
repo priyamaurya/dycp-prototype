@@ -133,6 +133,10 @@ router.post("/email-address", function (req, res) {
 });
 
 router.post("/event-mitigation", function (req, res) {
+  res.redirect("event-mitigation-step-two");
+});
+
+router.post("/event-mitigation-step-two", function (req, res) {
   res.redirect("event-documents");
 });
 
