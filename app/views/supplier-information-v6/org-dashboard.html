@@ -17,6 +17,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
     {% endif %}
 
     <h1 class="govuk-heading-l">
+      <span class="govuk-caption-m"> PPON - 97465533 </span>
       <span class="govuk-label--l">{{ data['orgName'] }}</span>
     </h1>
 
@@ -24,17 +25,18 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
 
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Companies House number</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">98876277</p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Organisation identifiers</dt>
-
         <dd class="govuk-summary-list__value">
           <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
             <li>
-              Companies House number <br />
-              9989898
-            </li>
-            <li>
               Charity Commission for England and Wales <br />
-              9989898
+              73992884
             </li>
             <li>
               Jersey Financial Services Commission Registry <br />
@@ -44,7 +46,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
         </dd>
 
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="org-id">Change<span class="govuk-visually-hidden"> organisation ID</span></a>
+          <a class="govuk-link govuk-link--no-visited-state" href="org-id">Add<span class="govuk-visually-hidden"> organisation ID</span></a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">

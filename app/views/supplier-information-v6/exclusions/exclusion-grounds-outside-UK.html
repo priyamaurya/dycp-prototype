@@ -6,11 +6,11 @@
 
 
   <h1 class="govuk-heading-l">
-    Select which exclusion applies
+    Select an exclusion
   </h1>
   <p class="govuk-body">
-    Select one. If you need to, you can add another at the end.
-    <p>As this exclusion happened outside the UK, select the overseas equivalent offence for where it took place. 
+    Only select one. You can add another at the end if you need to.
+    <p>As this exclusion happened outside the UK, select the equivalent offence for where it took place. 
   </p>
   <span class="govuk-caption-l">
     {{ data['mandatory'] }}
@@ -81,6 +81,13 @@
               </label>
             </div>
           
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
+              value="Failure to cooperate with investigation"> 
+              <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
+                Failure to cooperate with an investigation
+              </label>
+            </div>
           <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
               value="Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice"> 
@@ -102,7 +109,7 @@
               <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
               value="Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing"> 
               <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-                Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise
+                Penalties payable for errors in tax documentation and failure to notify, and certain VAT and excise
               </label>
             </div>
 
@@ -150,7 +157,7 @@
                   <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio"
                     value="Labour market, slavery and human trafficking offences">
                   <label class="govuk-label govuk-radios__label" for="exclusionMan">
-                   Labour market, slavery and human trafficking
+                   Labour market, slavery and human trafficking offences
                   </label>
                 </div>          
   
@@ -270,7 +277,7 @@
               <input class="govuk-radios__input" id="exclusionMan" name="exclusionMan" type="radio" 
               value="Suspension or ceasing to carry on all or a substantial part of business"> 
               <label class="govuk-label govuk-radios__label" for="exclusionMan"> 
-            Suspension or ceasing to carry on all or a substantial part of business
+            Suspension or ceasing to carry on all or a substantial part of a business
           </label> 
         </div> 
 
