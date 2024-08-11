@@ -22,39 +22,7 @@ Optional:
   
       {% include "./hint-text.html" %}
   
-      <div class="govuk-radios" data-module="govuk-radios">
-  
-        {% for i in range(0, options.length) %}
-  
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="{{inputName}}-{{ i }}" name="{{inputName}}" type="radio" value="{{ options[i] }}" {% if optionHints[i] %}aria-describedby="{{inputName}}Hint-{{ i }}"{% endif %} {% if optionReveals[i] %}aria-controls="{{ inputName }}Conditional-{{ i }}"{% endif %}>
-          <label class="govuk-label govuk-radios__label" for="{{inputName}}-{{ i }}">
-            {{ options[i] }}
-          </label>
-
-          {% if optionHints[i] %}
-          <div id="{{inputName}}Hint-{{ i }}" class="govuk-hint govuk-radios__hint">
-            {{ optionHints[i]|safe }}
-          </div>
-          {% endif %}
-        </div>
-
-        {% if optionReveals[i] %}
-        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="{{ inputName }}Conditional-{{ i }}">
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="{{ inputName }}TextInput">
-              {{optionReveals[i]}}
-            </label>
-            <input class="govuk-input govuk-!-width-one-half" id="{{ inputName }}TextInput" name="{{ inputName }}TextInput" type="number">
-          </div>
-        </div>
-        {% endif %}
-
-
-        
-        {% endfor %}
-        
-      </div>
+      {% include "./radio-options.html" %}
     </fieldset>
   </div>
   

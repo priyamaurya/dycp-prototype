@@ -14,6 +14,20 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+
+    <div class="govuk-notification-banner  govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          An email invite was sent to Joe. <a class="govuk-notification-banner__link" href="#">Close</a>
+        </p>
+      </div>
+    </div>
+
     <form class="form" method="post">
 
 
@@ -30,7 +44,12 @@
         <dl class="govuk-summary-list ros-add-to-a-list">
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              {{ user['firstName'] }} {{ user['lastName'] }}
+              {{ user['firstName'] }} {{ user['lastName'] }} 
+              {% if loop.index == 1 %}
+              <span class="govuk-tag">Admin</span>
+              {% else %}
+              <div class="govuk-hint">Invite sent</div>
+              {% endif %}
             </dt>
             <dt class="govuk-summary-list__key">
               {{ user['emailAddress'] }}

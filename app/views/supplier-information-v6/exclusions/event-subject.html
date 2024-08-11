@@ -12,178 +12,67 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
 
-        <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
-            Mandatory exclusion grounds
-        </h2>
+        {% set inputName="exclusionMan" %}
+        {% set heading="Select who the exclusion applies to" %}
+        {% set description="Defined in <a target=\"_blank\" href=\"https://www.legislation.gov.uk/ukpga/2023/54/schedule/6\">schedule 6 of the Procurement Act 2023 (opens in new tab).</a>" %}
 
-        <span class="govuk-caption-l">
-            {{ data['exclusionMan'] }}
-        </span> -->
+        {% set options=[] %}
+        {% set optionReveals=[] %}
+        {% set optionRevealHints=[] %}
 
-        <form class="form" method="post">
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" data-required data-error="Select the subject of the event"
-                    aria-required="true">
+        {% set options=(options.push("[Random Limited]"), options) %}
+        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
+        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
 
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">
-                            Select who the exclusion applies to
-                        </h1>
-                    </legend>
-                    <div class="govuk-inset-text">
-                        If it applies to anyone not listed below, you must first <a href="https://co-sirsi-17f24dc1d065.herokuapp.com/supplier-information-v5/connected/connected-start" target="https://co-sirsi-17f24dc1d065.herokuapp.com/supplier-information-v5/connected/connected-start">add
-                            them as a connected person (opens in new tab)</a>.
-                      </div>
-                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
-                        
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="eventSubMan-5" name="eventSubMan" type="radio"
-                                value="Me (Joe Bloggs)" aria-controls="conditional-contact-5">
-                            <label class="govuk-label govuk-radios__label" for="eventSubMan-5">
-                                [Random Limited]
-                            </label>
-                        </div>
+        {% set options=(options.push("[Connected org]"), options) %}
+        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
+        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
 
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-5">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label" for="contact-by-email">
-                                Email address
-                              </label>
-                              <div id="document-hint" class="govuk-hint">
-                                Where the contracting authority can contact someone about the exclusion. </div>
-                              <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                            </div>
-                        </div>
-                        
-                        <div class="govuk-radios__item">
+        {% set options=(options.push("[Connected individual]"), options) %}
+        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
+        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
 
-                            <input class="govuk-radios__input" id="eventSubMan" name="eventSubMan" type="radio"
-                                value="[Connected org]" aria-controls="conditional-contact">
-                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
-                                [Connected org]
-                            </label>
+        {% set options=(options.push("[Connected org 2]"), options) %}
+        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
+        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
 
-                        </div>
+        {% set options=(options.push("[Connected trustee]"), options) %}
+        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
+        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
 
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label" for="contact-by-email">
-                                Email address
-                              </label>
-                              <div id="document-hint" class="govuk-hint">
-                                Where the contracting authority can contact someone about the exclusion. </div>
-                              <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                            </div>
-                        </div>
+        {% set options=(options.push("..."), options) %}
+        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
+        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
 
-                        <div class="govuk-radios__item">
 
-                            <input class="govuk-radios__input" id="eventSubMan-1" name="eventSubMan" type="radio"
-                                value="[Connected individual]" aria-controls="conditional-contact-1">
-                            <label class="govuk-label govuk-radios__label" for="eventSubMan-1">
-                                [Connected individual]
-                            </label>
+        
 
-                        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <span class="govuk-caption-l">{{ headingCaption }}</span>
+                <h1 class="govuk-fieldset__heading">
+                  {{ heading }}
+                </h1>
+            </legend>
 
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-1">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label" for="contact-by-email">
-                                Email address
-                              </label>
-                              <div id="document-hint" class="govuk-hint">
-                                Where the contracting authority can contact someone about the exclusion. </div><input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                            </div>
-                        </div>
-
-                        <div class="govuk-radios__item">
-
-                            <input class="govuk-radios__input" id="eventSubMan-2" name="eventSubMan" type="radio"
-                                value="[Connected org 2]" aria-controls="conditional-contact-2">
-                            <label class="govuk-label govuk-radios__label" for="eventSubMan-2">
-                                [Connected org 2]
-                            </label>
-
-                        </div>
-
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label" for="contact-by-email">
-                                Email address
-                              </label>
-                              <div id="document-hint" class="govuk-hint">
-                                Where the contracting authority can contact someone about the exclusion. </div>
-                              <input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                            </div>
-                        </div>
-
-                        <div class="govuk-radios__item">
-
-                            <input class="govuk-radios__input" id="eventSubMan-3" name="eventSubMan" type="radio"
-                                value="[Connected trustee]" aria-controls="conditional-contact-3">
-                            <label class="govuk-label govuk-radios__label" for="eventSubMan-3">
-                                [Connected trustee]
-                            </label>
-
-                        </div>
-
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label" for="contact-by-email">
-                                Email address
-                              </label>
-                              <div id="document-hint" class="govuk-hint">
-                                Where the contracting authority can contact someone about the exclusion. </div><input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                            </div>
-                        </div>
-
-                        <div class="govuk-radios__item">
-
-                            <input class="govuk-radios__input" id="eventSubMan-4" name="eventSubMan" type="radio"
-                                value="..." aria-controls="conditional-contact-4">
-                            <label class="govuk-label govuk-radios__label" for="eventSubMan-4">
-                                ...
-                            </label>
-
-                        </div>
-
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-4">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label" for="contact-by-email">
-                                Email address
-                              </label>
-                              <div id="document-hint" class="govuk-hint">
-                                Where the contracting authority can contact someone about the exclusion.</div><input class="govuk-input govuk-!-width-one-half" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
-                            </div>
-                        </div>
-
-                        
-
-                        <!--
-                        {% for connectedPerson in data['connectedPersonArray'] %}
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="eventSub-3Man" name="eventSubMan" type="radio"
-                                value="{{ data['connectedPerson'] }}">
-                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
-                                {{ connectedPerson['connectedPerson'] }}
-                            </label>
-                        </div>
-
-                        {% endfor %}
-                    -->
-                    </div>
-
-                </fieldset>
+            <div class="govuk-inset-text govuk-!-margin-top-0">
+                If it applies to anyone not listed below, you must first <a href="https://co-sirsi-17f24dc1d065.herokuapp.com/supplier-information-v5/connected/connected-start" target="https://co-sirsi-17f24dc1d065.herokuapp.com/supplier-information-v5/connected/connected-start">add
+                    them as a connected person (opens in new tab)</a>.
             </div>
+    
+            {% include "../templates/radio-options.html" %}
+          </fieldset>
+        </div>
 
-            <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
+        {% include("../templates/button--submit.html") %}
+
+      </form>
     </div>
-    </form>
-
-
 </div>
-</div>
+
 
 {% endblock %}

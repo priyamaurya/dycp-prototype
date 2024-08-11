@@ -13,94 +13,21 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+          <div class="govuk-form-group">
+              {% set inputName="isEventEnded" %}
+              {% set heading="Have the circumstances that led to the exclusion ended?" %}
+              {% set hintText="For example, a court decision for environmental misconduct led your organisation or the connected person to stop harming the environment." %}
+              {% set revealLabel="Enter the date the circumstances ended" %}
 
-    <form class="form" method="post">
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" data-required data-error="Select" aria-required="true">
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Have the circumstances that led to the exclusion ended? 
-            </h1>
-          </legend>
-          <div id="ended-hint" class="govuk-hint">For example, a court decision for environmental misconduct led your organisation or the connected person to stop harming the environment.
-          </div>
-          
-          <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="eventOngoingMan" name="eventOngoingMan"
-                type="radio" value="Yes" data-aria-controls="eventOngoingMan-date" {% if data['eventOngoingMan'] == 'Yes' %} checked {% endif %}>
-              <label class="govuk-label govuk-radios__label" for="eventOngoingMan">
-                Yes            
-              
-            </label>
-            </div>
-            
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="eventOngoingMan-date">
-              <div id="convictionHint" class="govuk-hint">
-                <p>Enter the date the circumstances ended</p>
-                For example, 27 3 2007
-              </div>
-              <div class="govuk-date-input" id="conviction">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="convictionDay">
-                      Day
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="convictionDay"
-                      name="convictionDay" type="text" inputmode="numeric" value="{{ data['convictionDay'] }}">>
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="convictionMonth">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="convictionMonth"
-                      name="convictionMonth" type="text" inputmode="numeric" value="{{ data['convictionMonth']}}">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="convictionYear">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="convictionYear"
-                      name="convictionYear" type="text" inputmode="numeric" value="{{ data['convictionYear']}}">
-                  </div>
-                </div> 
-             
-              
-              
-            
-            
-            
-            
-
-
-
-
-            </div>
-          </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="eventOngoingMan-2" name="eventOngoingMan"
-                type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="eventOngoingMan-2">
-                No, the circumstances are ongoing
-              </label>
-            </div>
-
+              {% include "../templates/radio-yes-no-reveal-date.html" %}
           </div>
 
-        </fieldset>
-      </div>
+          {% include("../templates/button--submit.html") %}
 
-      <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
+      </form>
+
   </div>
-  </form>
-
-
-</div>
 </div>
 
 {% endblock %}

@@ -1,0 +1,42 @@
+<!--
+{*% set inputName="hasCompaniesHouseNumber" %*}
+{*% set heading="Is [Org] registered with Companies House?" %*}
+{*% set revealLabel = "On what date?" %*}
+OPTIONAL:
+
+{*% set headingCaption=data['connectedPersons'] %*}
+{*% set hintText="Is the 'connected person' registered with Companies House as required by the Companies Act 2006." %*}
+
+-->
+
+
+<div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" {% if hintText %}aria-describedby="contact-hint"{% endif %}>
+      {% include "./fieldset-legend.html" %}
+
+      {% include "./hint-text.html" %}
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="{{ inputName }}" name="{{ inputName }}" type="radio" value="Yes" data-aria-controls="{{ inputName }}Conditional">
+          <label class="govuk-label govuk-radios__label" for="{{ inputName }}">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="{{ inputName }}Conditional">
+
+          {% set hintText = "You can upload most file types including: PDF, scans, mobile phone photos, Word, Excel and PowerPoint, multimedia and ZIP files that are smaller than 10MB." %}
+          {% include "./fileupload.html" %}
+
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="{{ inputName }}-2" name="{{ inputName }}" type="radio" value="No">
+          <label class="govuk-label govuk-radios__label" for="{{ inputName }}-2">
+            No
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>

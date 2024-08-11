@@ -12,66 +12,23 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-three-quarters">
-
-        <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
-            Mandatory exclusion grounds
-        </h2>
-
-        <span class="govuk-caption-l">
-            {{ data['exclusionMan'] }}
-        </span> -->
-
+    <div class="govuk-grid-column-two-thirds">
         <form class="form" method="post">
-
             <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
 
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">
-                            Do you have a supporting document to upload? 
-                        </h1>
-                    </legend>
-                    <div id="document-hint" class="govuk-hint">
-                        A decision from a public authority that was the basis for the offence. For example, documentation from the police, HMRC or the court. </div>
-                    <div class="govuk-radios" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="documents-2" name="documents-2" type="radio" value="Yes" data-aria-controls="conditional-chno" {% if data['documents-2'] == 'Document upload' %} checked {% endif %} >
-                            <label class="govuk-label govuk-radios__label" for="documents-2">
-                                Yes
-                            </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chno">
-                            <div class="govuk-form-group">
-                            <label class="govuk-hint" for="chnoInput">
-                                You can upload most file types including: PDF, scans, mobile phone photos, Word, Excel and PowerPoint, multimedia and ZIP files that are smaller than 10MB.  
-                            </label>
-                            <br><input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
-                            </div>
-                        </div>
-                        <div class="govuk-radios" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="noDocuments" name="documents-2" type="radio" value="No, I cannot provide any documentation" {% if data['documents-2'] == 'No, I cannot provide any documentation' %} checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="noDocuments">
-                                    No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
+                {% set inputName="documents" %}
+                {% set heading="Do you have a supporting document to upload?" %}
+                {% set revealLabel = "Upload file" %}
+                {% set hintText="A decision from a public authority that was the basis for the offence. For example, documentation from the police, HMRC or the court." %}
 
-                </fieldset>
+                <!-- You can upload most file types including: PDF, scans, mobile phone photos, Word, Excel and PowerPoint, multimedia and ZIP files that are smaller than 10MB. -->
+                {% include "../templates/radio-yes-no-reveal-file-upload.html" %}
             </div>
-
-            <button class="govuk-button govuk-!-margin-top-6" type="submit">Continue</button>
-
+            {% include("../templates/button--submit.html") %}
         </form>
 
     </div>
 </div>
 </div>
-
-{% endblock %}
-
-{% block pageScripts %}
 
 {% endblock %}
