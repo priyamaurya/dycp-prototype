@@ -29,48 +29,52 @@ router.post("/uk-event", function (req, res) {
   }
 });
 
-router.post("/exclusion-grounds-outside-UK", function (req, res) {
-  let exclusionMan = req.session.data.exclusionMan;
-  let startQuestion = req.session.data.startQuestion;
+// router.post("/exclusion-grounds-outside-UK", function (req, res) {
+//   let exclusionMan = req.session.data.exclusionMan;
+//   let startQuestion = req.session.data.startQuestion;
 
-  if (exclusionMan == "Theft, fraud, bribery etc") {
-    res.redirect("theft-fraud-bribery");
-  } else if (exclusionMan == "Labour market, slavery and human trafficking offences") {
-    res.redirect("labour-market");
-  } else if (exclusionMan == "Tax offences") {
-    res.redirect("tax-offences");
-  } else if (exclusionMan == "Organised crime") {
-    res.redirect("organised-crime");
-  } else if (exclusionMan == "Ancillary offences") {
-    res.redirect("ancillary-offences");
-  } else if (exclusionMan == "Equivalents outside the United Kingdom") {
-    res.redirect("outside-uk");
-  } else if (exclusionMan == "Penalties for transactions connected with VAT fraud and evasion or tax or duty") {
-    res.redirect("vat-fraud");
-  } else if (exclusionMan == "Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing") {
-    res.redirect("vat-fraud");
-  } else if (exclusionMan == "None of the above" && startQuestion == "Individual") {
-    res.redirect("/suppliers-d/account-home");
-  } else if (exclusionMan == "None of the above" && startQuestion == "Company") {
-    res.redirect("../supplier-information"); ///suppliers-c/account-home
-  } else if (exclusionMan == "None of the above" && startQuestion == "Trust") {
-    res.redirect("/suppliers-b/account-home");
-  } else if (exclusionMan == "Adjustments for tax arrangements that are abusive") {
-    res.redirect("event-subject");
-  } else if (exclusionMan == "Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice") {
-    res.redirect("event-subject");
-  } else if (exclusionMan == "Defeat in respect of notifiable tax arrangements") {
-    res.redirect("event-subject");
-  } else if (exclusionMan == "Competition law infringements") {
-    res.redirect("event-subject");
-  } else if (exclusionMan == "Failure to cooperate with investigation") {
-    res.redirect("event-subject");
-  } else {
-    res.redirect("uk-crime");
-  }
-});
+//   if (exclusionMan == "Theft, fraud, bribery etc") {
+//     res.redirect("theft-fraud-bribery");
+//   } else if (exclusionMan == "Labour market, slavery and human trafficking offences") {
+//     res.redirect("labour-market");
+//   } else if (exclusionMan == "Tax offences") {
+//     res.redirect("tax-offences");
+//   } else if (exclusionMan == "Organised crime") {
+//     res.redirect("organised-crime");
+//   } else if (exclusionMan == "Ancillary offences") {
+//     res.redirect("ancillary-offences");
+//   } else if (exclusionMan == "Equivalents outside the United Kingdom") {
+//     res.redirect("outside-uk");
+//   } else if (exclusionMan == "Penalties for transactions connected with VAT fraud and evasion or tax or duty") {
+//     res.redirect("vat-fraud");
+//   } else if (exclusionMan == "Penalties payable for errors in tax documentation and failure to notify and certain VAT and excise wrongdoing") {
+//     res.redirect("vat-fraud");
+//   } else if (exclusionMan == "None of the above" && startQuestion == "Individual") {
+//     res.redirect("/suppliers-d/account-home");
+//   } else if (exclusionMan == "None of the above" && startQuestion == "Company") {
+//     res.redirect("../supplier-information"); ///suppliers-c/account-home
+//   } else if (exclusionMan == "None of the above" && startQuestion == "Trust") {
+//     res.redirect("/suppliers-b/account-home");
+//   } else if (exclusionMan == "Adjustments for tax arrangements that are abusive") {
+//     res.redirect("event-subject");
+//   } else if (exclusionMan == "Finding by HMRC, in exercise of its powers in respect of VAT, of abusive practice") {
+//     res.redirect("event-subject");
+//   } else if (exclusionMan == "Defeat in respect of notifiable tax arrangements") {
+//     res.redirect("event-subject");
+//   } else if (exclusionMan == "Competition law infringements") {
+//     res.redirect("event-subject");
+//   } else if (exclusionMan == "Failure to cooperate with investigation") {
+//     res.redirect("event-subject");
+//   } else {
+//     res.redirect("uk-crime");
+//   }
+// });
 
 router.post("/exclusion-grounds-in-UK", function (req, res) {
+  res.redirect("event-subject");
+});
+
+router.post("/exclusion-grounds-outside-UK", function (req, res) {
   res.redirect("event-subject");
 });
 

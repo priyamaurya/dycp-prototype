@@ -17,17 +17,16 @@
         <form class="form" method="post">
             <div class="govuk-form-group">
                 {% set inputName="mitDetail1" %}
-                {% set heading="Tell us about the exclusion" %}
-                {% set showCharacterCount=true %}
+                {% set heading="How the exclusion is being managed" %}
                 {% set description="
-                    <p class=\"govuk-body\">You must briefly describe:</p>
+                    <p class=\"govuk-body\">You must tell us what you or the person who was subject to the event:</p>
                 
 
-                    <ol class=\"govuk-list govuk-list--number\">
-                            <li>What has been done to prove it was taken seriously. For example, paid a fine or compensation. </li>
-                            <li>What steps have been taken to stop the circumstances that caused it from happening again. For example, changing staff or management, putting procedures or training in place. </li>
-                            <li>How the the steps taken are being monitored.</li>
-                    </ol>
+                    <ul class=\"govuk-list govuk-list--bullet\">
+                            <li>have done to prove it was taken seriously - for example, paid a fine or compensation</li>
+                            <li>have done to stop the circumstances that caused it from happening again - for example, taking steps like changing staff or management or putting procedures or training in place</li>
+                            <li>are doing to monitor the steps that were taken</li>
+                    </ul>
                 " %}
     
                 {% include "../templates/textarea.html" %}
