@@ -41,23 +41,23 @@ router.get('/:index/remove-user', function (req, res) {
     res.render(path.resolve(__dirname, 'remove-user'));
 })
 
-router.post('/:index/remove-user', function (req, res) {
-    let removeUser = req.session.data.removeUser;
-    const users = req.session.data.userArray || [];
+router.post('/remove-user', function (req, res) {
+    // let removeUser = req.session.data.removeUser;
+    // const users = req.session.data.userArray || [];
 
-    if (removeUser == 'Yes' && users.length) {
-        const deleteIndex = req.params.index - 1;
-        const maxIndex = users.length || 0;
+    // if (removeUser == 'Yes' && users.length) {
+    //     const deleteIndex = req.params.index - 1;
+    //     const maxIndex = users.length || 0;
 
-        if (deleteIndex <= maxIndex) {
-            users.splice(deleteIndex, 1);
+    //     if (deleteIndex <= maxIndex) {
+    //         users.splice(deleteIndex, 1);
 
-            req.session.data.userArray = users;
-            req.session.data.userCount = users.length;
-        }
-    }
+    //         req.session.data.userArray = users;
+    //         req.session.data.userCount = users.length;
+    //     }
+    // }
 
-    res.redirect('../add-another-user');
+    res.redirect('add-another-user');
 })
 
 router.get('/:index/check-answers', function (req, res) {

@@ -176,23 +176,23 @@ router.get("/:index/remove-exclusion", function (req, res) {
   res.render(path.resolve(__dirname, "remove-exclusion"));
 });
 
-router.post("/:index/remove-exclusion", function (req, res) {
-  let removeExclusionMan = req.session.data.removeExclusionMan;
-  const exclusionMans = req.session.data.exclusionManArray || [];
+router.post("/remove-exclusion", function (req, res) {
+  // let removeExclusionMan = req.session.data.removeExclusionMan;
+  // const exclusionMans = req.session.data.exclusionManArray || [];
 
-  if (removeExclusionMan == "Yes" && exclusionMans.length) {
-    const deleteIndex = req.params.index - 1;
-    const maxIndex = exclusionMans.length || 0;
+  // if (removeExclusionMan == "Yes" && exclusionMans.length) {
+  //   const deleteIndex = req.params.index - 1;
+  //   const maxIndex = exclusionMans.length || 0;
 
-    if (deleteIndex <= maxIndex) {
-      exclusionMans.splice(deleteIndex, 1);
+  //   if (deleteIndex <= maxIndex) {
+  //     exclusionMans.splice(deleteIndex, 1);
 
-      req.session.data.exclusionManArray = exclusionMans;
-      req.session.data.exclusionManCount = exclusionMans.length;
-    }
-  }
+  //     req.session.data.exclusionManArray = exclusionMans;
+  //     req.session.data.exclusionManCount = exclusionMans.length;
+  //   }
+  // }
 
-  res.redirect("../add-another-exclusion");
+  res.redirect("add-another-exclusion");
 });
 
 router.get("/:index/check-answers", function (req, res) {
