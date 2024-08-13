@@ -1,5 +1,17 @@
-{% extends "layouts/main.html" %} {% block header %} {% include("includes/header-with-nav.html") %} {% endblock %} {% block beforeContent %} {%
-include("includes/phase-banner.html") %} {% include("includes/back-link.html") %} {% endblock %} {% block content %}
+{% extends "layouts/main.html" %}
+
+{% set showFTS = true %}
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">

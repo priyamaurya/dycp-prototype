@@ -1,7 +1,17 @@
-{% extends "layouts/main.html" %} {% block header %} {%
-include("includes/header-with-nav.html") %} {% endblock %} {% block
-beforeContent %} {% include("includes/phase-banner.html") %} {% endblock %} {%
-block content %}
+{% extends "layouts/main.html" %}
+
+{% set showFTS = true %}
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">
@@ -33,17 +43,14 @@ block content %}
           <td class="govuk-table__cell">
             <a
               class="govuk-link govuk-link--no-visited-state"
-              href="org-dashboard"
-              >Select</a
-            >
+              href="org-dashboard">Select</a>
           </td>
         </tr>
       </tbody>
     </table>
 
     <a class="govuk-link govuk-link--no-visited-state" href="org-type"
-      >Add another organisation</a
-    >
+      >Add another organisation</a>
   </div>
 </div>
 
