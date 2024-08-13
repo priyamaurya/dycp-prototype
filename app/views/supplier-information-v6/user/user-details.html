@@ -23,8 +23,8 @@
     </span> -->
 
     <form class="form" method="post">
-
-
+      <h1 class="govuk-heading-l">Add a user
+        </h1>
       <fieldset class="govuk-fieldset" data-required data-error="Enter the email address" aria-required="true">
         <div class="govuk-form-group">
           <label class="govuk-label" for="firstName">
@@ -32,7 +32,7 @@
           </label>
           <input class="govuk-input govuk-!-width-two-thirds" id="firstName" name="firstName" type="text" value="{{ data['firstName'] }}">
         </div>
-      
+
         <div class="govuk-form-group">
             <label class="govuk-label" for="lastName">
                 Last name
@@ -46,7 +46,7 @@
           </label>
           <input class="govuk-input govuk-!-width-two-thirds" id="emailAddress" name="emailAddress" type="text" value="{{ data['emailAddress'] }}">
         </div>
-          <!-- 
+          <!--
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-heading-l">Enter their email address</h1>
             </legend>
@@ -56,41 +56,56 @@
            -->
 
            <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend">
-                  What do you want the user to do?
-              </legend>
+
+             <h2 class="govuk-heading-m">
+               Select user role
+               </h2>
+               <div id="user-type-item-hint" class="govuk-hint">
+                 Select all that apply
+               </div>
+               <fieldset class="govuk-fieldset">
+
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="userType" name="userType" type="checkbox" value="Admin" aria-describedby="user-type-item-hint">
                   <label class="govuk-label govuk-checkboxes__label" for="userType">
-                    Manage organisation users
+                    User admin
                   </label>
-                  <!-- <div id="user-type-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                    Admins can add, edit user roles and remove users
-                  </div> -->
+                  <div id="user-type-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                    Can add, remove and edit users
+                  </div>
                 </div>
 
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="userType2" name="userType" type="checkbox" value="Allow access to supplier information" aria-describedby="user-type2-item-hint">
                   <label class="govuk-label govuk-checkboxes__label" for="userType2">
-                    Add or change supplier information
+                    Editor
                   </label>
                   <div id="user-type2-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                    All users in your organisation can view organisation information. Tick this box only if you want to allow users to add or update organisation details.
+                    Can view, add and edit organisation information, view supplier information and create API keys
                   </div>
                 </div>
 
 
               </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="userType" name="userType" type="checkbox" value="Admin" aria-describedby="user-type-item-hint">
+                  <label class="govuk-label govuk-checkboxes__label" for="userType">
+                    Viewer
+                  </label>
+                  <div id="user-type-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                    Can view organisation and supplier information
+                  </div>
+                </div>
             </fieldset>
           </div>
-           
+
           </fieldset>
           <button class="govuk-button" type="submit">Continue</button>
         </form>
-      
-      
+
+
 
     </form>
   </div>
