@@ -22,6 +22,35 @@
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             First name
+            <br>
+            Last name
+            <br>
+            Email address
+            <br>
+            User role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['firstName'] }}
+            <br>
+            {{ data['lastName'] }}
+            <br>
+            {{ data['emailAddress'] }}
+            <br>
+            {{ data['userType'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="user-details">
+              Change<span class="govuk-visually-hidden">
+                user details</span>
+            </a>
+          </dd>
+        </div>
+
+
+
+        <!-- <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            First name
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['firstName'] }}
@@ -86,25 +115,18 @@
                 the event subject</span>
             </a>
           </dd>
-        </div>
+        </div> -->
 
         {% endif %}
 
       </dl>
-      <p class="govuk-body">We’ll send an email invite with a link for them to sign in with GOV.UK One Login.
+      <p class="govuk-body">We'll send an email invite with a link for them to sign in with GOV.UK One Login.
         </p>
-  </div>
+  
 
-  <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-button-group govuk-!-margin-top-9">
-      <button class="govuk-button" data-module="govuk-button">
-        Send email
-      </button>
-    </div>
-
-  </div>
-
+  <button class="govuk-button" data-module="govuk-button">
+    Send email
+  </button>
 
   </form>
 </div>
