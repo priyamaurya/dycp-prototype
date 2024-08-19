@@ -13,24 +13,50 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <fieldset class="govuk-fieldset" data-required data-error="Enter the trade assurance reference number" aria-required="true">
-
-            <form class="form" method="post">
-
+  
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" data-required data-error="Select yes if you know the trade assurance reference number"
+            aria-required="true">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you know the trade assurance reference number?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vatReg" name="vatReg" type="radio" value="Yes"  data-aria-controls="conditional-vat-yes">
+                <label class="govuk-label govuk-radios__label" for="vatReg">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-vat-yes">
                 <div class="govuk-form-group">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-heading-l">Enter the trade assurance reference number</h1>
-                    </legend>
-                    <input class="govuk-input govuk-input--width-20" name="tradeRef" id="tradeRef" type="text"
-                        aria-describedby="tradeRef" value="{{ data['tradeRef'] }}">
+                  <label class="govuk-label" for="vatNumber">
+                    Reference number
+                  </label>
+                  <div id="vat-registration-number-hint" class="govuk-hint">
+                  
+                  </div>
+                  <input class="govuk-input govuk-!-width-one-third" id="vatNumber" name="vatNumber" spellcheck="false" autocomplete="false" aria-describedby="vat-registration-number-hint">
                 </div>
-                <button class="govuk-button" type="submit">Save and continue</button>
-            </form>
-
-        </fieldset>
+              </div>
+  
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vatReg-2" name="vatReg" type="radio" value="No">
+                <label class="govuk-label govuk-radios__label" for="vatReg-2">
+                  No
+                </label>
+              </div>
+  
+            </div>
+  
+          </fieldset>
+        </div>
+  
+        <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
     </div>
-
-</div>
-</div>
+    </form>
 
 {% endblock %}
