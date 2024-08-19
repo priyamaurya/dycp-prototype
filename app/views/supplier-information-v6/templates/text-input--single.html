@@ -10,11 +10,16 @@ OPTIONAL:
 
 
 <div class="govuk-form-group">
+
+{% if displayHeadingAsLabel %}
+    <label class="govuk-label" for="{{ inputName }}">{{ heading }}</label>
+{% else %}
     {% include "./heading-caption.html" %}
 
     <h1 class="govuk-label-wrapper">
         <label class="govuk-label govuk-label--l" for="{{ inputName }}">{{ heading }}</label>
     </h1>
+{% endif %}
 
     {% include "./hint-text.html" %}
     

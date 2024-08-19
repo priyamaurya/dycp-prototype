@@ -38,7 +38,7 @@ router.get('/start', function (req, res) {
 
 router.post('/org-type', function (req, res) {
   var orgType = req.body.orgType;
-  req.session.orgType = orgType;
+  req.session.data.orgType = orgType;
 
   res.redirect('/supplier-information-v6/has-ch-number');
 });
@@ -57,23 +57,25 @@ router.post('/has-ch-number', function (req, res) {
 
 router.post('/org-name', function (req, res) {
 
-    console.log(req.session);
-  if(req.session.orgType.toLowerCase() == "supplier" && req.body.orgName.toLowerCase() == "capita plc"){
+  if(req.session.data.orgType.toLowerCase() == "supplier" && req.body.orgName.toLowerCase() == "capita plc"){
     res.redirect('/supplier-information-v6/org-exists');
-  } else if(req.session.orgType.toLowerCase() == "buyer" && req.body.orgName.toLowerCase() == "defra"){
+  } else if(req.session.data.orgType.toLowerCase() == "buyer" && req.body.orgName.toLowerCase() == "defra"){
     res.redirect('/supplier-information-v6/org-exists');
   } else {
     res.redirect('/supplier-information-v6/org-email');
   }
+
+    
+
 });
 
 
 router.get('/org-address-uk', function (req, res) {
-  res.render('supplier-information-v6/org-address-uk', {orgType: req.session.orgType});
+  res.render('supplier-information-v6/org-address-uk', {orgType: req.session.data.orgType});
 });
   
 router.post('/org-address-uk', function (req, res) {
-  if (req.session.orgType.toLowerCase()  == 'buyer'){
+  if (req.session.data.orgType.toLowerCase()  == 'buyer'){
     res.redirect('/supplier-information-v6/buyer-type');
   } else {
     res.redirect('/supplier-information-v6/org-overview'); 

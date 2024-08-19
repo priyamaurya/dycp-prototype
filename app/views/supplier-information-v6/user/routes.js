@@ -9,8 +9,35 @@ const axios = require('axios');
 
 
 router.post('/user-details', function (req, res) {
-    res.redirect('check-answers');
+    if (req.query.edit)
+        res.redirect('add-another-user?edit=success');
+    else
+        res.redirect('check-answers');
 })
+
+router.get('/user-details', function (req, res) {
+    var edit = false;
+
+    if (req.query.edit)
+        edit = true;
+
+    res.render(path.resolve(__dirname, 'user-details'), {isEditing: edit});
+})
+
+router.get('/add-another-user', function (req, res) {
+
+    if (req.query.add)
+        showSuccessMessage = "add";
+    else if(req.query.remove)
+        showSuccessMessage = "remove";
+    else if (req.query.edit)
+        showSuccessMessage = "edit";
+    else
+        showSuccessMessage = false;
+
+    res.render(path.resolve(__dirname, 'add-another-user'), {showSuccessMessage: showSuccessMessage});
+})
+
 
 
 // router.post('/event-subject', function (req, res) {
@@ -57,7 +84,7 @@ router.post('/remove-user', function (req, res) {
     //     }
     // }
 
-    res.redirect('add-another-user');
+    res.redirect('add-another-user?remove=success');
 })
 
 router.get('/:index/check-answers', function (req, res) {
@@ -104,7 +131,7 @@ router.post('/check-answers', function (req, res) {
 
     delete data.editUser;
 
-    res.redirect('add-another-user');
+    res.redirect('add-another-user?add=success');
 })
 
 

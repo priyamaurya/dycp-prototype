@@ -13,101 +13,56 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
-      Mandatory exclusion grounds
-    </h2>
-
-    <span class="govuk-caption-l">
-      {{ data['exclusionMan'] }}
-    </span> -->
-
+    <h1 class="govuk-heading-l">
+    {% if isEditing == true %}
+      Lewis Bloggs
+    {% else %}
+      Add a user
+    {% endif %}
+    </h1>
     <form class="form" method="post">
-      <h1 class="govuk-heading-l">Add a user
-        </h1>
-      <fieldset class="govuk-fieldset" data-required data-error="Enter the email address" aria-required="true">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="firstName">
-              First name
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="firstName" name="firstName" type="text" value="{{ data['firstName'] }}">
-        </div>
+      
+      {% if isEditing == true %}
+      {% else %}
 
-        <div class="govuk-form-group">
-            <label class="govuk-label" for="lastName">
-                Last name
-            </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="lastName" name="lastName" type="text"  value="{{ data['lastName'] }}">
-        </div>
+      {% set inputName="firstName" %}
+      {% set heading="First name" %}
+      {% set displayHeadingAsLabel=true %}
+      {% include("../templates/text-input--single.html") %} 
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="emailAddress">
-            Email address
-          </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="emailAddress" name="emailAddress" type="text" value="{{ data['emailAddress'] }}">
-        </div>
-          <!--
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-heading-l">Enter their email address</h1>
-            </legend>
+      {% set inputName="lastName" %}
+      {% set heading="Last name" %}
+      {% set displayHeadingAsLabel=true %}
+      {% include("../templates/text-input--single.html") %} 
 
-            <input class="govuk-input govuk-input--width-20" name="emailAddress" id="emailAddress" type="email"
-              aria-describedby="emailAddress" value="{{ data['emailAddress'] }}">
-           -->
+      {% set inputName="emailAddress" %}
+      {% set heading="Email address" %}
+      {% set displayHeadingAsLabel=true %}
+      {% include("../templates/text-input--single.html") %} 
 
-           <div class="govuk-form-group">
-
-             <h2 class="govuk-heading-m">
-               Select user role
-               </h2>
-               <div id="user-type-item-hint" class="govuk-hint">
-                 Select all that apply
-               </div>
-               <fieldset class="govuk-fieldset">
-
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="userType" name="userType" type="checkbox" value="Admin" aria-describedby="user-type-item-hint">
-                  <label class="govuk-label govuk-checkboxes__label" for="userType">
-                    User admin
-                  </label>
-                  <div id="user-type-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                    Can add, remove and edit users
-                  </div>
-                </div>
-
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="userType2" name="userType" type="checkbox" value="Allow access to supplier information" aria-describedby="user-type2-item-hint">
-                  <label class="govuk-label govuk-checkboxes__label" for="userType2">
-                    Editor
-                  </label>
-                  <div id="user-type2-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                    Can view, add and edit organisation information, view supplier information and create API keys
-                  </div>
-                </div>
+      {% endif %}
 
 
-              </div>
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="userType" name="userType" type="checkbox" value="Admin" aria-describedby="user-type-item-hint">
-                  <label class="govuk-label govuk-checkboxes__label" for="userType">
-                    Viewer
-                  </label>
-                  <div id="user-type-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                    Can view organisation and supplier information
-                  </div>
-                </div>
-            </fieldset>
-          </div>
+      {% set inputName="natureOfControl" %}
+      {% set heading="Select a role" %}
+      {% set displayHeadingAsLabel=true %}
 
-          </fieldset>
-          <button class="govuk-button" type="submit">Continue</button>
-        </form>
+      {% set options=[] %}
+      {% set optionHints=[] %}
 
+      {% set options=(options.push("User admin"), options) %}
+      {% set optionHints=(optionHints.push("Can add, remove and edit users"), optionHints) %}
 
+      {% set options=(options.push("Editor"), options) %}
+      {% set optionHints=(optionHints.push("Can view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
 
-    </form>
+      {% set options=(options.push("Viewer"), options) %}
+      {% set optionHints=(optionHints.push("Can view organisation and supplier information"), optionHints) %}
+
+      {% include("../templates/radios.html") %} 
+      {% include("../templates/button--submit.html") %}
+
+      </form>
   </div>
 
 </div>

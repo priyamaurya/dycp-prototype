@@ -15,18 +15,35 @@
   <div class="govuk-grid-column-full">
 
 
+    {% if showSuccessMessage == 'add' %}
+      {% set messageTitle = "Success" %}
+      {% set messageBody = "You've invited [Joe Bloggs]" %}
+    {% endif %}
+
+    {% if showSuccessMessage == 'edit' %}
+      {% set messageTitle = "Success" %}
+      {% set messageBody = "You've updated [Joe Bloggs] role" %}
+    {% endif %}
+
+    {% if showSuccessMessage == 'remove' %}
+      {% set messageTitle = "Success" %}
+      {% set messageBody = "You've removed [Joe Bloggs]" %}
+    {% endif %}
+
+    {% if showSuccessMessage %}
     <div class="govuk-notification-banner  govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
+          {{ messageTitle }}
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
-          You’ve sent an email invite to Joe Bloggs
+          {{messageBody}}
         </p>
       </div>
     </div>
+    {% endif %}
 
     <form class="form" method="post">
 
@@ -55,18 +72,84 @@
               {{ user['emailAddress'] }}
             </dt>
             <dd class="govuk-summary-list__actions">
+              {% if loop.index > 1 %}
               <ul class="govuk-summary-list__actions-list">
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="{{loop.index}}/check-answers">Change</a>
+                  <a class="govuk-link govuk-link--no-visited-state" href="user-details?edit=true">Change</a>
                 </li>
                 <li class="govuk-summary-list__actions-list-item">
-                  <a class="govuk-link" href="remove-user">Remove</a>
+                  <a class="govuk-link govuk-link--no-visited-state" href="remove-user">Remove</a>
+                </li>
+              </ul>
+              {% endif %}
+            </dd>
+          </div>
+        </dl>
+        {% endfor %}
+        <dl class="govuk-summary-list ros-add-to-a-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Lewis Bloggs <span class="govuk-tag">Admin</span>
+            </dt>
+            <dt class="govuk-summary-list__key">
+              Lewis.bloggs@capita.com
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="user-details?edit=true">Change</a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="remove-user">Remove</a>
                 </li>
               </ul>
             </dd>
           </div>
         </dl>
-        {% endfor %}
+
+        <dl class="govuk-summary-list ros-add-to-a-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Mercedes Benz <span class="govuk-tag govuk-tag--green">Editor</span>
+              <div class="govuk-hint">Invite sent</div>
+            </dt>
+            <dt class="govuk-summary-list__key">
+              mercedes.benz@capita.com
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change</a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="remove-user">Remove</a>
+                </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+
+        <dl class="govuk-summary-list ros-add-to-a-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Raj Patel <span class="govuk-tag govuk-tag--yellow">Viewer</span>
+            </dt>
+            <dt class="govuk-summary-list__key">
+              raj.patel@capita.com
+            </dt>
+            <dd class="govuk-summary-list__actions">
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="#">Change</a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link govuk-link--no-visited-state" href="remove-user">Remove</a>
+                </li>
+              </ul>
+            </dd>
+          </div>
+        </dl>
+        
       </div>
 
 

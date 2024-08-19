@@ -1,0 +1,160 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+{% set nav = [
+  {
+    href: '/supplier-information-v'+data['v']+'/dashboard',
+    text: "Search",
+    active: false
+  },
+  {
+    href: "#",
+    text: "Register"
+  },
+  {
+    href: "#",
+    text: "Sign in"
+  }
+] %}
+
+{{ govukHeader({
+  homepageUrl: "start",
+  serviceName: "Find a Tender",
+  serviceUrl: "#",
+  navigation: nav
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Find a Tender
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h1 class="govuk-label-wrapper">
+        <label class="govuk-label govuk-label--m" for="event-name">
+          Use Find a Tender service to search for opportunities, awards, and contracts in the UK's public and utilities sectors.
+        </label>
+      </h1>
+      <!-- <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text">  -->
+      <button class="govuk-button govuk-button--start">
+        Start
+
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </button>
+    </div>
+    
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--s">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      What is Find a Tender
+    </h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-panel govuk-!-text-align-left  govuk-panel--confirmation">
+      <h1 class="govuk-heading-l">
+        Suppliers
+      </h1>
+  
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      </p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-one-half">
+    <div class="govuk-panel govuk-!-text-align-left govuk-panel--confirmation">
+      <h1 class="govuk-heading-l">
+        Buyers
+      </h1>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+      </p>
+    </div>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-panel">
+    <h1 class="govuk-heading-xl">
+      Notifications
+    </h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-m">
+      Public procurement regulations
+    </h1>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+    </p>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-m">
+      Review services
+    </h1>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <p>
+      <a href="#">Contact us</a> if you have concerns about procurement practices, including payment, contact.
+    </p>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <h1 class="govuk-heading-m">
+      Service support team
+    </h1>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <p>
+      <a href="#">Contact us</a> if you are experiencing problems using the Find a Tender service.
+    </p>
+  </div>
+</div>
+
+
+{% endblock %}
