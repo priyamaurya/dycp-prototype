@@ -91,10 +91,10 @@ router.post('/is-the-address-same', function (req, res) {
 
   let addressSame = req.session.data.addressSame;
 
-  if (addressSame == "No") {
-    res.redirect('postal-uk-address');
+  if (addressSame == "Yes") {
+    res.redirect('non-individual-core-data');   
   } else {
-    res.redirect('non-individual-core-data');
+    res.redirect('postal-uk-address');
   }
 })
 
@@ -517,20 +517,20 @@ router.post('/find-postal-uk-address', function (req, res) {
 
 })
 
-router.get('/non-individual-core-data', function (req, res) {
-  console.log(req.session.data)
-  res.render(path.resolve(__dirname, 'non-individual-core-data'));
-});
+// router.get('/non-individual-core-data', function (req, res) {
+//   console.log(req.session.data)
+//   res.render(path.resolve(__dirname, 'non-individual-core-data'));
+// });
 
 
 
-router.get('/is-the-address-same', function (req, res) {
-  if (req.session.data.individualOrOrg && req.session.data.individualOrOrg == 'Individual'){
-    res.redirect('postal-uk-address')
-  } else {
-    res.render(path.resolve(__dirname, 'is-the-address-same'));
-  }
-});
+// router.get('/is-the-address-same', function (req, res) {
+//   if (req.session.data.individualOrOrg && req.session.data.individualOrOrg == 'Individual'){
+//     res.redirect('postal-uk-address')
+//   } else {
+//     res.render(path.resolve(__dirname, 'is-the-address-same'));
+//   }
+// });
 
 
 module.exports = router

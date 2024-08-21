@@ -20,9 +20,15 @@
           aria-required="true">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Does your organisation hold any professional qualifications?
-            </h1>
+                    {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                        <h1 class="govuk-fieldset__heading">
+                          Does your organisation hold any professional qualifications?
+                        </h1>
+                    {% else  %}
+                        <h1 class="govuk-fieldset__heading">
+                          Do you hold any professional qualifications?
+                        </h1>
+                    {% endif %}
           </legend>
 		<div id="qualification-question-hint" class="govuk-hint">
       These are general qualifications for business and trade, not procurement specific. For example, International Organisation for Standardisation (ISO) certification. 

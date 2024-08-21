@@ -20,9 +20,15 @@
           aria-required="true">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              [Do you/Does your organisation] have a website?
-            </h1>
+                    {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                        <h1 class="govuk-fieldset__heading">
+                          Does your organisation have a website?
+                        </h1>
+                    {% else  %}
+                        <h1 class="govuk-fieldset__heading">
+                          Do you have a website?
+                        </h1>
+                    {% endif %}
           </legend>
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
             <div class="govuk-radios__item">
