@@ -182,8 +182,11 @@
                     Enter your organisation's registered legal form
                   </label>
                 </h1>
-                <input class="govuk-input" id="legalForm-by-text" name="legalForm"
+                <div id="legalForm-hint" class="govuk-hint">
+                In the UK this is a business structure or trading status. For example, limited company or limited liability partnership.</div>
+                <br><input class="govuk-input" id="legalForm-by-text" name="legalForm"
                   value="{{ data['legalForm'] }}">
+                  
               </div>
 
             {% endif %}
@@ -192,7 +195,7 @@
 
 
 
-      <button class="govuk-button" type="submit">Save and continue</button>
+      <button class="govuk-button" type="submit">Continue</button>
     </form>
   </div>
 

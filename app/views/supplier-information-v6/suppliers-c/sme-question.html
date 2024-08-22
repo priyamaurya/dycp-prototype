@@ -21,73 +21,84 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              How does the organisation operate?
+              Which best describes your organisation?
             </h1>
           </legend>
           <div id="orgType-hint" class="govuk-hint">
-            Select all that apply.
+            Select all that apply
           </div>
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="orgType" name="orgType" type="checkbox"
                 value="A small or medium-sized enterprise">
               <label class="govuk-label govuk-checkboxes__label" for="orgType">
-                As a small or medium-sized enterprise
+                Small or medium-sized enterprise
               </label>
             </div>
 
-            <details class="govuk-details" data-module="govuk-details">
+            <!--<details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Small and medium-sized enterprises are defined by having:
+                  Small and medium-sized enterprise definition
                 </span>
-              </summary>
-              <div class="govuk-details__text">
-                (a) fewer than 250 staff, and <br><br>
-                (b) a turnover of an amount less than or equal to £44 million, or a balance sheet total of an
-                amount less than or equal to £38 million </div>
-            </details>
+              </summary>-->
+              <div id="sme-hint" class="govuk-hint">
+                Fewer than 250 staff, turnover of £44 million or less, or a balance sheet total of £38 million or less
+              </div>
+              <!--<div class="govuk-details__text">
+                <p class="govuk-body">These organisations have:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>fewer than 250 staff</li>
+  <li>a turnover of an amount less than or equal to £44 million, or a balance sheet total of an
+    amount less than or equal to £38 million</li>
+</ul>
+            </details>-->
 
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="orgType-2" name="orgType-2" type="checkbox"
                 value="A non-governmental organisation">
               <label class="govuk-label govuk-checkboxes__label" for="orgType-2">
-                As a non-governmental organisation that is value-driven and which principally reinvests its surpluses to
-                further social, environmental or cultural objectives
+                Social enterprise
               </label>
             </div>
+                <div id="social-enterprise-hint" class="govuk-hint">
+                  Non-governmental, value-driven and reinvests to
+                further social, environmental or cultural objectives
+                </div>
+                
+             
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="orgType-3" name="orgType-3" type="checkbox"
                 value="A supported employment provider">
               <label class="govuk-label govuk-checkboxes__label" for="orgType-3">
-                As a supported employment provider
+                Supported employment provider
               </label>
             </div>
 
-            <details class="govuk-details" data-module="govuk-details">
+            <!--<details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Supported employment providers are defined by having:
+                  Supported employment provider definition
                 </span>
-              </summary>
-              <div class="govuk-details__text">
-                Wholly or partly provided employment, or employment related support, to disabled or disadvantaged individuals
-                where:<br><br>
-                (a) disabled or disadvantaged individuals represent at least 30 per cent of
-                the workforce of the organisation,<br><br>
-                (b) if a particular part of the organisation is to perform the contract,
-                disabled or disadvantaged individuals represent at least 30 per cent of
-                the workforce of that part of the organisation, or<br><br>
-                (c) if more than one organisation is to perform the contract, disabled or
-                disadvantaged individuals represent at least 30 per cent of the
-                combined workforce of—<br><br>
-                (i) those organisations,<br><br>
-                (ii) where a particular part of each organisation is to perform the
-                contract, those parts, or<br><br>
-                (iii) where a combination of organisations and parts is to perform
-                the contract, those organisations and parts.<br> </div>
-            </details>
+              </summary>-->
+              <div id="supported-employer-hint" class="govuk-hint">
+                Providing employment, or employment related support, to disabled or disadvantaged individuals that represent at least 30 per cent of the workforce</p>
+<!--<ul class="govuk-list govuk-list--bullet">
+  <li>disabled or disadvantaged individuals </li>
+  <li>if a particular part of the organisation is to perform the contract,
+    disabled or disadvantaged individuals represent at least 30 per cent of
+    the workforce of that part of the organisation, or</li>
+    <li>if more than one organisation is to perform the contract, disabled or
+      disadvantaged individuals represent at least 30 per cent of the
+      combined workforce of—<br><br>
+      (i) those organisations,<br><br>
+      (ii) where a particular part of each organisation is to perform the
+      contract, those parts, or<br><br>
+      (iii) where a combination of organisations and parts is to perform
+      the contract, those organisations and parts</li>
+    
+            </details>-->
 
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="orgType-4" name="orgType-4" type="checkbox"
@@ -97,14 +108,15 @@
               </label>
             </div>
 
-            <details class="govuk-details" data-module="govuk-details">
+            <!--<details class="govuk-details" data-module="govuk-details">
               <summary class="govuk-details__summary">
                 <span class="govuk-details__summary-text">
-                  Public service mutuals are defined by having:
+                  Public service mutual definition
                 </span>
               </summary>
-              <div class="govuk-details__text">
-                Previously left the public sector but continues delivering public services.
+              <div class="govuk-details__text">-->
+                <div id="supported-employer-hint" class="govuk-hint">
+                Had previously left the public sector, but continuing to deliver public services
               </div>
             </details>
 
@@ -113,7 +125,7 @@
               <input class="govuk-checkboxes__input" id="orgType-5" name="orgType" type="checkbox"
                 value="My organisation is not defined" data-behaviour="exclusive">
               <label class="govuk-label govuk-checkboxes__label" for="orgType-5">
-                My organisation is none of the above
+                None apply
               </label>
             </div>
           </div>

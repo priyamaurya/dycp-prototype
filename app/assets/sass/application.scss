@@ -4,3 +4,22 @@
 // 
 
 // Add extra styles here
+
+
+.govuk-panel--a, .govuk-panel--b {
+    h1 {
+        color: white;
+    }
+
+    p {
+        color: white;
+    }
+}
+
+.govuk-panel--a { 
+    background-color: govuk-colour("bright-purple");
+}
+
+.govuk-panel--b { 
+    background-color: govuk-colour("dark-blue");
+}
