@@ -19,11 +19,14 @@
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
                 {% if data['postcode'] | length == "0" %}
-                <h1 class="govuk-fieldset__heading">
-                    Enter your organisation's registered address
-                </h1>
-                <div id="registered-address-hint" class="govuk-hint">
-                    <br>The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office.</div>
+                    <h1 class="govuk-fieldset__heading">
+                        Enter your organisation's registered address
+                    </h1>
+                </legend>
+                    <div id="registered-hint" class="govuk-hint">   
+                    The address registered with Companies House, or the principal address the business conducts its activities. For example, a head office.
+                    </div>
+                    
                 {% else %}
                 <h1 class="govuk-fieldset__heading">
                     Address not found, enter your organisation's registered UK address

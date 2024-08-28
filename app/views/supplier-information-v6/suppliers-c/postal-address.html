@@ -16,15 +16,26 @@
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                    Enter [your organisation's / your] postal address
-                </h1>
-            </legend>
-            <div id="postal-address-hint" class="govuk-hint">
-                <br>For org - The place where an organisation receives official post, also known as the 'service address'.
-                    <br>Individual - The place where you receive official work-related post, also known as the 'service address'.</br>
-            </div>
 
+                {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                    <h1 class="govuk-fieldset__heading">
+                        
+                        Enter your organisation's postal address
+                    </h1>
+                </legend>
+                    <div id="postal-address-hint" class="govuk-hint">                   
+                        The place where an organisation receives official post, also known as the 'service address'            
+                    </div>
+                {% else  %}
+                    <h1 class="govuk-fieldset__heading">
+                        Enter your postal address
+                    </h1>
+                    <div id="postal-address-hint" class="govuk-hint">                   
+                        The place where you receive official work-related post, also known as the 'service address'            
+                    </div>
+                 {% endif %}
+
+            </legend>
 
             <form class="form" method="post">
 

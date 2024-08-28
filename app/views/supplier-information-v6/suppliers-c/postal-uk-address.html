@@ -16,15 +16,30 @@
 
         <fieldset class="govuk-fieldset">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                {% if data['addressSecond'] | length == "0" %}
+
+                    {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                        <h1 class="govuk-fieldset__heading">
+                            Enter your {{(data['individualOrOrg']).toLowerCase()}}'s postal address
+                        </h1>
+                    </legend>
+                        <div id="postal-address-hint" class="govuk-hint">                   
+                            The place where an organisation receives official post, also known as the 'service address'             
+                        </div>
+                    {% else  %}
+                        <h1 class="govuk-fieldset__heading">
+                            Enter your postal address
+                        </h1>
+                        <div id="postal-address-hint" class="govuk-hint">                   
+                            The place where you receive official work-related post, also known as the 'service address'            
+                        </div>
+                    {% endif %}
+                    
+                {% else %}
                 <h1 class="govuk-fieldset__heading">
-                    Enter {{data['individualOrOrg']}}'s postal address
+                    Address not found, enter your organisation's postal address
                 </h1>
-                <div id="postal-address-hint" class="govuk-hint">
-                    <br>For org - The place where an organisation receives official post, also known as the 'service address'.
-                    <br>Individual - The place where you receive official work-related post, also known as the 'service address'.</br>
-                </div>
-            </legend>
-              
+                {% endif %}
             </legend>
             <!-- <div id="hint" class="govuk-hint">The address of the company or organisation which is recorded on public records or within the public domain. This will be displayed on notices.</div> -->
             <p>
