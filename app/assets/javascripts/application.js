@@ -25,9 +25,16 @@ function upTo(el, tagName) {
 }
 
 $(document).ready(function () {
+
+ $('.link-show-more').on('click', function(e){
+  e.preventDefault();
+  $(this).parent().find('.govuk-visually-hidden').removeAttr('class')
+ })
+
   window.GOVUKFrontend.initAll()
   window.MOJFrontend.initAll()
-  
+
+
 
   if (document.querySelector('.autocomplete') != null || document.querySelector('.autocomplete-country') != null) {
     var originalSelect;
@@ -68,5 +75,8 @@ $(document).ready(function () {
       }
     }, 2000)
   }
+
+
+
 })
 
