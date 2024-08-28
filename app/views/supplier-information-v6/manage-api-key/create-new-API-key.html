@@ -13,16 +13,15 @@ include("includes/back-link.html") %} {% endblock %} {% block content %}
           </label>
         </h1>
         <div id="hint" class="govuk-hint">
-          The name will help you identify keys as we only show the actual API key once on the confirmation page. You could use the name of the service the API key is for. For example, XXXXX.
-        </div>
+          For security we only show the API key once on the confirmation page. Add a name for reference. For example, the name of the eSender it's for.
+          </div>
         <input
           class="govuk-input govuk-!-width-two-thirds"
           id="APIKeyName"
           name="APIKeyName"
           type="text"
           aria-describedby="hint"
-          value="{{ data['APIKeyName'] }}"
-        />
+          value="{{ data['APIKeyName'] }}"/>
       </div>
       <div class="govuk-button-group govuk-!-margin-top-6">
         <button class="govuk-button" data-module="govuk-button">
