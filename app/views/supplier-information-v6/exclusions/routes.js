@@ -260,8 +260,9 @@ router.post("/add-another-exclusion-route", function (req, res) {
 
 router.post("/add-another-exclusion", function (req, res) {
   delete req.session.data.editExclusionMan;
+  console.log("req.session.data.addAnotherExclusionMan", req.session.data.addAnotherExclusionMan);
 
-  if (req.session.data.addAnotherExclusionMan == "Yes") {
+  if (req.session.data.addAnother == "Yes") {
     res.redirect("uk-event");
   } else {
     let startQuestion = req.session.data.startQuestion;
