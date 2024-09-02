@@ -26,9 +26,11 @@ function upTo(el, tagName) {
 
 $(document).ready(function () {
 
+  
  $('.link-show-more').on('click', function(e){
-  e.preventDefault();
-  $(this).parent().find('.govuk-visually-hidden').removeAttr('class')
+  e.preventDefault(); 
+  var currentLinkCaption = $(this).text();
+  $(this).text($(this).attr('data-link-caption')).attr('data-link-caption',currentLinkCaption).parent().find('.hidden-content').toggleClass('govuk-visually-hidden');
  })
 
   window.GOVUKFrontend.initAll()
