@@ -6,7 +6,7 @@
 // Add extra styles here
 
 
-.govuk-panel--a, .govuk-panel--b {
+.govuk-panel--a, .govuk-panel--b, .govuk-panel--c {
     h1 {
         color: white;
     }
@@ -17,9 +17,13 @@
 }
 
 .govuk-panel--a { 
-    background-color: govuk-colour("bright-purple");
+    background-color: govuk-colour("green");
 }
 
 .govuk-panel--b { 
-    background-color: govuk-colour("dark-blue");
+    background-color: govuk-colour("turquoise");
+}
+
+.govuk-panel--c { 
+    background-color: govuk-colour("blue");
 }
