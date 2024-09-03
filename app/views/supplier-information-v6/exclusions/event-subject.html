@@ -24,31 +24,18 @@
         {% set optionRevealHints=[] %}
 
         {% set options=(options.push("[Random Limited]"), options) %}
-        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
-        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
 
         {% set options=(options.push("[Connected org]"), options) %}
-        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
-        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
+       
 
         {% set options=(options.push("[Connected individual]"), options) %}
-        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
-        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
-
+      
         {% set options=(options.push("[Connected org 2]"), options) %}
-        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
-        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
-
+       
         {% set options=(options.push("[Connected trustee]"), options) %}
-        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
-        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
-
+       
         {% set options=(options.push("..."), options) %}
-        {% set optionReveals=(optionReveals.push("Email address"), optionReveals) %}
-        {% set optionRevealHints=(optionRevealHints.push("Where the contracting authority can contact someone about the exclusion."), optionRevealHints) %}
-
-
-        
+              
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -60,7 +47,7 @@
             </legend>
 
             <div class="govuk-inset-text govuk-!-margin-top-0">
-              If it applies to someone not listed, you must first <a href="../connected-person/start" target="_blank">add them as a connected person (opens in new tab)</a>. 
+              If it applies to someone not listed, you must first <a href="../connected-person/start" target="">add them as a connected person</a>. 
             </div>
     
             {% include "../templates/radio-options.html" %}
