@@ -115,7 +115,7 @@ router.post("/uk-event", function (req, res) {
 });
 
 router.post("/event-subject", function (req, res) {
-  res.redirect("event-mitigation");
+  res.redirect("org-email");
   // let eventSubMan = req.session.data.eventSubMan;
 
   // if (eventSubMan == "Not listed") {
@@ -130,6 +130,11 @@ router.post("/event-subject", function (req, res) {
   // } else {
   //   res.redirect("email-address");
   // }
+});
+
+
+router.post("/org-email", function (req, res) {
+  res.redirect("event-mitigation");
 });
 
 router.post("/email-address", function (req, res) {
