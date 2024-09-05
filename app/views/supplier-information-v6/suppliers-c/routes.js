@@ -91,7 +91,7 @@ router.post('/is-the-address-same', function (req, res) {
 
   let addressSame = req.session.data.addressSame;
 
-  if (addressSame == "Yes") {
+  if (addressSame == "No") {
     res.redirect('non-individual-core-data');   
   } else {
     res.redirect('postal-uk-address');

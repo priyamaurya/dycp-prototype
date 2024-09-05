@@ -19,13 +19,24 @@
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" aria-describedby="addressSame-hint">
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">
-                            Does your organisation have a different postal address?
-                        </h1>
+
+                        {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                            <h1 class="govuk-fieldset__heading">
+                                Does your organisation have a different postal address?
+                            </h1>
+                            <div id="addressSame-hint" class="govuk-hint">
+                                The place where an organisation receives official post, also known as the 'service address', can be different from its registered address. For example, a branch office. 
+                            </div>
+                        {% else  %}
+                            <h1 class="govuk-fieldset__heading">
+                                Enter your postal address.
+                            </h1>
+                            <div id="addressSame-hint" class="govuk-hint">
+                                The place where you receive work-related post. 
+                            </div>
+                        {% endif %}
                     </legend>
-                    <div id="addressSame-hint" class="govuk-hint">
-                        The place where an organisation receives official post, also known as the 'service address', can be different from its registered address. For example, a branch office. 
-                    </div>
+                  
                     <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                             <input class="govuk-radios__input" id="addressSame" name="addressSame" type="radio"
