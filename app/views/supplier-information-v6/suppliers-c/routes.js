@@ -30,11 +30,11 @@ router.post('/signin-success', function (req, res) {
   res.redirect('test');
 })
 
-router.get('/registered-address', function (req, res) {
-  res.render(path.resolve(__dirname, 'registered-address'), {
-    countries: require('../../../data/data').countries
-  })
-})
+// router.get('/registered-address', function (req, res) {
+//   res.render(path.resolve(__dirname, 'registered-address'), {
+//     countries: require('../../../data/data').countries
+//   })
+// })
 
 
 router.post('/individual-or-org', function (req, res) {
@@ -62,11 +62,11 @@ router.post('/address-type', function (req, res) {
   }
 })
 
-router.get('/postal-address', function (req, res) {
-  res.render(path.resolve(__dirname, 'postal-address'), {
-    countries: require('../../../data/data').countries
-  })
-})
+// router.get('/postal-address', function (req, res) {
+//   res.render(path.resolve(__dirname, 'postal-address'), {
+//     countries: require('../../../data/data').countries
+//   })
+// })
 
 router.post('/postal-address', function (req, res) {
   res.redirect('non-individual-core-data');
