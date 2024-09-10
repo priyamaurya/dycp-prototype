@@ -6,19 +6,20 @@
 // Add extra styles here
 
 
-.govuk-panel--a, .govuk-panel--b, .govuk-panel--c {
-    h1 {
-        color: white;
-    }
-
-    p {
+.govuk-panel--b, .govuk-panel--c {
+    h1, p, span, summary {
         color: white;
     }
 }
 
 .govuk-panel--a { 
-    background-color: govuk-colour("green");
+    background-color: govuk-colour("light-grey");
+
+    a:visited {
+        color: black;
+    }
 }
+
 
 .govuk-panel--b { 
     background-color: govuk-colour("turquoise");
