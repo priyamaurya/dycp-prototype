@@ -7,8 +7,11 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">Select an organisation registry and enter the identifier</h1>
+            <h1 class="govuk-fieldset__heading">Select your registries and enter their identifier</h1>
           </legend>
+          <div id="registry-hint" class="govuk-hint">
+            Select all that apply
+          </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
@@ -202,7 +205,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="orgid-none" name="orgid" type="checkbox" value="The organisation does not have a registry number" />
-              <label class="govuk-label govuk-checkboxes__label" for="orgid-none"> The organisation does not have one of these identifiers </label>
+              <label class="govuk-label govuk-checkboxes__label" for="orgid-none"> None of these apply</label>
             </div>
           </div>
         </fieldset>
