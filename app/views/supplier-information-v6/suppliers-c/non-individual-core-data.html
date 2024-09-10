@@ -161,6 +161,7 @@
 
   {% endif %}
 
+
     {% if data['address'] | length != "0" and data['addressSame'] == "Yes" %}
 
             <div class="govuk-summary-list__row">
@@ -199,11 +200,19 @@
                 {{ data['postal-address-postcode'] }} </br>
               </dd>
               {% endif %}
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="is-the-address-same">
-                  Change<span class="govuk-visually-hidden"> Change</span>
-                </a>
-              </dd>
+              {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="is-the-address-same">
+                    Change<span class="govuk-visually-hidden"> Change</span>
+                  </a>
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="postal-uk-address.html">
+                    Change<span class="govuk-visually-hidden"> Change</span>
+                  </a>
+                </dd>
+                {% endif %}
             </div>
 
             {% elif data['addressSame'] == "Yes" and data.company.registered_office_address.address_line_1 is not
@@ -233,11 +242,19 @@
                 {{ data['selectData'] }} </br>
               </dd>
               {% endif %}
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="is-the-address-same">
-                  Change<span class="govuk-visually-hidden"> Change</span>
-                </a>
-              </dd>
+              {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="is-the-address-same">
+                    Change<span class="govuk-visually-hidden"> Change</span>
+                  </a>
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="postal-uk-address.html">
+                    Change<span class="govuk-visually-hidden"> Change</span>
+                  </a>
+                </dd>
+                {% endif %}
             </div>
 
     {% else %}
@@ -266,11 +283,19 @@
                 {{ data['selectData'] }} </br>
               </dd>
               {% endif %}
+              {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
               <dd class="govuk-summary-list__actions">
                 <a class="govuk-link" href="is-the-address-same">
-                  Change<span class="govuk-visually-hidden"> Change</span>
+                  Change<span class="govuk-visually-hidden">Change</span>
                 </a>
               </dd>
+            {% else %}
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="postal-uk-address">
+                  Change<span class="govuk-visually-hidden">Change</span>
+                </a>
+              </dd>
+            {% endif %}
             </div>
 
             {% elif data['addressTypePos'] == "Yes" and data ['secondAddress'] | length == "0" %}
@@ -295,11 +320,19 @@
                 {{ data['postal-uk-address-postcode'] }} </br>
               </dd>
               {% endif %}
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="is-the-address-same">
-                  Change<span class="govuk-visually-hidden"> Change</span>
-                </a>
-              </dd>
+              {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="is-the-address-same">
+                      Change<span class="govuk-visually-hidden">Change</span>
+                    </a>
+                  </dd>
+                {% else %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="postal-uk-address">
+                      Change<span class="govuk-visually-hidden">Change</span>
+                    </a>
+                  </dd>
+                {% endif %}
             </div>
 
             {% elif data['addressTypePos'] == "Yes" and data ['secondAddress'] | length != "0" %}
@@ -311,11 +344,19 @@
               <dd class="govuk-summary-list__value">
                 {{ data['secondAddress'] }}
               </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="postal-uk-address">
-                  Change<span class="govuk-visually-hidden">Add</span>
-                </a>
-              </dd>
+              {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="is-the-address-same">
+                      Change<span class="govuk-visually-hidden">Change</span>
+                    </a>
+                  </dd>
+                {% else %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="postal-uk-address">
+                      Change<span class="govuk-visually-hidden">Change</span>
+                    </a>
+                  </dd>
+                {% endif %}
             </div>
 
         {% else %}
@@ -328,11 +369,19 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="postal-uk-address">
-                    Add<span class="govuk-visually-hidden">Add</span>
-                  </a>
-                </dd>
+                {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="is-the-address-same">
+                      Add<span class="govuk-visually-hidden">Add</span>
+                    </a>
+                  </dd>
+                {% else %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="postal-uk-address">
+                      Add<span class="govuk-visually-hidden">Add</span>
+                    </a>
+                  </dd>
+                {% endif %}
               </div>
 
               {% elif data.company.registered_office_address.address_line_1 is defined and data['addressSame'] == "Yes"%}
@@ -349,11 +398,19 @@
                   {{ data.company.registered_office_address.locality }} , <br>
                   {{ data.company.registered_office_address.postal_code }}
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="is-the-address-same">
-                    Change<span class="govuk-visually-hidden">Change</span>
-                  </a>
-                </dd>
+                {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="is-the-address-same">
+                      Change<span class="govuk-visually-hidden">Change</span>
+                    </a>
+                  </dd>
+                {% else %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="postal-uk-address">
+                      Change<span class="govuk-visually-hidden">Change</span>
+                    </a>
+                  </dd>
+                {% endif %}
               </div>
 
               {% elif data.company.registered_office_address.address_line_1 is defined and data['addressSame'] | length ==
@@ -365,11 +422,19 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                 </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="postal-uk-address">
-                    Add<span class="govuk-visually-hidden">Add</span>
-                  </a>
-                </dd>
+                {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="is-the-address-same">
+                      Add<span class="govuk-visually-hidden">Add</span>
+                    </a>
+                  </dd>
+                  {% else %}
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="postal-uk-address">
+                      Add<span class="govuk-visually-hidden">Add</span>
+                    </a>
+                  </dd>
+                {% endif %}
               </div>
 
               {% else %}
@@ -380,11 +445,19 @@
               </dt>
               <dd class="govuk-summary-list__value">
               </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="postal-uk-address">
-                  Add<span class="govuk-visually-hidden">Add</span>
-                </a>
-              </dd>
+              {% if data['individualOrOrg'] and data['individualOrOrg'] == 'Organisation' %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="is-the-address-same">
+                    Add<span class="govuk-visually-hidden">Add</span>
+                  </a>
+                </dd>
+                {% else %}
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="postal-uk-address">
+                    Add<span class="govuk-visually-hidden">Add</span>
+                  </a>
+                </dd>
+                {% endif %}
             </div>
 
               {% endif %}

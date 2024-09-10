@@ -19,14 +19,13 @@
             {% set inputName="natureOfControl" %}
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
             {% set heading="Which specified conditions of control does [person/Org] have?" %}
-            {% set hintText="As defined in <a href=\"https://www.legislation.gov.uk/ukpga/2006/46/schedule/1A/part/1?timeline=false\" target=\"_blank\">part 1 schedule 1a of the Companies Act 2006</a>. Select all that apply." %}
+            {% set hintText="As defined in <a href=\"https://www.legislation.gov.uk/ukpga/2006/46/schedule/1A/part/1?timeline=false\" target=\"_blank\">part 1 schedule 1a of the Companies Act 2006 (opens in new tab)</a>. Select all that apply." %}
             {% set showOr = true%}
 
             {% if page == "/registered-company-nature-of-control-2"
                     or page == "/other-org-with-control-nature-of-control-2" %}
                 {% set hintText = "In the UK this is defined in <a href=\"\https://www.legislation.gov.uk/ukpga/2006/46/schedule/1A/part/1?timeline=false\" target=\"_blank\">part 1 schedule 1a of the Companies Act 2006 (opens in new tab)</a>. Select all equivalent conditions that apply. " %}
             {% endif %}
-
             <!-- user options -->
 
             {% set options=[] %}
