@@ -27,7 +27,14 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="chew"> Charity Commission for England and Wales </label>
             </div>
-            <div></div>
+              <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chew">
+                <div class="govuk-form-group">
+                <label class="govuk-label" for="chew-input">
+                    Charity number
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="chew-input" name="chewInput">
+                </div>
+            </div> -->
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -42,12 +49,12 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="scr"> Scottish Charity Regulator </label>
             </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-scr">
+            <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-scr">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="scr-input"> Charity number </label>
                 <input class="govuk-input govuk-!-width-one-third" id="scr-input" name="scrInput" />
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -62,12 +69,12 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="ccni"> Charity Commission for Northern Ireland </label>
             </div>
-            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-ccni">
+            <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-ccni">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="ccni-input"> Charity number </label>
                 <input class="govuk-input govuk-!-width-one-third" id="ccni-input" name="ccniInput" />
               </div>
-            </div>
+            </div> -->
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -103,7 +110,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               </div>
             </div>
           </div>
-
+          
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input
@@ -118,7 +125,14 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="jrfscr"> Jersey Financial Services Commission Registry </label>
             </div>
-            <div></div>
+           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-jrfscr">
+                        <div class="govuk-form-group">
+                        <label class="govuk-label" for="jrfscr-input">
+                            Registration number
+                        </label>
+                        <input class="govuk-input govuk-!-width-one-third" id="jrfscr-input" name="jrfscrInput">
+                        </div>
+                    </div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
