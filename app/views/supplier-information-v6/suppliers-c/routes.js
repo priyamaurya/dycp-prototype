@@ -194,6 +194,16 @@ router.post('/ca-question', function (req, res) {
 })
 
 router.post('/legal-form', function (req, res) {
+  console.log(req.body['legalForm'])
+  if( req.body.legalForm == 'Other' )
+    res.redirect("legal-form-other")
+  else
+    res.redirect('law-registered');
+  
+})
+
+router.post('/legal-form-other', function (req, res) {
+  console.log(req.body['legalForm'])
   res.redirect('law-registered');
 })
 

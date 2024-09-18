@@ -12,7 +12,7 @@ const { nextTick } = require('node:process');
 
 router.get('/*', function(req,res, next){
 
-  console.log(req.session.data)
+  // console.log(req.session.data)
   if (!req.session.proto_version  ){
     req.session.proto_version = 6;
     req.session.data["v"] = 6
