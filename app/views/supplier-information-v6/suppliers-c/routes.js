@@ -194,11 +194,6 @@ router.post('/ca-question', function (req, res) {
 })
 
 router.post('/legal-form', function (req, res) { 
-    res.redirect('formation-date');  
-})
-
-router.post('/legal-form-other', function (req, res) {
-  console.log(req.body['legalForm'])
   res.redirect('law-registered');
 })
 
