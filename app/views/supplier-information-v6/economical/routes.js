@@ -9,13 +9,12 @@ router.post('/financial-question', function (req, res) {
 
     let fileState = req.session.data.fileState;
 
-    if (fileState == 'No') {
-        res.redirect('two-or-more');
-
-    } else if (fileState == 'Yes') {
+    if (fileState == 'No' || fileState == 'Yes') {
         res.redirect('one-doc');
 
-    } else if (fileState == 'Upload accounts or other information which is equivalent to information contained in accounts audited.') {
+    } 
+
+    else if (fileState == 'Upload accounts or other information which is equivalent to information contained in accounts audited.') {
         res.redirect('two-or-more-type');
 
     } else {
