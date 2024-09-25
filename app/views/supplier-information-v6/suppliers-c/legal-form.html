@@ -12,37 +12,114 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">     
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" data-required data-error="Select the organisation's registered legal form"
+          aria-required="true" aria-describedby="legalForm-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              How was your organisation registered? 
+            </h1>
+          </legend>
 
-        <form class="form" method="post">
-            <div class="govuk-form-group">
-                {% set inputName="legalForm" %}
-                {% set heading="How was your organisation registered?" %}
-                {% set description="
-                    <p class=\"govuk-body\"> The legal structure when it was set up and registered with Companies House or an overseas equivalent.
-                      
-                      <p>Examples of legal structure in the UK include:</p>
-                
+          {% if data['caQuestion'] == 'Yes' %}
+            <p class="govuk-body">
+              The legal structure when it was set up and registered with <a href="https://www.gov.uk/government/organisations/companies-house">Companies House (opens in new tab)</a>
+            </p>
+          {% else %}
+            <p class="govuk-body">For non-UK organisations, select the equivalent legal structure when it was set up and registered</p>
+          {% endif %}
 
-                    <ul class=\"govuk-list govuk-list--bullet\">
-                            <li>Partnership</li>
-                            <li>Limited Partnership (LP)</li>
-                            <li>Limited Liability Partnership (LLP)</li>
-                            <li>Private Limited Company (Ltd)</li>
-                            <li>Public Limited Company (PLC)</li>
-                            <li>Community Interest Company (CIC)</li>
-                            <li>Charitable Incorporated Organisation (CIO)</li>
-                            <li>Industrial and Provident Society</li>
-                            <li>Financial Mutual</li>
-                            
-                    </ul>
-                " %}
-    
-                {% include "../templates/textarea.html" %}
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-1" name="legalForm" type="radio"
+                value="Partnership">
+              <label class="govuk-label govuk-radios__label" for="legalForm-1">
+                  Partnership
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Companies Act 2006
             </div>
-            {% include("../templates/button--submit.html") %}
-        </form>
-    </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited partnership">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                  Limited Partnership (LP)
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Companies Act 2006
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Limited liability partnership">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                Limited Liability Partnership (LLP)
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Companies Act 2006
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Private limited company">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                  Private Limited Company (Ltd)
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Companies Act 2006
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Public limited liability company">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                Public Limited Company (PLC)
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Companies Act 2006
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-3" name="legalForm" type="radio"
+                value="Community interest company">
+              <label class="govuk-label govuk-radios__label" for="legalForm-3">
+                  Community Interest Company (CIC)
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Companies (Audit, Investigations and Community Enterprise) Act 2004
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Charitable incorporated organisation">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                Charitable Incorporated Organisation (CIO)
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Companies (Audit, Investigations and Community Enterprise) Act 2004
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Industrial and provident society">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                  Industrial and Provident Society
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Cooperative and Community Benefit Societies Act 2014
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-2" name="legalForm" type="radio" value="Financial mutual">
+              <label class="govuk-label govuk-radios__label" for="legalForm-2">
+                  Financial Mutual
+              </label>
+              <div id="legalForm-item-hint" class="govuk-hint govuk-radios__hint">In the UK, registered under the Building Societies Act 1986
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="legalForm-4" name="legalForm" type="radio" value="Other" data-aria-controls="conditional-legalForm-4">
+              <label class="govuk-label govuk-radios__label" for="legalForm-4">
+                Other
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div>
+          <button class="govuk-button" type="submit">Continue</button>
+      </div>
+    </form>
+  </div>
 </div>
 
-    {% endblock %}
+{% endblock %}

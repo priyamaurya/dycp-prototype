@@ -25,7 +25,16 @@
           
 
           <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
-            For example, the Companies Act 2006, Building Societies Act 1986 or Charities Act 2011  
+            {% if data['legalForm'] == 'Partnership' %}In the UK the law for a Partnership is the Companies Act 2006 {% endif %}
+            {% if data['legalForm'] == 'Limited partnership' %} In the UK the law for a Limited Partnership (LP) is the Companies Act 2006 {% endif %}
+            {% if data['legalForm'] == 'Limited liability partnership' %} In the UK the law for a Limited Liability Partnership (LLP) is the Companies Act 2006{% endif %}
+            {% if data['legalForm'] == 'Private limited company' %} In the UK the law for a Private Limited Company (Ltd) is the Companies Act 2006 {% endif %}
+            {% if data['legalForm'] == 'Public limited liability company' %} In the UK the law for a Private Limited Company (Ltd) is the Companies Act 2006 {% endif %}
+            {% if data['legalForm'] == 'Community interest company' %}In the UK the law for a Community Interest Company (CIC) is the Companies (Audit, Investigations and Community Enterprise) Act 2004  {% endif %}
+            {% if data['legalForm'] == 'Charitable incorporated organisation' %} In the UK the law for a Charitable Incorporated Organisation (CIO) is the Companies (Audit, Investigations and Community Enterprise) Act 2004  {% endif %}
+            {% if data['legalForm'] == 'Industrial and provident society' %} In the UK the law for an Industrial and Provident Society is the Cooperative and Community Benefit Societies Act 2014  {% endif %}
+            {% if data['legalForm'] == 'Financial mutuals' %} In the UK the law for Financial Mutuals is the Building Societies Act 1986 {% endif %}
+            {% if data['legalForm'] == 'Other :' %} In the UK the most common law is the Companies Act 2006  {% endif %}
           </div>
           
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
