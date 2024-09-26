@@ -22,7 +22,9 @@
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                    <h1 class="govuk-fieldset__heading">Do you know the law under which your organisation is registered?</h1>                   
           </legend>
-          
+          <div id="egalForm-hint" class="govuk-hint">
+            For example, the most common law in the UK is the Companies Act 2006
+          </div>
 
           <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
             {% if data['legalForm'] == 'Partnership' %}In the UK the law for a Partnership is the Companies Act 2006 {% endif %}
