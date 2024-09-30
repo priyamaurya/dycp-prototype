@@ -16,22 +16,16 @@
 
     <form class="form" method="post">
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" data-required data-error="Select Yes if you have any qualifications"
+        <fieldset class="govuk-fieldset" data-required data-error="Select Yes if you want to add any relevant qualifications"
           aria-required="true">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
                         <h1 class="govuk-fieldset__heading">
-                          Does your organisation hold any professional qualifications?
+                          Do you want to add any relevant qualifications?
                         </h1>
-                    {% else  %}
-                        <h1 class="govuk-fieldset__heading">
-                          Do you hold any professional qualifications?
-                        </h1>
-                    {% endif %}
           </legend>
 		<div id="qualification-question-hint" class="govuk-hint">
-      These are general qualifications for business and trade, not procurement specific. For example, International Organization for Standardization (ISO) certification. 
+      These are general qualifications for business and trade, not procurement specific. Adding them will provide evidence of your suitability to contracting authorities and support any bids you submit. For example, ISO certification.  
 		  </div>
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
             <div class="govuk-radios__item">

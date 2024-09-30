@@ -119,6 +119,22 @@
                         </dd>
                     </div> -->
 
+                    
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Document uploaded
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['fileUpload'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="two-or-more">
+                                Change<span class="govuk-visually-hidden">
+                                    the type of documentation</span>
+                            </a>
+                        </dd>
+                    </div>
+
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Date of financial year end
@@ -134,20 +150,6 @@
                         </dd>
                     </div>
 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Document uploaded
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            {{ data['fileUpload'] }}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="two-or-more">
-                                Change<span class="govuk-visually-hidden">
-                                    the type of documentation</span>
-                            </a>
-                        </dd>
-                    </div>
 
                 </dl>
 

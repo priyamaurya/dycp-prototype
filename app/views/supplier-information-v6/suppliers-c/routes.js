@@ -162,22 +162,22 @@ router.post('/trade-question', function (req, res) {
 })
 
 router.post('/qualification-type', function (req, res) {
-  res.redirect('awarded-date');
+  res.redirect('qualified-name');
 })
 
 router.post('/trade-type', function (req, res) {
   res.redirect('trade-reference');
 })
 
-router.post('/awarded-date', function (req, res) {
-  res.redirect('qualified-name');
+router.post('/qualified-name', function (req, res) {
+  res.redirect('awarded-date');
 })
 
 router.post('/trade-reference', function (req, res) {
   res.redirect('awarded-trade-date');
 })
 
-router.post('/qualified-name', function (req, res) {
+router.post('/awarded-date', function (req, res) {
   res.redirect('check-answers');
 })
 
@@ -194,11 +194,10 @@ router.post('/ca-question', function (req, res) {
 })
 
 router.post('/legal-form', function (req, res) {
-  console.log(req.body['legalForm'])
   if( req.body.legalForm == 'Other' )
     res.redirect("legal-form-other")
   else
-    res.redirect('law-registered');
+    res.redirect('formation-date');
   
 })
 

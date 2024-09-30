@@ -21,18 +21,36 @@
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Awarded by person or body
+            Qualification name
           </dt>
           <dd class="govuk-summary-list__value">
 
           </dd>
-          <dd class="govuk-summary-list__value">
+          <dd class="govuk-summary-list__value">            
             {{ data['qualificationType'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="qualification-type">
               Change<span class="govuk-visually-hidden">
-                the Awarded by Person or body</span>
+                Qualification name</span>
+            </a>
+          </dd>
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Awarded by
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+          </dd>
+          <dd class="govuk-summary-list__value">
+            {{ data['qualifiedName'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="qualified-name">
+              Change<span class="govuk-visually-hidden">
+                Awarded by</span>
             </a>
           </dd>
         </div>
@@ -55,23 +73,7 @@
           </dd>
         </div>
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Qualification name
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['qualifiedName'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="qualified-name">
-              Change<span class="govuk-visually-hidden">
-                Qualification name</span>
-            </a>
-          </dd>
-        </div>
+        
 
       </dl>
 
