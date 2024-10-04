@@ -21,24 +21,24 @@
     {% endif %}
     </h1>
     <form class="form" method="post">
-      
+
       {% if isEditing == true %}
       {% else %}
 
       {% set inputName="firstName" %}
       {% set heading="First name" %}
       {% set displayHeadingAsLabel=true %}
-      {% include("../templates/text-input--single.html") %} 
+      {% include("../templates/text-input--single.html") %}
 
       {% set inputName="lastName" %}
       {% set heading="Last name" %}
       {% set displayHeadingAsLabel=true %}
-      {% include("../templates/text-input--single.html") %} 
+      {% include("../templates/text-input--single.html") %}
 
       {% set inputName="emailAddress" %}
       {% set heading="Email address" %}
       {% set displayHeadingAsLabel=true %}
-      {% include("../templates/text-input--single.html") %} 
+      {% include("../templates/text-input--single.html") %}
 
       {% endif %}
 
@@ -50,8 +50,8 @@
       {% set options=[] %}
       {% set optionHints=[] %}
 
-      {% set options=(options.push("User admin"), options) %}
-      {% set optionHints=(optionHints.push("Can add, remove and edit users"), optionHints) %}
+      {% set options=(options.push("Admin"), options) %}
+      {% set optionHints=(optionHints.push("Can add, remove and edit users, view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
 
       {% set options=(options.push("Editor"), options) %}
       {% set optionHints=(optionHints.push("Can view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
@@ -59,7 +59,7 @@
       {% set options=(options.push("Viewer"), options) %}
       {% set optionHints=(optionHints.push("Can view organisation and supplier information"), optionHints) %}
 
-      {% include("../templates/radios.html") %} 
+      {% include("../templates/radios.html") %}
       {% include("../templates/button--submit.html") %}
 
       </form>
