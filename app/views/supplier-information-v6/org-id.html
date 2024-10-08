@@ -7,7 +7,7 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">Select your registries and enter their identifier</h1>
+            <h1 class="govuk-fieldset__heading">Is your organisation on any of these registries?</h1>
           </legend>
           <div id="registry-hint" class="govuk-hint">
             Select all that apply
@@ -24,21 +24,18 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 id="chew"
                 name="orgid"
                 type="checkbox"
-                value="chew|Charity Commission for England and Wales"
-                disabled
+                value="chew|Charity Commission for England and Wales"                
                 checked
                 data-aria-controls="conditional-chew"
               />
               <label class="govuk-label govuk-checkboxes__label" for="chew"> Charity Commission for England and Wales </label>
             </div>
-              <!-- <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-chew">
-                <div class="govuk-form-group">
-                <label class="govuk-label" for="chew-input">
-                    Charity number
-                </label>
-                <input class="govuk-input govuk-!-width-one-third" id="chew-input" name="chewInput">
-                </div>
-            </div> -->
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-chew">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="scr-input"> Charity number </label>
+                <input class="govuk-input govuk-!-width-one-third" id="scr-input" name="scrInput" />
+              </div>
+            </div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -53,12 +50,12 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="scr"> Scottish Charity Regulator </label>
             </div>
-            <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-scr">
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-scr">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="scr-input"> Charity number </label>
                 <input class="govuk-input govuk-!-width-one-third" id="scr-input" name="scrInput" />
               </div>
-            </div> -->
+            </div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -73,12 +70,12 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="ccni"> Charity Commission for Northern Ireland </label>
             </div>
-            <!-- <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-ccni">
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-ccni">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="ccni-input"> Charity number </label>
                 <input class="govuk-input govuk-!-width-one-third" id="ccni-input" name="ccniInput" />
               </div>
-            </div> -->
+            </div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -122,21 +119,18 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
                 id="jrfscr"
                 name="orgid"
                 type="checkbox"
-                value="Jersey Financial Services Commission Registry"
-                disabled
+                value="Jersey Financial Services Commission Registry"                
                 checked
                 data-aria-controls="conditional-jrfscr"
               />
               <label class="govuk-label govuk-checkboxes__label" for="jrfscr"> Jersey Financial Services Commission Registry </label>
             </div>
-           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-jrfscr">
-                        <div class="govuk-form-group">
-                        <label class="govuk-label" for="jrfscr-input">
-                            Registration number
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-third" id="jrfscr-input" name="jrfscrInput">
-                        </div>
-                    </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-jrfscr">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="scr-input"> Charity number </label>
+                <input class="govuk-input govuk-!-width-one-third" id="scr-input" name="scrInput" />
+              </div>
+            </div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -223,7 +217,10 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="orgid-none" name="orgid" type="checkbox" value="The organisation does not have a registry number" />
-              <label class="govuk-label govuk-checkboxes__label" for="orgid-none"> None of these apply</label>
+              <label class="govuk-label govuk-checkboxes__label" for="orgid-none"> None apply</label>
+            </div>
+            <div id="checkbox-hint" class="govuk-hint govuk-checkboxes__hint">
+              A public procurement organisation number (PPON) will be assigned to your organisation  
             </div>
           </div>
         </fieldset>
