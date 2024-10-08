@@ -83,6 +83,20 @@ router.post('/org-address-uk', function (req, res) {
 }); 
 
 
+router.get('/buyer-type', function (req, res) {
+  console.log(req.session)
+
+  if (req.query['alternative-journey'] == 'yes')
+    req.session.data['alternativeJourney'] = 'yes';
+  else
+    req.session.data['alternativeJourney'] = 'no';
+
+  res.render('supplier-information-v6/buyer-type');
+}); 
+
+
+
+
 router.get('/manage-users', function (req, res) {
 
   console.log(req.session.allowManageUsers);
@@ -116,9 +130,24 @@ router.post('/do-devolved-regulations-apply', function (req, res) {
   if(req.body.devoledRegsApply == 'Yes'){
     res.redirect('/supplier-information-v6/devolved-regulations');
   } else {
-    res.redirect('/supplier-information-v6/org-overview');
+    if(req.session.data['alternativeJourney'] = 'yes')
+      res.redirect('/supplier-information-v6/buyer-overview');
+    else
+      res.redirect('/supplier-information-v6/org-overview');
   }
   
+});
+
+router.post('/devolved-regulations', function (req, res) {
+  if(req.session.data['alternativeJourney'] = 'yes')
+    res.redirect('/supplier-information-v6/buyer-overview');
+  else
+    res.redirect('/supplier-information-v6/org-overview');
+});
+
+
+router.post('/buyer-overview', function (req, res) {
+  res.redirect('/supplier-information-v6/org-dashboard-2?registered-as-buyer=yes');
 });
 
 
@@ -159,6 +188,13 @@ router.get('/org-address-overseas', function (req, res) {
   })
 })
 
+
+router.get('/org-id-overseas-country', function (req, res) {
+  console.log(__dirname);
+  res.render('supplier-information-v6/org-id-overseas-country', {
+    countries: require('../../data/data').countries
+  })
+})
 
 
 module.exports = router
