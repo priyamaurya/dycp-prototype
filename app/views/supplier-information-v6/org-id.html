@@ -26,9 +26,12 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="chew"> Charity Commission for England and Wales </label>
             </div>
-             <div>
-
-             </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-chew">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="scr-input"> Charity number </label>
+                <input class="govuk-input govuk-!-width-one-third" id="scr-input" name="scrInput" />
+              </div>
+            </div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -118,14 +121,12 @@ include("includes/phase-banner.html") %} {% include("includes/back-link.html") %
               />
               <label class="govuk-label govuk-checkboxes__label" for="jrfscr"> Jersey Financial Services Commission Registry </label>
             </div>
-           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-jrfscr">
-                        <div class="govuk-form-group">
-                        <label class="govuk-label" for="jrfscr-input">
-                            Registration number
-                        </label>
-                        <input class="govuk-input govuk-!-width-one-third" id="jrfscr-input" name="jrfscrInput">
-                        </div>
-                    </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-jrfscr">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="scr-input"> Charity number </label>
+                <input class="govuk-input govuk-!-width-one-third" id="scr-input" name="scrInput" />
+              </div>
+            </div>
           </div>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
