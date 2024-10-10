@@ -27,13 +27,16 @@
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Identifier
-          
         </dt>
-        <dd class="govuk-summary-list__value">
-          {% if data['chno']|length > 2 %}
+        <dd class="govuk-summary-list__value">         
+
+          {% if data['overseasIdNumber']|length > 2 %}
+            {{ data['overseasIdName'] }}
+            {{ data['overseasIdNumber'] }}
+          {% elif data['chno']|length > 2 %}
             Companies House number
             {{ data['chnoInput'] }}
-          {% else %}
+          {% elif data['orgid']|length > 2 %}
             <p>{{ data['orgid'].slice(5) }}</p>
             <p>{{ data[data['orgid'].slice(0,4)+'Input'] }}</p>
           {% endif %}
