@@ -42,16 +42,16 @@
 
       {% endif %}
 
+  {% set inputName="natureOfControl" %}
+    {% set heading="Select a role" %}
+    {% set displayHeadingAsLabel=true %}
 
-      {% set inputName="natureOfControl" %}
-      {% set heading="Select a role" %}
-      {% set displayHeadingAsLabel=true %}
 
-      {% set options=[] %}
-      {% set optionHints=[] %}
+    {% set options=[] %}
+    {% set optionHints=[] %}
 
       {% set options=(options.push("Admin"), options) %}
-      {% set optionHints=(optionHints.push("Can add, remove and edit users, view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
+      {% set optionHints=(optionHints.push("Can add, remove and edit users. Can view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
 
       {% set options=(options.push("Editor"), options) %}
       {% set optionHints=(optionHints.push("Can view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
