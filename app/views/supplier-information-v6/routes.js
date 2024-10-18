@@ -196,5 +196,49 @@ router.get('/org-id-overseas-country', function (req, res) {
   })
 })
 
+// Consortium pages routing
+
+router.post('/consortium-share-code', function (req, res) {
+  res.redirect('/supplier-information-v6/add-supplier-consortium');
+});
+
+router.post('/add-supplier-consortium', function (req, res) {
+  res.redirect('/supplier-information-v6/add-another-supplier');
+});
+
+router.post('/add-another-supplier', function (req, res) {
+  if(req.body.addAnotherSupplier.toLowerCase() == 'yes'){
+    res.redirect('/supplier-information-v6/consortium-share-code');
+  }
+  else {
+    res.redirect('/supplier-information-v6/consortium-suppliers');
+  }
+});
+
+router.post('/consortium-admin-name', function (req, res) {
+  res.redirect('/supplier-information-v6/consortium-admin-address');
+});
+
+router.post('/consortium-admin-address', function (req, res) {
+  res.redirect('/supplier-information-v6/consortium-admin-email');
+});
+
+router.post('/consortium-admin-email', function (req, res) {
+  res.redirect('/supplier-information-v6/consortium-name');
+});
+
+router.post('/consortium-name', function (req, res) {
+  res.redirect('/supplier-information-v6/consortium-dashboard');
+});
+
+router.post('/consortium-uniqueId', function (req, res) {
+  res.redirect('/supplier-information-v6/consortium-formal-name');
+});
+
+router.post('/consortium-formal-name', function (req, res) {
+  res.redirect('/supplier-information-v6/org-dashboard');
+});
+
+
 
 module.exports = router
