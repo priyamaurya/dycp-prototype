@@ -19,7 +19,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">
 
-
+    {% if showSuccessBanner == 'yes' %}
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -33,7 +33,7 @@
         <p class="govuk-body">You'll need to <a class="govuk-notification-banner__link" href="#sectionSupplierInformation">add supplier information</a> to be able to create sharecode.</p>
       </div>
     </div>
-
+    {% endif %}
 
     {% if data['orgType'] == 'Buyer' or registeredAsBoth == 'yes' %}
 
@@ -171,7 +171,7 @@
 
       {% if data['orgType'] == 'Buyer' and registeredAsBoth != 'yes' %}
         <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
-          <a class="govuk-link" href="org-dashboard-4?registeredAsBoth=yes">Register as a supplier</a>
+          <a class="govuk-link" href="org-dashboard-4?registeredAsBoth=yes&showSuccessBanner=yes">Register as a supplier</a>
         </div>
 
         <hr class="govuk-section-break  govuk-section-break--visible govuk-section-break--m" />

@@ -193,7 +193,8 @@ router.get('/org-dashboard-redirect', function (req, res) {
 
 router.get('/org-dashboard-4', function (req, res) {
   var registeredAsBoth = req.query.registeredAsBoth ? req.query.registeredAsBoth : "no";
-  res.render('supplier-information-v6/org-dashboard-4',{registeredAsBoth: registeredAsBoth})
+  var showSuccessBanner = req.query.showSuccessBanner ? req.query.showSuccessBanner : "no";
+  res.render('supplier-information-v6/org-dashboard-4',{registeredAsBoth: registeredAsBoth, showSuccessBanner: showSuccessBanner})
 });
 
 
