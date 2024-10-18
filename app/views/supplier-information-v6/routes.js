@@ -147,7 +147,11 @@ router.post('/devolved-regulations', function (req, res) {
 
 
 router.post('/buyer-overview', function (req, res) {
-  res.redirect('/supplier-information-v6/org-dashboard-2?registered-as-buyer=yes');
+  if(req.session.data['alternativeJourney'] = 'yes')
+    res.redirect('/supplier-information-v6/org-dashboard-4?registeredAsBoth=yes'); 
+  else
+    res.redirect('/supplier-information-v6/org-dashboard'); 
+  //-3?registered-as-buyer=yes#buyer-details
 });
 
 
@@ -179,6 +183,19 @@ router.get('/org-dashboard', function (req, res) {
   }
   
 });
+
+router.get('/org-dashboard-redirect', function (req, res) {
+  var orgtype = req.query.orgtype ? req.query.orgtype : "Supplier";
+  req.session.data['orgType'] = orgtype;
+  res.redirect('org-dashboard-4');
+});
+
+
+router.get('/org-dashboard-4', function (req, res) {
+  var registeredAsBoth = req.query.registeredAsBoth ? req.query.registeredAsBoth : "no";
+  res.render('supplier-information-v6/org-dashboard-4',{registeredAsBoth: registeredAsBoth})
+});
+
 
 
 router.get('/org-address-overseas', function (req, res) {

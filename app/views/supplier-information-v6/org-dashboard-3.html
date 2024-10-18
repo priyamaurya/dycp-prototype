@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% set showFTS = true %}
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-body">
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">Buyer registration pending approval</p>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-m"> PPON - 97465533 </span>
+      <span class="govuk-label--l">{{ data['orgName'] }}</span>
+    </h1>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#org-details">
+            Organisation details
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#supplier-information">
+            Supplier information
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#buyer-details">
+            Buyer details
+          </a>
+        </li>
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#manage-users">
+            Manage users
+          </a>
+        </li>
+
+      </ul>
+      <div class="govuk-tabs__panel" id="org-details">
+        {% include("./org-dashboard-3-tab1.html") %}
+
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="supplier-information">
+        <h2 class="govuk-heading-l">Supplier information</h2>
+        {% include("./org-dashboard-3-tab2.html") %}
+      </div>
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="buyer-details">
+        <h2 class="govuk-heading-l">Buyer details</h2>
+        {% include("./org-dashboard-3-tab3.html") %}
+      </div>
+
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="manage-users">
+        <h2 class="govuk-heading-l">Manage users</h2>
+        
+      </div>
+
+    </div>
+
+
+
+
+  </div>
+</div>
+
+{% endblock %}
