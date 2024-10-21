@@ -1,6 +1,19 @@
 {% extends "layouts/main.html" %}
 
 {% block header %}
+
+<div class="global-banner govuk-!-padding-top-1 govuk-!-padding-bottom-1">
+  <div class="govuk-width-container">
+    <div class="govuk-warning-text govuk-warning-text--inverted govuk-!-margin-bottom-0 ">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        This service is not live.
+      </strong>
+    </div>
+  </div>
+</div>
+
 {% set nav = [
   {
     href: '/supplier-information-v'+data['v']+'/dashboard',

@@ -52,3 +52,20 @@
 footer {
     border-top: 10px solid $govuk-brand-colour !important;
 }
+
+.global-banner {
+    background-color: govuk-colour("red");
+    border-bottom: 1px solid govuk-colour("white");
+
+    .govuk-warning-text--inverted 
+        .govuk-warning-text__text {
+            color: govuk-colour("white") !important;
+        }
+
+        .govuk-warning-text__icon {
+            background-color: govuk-colour("white") !important;
+            border-color: govuk-colour("white");
+            color: govuk-colour("black");
+        }
+}
+
