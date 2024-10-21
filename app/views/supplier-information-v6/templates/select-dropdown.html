@@ -7,6 +7,7 @@
 OPTIONAL:
 {*% set headingCaption="[Caption]" %*}
 {*% set hintText="[hint text here...]" %*}
+{*% set defaultValue="Select country" %*}
 -->
 
 
@@ -20,7 +21,7 @@ OPTIONAL:
     {% include "./hint-text.html" %}
     
     <select class="govuk-select govuk-!-width-two-thirds"  name="{{ inputName }}" id="{{ inputName }}" {% if hintText %}aria-describedby="{{ inputName }}-hint"{% endif %}>
-        <option value="choose" selected>Select</option>
+        <option value="choose" selected>{{ defaultValue }}</option>
         {% for option in options %}
             <option value="{{ option.value }}">{{ option.value }}</option>
         {% endfor %}

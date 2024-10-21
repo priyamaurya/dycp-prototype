@@ -40,7 +40,7 @@ OPTIONAL:
         Nationality
     </label>
     <select class="govuk-select" id="selectNationality" name="selectNationality">
-        <option value="">Select</option>
+        <option value="">Select nationality</option>
         {% for nationality in data['listOfCountries'] %}
             <option value="{{ nationality.value }}">{{ nationality.value }}</option>
         {% endfor %}

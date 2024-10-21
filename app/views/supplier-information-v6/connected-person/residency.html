@@ -20,6 +20,7 @@
             {% set headingCaption=data['categoryOfConnectedPerson'] %}
             {% set heading="What country does [person] usually live in?" %}
             {% set options = data['listOfCountries'] %}
+            {% set defaultValue = "Select country" %}
 
 
             {% include("../templates/select-dropdown.html") %}

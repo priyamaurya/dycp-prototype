@@ -36,3 +36,19 @@
 .border-bottom {
     border-bottom: 2px solid $govuk-border-colour;
 }
+
+#page-feedback-container {
+    background-color: govuk-colour("light-grey");
+    border-top: 1px solid $govuk-border-colour;
+}
+
+#page-feedback-container button, #page-feedback-container a {
+    background: none;
+    border: 1px solid govuk-colour("black");
+    color: $govuk-text-colour;
+    text-decoration: none;
+}
+
+footer {
+    border-top: 10px solid $govuk-brand-colour !important;
+}

@@ -3,6 +3,7 @@
 "govuk-prototype-kit/layouts/govuk-branded.njk" %} 
 
 {% block footer %} 
+{% include "../includes/page-feedback.html" %}
 {% from "govuk/components/footer/macro.njk" import govukFooter %}
  {{ govukFooter({ 
     meta: {

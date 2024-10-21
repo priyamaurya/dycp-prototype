@@ -54,7 +54,7 @@ OPTIONAL:
             Country
         </label>
         <select class="govuk-select govuk-!-width-one-half" id="addressCountry" name="addressCountry">
-            <option value=""></option>
+            <option value="">Select country</option>
             {% for country in countries %}
             <option value="{{ country.value }}">{{ country.value }}</option>
             {% endfor %}

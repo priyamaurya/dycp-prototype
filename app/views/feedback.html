@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <h1 class="govuk-heading-l">
+      Provide Find a Tender feedback
+    </h1>
+
+   <p>This form is to provide feedback on the Find a Tender Website.</p>
+   <p>You can use it to suggest feedback, an improvement or suggestion to the Find a Tender team</p>
+
+    <form method="post" action="org-overview">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              What's it to do with?
+            </h2>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="option-whole-site" name="options-what" type="radio" value="the whole site">
+              <label class="govuk-label govuk-radios__label" for="option-whole-site">
+                The whole site
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="option-specific-page" name="options-what" type="radio" value="specific page" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="option-specific-page">
+                A specific page
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="url-or-page">
+                  Enter URL or name of page
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="url-or-page" name="url-or-page">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="more-detail">
+            What is your feedback
+          </label>
+        </h2>
+        <div id="more-detail-hint" class="govuk-hint">
+          Do not include personal or financial information, like your National Insurance number or credit card details
+        </div>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+      </div>
+
+
+
+      <h2 class="govuk-heading-m">If you want a reply (optional)</h2>
+      <p>If you'd like us to get back to you, please leave your details below</p>
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="feedback-your-name">
+              Your name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="feedback-your-name"
+              name="feedback-your-name" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="feedback-your-name">
+            Your email address
+        </label>
+        <div class="govuk-hint">We'll only use this to reply to your message.</div>
+        <input class="govuk-input govuk-!-width-two-thirds" id="feedback-your-email"
+            name="feedback-your-email" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+              Send message
+          </button>
+      </div>
+
+  </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
