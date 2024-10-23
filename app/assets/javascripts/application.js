@@ -44,7 +44,7 @@ $(document).ready(function () {
     var feedbackContainer = $('#page-feedback-container');
     var h2 = feedbackContainer.find('h2');
     h2.text($(this).attr('data-title-on-press'))
-    feedbackContainer.html(h2).append('<p class="govuk-body">'+ $(this).attr('data-content-on-press') +'</p>');
+    feedbackContainer.html(h2).append('<p class="govuk-body govuk-body govuk-!-width-two-thirds">'+ $(this).attr('data-content-on-press') +'</p>');
   });
 
   window.GOVUKFrontend.initAll()
