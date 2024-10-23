@@ -42,7 +42,7 @@
     border-top: 1px solid $govuk-border-colour;
 }
 
-#page-feedback-container button, #page-feedback-container a {
+#page-feedback-container button, #page-feedback-container a[role="button"] {
     background: none;
     border: 1px solid govuk-colour("black");
     color: $govuk-text-colour;
@@ -54,18 +54,7 @@ footer {
 }
 
 .global-banner {
-    background-color: govuk-colour("red");
+    background-color: #bbd4ea;
     border-bottom: 1px solid govuk-colour("white");
-
-    .govuk-warning-text--inverted 
-        .govuk-warning-text__text {
-            color: govuk-colour("white") !important;
-        }
-
-        .govuk-warning-text__icon {
-            background-color: govuk-colour("white") !important;
-            border-color: govuk-colour("white");
-            color: govuk-colour("black");
-        }
 }
 

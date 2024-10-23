@@ -27,11 +27,25 @@ function upTo(el, tagName) {
 $(document).ready(function () {
 
   
- $('.link-show-more').on('click', function(e){
-  e.preventDefault(); 
-  var currentLinkCaption = $(this).text();
-  $(this).text($(this).attr('data-link-caption')).attr('data-link-caption',currentLinkCaption).parent().find('.hidden-content').toggleClass('govuk-visually-hidden');
- })
+  $('.link-show-more').on('click', function(e){
+    e.preventDefault(); 
+    var currentLinkCaption = $(this).text();
+    $(this).text($(this).attr('data-link-caption')).attr('data-link-caption',currentLinkCaption).parent().find('.hidden-content').toggleClass('govuk-visually-hidden');
+  })
+
+  $('#page-feedback-button-yes').on('click', function(e){
+    var feedbackContainer = $('#page-feedback-container');
+    var h2 = feedbackContainer.find('h2');
+    h2.text($(this).attr('data-title-on-press'))
+    feedbackContainer.html(h2);
+  });
+
+  $('#page-feedback-button-no').on('click', function(e){
+    var feedbackContainer = $('#page-feedback-container');
+    var h2 = feedbackContainer.find('h2');
+    h2.text($(this).attr('data-title-on-press'))
+    feedbackContainer.html(h2).append('<p class="govuk-body">'+ $(this).attr('data-content-on-press') +'</p>');
+  });
 
   window.GOVUKFrontend.initAll()
   window.MOJFrontend.initAll()
