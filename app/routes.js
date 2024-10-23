@@ -171,3 +171,51 @@ router.use(
   "/supplier-information-v6/connected-person",
   require("./views/supplier-information-v6/connected-person/routes")
 );
+
+
+router.use(
+  "/supplier-information-v7",
+  require("./views/supplier-information-v7/routes")
+);
+router.use(
+  "/supplier-information-v7/suppliers-c",
+  require("./views/supplier-information-v7/suppliers-c/routes")
+);
+
+router.use(
+  "/supplier-information-v7/mandatory",
+  require("./views/supplier-information-v7/mandatory/routes")
+);
+router.use(
+  "/supplier-information-v7/exclusions",
+  require("./views/supplier-information-v7/exclusions/routes")
+);
+router.use(
+  "/supplier-information-v7/discretionary",
+  require("./views/supplier-information-v7/discretionary/routes")
+);
+router.use(
+  "/supplier-information-v7/financial",
+  require("./views/supplier-information-v7/financial/routes")
+);
+router.use(
+  "/supplier-information-v7/economical",
+  require("./views/supplier-information-v7/economical/routes")
+);
+router.use(
+  "/supplier-information-v7/user",
+  require("./views/supplier-information-v7/user/routes")
+);
+router.use(
+  "/supplier-information-v7/download",
+  require("./views/supplier-information-v7/download/routes")
+);
+router.use(
+  "/supplier-information-v7/manage-api-key",
+  require("./views/supplier-information-v7/manage-api-key/routes")
+);
+
+router.use(
+  "/supplier-information-v7/connected-person",
+  require("./views/supplier-information-v7/connected-person/routes")
+);
