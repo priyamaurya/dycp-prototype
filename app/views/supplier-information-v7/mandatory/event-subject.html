@@ -1,0 +1,87 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Mandatory exclusion grounds
+        </h2>
+
+        <span class="govuk-caption-l">
+            {{ data['exclusionMan'] }}
+        </span> -->
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Select the subject of the event"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Who has been the subject of the event?
+                        </h1>
+                    </legend>
+                    <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            {% if data['startQuestion'] != "Individual" %}
+                            <input class="govuk-radios__input" id="eventSubMan" name="eventSubMan" type="radio"
+                                value="Tech Innovators Ltd">
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
+                                [Tech Innovators Ltd]
+                            </label>
+                            {% else %}
+                            <input class="govuk-radios__input" id="eventSubMan" name="eventSubMan" type="radio"
+                                value="John Smith">
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
+                                John Smith
+                            </label>
+                            {% endif %}
+                        </div>
+                        {% for connectedPerson in data['connectedPersonArray'] %}
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSub-3Man" name="eventSubMan" type="radio"
+                                value="{{ data['connectedPerson'] }}">
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan">
+                                {{ connectedPerson['connectedPerson'] }}
+                            </label>
+                        </div>
+
+                        {% endfor %}
+
+                        <div class="govuk-radios__divider">or</div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="eventSubMan-or" name="eventSubMan" type="radio"
+                                value="Not listed">
+                            <label class="govuk-label govuk-radios__label" for="eventSubMan-or">
+                                Not listed
+                            </label>
+                            <div id="eventSubMan-hint" class="govuk-hint govuk-radios__hint">
+                                You’ll have to declare this person as a Connected Person before you can add them here.
+                                This option will take you to the Connected Person page.
+                            </div>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Save and continue</button>
+    </div>
+    </form>
+
+
+</div>
+</div>
+
+{% endblock %}

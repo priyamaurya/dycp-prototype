@@ -1,0 +1,183 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-label--l">{{ data['orgName'] }}</span>
+    </h1>
+
+    <h2 class="govuk-heading-m">Organisation details</h2>
+    
+    <dl class="govuk-summary-list">
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Identifier
+        </dt>
+        <dd class="govuk-summary-list__value">         
+
+          {% if data['overseasIdNumber']|length > 2 %}
+            {{ data['overseasIdName'] }}
+            {{ data['overseasIdNumber'] }}
+          {% elif data['chno']|length > 2 %}
+            Companies House number
+            {{ data['chnoInput'] }}
+          {% elif data['orgid']|length > 2 %}
+            <p>{{ data['orgid'].slice(5) }}</p>
+            <p>{{ data[data['orgid'].slice(0,4)+'Input'] }}</p>
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> organisation ID</span></a>
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Organisation name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">{{ data['orgName'] }}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> organisation name</span></a>
+        </dd>
+      </div>
+
+      
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">{{ data['emailAddress'] }}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> email address</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Registered address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>
+            {{ data['postal-address-line-1'] }}
+            <br>
+            {{ data['postal-address-postcode'] }}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+
+      {% if data['orgType'] == 'Buyer' %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Organisation type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Central government, public authority: UK, Scottish, Welsh and Northern Irish Executive
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> organisation type</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Devolved regulations
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Yes
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> do devolved regulations apply to the organisation?</span></a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Devolved regions
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Nothern Ireland, Scotland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> which devolved regulations apply to the organisation?</span></a>
+          </dd>
+        </div>
+      {% endif %}
+
+    </dl>
+
+
+    <!-- <h2 class="govuk-heading-m govuk-!-margin-top-9">Organisation management</h2>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a href="#">Add management</a>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </dd>
+      </div>
+      
+    </dl> 
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Organisation users</h2>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a href="#">Add users</a>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+        </dd>
+      </div>
+      
+    </dl>
+   
+
+    
+ -->
+
+  <form action="dashboard">
+    <input class="govuk-button" type="submit" value="Save" />
+  </form>
+
+
+  </div>
+</div>
+
+{% endblock %}

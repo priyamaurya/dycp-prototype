@@ -1,0 +1,31 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" method="post">
+        <div class="govuk-form-group">
+            {% set inputName="mitDetail1" %}
+            {% set heading="Describe the exclusion in more detail" %}
+            {% set description="<p class=\"govuk-hint\">Give us your explanation of the event. For example, any background information you can give about what happened or what caused the exclusion.</p>" %}
+
+            {% include "../templates/textarea.html" %}
+        </div>
+
+        {% include("../templates/button--submit.html") %}
+    </form>
+    </div>
+</div>
+
+    {% endblock %}

@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+
+            {% set inputName="hasCompaniesHouseNumber" %}
+            {% set headingCaption=data['categoryOfConnectedPerson'] %}
+            {% set heading="Is [person/Org] registered with Companies House?" %}
+            {% set hintText="Is the 'connected person' registered with Companies House as required by the Companies Act 2006." %}
+            {% set revealInputLabel="Companies House number" %}
+
+            {% if page == '/other-org-with-control-ch-equivalent-overseas-1'
+                or page == '/other-org-with-control-ch-equivalent-overseas-2'
+                or page == '/category-other-indvidual-with-control-ch-equivalent-overseas-2'
+                or page == '/registered-company-ch-equivalent-overseas-2'
+                or page == '/director-ch-equivalent-overseas-2'
+                or page == '/parent-company-ch-equivalent-overseas-2' %}
+                {% set heading="Is [person/Org] registered with an overseas equivalent to Companies House?" %}
+                {% set hintText="Is the 'connected person' registered with a similar non-UK body that incorporates companies?" %}
+                {% set revealInputLabel="Company registration number" %}
+            {% endif %}
+
+            {% if page == "/taken-over-company-ch-number-2" %}
+                {% set heading = "Was [Org] registered with Companies House?" %}
+                {% set hintText="Was the 'connected person' registered with Companies House as required by the Companies Act 2006." %}
+            {% endif %}
+
+            {% if page == "/taken-over-company-ch-equivalent-overseas-2" %}
+                {% set heading="Was [Org] registered with an overseas equivalent to Companies House?" %}
+                {% set hintText="Was the 'connected person' registered with a similar non-UK body that incorporates companies?" %}
+            {% endif %}
+
+            {% include("../templates/radio-yes-no.html") %}
+
+
+            {% include("../templates/button--submit.html") %}
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

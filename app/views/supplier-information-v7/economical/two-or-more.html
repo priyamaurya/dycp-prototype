@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <!-- <h2 class="govuk-heading-m" style="color: #1d70b8;">
+            Economic and Financial Standing
+        </h2> -->
+
+        <!-- <span class="govuk-caption-l">
+            {{ data['fileState'] }}
+        </span> -->
+
+        <form class="form" method="post">
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" data-required data-error="Upload the latest accounts"
+                    aria-required="true">
+
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Upload your accounts or financial statements
+                        </h1>
+                    </legend>
+                    <p>As your accounts did not require an audit, upload accounts or financial statements for your most recent 2 financial years.</p>
+                        <p>If you do not have 2, upload your most recent financial year.</p>
+                        <div id="file-hint" class="govuk-hint">
+                            You can upload most file types including: PDF, scans, mobile phone photos, Word, Excel and PowerPoint and ZIP files that are smaller than 10MB.
+                            <p><div id="file-hint" class="govuk-hint"></div>Give the file a descriptive name such as 'audited-accounts-2020-2021.pdf'.</p>  
+                        </label>
+
+                    <label class="govuk-label govuk-!-margin-top-6" for="fileUpload">
+                        Upload a file
+                    </label>
+                    <input class="govuk-file-upload" id="file-Upload2" name="fileUpload" type="file">
+
+                </fieldset>
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-4" type="submit">Continue</button>
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

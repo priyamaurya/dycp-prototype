@@ -1,0 +1,34 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <form action="org-address-uk">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--l" for="emailAddress">
+              Enter your organisation's email address
+            </label>
+          </h1>
+          <div id="hint" class="govuk-hint">Where possible, use a shared inbox that other team members can access</div>
+          <input class="govuk-input govuk-!-width-two-thirds" id="emailAddress" name="emailAddress" type="text" aria-describedby="hint" value="{{ data['emailAddress'] }}">
+        </div>
+        
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

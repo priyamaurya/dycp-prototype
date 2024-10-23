@@ -1,0 +1,331 @@
+{% extends "layouts/main.html" %}
+
+{% set showFTS = true %}
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-body">
+
+    {% if data['orgType'] == 'Buyer' %}
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Important</h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">Buyer registration pending approval</p>
+      </div>
+    </div>
+
+    {% endif %}
+
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-m"> PPON - 97465533 </span>
+      <span class="govuk-label--l">{{ data['orgName'] }}</span>
+    </h1>
+
+    <h2 class="govuk-heading-m">Organisation details</h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Companies House number</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">98876277</p>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Organisation identifiers</dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+            <li>
+              Charity Commission for England and Wales <br />
+              73992884
+            </li>
+            <li>
+              Jersey Financial Services Commission Registry <br />
+              9989898
+            </li>
+          </ul>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="org-id">Add<span class="govuk-visually-hidden"> organisation ID</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Organisation name</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">{{ data['orgName'] }}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="org-name">Change<span class="govuk-visually-hidden"> organisation name</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Organisation email</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">{{ data['emailAddress'] }}</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="org-email">Change<span class="govuk-visually-hidden"> email address</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Organisation address</dt>
+        <dd class="govuk-summary-list__value">
+          <p>
+            {{ data['postal-address-line-1'] }}
+            <br />
+            {{ data['postal-address-postcode'] }}
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="org-address-uk">Change<span class="govuk-visually-hidden"> address</span></a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Supplier information
+          <div class="govuk-hint">
+            You must complete this section to bid for work
+          </div>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          0 of 4 sections completed
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="supplier-information">Update<span class="govuk-visually-hidden"> supplier information</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Buyer details and API access
+          <div class="govuk-hint">
+            Complete this section if you're a contracting authority
+          </div>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['registered-as-buyer'] == 'yes' %}
+            You are registered as a buyer.  <a class="govuk-link" href="manage-api-key/manage-API-key-start.html">Manage API keys</a>
+          {% else %}
+            You have not registered yourself as buyer
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          {% if data['registered-as-buyer'] == 'yes' %}
+            <a class="govuk-link govuk-link--no-visited-state" href="buyer-type?alternative-journey=yes">View details</a>
+          {% else %}
+            <a class="govuk-link govuk-link--no-visited-state" href="buyer-type?alternative-journey=yes">Register as a buyer</a>
+          {% endif %}
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Users
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1 user
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="user/add-another-user">Manage<span class="govuk-visually-hidden"> users</span></a>
+        </dd>
+      </div>
+
+      {% if data['orgType'] == 'Buyerx' %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Organisation type</dt>
+        <dd class="govuk-summary-list__value">Central government, public authority: UK, Scottish, Welsh and Northern Irish Executive</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="buyer-type">Change<span class="govuk-visually-hidden"> organisation type</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Do devolved regulations apply to the organisation?</dt>
+        <dd class="govuk-summary-list__value">Yes</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="do-devolved-regulations-apply"
+            >Change<span class="govuk-visually-hidden"> do devolved regulations apply to the organisation?</span></a
+          >
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Which devolved regulations apply to the organisation?</dt>
+        <dd class="govuk-summary-list__value">Nothern Ireland, Scotland</dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="devolved-regulations">Change<span class="govuk-visually-hidden"> which devolved regulations apply to the organisation?</span></a>
+        </dd>
+      </div>
+        </dl>
+      {% endif %} {% if data['orgType'] == 'Supplier' %}
+
+
+      <!-- <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+        <a class="govuk-link" href="supplier-information">Supplier information</a>
+        <div class="govuk-hint">test</div>
+      </div> -->
+
+      {% elif data['orgType'] == 'Buyer' %} 
+      <!-- <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+        <a class="govuk-link" href="supplier-information">Buyer</a>
+        <div class="govuk-hint">test</div>
+      </div> -->
+      {% endif %}
+
+      
+      <!-- <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+        <a class="govuk-link" href="manage-api-key/manage-API-key-start.html">Manage API keys</a>
+        <p class="govuk-!-margin-top-3">An application programming interface (API) key is a code that allows different pieces of software to share information.</p>
+        <p class="govuk-body">You need to create an API key and share it with the e-Sender you use to publish procurement notices on the Find a Tender service.</p>
+      </div>
+       -->
+
+      <!-- <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+        <a class="govuk-link" href="user/add-another-user">Users</a>
+      </div> -->
+
+
+    {% if data['orgType'] == 'Supplierx' %}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-9">Supplier information</h2>
+
+    {% if data.company.registered_office_address.address_line_1 is defined %} {% set href="suppliers-c/individual-or-org" %} {% set value = "" %} {% set status
+    = "In progress" %} {% elif data['legalForm'] | length != "0" %} {% set href="suppliers-c/individual-or-org" %} {% set value = "" %} {% set status =
+    "Completed" %} {% elif data['addressTypeBasic'] | length != "0" %} {% set href="suppliers-c/individual-or-org" %} {% set value = "" %} {% set status = "In
+    progress" %} {% else %} {% set href="suppliers-c/individual-or-org" %} {% set value = "" %} {% set status = "Not started" %} {% endif %}
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Basic information</a>
+        </dt>
+        <dd class="govuk-summary-list__value">{{ value }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag">{{ status }}</strong>
+        </dd>
+      </div>
+    </dl>
+
+    {% if (data['connectedPersonCount'] == "1") %} {% set href="connected/add-another-connected-person" %} {% set value = "1 connected person" %} {% set status
+    = "Completed" %} {% elif data['addAnotherConnectedPerson'] | length != "0" and data['connectedPersons'] | length != "0" %} {% set
+    href="connected/add-another-connected-person" %} {% set value = data ['connectedPersonCount'] + " connected persons" %} {% set status = "Completed" %} {%
+    elif data['connectedPsc'] == "No" %} {% set href="connected/connected-question" %} {% set value = "No connected persons" %} {% set status = "Completed" %}
+    {% elif data['connectedPsc'] | length != "0" and data['connectedPersons'] | length != "0" %} {% set href="connected/connected-question" %} {% set value = ""
+    %} {% set status = "In progress" %} {% else %} {% set href="connected/connected-question" %} {% set value = "" %} {% set status = "Not started" %} {% endif
+    %}
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Connected persons</a>
+        </dt>
+        <dd class="govuk-summary-list__value">{{ value }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag">{{ status }}</strong>
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['addAnotherExclusionMan'] | length != "0" and data['exclusionManArray'] | length >= "2" %} {% set href="mandatory/add-another-exclusion" %} {%
+    set value = data ['exclusionManCount'] + " mandatory exclusions" %} {% set status = "Completed" %} {% elif data['addAnotherExclusionMan'] | length != "0" %}
+    {% set href="mandatory/add-another-exclusion" %} {% set value = data ['exclusionManCount'] + " mandatory exclusion" %} {% set status = "Completed" %} {%
+    elif data['exclusionMan'] == 'None of the above' %} {% set href="mandatory/exclusion-grounds" %} {% set value = "No mandatory exclusions" %} {% set status =
+    "Completed" %} {% elif data['eventSub'] | length != "0" %} {% set href="mandatory/mandatory/check-answers" %} {% set value = "" %} {% set status = "In
+    progress" %} {% else %} {% set href="mandatory/exclusion-grounds" %} {% set value = "" %} {% set status = "Not started" %} {% endif %}
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Mandatory exclusions</a>
+        </dt>
+        <dd class="govuk-summary-list__value">{{ value }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag">{{ status }}</strong>
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['addAnotherExclusion'] | length != "0" and data['exclusionArray'] | length >= "2" %} {% set href="discretionary/add-another-exclusion" %} {% set
+    value = data ['exclusionCount'] + " discretionary exclusions" %} {% set status = "Completed" %} {% elif data['addAnotherExclusion'] | length != "0" %} {%
+    set href="discretionary/add-another-exclusion" %} {% set value = data ['exclusionCount'] + " discretionary exclusion" %} {% set status = "Completed" %} {%
+    elif data['exclusionDis'] == 'None of the above' %} {% set href="discretionary/exclusion-grounds" %} {% set value = "No discretionary exclusions" %} {% set
+    status = "Completed" %} {% elif data['eventSubDis'] | length != "0" %} {% set href="discretionary/check-answers" %} {% set value = "" %} {% set status = "In
+    progress" %} {% else %} {% set href="discretionary/exclusion-grounds" %} {% set value = "" %} {% set status = "Not started" %} {% endif %}
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Discretionary exclusions</a>
+        </dt>
+        <dd class="govuk-summary-list__value">{{ value }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag">{{ status }}</strong>
+        </dd>
+      </div>
+    </dl>
+
+    {% if data['addAnotherFile'] == "No" %} {% set href="economical/check-answers" %} {% set value = "" %} {% set status = "Completed" %} {% elif
+    data['financialStandIn'] | length != "0" and data['financialsYear'] | length == "0" %} {% set href="economical/financial-question" %} {% set value = "" %}
+    {% set status = "In progress" %} {% else %} {% set href="economical/financial-question" %} {% set value = "" %} {% set status = "Not started" %} {% endif %}
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a class="govuk-link govuk-link--no-visited-state" href="{{ href }}">Economic and Financial Standing</a>
+        </dt>
+        <dd class="govuk-summary-list__value">{{ value }}</dd>
+        <dd class="govuk-summary-list__actions">
+          <strong class="govuk-tag">{{ status }}</strong>
+        </dd>
+      </div>
+    </dl>
+
+    <!-- <h2 class="govuk-heading-m govuk-!-margin-top-9">Users</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            <a class="govuk-link govuk-link--no-visited-state" href="user/add-another-user">Users</a>
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['userCount'] }}
+            {% if data['userArray']|length == "1" %}
+              user
+            {% else %}
+              users
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            &nbsp;
+          </dd>
+        </div>
+      </dl> -->
+
+    <a href="download/declaration" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-9" data-module="govuk-button">
+      Share my data
+      <!-- <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+                  viewBox="0 0 33 40" aria-hidden="true" focusable="false" style="rotate: 270deg;">
+                  <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+              </svg> -->
+    </a>
+
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+    {% if isEditing == true %}
+      Lewis Bloggs
+    {% else %}
+      Add a user
+    {% endif %}
+    </h1>
+    <form class="form" method="post">
+
+      {% if isEditing == true %}
+      {% else %}
+
+      {% set inputName="firstName" %}
+      {% set heading="First name" %}
+      {% set displayHeadingAsLabel=true %}
+      {% include("../templates/text-input--single.html") %}
+
+      {% set inputName="lastName" %}
+      {% set heading="Last name" %}
+      {% set displayHeadingAsLabel=true %}
+      {% include("../templates/text-input--single.html") %}
+
+      {% set inputName="emailAddress" %}
+      {% set heading="Email address" %}
+      {% set displayHeadingAsLabel=true %}
+      {% include("../templates/text-input--single.html") %}
+
+      {% endif %}
+
+  {% set inputName="natureOfControl" %}
+    {% set heading="Select a role" %}
+    {% set displayHeadingAsLabel=true %}
+
+
+    {% set options=[] %}
+    {% set optionHints=[] %}
+
+      {% set options=(options.push("Admin"), options) %}
+      {% set optionHints=(optionHints.push("Can add, remove and edit users. Can view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
+
+      {% set options=(options.push("Editor"), options) %}
+      {% set optionHints=(optionHints.push("Can view, add and edit organisation information, view supplier information and create API keys"), optionHints) %}
+
+      {% set options=(options.push("Viewer"), options) %}
+      {% set optionHints=(optionHints.push("Can view organisation and supplier information"), optionHints) %}
+
+      {% include("../templates/radios.html") %}
+      {% include("../templates/button--submit.html") %}
+
+      </form>
+  </div>
+
+</div>
+</div>
+
+{% endblock %}

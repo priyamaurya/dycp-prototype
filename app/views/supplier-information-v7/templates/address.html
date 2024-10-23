@@ -1,0 +1,65 @@
+<!--
+{*% set heading="Enter [Org]'s registered address" %*}
+
+OPTIONAL:
+{*% set headingCaption="[Heading caption]" %*}
+{*% set description="[Description here...]" %*}
+{*% set addressType="uk" %*}
+-->
+
+<fieldset class="govuk-fieldset">
+
+    {% include "./fieldset-legend.html" %}
+
+    {% if description %}
+    <p>
+        {{ description }}
+    </p>
+    {% endif %}
+
+    {% if addressType != "non-uk" %}
+    <p>
+        <a href="{% if overseasAddressUrl %}{{overseasAddressUrl}}{% else %}#{% endif %}">Enter a non-UK address</a>
+    </p>
+    {% endif %}
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="addressLine1">
+        Address line 1
+        </label>
+        <input class="govuk-input" id="addressLine1" name="addressLine1" type="text" autocomplete="address-line1">
+    </div>
+
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="addressTown">
+        Town or city
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="addressTown" name="addressTown" type="text" autocomplete="address-town">
+    </div>
+    
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="addressPostcode">
+        {% if addressType == "non-uk" %}
+            Postal or ZIP Code
+        {% else %}
+            Postcode
+        {% endif %}
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="addressPostcode" name="addressPostcode" type="text" autocomplete="postcode">
+    </div>
+
+    {% if addressType == "non-uk" %}
+    <div class="govuk-form-group">
+        <label class="govuk-label" for="addressCountry">
+            Country
+        </label>
+        <select class="govuk-select govuk-!-width-one-half" id="addressCountry" name="addressCountry">
+            <option value="">Select country</option>
+            {% for country in countries %}
+            <option value="{{ country.value }}">{{ country.value }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    {% endif %}
+
+</fieldset>

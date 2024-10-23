@@ -1,0 +1,126 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+        <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+
+                {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
+                    <h1 class="govuk-fieldset__heading">
+                        
+                        Enter your organisation's postal address
+                    </h1>
+                </legend>
+                    <!--<div id="postal-address-hint" class="govuk-hint">                   
+                        The place where an organisation receives official post, also known as the 'service address'            
+                    </div>-->
+                {% else  %}
+                    <h1 class="govuk-fieldset__heading">
+                        Enter your postal address
+                    </h1>
+                    <div id="postal-address-hint" class="govuk-hint">                   
+                        The place where you receive official work-related post, also known as the 'service address'            
+                    </div>
+                 {% endif %}
+
+            </legend>
+
+            <form class="form" method="post">
+
+                <div class="govuk-form-group govuk-!-margin-top-3">
+                    <label class="govuk-label" for="postal-address-line-1">
+                        Address line 1
+                    </label>
+                    <input class="govuk-input" id="postal-address-line-1" name="postal-address-line-1" type="text"
+                        value="{{ data['postal-address-line-1'] }}" autocomplete="postal-address-line-1">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="postal-address-town">
+                        Town or city
+                    </label>
+                    <input class="govuk-input govuk-!-width-two-thirds" id="postal-address-town"
+                        name="postal-address-town" type="text" value="{{ data['postal-address-town'] }}"
+                        autocomplete="postal-address-town">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label" for="postal-address-postcode">
+                        Postal or ZIP Code
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="postal-address-postcode"
+                        name="postal-address-postcode" type="text" value="{{ data['postal-address-postcode'] }}"
+                        autocomplete="postal-address-postcode">
+                </div>
+
+                <div class="govuk-form-group">
+                    <label class="govuk-label govuk-!-margin-top-6" for="registered-address-country">
+                        Country
+                    </label>
+
+                    <select class="govuk-select autocomplete" id="selectData" name="selectData">
+
+                        <option value="">Select country</option>
+                        {% for country in countries %}
+                        <option value="{{ country.value }}">{{ country.value }}</option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+
+
+                <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+                    Save and exit
+                </button>
+
+
+            </form>
+        </fieldset>
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
+{% block pageScripts %}
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/script.js"></script>
+<script src="/public/javascripts/data.js"></script>
+
+<!-- Add an event listener to the form to prevent the error message on submit 
+<script>
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    // Get the Address line 2 (optional) input value
+    const addressLine2Input = document.getElementById('postal-address-line-2');
+    const addressLine2Value = addressLine2Input.value;
+
+    // Check if the value is 'Null' or empty, and if so, set it to an empty string
+    if (addressLine2Value.trim().toLowerCase() === 'null' || addressLine2Value.trim() === '') {
+        addressLine2Input.value = '';
+    }
+});
+
+ // Add an event listener to prevent the error message on submit
+ document.getElementById('myForm').addEventListener('invalid', function (e) {
+    e.preventDefault(); // Prevent the form from submitting
+});
+</script>
+
+-->
+{% endblock %}

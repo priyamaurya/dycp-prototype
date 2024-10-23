@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post">
+          <div class="govuk-form-group">
+              {% set inputName="isEventEnded" %}
+              {% set heading="Have the circumstances that led to the exclusion ended?" %}
+              {% set hintText="For example, a court decision for environmental misconduct led your organisation or the connected person to stop harming the environment" %}
+              {% set revealLabel="Enter the date the circumstances ended" %}
+
+              {% include "../templates/radio-yes-no-reveal-date.html" %}
+          </div>
+
+          {% include("../templates/button--submit.html") %}
+
+      </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="isRequiredToRegisterAsPSC" %}
+            {% set heading="Were you required to register [person/Org] as a person with significant control?" %}
+            {% set hintText="In the UK this is defined by <a href=\"#\">section 790C(4) of the Companies Act 2006 (opens in new tab)</a>" %}
+            {% set revealLabel="Date registered" %}
+
+            {% include("../templates/radio-yes-no-reveal-date.html") %}
+
+            {% include("../templates/button--submit.html") %}
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

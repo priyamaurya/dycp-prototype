@@ -1,0 +1,26 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" method="post">
+      {% set inputName="exclusionDetails" %} 
+      {% set heading="Do you have any exclusions to add for your organisation or a connected person?" %} 
+      
+      {% include("../templates/radio-yes-no.html") %} 
+      {% include("../templates/button--submit.html") %}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
