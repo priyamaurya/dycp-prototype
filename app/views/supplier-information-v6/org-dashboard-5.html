@@ -155,9 +155,7 @@
         <div id="sectionSupplierInformation" class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
           <a class="govuk-link" href="supplier-information">Complete supplier information</a>
         </div>
-        <p class="govuk-body">
-          Complete, declare and share your supplier information to be able to bid for procurements.
-        </p>
+        <p class="govuk-!-margin-top-3">Complete, declare and share your supplier information to be able to bid for procurements.</p>
 
         <hr class="govuk-section-break  govuk-section-break--visible govuk-section-break--m" />
 
@@ -165,9 +163,7 @@
         <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
           <a class="govuk-link" href="buyer-type?alternative-journey=yes">Register as a buyer</a>
         </div>
-        <p class="govuk-body">
-          If you also buy goods, works, services or utilities, you can register as a public sector buyer.  
-        </p>
+        <p class="govuk-!-margin-top-3">If you also buy goods, works, services or utilities, you can register as a public sector buyer.</p>
 
         <hr class="govuk-section-break  govuk-section-break--visible govuk-section-break--m" />
 
@@ -179,15 +175,15 @@
         <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
           <a class="govuk-link" href="org-dashboard-4?registeredAsBoth=yes&showSuccessBanner=yes">Register as a supplier</a>
         </div>
-
+        <p class="govuk-!-margin-top-3">If you also supply goods, works, services or utilities to the public sector, you can register as a supplier.</p>
         <hr class="govuk-section-break  govuk-section-break--visible govuk-section-break--m" />
       {% endif %}
 
       {% if data['orgType'] == 'Buyer' or registeredAsBoth == 'yes' %}
         <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
-          <a class="govuk-link" href="manage-api-key/manage-API-key-start.html">Manage API keys (for Buyers)</a>
+          <a class="govuk-link" href="manage-api-key/manage-API-key-start.html">Manage API keys</a>
           <p class="govuk-!-margin-top-3">An application programming interface (API) key is a code that allows different pieces of software to share information.</p>
-          <p class="govuk-body">You need to create an API key and share it with the e-Sender you use to publish procurement notices on the Find a Tender service.</p>
+          <p class="govuk-body">Buyers need to create an API key and share it with the e-Sender you use to publish procurement notices on the Find a Tender service.</p>
         </div>
 
         <hr class="govuk-section-break  govuk-section-break--visible govuk-section-break--m" />
@@ -196,8 +192,9 @@
 
 
       <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
-        <a class="govuk-link" href="user/add-another-user">Users</a>
+        <a class="govuk-link" href="user/add-another-user">Manage users</a>
       </div>
+      <p class="govuk-!-margin-top-3">View users add or remove users.</p>
   </div>
 </div>
 
