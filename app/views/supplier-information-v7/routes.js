@@ -44,14 +44,10 @@ router.post('/org-type', function (req, res) {
 });
 
 router.post('/has-ch-number', function (req, res) {
-  if(req.body.chno.toLowerCase() == 'no'){
-    res.redirect('/supplier-information-v7/org-id');
+  if(req.body.chnoInput == "12345678"){
+    res.redirect('/supplier-information-v7/org-exists');
   } else {
-    if(req.body.chnoInput == "12345678"){
-      res.redirect('/supplier-information-v7/org-exists');
-    } else {
-      res.redirect('/supplier-information-v7/org-name');
-    }
+    res.redirect('/supplier-information-v7/org-address-uk');
   }
 });
 
@@ -70,17 +66,17 @@ router.post('/org-name', function (req, res) {
 });
 
 
-router.get('/org-address-uk', function (req, res) {
-  res.render('supplier-information-v7/org-address-uk', {orgType: req.session.data.orgType});
-});
+// router.get('/org-address-uk', function (req, res) {
+//   res.render('supplier-information-v7/org-address-uk', {orgType: req.session.data.orgType});
+// });
   
-router.post('/org-address-uk', function (req, res) {
-  if (req.session.data.orgType.toLowerCase()  == 'buyer'){
-    res.redirect('/supplier-information-v7/buyer-type');
-  } else {
-    res.redirect('/supplier-information-v7/org-overview'); 
-  }
-}); 
+// router.post('/org-address-uk', function (req, res) {
+//   if (req.session.data.orgType.toLowerCase()  == 'buyer'){
+//     res.redirect('/supplier-information-v7/buyer-type');
+//   } else {
+//     res.redirect('/supplier-information-v7/org-overview'); 
+//   }
+// }); 
 
 
 router.get('/buyer-type', function (req, res) {

@@ -4,6 +4,11 @@
   {% include("includes/header-with-nav.html") %}
 {% endblock %}
 
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -24,47 +29,33 @@
     </form> -->
 
     <h1 class="govuk-heading-l">
-      Enter your organisation's registered address
+      Enter the registration number 
     </h1>
-
-   <p>The address recorded on public records or within the public domain</p>
-
-    <form method="post" action="org-id-overseas">
+    <div class="govuk-hint" id="hint">
+      For example, a SIRET number in France  
+    <form method="post" action="org-overview">
       <div class="govuk-form-group">
 
-          <div class="govuk-form-group govuk-!-margin-top-3">
-              <label class="govuk-label" for="connectedPersonsPscNi-address-line-1">
-                  Address line 1
-              </label>
-              <input class="govuk-input" id="connectedPersonsPscNi-address-line-1"
-                  name="connectedPersonsPscNi-address-line-1" type="text"
-                  autocomplete="connectedPersonsPscNi-address-line1">
-          </div>
-
           <div class="govuk-form-group">
-              <label class="govuk-label" for="connectedPersonsPscNi-address-town">
-                  Town or city
+              <label class="govuk-label" for="overseas-id-name">
+                  What is it called?
               </label>
-              <input class="govuk-input govuk-!-width-two-thirds" id="connectedPersonsPscNi-address-town"
-                  name="connectedPersonsPscNi-address-town" type="text"
-                  autocomplete="connectedPersonsPscNi-address-town">
+              <input class="govuk-input govuk-!-width-two-thirds" id="overseas-id-name" name="overseas-id-name" type="text">
           </div>
 
           <div class="govuk-form-group">
               <label class="govuk-label" for="connectedPersonsPscNi-address-postcode">
-                  Postal or ZIP Code
+                  Enter identifier
               </label>
-              <input class="govuk-input govuk-input--width-10" id="connectedPersonsPscNi-address-postcode"
-                  name="connectedPersonsPscNi-address-postcode" type="text"
-                  autocomplete="connectedPersonsPscNi-postal-code">
+              <input class="govuk-input govuk-input--width-10" id="overseas-id" name="overseas-id" type="text">
           </div>
-          <label class="govuk-label govuk-!-margin-top-6" for="connectedPersonsPscNi-address-country">
+          <label class="govuk-label govuk-!-margin-top-6" for="overseas-id-country">
               Country
           </label>
 
-          <select class="govuk-select autocomplete" id="selectData" name="selectData">
+          <select class="govuk-select autocomplete" id="overseas-id-country" name="selectData">
 
-              <option value="">Select country</option>
+            <option value="">Select country</option>
               {% for country in countries %}
               <option value="{{ country.value }}">{{ country.value }}</option>
               {% endfor %}
@@ -74,7 +65,7 @@
       </div>
       <div class="govuk-form-group">
           <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
-              Continue
+              Save and continue
           </button>
       </div>
 
