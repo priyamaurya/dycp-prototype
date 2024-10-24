@@ -121,27 +121,54 @@
           <a class="govuk-link govuk-link--no-visited-state" href="devolved-regulations">Change<span class="govuk-visually-hidden"> which devolved regulations apply to the organisation?</span></a>
         </dd>
       </div>
-        </dl>
-      {% endif %} {% if data['orgType'] == 'Supplier' %}
+      
+      {% endif %} 
+      </dl>
+      
+      {% if data['orgType'] == 'Supplier' %}
       <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
-        <a class="govuk-link" href="supplier-information">Supplier information</a>
+        <a class="govuk-link" href="supplier-information">Complete supplier information</a>
+        <p class="govuk-!-margin-top-3">Complete and share your supplier information to be able to bid for procurements.</p>
       </div>
+            
 
       {% elif data['orgType'] == 'Buyer' %}
       <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
         <a class="govuk-link" href="manage-api-key/manage-API-key-start.html">Manage API keys</a>
-        <p class="govuk-!-margin-top-3">An application programming interface (API) key is a code that allows different pieces of software to share information.</p>
-        <p class="govuk-body">You need to create an API key and share it with the e-Sender you use to publish procurement notices on the Find a Tender service.</p>
+        <p class="govuk-!-margin-top-3">Create an API key and share it with the e-Sender you use to publish procurement notices.</p>
       </div>
+
       {% endif %}
 
-      <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
-        <a class="govuk-link" href="user/add-another-user">Users</a>
+       <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+        <a class="govuk-link" href="user/add-another-user">Manage users</a>
+        <p class="govuk-!-margin-top-3">View, add or remove users.</p>
       </div>
 
-      <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
-        <a class="govuk-link" href="consortium-share-code">Join bid with other suppliers</a>
-      </div>
+      {% if data['orgType'] == 'Supplier' %}
+      
+        <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+          <a class="govuk-link" href="org-type.html">Register as a buyer</a>
+          <p class="govuk-!-margin-top-3">If you also buy public sector goods, works, services or utilities.</p>
+        </div>
+
+      {% elif data['orgType'] == 'Buyer' %}
+        <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+          <a class="govuk-link" href="org-type.html">Register as a supplier</a>
+          <p class="govuk-!-margin-top-3">If you also supply goods, works, services or utilities to the public sector.</p>
+        </div>
+        
+      {% endif %}
+
+
+      <!-- <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
+        <a class="govuk-link" href="consortium-share-code">Join a consortium</a>
+        <p class="govuk-!-margin-top-3">Create or join a consortium with other suppliers to submit tenders.</p>
+      </div> -->
+
+      {% if data['orgType'] == 'Buyer' %}
+      <p class="govuk-!-margin-top-3">Get procurement guidance on the  <a class="govuk-link" href="#">Procurement Pathway service (opens in new tab)</a></p>
+      {% endif %}
 
 
     {% if data['orgType'] == 'Supplierx' %}
