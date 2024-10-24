@@ -14,71 +14,64 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-
   <div class="govuk-grid-column-two-thirds govuk-body">
+
     <h1 class="govuk-heading-l">
       <span class="govuk-label--l">My account</span>
     </h1>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">
-        Sign in details
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header"></th>
-          <th scope="col" class="govuk-table__header"></th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td scope="row" class="govuk-table__header">
+    <section id="signinDetails">
+      <h2 class="govuk-heading-m">Sign in details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Email address:
-          </td>
-          <td scope="row" class="govuk-table__cell">
+          </dt>
+          <dd class="govuk-summary-list__value">
             john@supplier.com
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </dd>
+        </div>
+      </dl>
 
-    <p class="govuk-body">
-      You can <a href="https://home.account.gov.uk/settings" target="_blank">change your sign in details in your GOV.UK One Login</a>.
-  </p>
+      <p class="govuk-body">
+        You can <a class="govuk-link govuk-link--no-visited-state" href="https://home.account.gov.uk/settings" target="_blank">change your sign in details in your GOV.UK One Login</a>.
+      </p>
+    </section>
 
- <hr class="govuk-section-break govuk-section-break--invisible govuk-section-break--xl">
-
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">
+    <hr class="govuk-section-break govuk-section-break--invisible govuk-section-break--xl">
+    
+    <section id="myOrgs">
+      <h2 class="govuk-heading-m">
         My organisations
-      </caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Organisation name</th>
-          <th scope="col" class="govuk-table__header">Action
-          </th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">
-            {{ data['orgName'] }} {% if data['orgType'] == 'Buyer' %}<span
-              class="govuk-tag govuk-tag--light-blue govuk-!-font-size-16"
-              >Pending approval</span
-            >{% endif%}
-            <!-- <div class="govuk-!-font-weight-regular">{{ data['postal-address-line-1'] }}</div> -->
-          </th>
-          <td class="govuk-table__cell">
-            <a
-              class="govuk-link govuk-link--no-visited-state"
-              href="org-dashboard">View</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      </h2>
+    
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Organisation name</th>
+            <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              {{ data['orgName'] }} {% if data['orgType'] == 'Buyer' %}<span
+                class="govuk-tag govuk-tag--light-blue govuk-!-font-size-16"
+                >Pending approval</span
+              >{% endif%}
+            </th>
+            <td class="govuk-table__cell">
+              <a
+                class="govuk-link govuk-link--no-visited-state"
+                href="org-dashboard">View</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-    <a class="govuk-link govuk-link--no-visited-state" href="org-type"
-      >Add another organisation</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="org-type">Add another organisation</a>
+    </section>
   </div>
 </div>
 
