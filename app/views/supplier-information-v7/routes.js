@@ -70,13 +70,13 @@ router.post('/org-name', function (req, res) {
 //   res.render('supplier-information-v7/org-address-uk', {orgType: req.session.data.orgType});
 // });
   
-// router.post('/org-address-uk', function (req, res) {
-//   if (req.session.data.orgType.toLowerCase()  == 'buyer'){
-//     res.redirect('/supplier-information-v7/buyer-type');
-//   } else {
-//     res.redirect('/supplier-information-v7/org-overview'); 
-//   }
-// }); 
+router.post('/org-email', function (req, res) {
+  if (req.session.data.orgType.toLowerCase()  == 'buyer'){
+    res.redirect('/supplier-information-v7/buyer-type');
+  } else {
+    res.redirect('/supplier-information-v7/org-overview'); 
+  }
+}); 
 
 
 router.get('/buyer-type', function (req, res) {
