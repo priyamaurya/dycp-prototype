@@ -47,7 +47,7 @@ router.post('/has-ch-number', function (req, res) {
   if(req.body.chnoInput == "12345678"){
     res.redirect('/supplier-information-v7/org-exists');
   } else {
-    res.redirect('/supplier-information-v7/org-address-uk');
+    res.redirect('/supplier-information-v7/org-name');
   }
 });
 
@@ -58,7 +58,7 @@ router.post('/org-name', function (req, res) {
   } else if(req.session.data.orgType.toLowerCase() == "buyer" && req.body.orgName.toLowerCase() == "defra"){
     res.redirect('/supplier-information-v7/org-exists');
   } else {
-    res.redirect('/supplier-information-v7/org-email');
+    res.redirect('/supplier-information-v7/org-address-uk');
   }
 
     
