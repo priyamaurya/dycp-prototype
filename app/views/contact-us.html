@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+
+    <!-- <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Contact form cannot be sent
+      </h1>
+    </div>
+    <h2 class="govuk-heading-l">
+      There is a problem
+    </h2>
+    <p>
+      Your message could not be sent.
+    </p>
+    <p>
+      <a href="#">Try again</a> or come back later
+    </p> -->
+
+    <h1 class="govuk-heading-l">
+      Contact us
+    </h1>
+
+    <form method="post" action="contact-us-confirm">
+      
+      <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-your-name">
+              Name
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="contact-your-name"
+              name="contact-your-name" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="contact-your-email">
+            Email address
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="contact-your-email"
+            name="contact-your-email" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="contact-your-org">
+            Organisation
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="contact-your-org"
+            name="contact-your-org" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="more-detail">
+           Message
+          </label>
+        </h2>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <p class="govuk-body">You have 10,000 characters remaining</p>
+      </div>
+
+      <div class="govuk-form-group">
+          <button class="govuk-button govuk-!-margin-top-3" data-module="govuk-button">
+              Send
+          </button>
+      </div>
+
+  </form>
+  </div>
+</div>
+
+
+
+
+{% endblock %}

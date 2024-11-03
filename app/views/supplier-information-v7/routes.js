@@ -23,6 +23,8 @@ router.get('/*', function(req,res, next){
     req.session.data["orgName"] = '[Random Limited]';
     req.session.data["orgType"] = 'Supplier';
     req.session.data["emailAddress"] = 'info@randomlimited.co.uk';
+    req.session.data["supplierArray"] = 'Consortium supplier 1';
+    req.session.data["supplierShareCode"] = '6789ABCFD';
   } 
   // else {
     return next();
@@ -210,48 +212,6 @@ router.get('/org-id-overseas-country', function (req, res) {
   })
 })
 
-// Consortium pages routing
-
-router.post('/consortium-share-code', function (req, res) {
-  res.redirect('/supplier-information-v7/add-supplier-consortium');
-});
-
-router.post('/add-supplier-consortium', function (req, res) {
-  res.redirect('/supplier-information-v7/add-another-supplier');
-});
-
-router.post('/add-another-supplier', function (req, res) {
-  if(req.body.addAnotherSupplier.toLowerCase() == 'yes'){
-    res.redirect('/supplier-information-v7/consortium-share-code');
-  }
-  else {
-    res.redirect('/supplier-information-v7/consortium-suppliers');
-  }
-});
-
-router.post('/consortium-admin-name', function (req, res) {
-  res.redirect('/supplier-information-v7/consortium-admin-address');
-});
-
-router.post('/consortium-admin-address', function (req, res) {
-  res.redirect('/supplier-information-v7/consortium-admin-email');
-});
-
-router.post('/consortium-admin-email', function (req, res) {
-  res.redirect('/supplier-information-v7/consortium-name');
-});
-
-router.post('/consortium-name', function (req, res) {
-  res.redirect('/supplier-information-v7/consortium-dashboard');
-});
-
-router.post('/consortium-uniqueId', function (req, res) {
-  res.redirect('/supplier-information-v7/consortium-formal-name');
-});
-
-router.post('/consortium-formal-name', function (req, res) {
-  res.redirect('/supplier-information-v7/org-dashboard');
-});
 
 
 

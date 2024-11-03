@@ -219,3 +219,8 @@ router.use(
   "/supplier-information-v7/connected-person",
   require("./views/supplier-information-v7/connected-person/routes")
 );
+
+router.use(
+  "/supplier-information-v7/consortiums",
+  require("./views/supplier-information-v7/consortiums/routes")
+);
