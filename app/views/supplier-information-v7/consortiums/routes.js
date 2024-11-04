@@ -45,7 +45,7 @@ router.post('/consortium-share-code', function (req, res) {
   });
   
   router.post('/consortium-formal-name', function (req, res) {
-    res.redirect('/supplier-information-v7/consortiums/org-dashboard');
+    res.redirect('/supplier-information-v7/consortiums/org-dashboard-formal');
   });
   
 
