@@ -52,10 +52,10 @@
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">
-                  Food Factory Limited <span
-              class="govuk-tag--orange  govuk-!-font-size-16"
-              >Rejected</span
-            >
+            {{ data['orgName'] }} {% if data['orgType'] == 'Buyer' %}<span
+              class="govuk-tag govuk-tag--light-blue govuk-!-font-size-16"
+              >Pending approval</span
+            >{% endif%}
             <!-- <div class="govuk-!-font-weight-regular">{{ data['postal-address-line-1'] }}</div> -->
           </th>
           <td class="govuk-table__cell">
