@@ -17,15 +17,15 @@ router.post('/confirm-supplier', function (req, res) {
 });
 
 router.post('/add-another', function (req, res) {
-    res.redirect('select-consortium-lead');
-});
-
-router.post('/select-consortium-lead', function (req, res) {
     res.redirect('consortium-name');
 });
 
-
 router.post('/consortium-name', function (req, res) {
+    res.redirect('select-consortium-lead');
+});
+
+
+router.post('/select-consortium-lead', function (req, res) {
     res.redirect('overview');
 });
 
