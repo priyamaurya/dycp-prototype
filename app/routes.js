@@ -177,6 +177,7 @@ router.use(
   "/supplier-information-v7",
   require("./views/supplier-information-v7/routes")
 );
+
 router.use(
   "/supplier-information-v7/suppliers-c",
   require("./views/supplier-information-v7/suppliers-c/routes")
@@ -210,6 +211,7 @@ router.use(
   "/supplier-information-v7/download",
   require("./views/supplier-information-v7/download/routes")
 );
+
 router.use(
   "/supplier-information-v7/manage-api-key",
   require("./views/supplier-information-v7/manage-api-key/routes")
@@ -223,4 +225,9 @@ router.use(
 router.use(
   "/supplier-information-v7/consortiums",
   require("./views/supplier-information-v7/consortiums/routes")
+);
+
+router.use(
+  "/supplier-information-v7/consortium",
+  require("./views/supplier-information-v7/consortium/routes")
 );

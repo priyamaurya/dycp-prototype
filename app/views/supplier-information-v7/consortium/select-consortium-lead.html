@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <!-- !! - show one's they can't select?? - !! -->
+
+        <form class="form" method="post">
+
+            {% set inputName="consortiumLead" %}
+            {% set heading="Select the lead organisation for consortium you want to create" %}
+ 
+            <!-- user options -->
+
+            {% set options=[] %}
+            {% set optionHints=[] %}
+
+            {% set options=(options.push("Kaffeine labs"), options) %}
+            {% set optionHints=(optionHints.push("Share code P990281"), optionHints) %}
+
+            {% set options=(options.push("My org 2"), options) %}
+            {% set optionHints=(optionHints.push("Share code L093939"), optionHints) %}
+
+ 
+            {% include("../templates/radios.html") %}
+            {% include("../templates/button--submit.html") %}
+            
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

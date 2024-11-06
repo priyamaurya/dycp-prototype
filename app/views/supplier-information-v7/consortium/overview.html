@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% set showFTS = true %}
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-body">
+
+    <h1 class="govuk-heading-l">
+      [Consortium name]
+    </h1>
+
+    <h2 class="govuk-heading-m">Consortium details</h2>
+
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Consortium name</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">My fab consortium</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="org-name">Change<span class="govuk-visually-hidden"> organisation name</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Consortium lead</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body">Kaffeine labs</p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> organisation name</span></a>
+        </dd>
+      </div>
+
+      
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Consortia</dt>
+          <dd class="govuk-summary-list__value">
+            {% if showConsortia %}
+            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
+              <li>
+                <a href="#">Random limited (Opens in new tab)</a><br />
+                P92p0020
+              </li>
+              <li>
+                <a href="#">Joe the plumber (Opens in new tab)</a><br />
+                S98181L0
+              </li>
+            </ul>
+            {% else %}
+              This consortia is currently empty
+            {% endif %}
+          </dd>
+          
+          
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link govuk-link--no-visited-state" href="enter-sharecode">Add<span class="govuk-visually-hidden"> organisation ID</span></a>
+          </dd>
+        </div>
+     
+
+    </dl>
+
+    <h2 class="govuk-heading-m">Share your consortium information</h2>
+
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="download/manage-codes" aria-describedby="before-you-start-2-status">
+            Declare and create a share code
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="before-you-start-2-status">
+
+          {% if showConsortia %}
+          <strong class="govuk-tag">
+            Not complete
+          </strong>
+          {% else %}
+          <strong class="govuk-tag govuk-tag--orange">
+            Cannot start yet
+          </strong>
+          {% endif %}
+        </div>
+      </li>
+    </ul>
+
+
+    <div class="govuk-!-margin-top-3">
+        <a class="govuk-link" href="org-dashboard">Back to my account</a>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

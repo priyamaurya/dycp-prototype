@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set inputName="orgSharecode" %}
+            {% set heading="Enter sharecode of the organisation you'd like to add" %}
+
+            {% include("../templates/text-input--single.html") %}
+            {% include("../templates/button--submit.html") %}
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
