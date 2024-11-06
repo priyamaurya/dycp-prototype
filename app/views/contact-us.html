@@ -14,23 +14,20 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">
 
-     <div class="govuk-error-summary" data-module="govuk-error-summary">
-  <div role="alert">
-    <h2 class="govuk-error-summary__title">
-      There is a problem
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          Your message could not be sent.
-        </li>
-        <li>
-          <a href="#">Try again</a> or come back later
-        </li>
-      </ul>
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          There is a problem with the service         
+        </p>
+        <p class="govuk-body">Your message could not be sent. Try again or come back later</p> 
+      </div>
     </div>
-  </div>
-</div>
+    
     <h1 class="govuk-heading-l">
       Contact us
     </h1>
@@ -67,8 +64,10 @@
            Message
           </label>
         </h2>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-        <p class="govuk-body">You have 10,000 characters remaining</p>
+        <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="withHint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+            You can enter up to 10,000 characters
+          </div>
       </div>
 
       <div class="govuk-form-group">
