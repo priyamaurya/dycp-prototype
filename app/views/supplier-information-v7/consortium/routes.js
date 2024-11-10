@@ -5,11 +5,11 @@ const path = require('node:path')
 
 // Add your routes here - above the module.exports line
 
-router.get('/overview', function (req, res) {
+// router.get('/overview', function (req, res) {
 
-    showConsortia = req.query.showConsortia ? req.query.showConsortia : false;
-    res.render(path.resolve(__dirname, 'overview'), {showConsortia, showConsortia});
-});
+//     showConsortia = req.query.showConsortia ? req.query.showConsortia : false;
+//     res.render(path.resolve(__dirname, 'overview'), {showConsortia, showConsortia});
+// });
 
 
 router.post('/confirm-supplier', function (req, res) {
