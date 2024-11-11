@@ -1,3 +1,4 @@
+@ -0,0 +1,105 @@
 {% extends "layouts/main.html" %}
 
 {% block header %}
@@ -51,15 +52,9 @@
           aria-required="true">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                    {% if (data['individualOrOrg']).toLowerCase() == "organisation" %}
                         <h1 class="govuk-fieldset__heading">
                           Is your organisation registered for VAT?
                         </h1>
-                    {% else  %}
-                        <h1 class="govuk-fieldset__heading">
-                          Are you registered for VAT?
-                        </h1>
-                    {% endif %}
           </legend>
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
             <div class="govuk-radios__item">
