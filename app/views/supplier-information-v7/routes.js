@@ -20,7 +20,7 @@ router.get('/*', function(req,res, next){
     req.session.data["lastName"] = 'Bloggs';
     req.session.data["chno"] = "Yes"
     req.session.data["chnoInput"] = "93939393"
-    req.session.data["orgName"] = '[Random Limited]';
+    req.session.data["orgName"] = 'Random Limited';
     req.session.data["orgType"] = 'Supplier';
     req.session.data["emailAddress"] = 'info@randomlimited.co.uk';
     req.session.data["supplierArray"] = 'Consortium supplier 1';

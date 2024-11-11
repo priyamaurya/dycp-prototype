@@ -19,14 +19,14 @@
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              What do you want to register your organisation as?
+              Choose whether you would like to register a new organisation or join an existing one 
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="orgType" name="orgType" type="radio" value="Buyer" aria-describedby="hint-buyer">
               <label class="govuk-label govuk-radios__label" for="orgType">
-                Buyer
+                Register a new buyer organisation
               </label>
               <div id="hint-buyer" class="govuk-hint govuk-radios__hint">
                 A contracting authority who publishes notices to buy goods, works, services or utilities
@@ -35,28 +35,50 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="orgType-2" name="orgType" type="radio" value="Supplier" aria-describedby="hint-supplier">
               <label class="govuk-label govuk-radios__label" for="orgType-2">
-                Supplier
+                Register a new supplier organisation
               </label>
               <div id="hint-supplier" class="govuk-hint govuk-radios__hint">
                 An organisation or sole trader who searches for tenders and submits bids to supply goods, works, services or utilities
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="orgType-3" name="orgType" type="radio" value="both">
+              <input class="govuk-radios__input" id="orgType-3" name="orgType" type="radio" value="join" aria-describedby="hint-join"  data-aria-controls="conditional-join">
               <label class="govuk-label govuk-radios__label" for="orgType-3">
-                  Join an existing organisation
+                Join an existing buyer or supplier organisation
               </label>
-              <div id="hint-supplier" class="govuk-hint govuk-radios__hint">
-               Please enter the organisation company house number on the next screen.
+              <div id="hint-join" class="govuk-hint govuk-radios__hint">
+                You will need an organisation identifier, such as a PPON or Companies House number, to join an existing organisation on this service
+              </div>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-join">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sort">
+                  Select the identifier type
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                  
+                  <option value="null" selected>Not selected</option>
+                  <option value="ppon">PPON</option>
+                  <option value="chno">Companies House number</option>
+                  <option value="ccew">Charity Commission for England and Wales</option>
+                  <option value="more">...</option>
+                </select>
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-text">
+                  Enter the identifier
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
               </div>
             </div>
           </div>
         </fieldset>
       </div>
 
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-        </button>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
     </form>
   </div>
 </div>

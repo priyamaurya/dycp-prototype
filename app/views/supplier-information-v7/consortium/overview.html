@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-full govuk-body">
 
     <h1 class="govuk-heading-l">
-      [Consortium name]
+      My fab consortium
     </h1>
 
     <h2 class="govuk-heading-m">Consortium details</h2>
@@ -30,51 +30,75 @@
           <p class="govuk-body">My fab consortium</p>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="org-name">Change<span class="govuk-visually-hidden"> organisation name</span></a>
+          <a class="govuk-link govuk-link--no-visited-state" href="org-name">Change<span class="govuk-visually-hidden"> consortium name</span></a>
         </dd>
       </div>
 
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Consortium lead</dt>
+        <dt class="govuk-summary-list__key">Lead organisation</dt>
         <dd class="govuk-summary-list__value">
           <p class="govuk-body">Kaffeine labs</p>
+          <p>
+            <a href="#">L1P09200</a>
+            <span class="govuk-hint govuk-!-display-block">Sharecode created on 11 Nov 2024</span>
+          </p>
+          <p class="govuk-body">1 Penny Lane
+            <br>
+            Liverpool
+            <br>
+            L18 1DG
+          </p>
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> organisation name</span></a>
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Change<span class="govuk-visually-hidden"> lead organisation</span></a>
         </dd>
       </div>
 
-      
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Consortia</dt>
-          <dd class="govuk-summary-list__value">
-            {% if showConsortia %}
-            <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
-              <li>
-                <a href="#">Random limited (Opens in new tab)</a><br />
-                P92p0020
-              </li>
-              <li>
-                <a href="#">Joe the plumber (Opens in new tab)</a><br />
-                S98181L0
-              </li>
-            </ul>
-            {% else %}
-              This consortia is currently empty
-            {% endif %}
-          </dd>
-          
-          
 
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link govuk-link--no-visited-state" href="enter-sharecode">Add<span class="govuk-visually-hidden"> organisation ID</span></a>
-          </dd>
-        </div>
      
 
     </dl>
 
-    <h2 class="govuk-heading-m">Share your consortium information</h2>
+    <h2 class="govuk-heading-m">Organisations (in this consortium?)</h2>
+    <p>You'll need the most recent share code for each</p>
+    
+    {% if showConsortia %}
+    <dl class="govuk-summary-list ">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Random Limited</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body"><a href="#">P0029939</a>
+            <span class="govuk-hint govuk-!-display-block">Sharecode created on 8 Nov 2024</span>
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="update-sharecode">Change<span class="govuk-visually-hidden"> organisation sharecode</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Joe the plumber</dt>
+        <dd class="govuk-summary-list__value">
+          <p class="govuk-body"><a href="#">XJ992838</a>
+            <span class="govuk-hint govuk-!-display-block">Sharecode created on 8 Nov 2024</span>
+          </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link govuk-link--no-visited-state" href="update-sharecode">Change<span class="govuk-visually-hidden"> organisation sharecode</span></a>
+        </dd>
+      </div>
+
+    </dl>
+    {% endif %}
+
+    <div class="govuk-body">
+      <a class="govuk-button govuk-button--secondary" href="enter-sharecode">Add organisation to the consortium</a>
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--l" />
+
+    <h2 class="govuk-heading-m">Share your combined supplier information</h2>
 
     <ul class="govuk-task-list">
       <li class="govuk-task-list__item govuk-task-list__item--with-link">
@@ -99,6 +123,7 @@
       </li>
     </ul>
 
+    <hr class="govuk-section-break govuk-section-break--l" />
 
     <div class="govuk-!-margin-top-3">
         <a class="govuk-link" href="org-dashboard">Back to my account</a>
