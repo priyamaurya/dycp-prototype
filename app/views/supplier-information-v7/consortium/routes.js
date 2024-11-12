@@ -8,7 +8,8 @@ const path = require('node:path')
 router.get('/overview', function (req, res) {
 
     showConsortia = req.query.showConsortia ? req.query.showConsortia : false;
-    res.render(path.resolve(__dirname, 'overview'), {showConsortia, showConsortia});
+    showNotification = req.query.showNotification ? req.query.showNotification : false;
+    res.render(path.resolve(__dirname, 'overview'), {showConsortia, showNotification});
 });
 
 
@@ -31,13 +32,19 @@ router.post('/enter-sharecode', function (req, res) {
 });
 
 router.post('/confirm-supplier', function (req, res) {
-    res.redirect('overview?showConsortia=true');
+    res.redirect('overview?showConsortia=true&showNotification=true');
 });
 
 
 router.post('/update-sharecode', function (req, res) {
-    res.redirect('overview?showConsortia=true');
+    res.redirect('overview?showConsortia=true&showNotification=true');
 });
+
+
+router.post('/remove-organisation', function (req, res) {
+    res.redirect('overview');
+});
+
 
 
 

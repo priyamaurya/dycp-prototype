@@ -1,9 +1,10 @@
 <!--
 OPTIONAL:
 {*% set buttonCaption="[Save and continue]" %*}
+{*%set buttonStyle = "secondary or warning" %*}
 -->
 
-<button class="govuk-button" type="submit">
+<button class="govuk-button {% if buttonStyle %}govuk-button--{{buttonStyle}}{% endif %}" type="submit">
     {% if buttonCaption %}
         {{ buttonCaption }}
     {% else %}
