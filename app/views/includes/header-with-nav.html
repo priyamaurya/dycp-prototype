@@ -1,8 +1,17 @@
 
-{% if showFTS == true %}
+{% if data['v'] == 7 %}
+{% set url = '/my-account/dashboard' %}
+{% else %}
+{% set url = '/dashboard' %}
+{% endif %}
+
+
+
+{% 
+  if showFTS == true %}
   {% set nav = [
     {
-      href: '/supplier-information-v'+data['v']+'/dashboard',
+      href: '/supplier-information-v'+data['v']+url,
       text: "Dashboard",
       active: false
     },
@@ -18,7 +27,7 @@
 {% else %}
   {% set nav = [
     {
-      href: '/supplier-information-v'+data['v']+'/dashboard',
+      href: '/supplier-information-v'+data['v']+url,
       text: "Dashboard",
       active: false
     },

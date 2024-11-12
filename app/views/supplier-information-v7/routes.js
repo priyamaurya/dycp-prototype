@@ -12,8 +12,8 @@ const { nextTick } = require('node:process');
 
 router.get('/*', function(req,res, next){
 
-  // console.log(req.session.data)
-  if (!req.session.proto_version  ){
+   
+  if (!req.session.data["v"] ){
     req.session.proto_version = 7;
     req.session.data["v"] = 7;
     req.session.data["firstName"] = 'Joe';
@@ -26,6 +26,7 @@ router.get('/*', function(req,res, next){
     req.session.data["supplierArray"] = 'Consortium supplier 1';
     req.session.data["supplierShareCode"] = '6789ABCFD';
   } 
+
   // else {
     return next();
   // }
