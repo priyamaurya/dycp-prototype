@@ -22,25 +22,23 @@
             {% set heading="Select the lead organisation" %}
             {% set headingCaption="[My fab consortium]" %}
             {% set hintText="The lead will set up the consortium and be the admin" %}
- 
+
             <!-- user options -->
 
             {% set options=[] %}
             {% set optionHints=[] %}
 
             {% set options=(options.push("Kaffeine labs"), options) %}
-            {% set optionHints=(optionHints.push("Share code P990281"), optionHints) %}
 
             {% set options=(options.push("My org 2"), options) %}
-            {% set optionHints=(optionHints.push("Share code L093939"), optionHints) %}
 
- 
+
             {% include("../templates/radios.html") %}
 
-            {% set buttonCaption="Save" %}
+            {% set buttonCaption="Continue" %}
             {% include("../templates/button--submit.html") %}
-            
-            
+
+
         </form>
 
     </div>

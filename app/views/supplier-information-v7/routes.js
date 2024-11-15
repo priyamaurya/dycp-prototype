@@ -12,8 +12,8 @@ const { nextTick } = require('node:process');
 
 router.get('/*', function(req,res, next){
 
-  // console.log(req.session.data)
-  if (!req.session.proto_version  ){
+   
+  if (!req.session.data["v"] ){
     req.session.proto_version = 7;
     req.session.data["v"] = 7;
     req.session.data["firstName"] = 'Joe';
@@ -26,6 +26,8 @@ router.get('/*', function(req,res, next){
     req.session.data["supplierArray"] = 'Consortium supplier 1';
     req.session.data["supplierShareCode"] = '6789ABCFD';
   } 
+  
+
   // else {
     return next();
   // }
@@ -46,6 +48,7 @@ router.post('/org-type', function (req, res) {
 });
 
 router.post('/has-ch-number', function (req, res) {
+  req.session.data["orgName"] = 'Ministry of Justice UK';
   if(req.body.chnoInput == "12345678"){
     res.redirect('/supplier-information-v7/org-exists');
   } else {
@@ -59,12 +62,16 @@ router.post('/org-name', function (req, res) {
     res.redirect('/supplier-information-v7/org-exists');
   } else if(req.session.data.orgType.toLowerCase() == "buyer" && req.body.orgName.toLowerCase() == "defra"){
     res.redirect('/supplier-information-v7/org-exists');
+  } else if(req.session.data.orgType.toLowerCase() == "buyer"){
+    res.redirect('/supplier-information-v7/org-name-match');
   } else {
     res.redirect('/supplier-information-v7/org-address-uk');
   }
 
-    
+});
 
+router.post('/org-name-match', function (req, res) {
+  res.redirect('/supplier-information-v7/org-address-uk');
 });
 
 

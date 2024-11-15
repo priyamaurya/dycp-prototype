@@ -136,3 +136,6 @@ app/assets/.DS_Store
 package-lock.json
 app/assets/.DS_Store
 app/.DS_Store
+app/views/.DS_Store
+app/views/supplier-information-v7/.DS_Store
+app/views/supplier-information-v7/admin/.DS_Store

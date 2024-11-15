@@ -14,23 +14,6 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <!-- <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          Entered VAT number is already registered.      
-        </p>
-        <p class="govuk-body">Please use another VAT number.</p> 
-      </div>
-    </div> -->
-
-    
-
     <div class="govuk-error-summary" data-module="govuk-error-summary">
       <div role="alert">
         <h2 class="govuk-error-summary__title">
@@ -39,18 +22,18 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              Entered VAT number is already registered.
+              <a href="#vatNumber">This VAT number belongs to another organisation. Enter a different VAT number.</a>
             </li>
           </ul>
         </div>
       </div>
-    </div>    
+    </div>
+
 
     <form class="form" method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" data-required data-error="Select yes if you are registered for VAT"
           aria-required="true">
-
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
                           Is your organisation registered for VAT?
@@ -63,19 +46,20 @@
                 Yes
               </label>
             </div>
+
+
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-vat-yes">
-              <div class="govuk-form-group">
+              <div class="govuk-form-group govuk-form-group--error">
                 <label class="govuk-label" for="vatNumber">
                   VAT number
                 </label>
                 <div id="vat-registration-number-hint" class="govuk-hint">
-                 You can find it
-                  on your VAT registration certificate
+                 You can find it on your VAT registration certificate
                 </div>
-                <p id="vatNumber" class="govuk-error-message">
-                  <span class="govuk-visually-hidden">Error:</span> VAT number already exists.
+                <p id="vatNumber-input-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span>This VAT number belongs to another organisation. Enter a different VAT number.
                 </p>
-                <input class="govuk-input govuk-!-width-one-third govuk-input govuk-input--error" id="vatNumber" name="vatNumber" spellcheck="false" autocomplete="false" aria-describedby="vat-registration-number-hint">
+                <input class="govuk-input govuk-input--error" id="vatNumber" name="vatNumber" spellcheck="false" autocomplete="false" aria-describedby="vatNumber-input-error">
               </div>
             </div>
            
