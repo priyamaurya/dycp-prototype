@@ -12,7 +12,8 @@ const { nextTick } = require('node:process');
 
 router.get('/*', function(req,res, next){
 
-   
+  req.session.admin = false;
+
   if (!req.session.data["v"] ){
     req.session.proto_version = 7;
     req.session.data["v"] = 7;

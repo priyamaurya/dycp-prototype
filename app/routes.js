@@ -231,3 +231,8 @@ router.use(
   "/supplier-information-v7/consortium",
   require("./views/supplier-information-v7/consortium/routes")
 );
+
+router.use(
+  "/supplier-information-v7/admin",
+  require("./views/supplier-information-v7/admin/routes")
+);

@@ -1,0 +1,45 @@
+
+{% if data['v'] == 7 %}
+{% set url = '/my-account/dashboard' %}
+{% else %}
+{% set url = '/dashboard' %}
+{% endif %}
+
+
+{% 
+  if showFTS == true %}
+  {% set nav = [
+    {
+      href: '/supplier-information-v'+data['v']+url,
+      text: "Dashboard",
+      active: false
+    },
+    {
+      href: "#",
+      text: "My notices"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ] %}
+{% else %}
+  {% set nav = [
+    {
+      href: '/supplier-information-v'+data['v']+url,
+      text: "Dashboard",
+      active: false
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+  ] %}
+{% endif %}
+
+{{ govukHeader({
+    homepageUrl: "start",
+    serviceName: serviceName,
+    serviceUrl: "#",
+    navigation: nav
+  }) }}
