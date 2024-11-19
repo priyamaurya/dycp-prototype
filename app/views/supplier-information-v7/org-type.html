@@ -19,7 +19,7 @@
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Register a new organisation or join an existing one 
+              Register a new organisation or request to join an existing one 
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
@@ -45,20 +45,20 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="orgType-3" name="orgType" type="radio" value="join" aria-describedby="hint-join"  data-aria-controls="conditional-join">
               <label class="govuk-label govuk-radios__label" for="orgType-3">
-                Join an existing buyer or supplier
+                Request to join an existing buyer or supplier
               </label>
               <div id="hint-join" class="govuk-hint govuk-radios__hint">
-                You'll need an organisation identifier, such as a PPON or Companies House number
+                You'll need their organisation identifier, such as a PPON or Companies House number
               </div>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-join">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="sort">
-                  Select the organisation identifier
+                  Organisation identifier
                 </label>
                 <select class="govuk-select" id="sort" name="sort">
                   
-                  <option value="null" selected>Not selected</option>
+                  <option value="null" selected>Select identifier</option>
                   <option value="ppon">PPON</option>
                   <option value="chno">Companies House number</option>
                   <option value="ccew">Charity Commission for England and Wales</option>
@@ -68,7 +68,7 @@
 
               <div class="govuk-form-group">
                 <label class="govuk-label" for="contact-by-text">
-                  Organisation identifier
+                  Identifier number
                 </label>
                 <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-text" name="contactByText" type="tel" autocomplete="tel">
               </div>
