@@ -17,9 +17,8 @@
         <!-- !! - show one's they can't select?? - !! -->
 
         <form class="form" method="post">
-
             {% set inputName="consortiumLead" %}
-            {% set heading="Select the lead organisation" %}
+            {% set heading="Select the lead organisation's share code" %}
             {% set headingCaption="[My fab consortium]" %}
             {% set hintText="The lead will set up the consortium and be the admin" %}
 
@@ -28,17 +27,14 @@
             {% set options=[] %}
             {% set optionHints=[] %}
 
-            {% set options=(options.push("Kaffeine labs"), options) %}
+            {% set options=(options.push("P93X932 - Kaffeine labs"), options) %}
+            {% set optionHints=(optionHints.push("Share code created on 8 Nov 2024"), optionHints) %}
 
-            {% set options=(options.push("My org 2"), options) %}
-
+            {% set options=(options.push("X902S90 - Simba International LLP"), options) %}
+            {% set optionHints=(optionHints.push("Share code created on 6 Feb 2024"), optionHints) %}
 
             {% include("../templates/radios.html") %}
-
-            {% set buttonCaption="Continue" %}
             {% include("../templates/button--submit.html") %}
-
-
         </form>
 
     </div>

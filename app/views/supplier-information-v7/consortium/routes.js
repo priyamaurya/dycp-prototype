@@ -23,9 +23,19 @@ router.post('/consortium-name', function (req, res) {
 
 
 router.post('/select-consortium-lead', function (req, res) {
+    if(req.body['consortiumLead'].includes("International"))
+        res.redirect('address-non-uk');
+    else
+        res.redirect('address');
+});
+
+router.post('/address', function (req, res) {
     res.redirect('overview');
 });
 
+router.post('/address-non-uk', function (req, res) {
+    res.redirect('overview');
+});
 
 router.post('/enter-sharecode', function (req, res) {
     res.redirect('confirm-supplier');

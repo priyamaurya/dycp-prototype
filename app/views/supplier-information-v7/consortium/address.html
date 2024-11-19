@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <form class="form" method="post">
+
+            {% set headingCaption=data['categoryOfConnectedPerson'] %}
+            {% set heading="Enter address for the consortium" %}
+            {% set description="Add context e.g. they should change this if it's a different address?" %}
+            
+            {% set overseasAddressUrl = "address-non-uk" %}
+           
+
+            {% set value = ["10 Downing Street", "London", "SW1 1SW"] %}
+
+            {% include("../templates/address.html") %}
+
+            {% set buttonCaption="Save" %}
+            {% include("../templates/button--submit.html") %}
+
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}

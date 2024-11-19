@@ -5,6 +5,7 @@ OPTIONAL:
 {*% set headingCaption="[Heading caption]" %*}
 {*% set description="[Description here...]" %*}
 {*% set addressType="uk" %*}
+{*% set value = [value1, value2, value3] %*}
 -->
 
 <fieldset class="govuk-fieldset">
@@ -17,9 +18,15 @@ OPTIONAL:
     </p>
     {% endif %}
 
-    {% if addressType != "non-uk" %}
+    {% if overseasAddressUrl %}
     <p>
-        <a href="{% if overseasAddressUrl %}{{overseasAddressUrl}}{% else %}#{% endif %}">Enter a non-UK address</a>
+        <a href="{{overseasAddressUrl}}">Enter a non-UK address</a>
+    </p>
+    {% endif %}
+
+    {% if UKAddressUrl %}
+    <p>
+        <a href="{{UKAddressUrl}}">Enter a UK address</a>
     </p>
     {% endif %}
 
@@ -27,14 +34,14 @@ OPTIONAL:
         <label class="govuk-label" for="addressLine1">
         Address line 1
         </label>
-        <input class="govuk-input" id="addressLine1" name="addressLine1" type="text" autocomplete="address-line1">
+        <input class="govuk-input" id="addressLine1" name="addressLine1" type="text" autocomplete="address-line1" value="{% if value %} {{value[0]}} {% endif %}">
     </div>
 
     <div class="govuk-form-group">
         <label class="govuk-label" for="addressTown">
         Town or city
         </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="addressTown" name="addressTown" type="text" autocomplete="address-town">
+        <input class="govuk-input govuk-!-width-two-thirds" id="addressTown" name="addressTown" type="text" autocomplete="address-town" value="{% if value %} {{value[1]}} {% endif %}">
     </div>
     
     <div class="govuk-form-group">
@@ -45,7 +52,7 @@ OPTIONAL:
             Postcode
         {% endif %}
         </label>
-        <input class="govuk-input govuk-input--width-10" id="addressPostcode" name="addressPostcode" type="text" autocomplete="postcode">
+        <input class="govuk-input govuk-input--width-10" id="addressPostcode" name="addressPostcode" type="text" autocomplete="postcode" value="{% if value %} {{value[2]}} {% endif %}">
     </div>
 
     {% if addressType == "non-uk" %}
