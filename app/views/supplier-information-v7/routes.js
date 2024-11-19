@@ -166,10 +166,14 @@ router.post('/buyer-overview', function (req, res) {
 // hack
 router.get('/org-dashboard', function (req, res) {
 
+  
+
   req.session.data.startQuestion = "Company"; // adding this line as there's no page that tells that the user is an individual
   
   var sessionData = req.session.data;
   var userArray = sessionData.userArray || [];
+
+  console.log(sessionData)
 
   if (userArray.length == 0){
       var user = {
