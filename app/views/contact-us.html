@@ -7,17 +7,26 @@
 {% block beforeContent %}
     {% include("includes/phase-banner.html") %}
 {% endblock %}
-
+ 
 
 {% block content %}
+
+<style>
+  .red-banner {
+    background-color: #d4351c; /* gov uk red background */
+    border: 6px solid #d4351c; /* Red border for emphasis */
+    color: #d4351c; /* Text color */
+}
+
+</style>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">
 
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner red-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__header">
         <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
+          Failed to send
         </h2>
       </div>
       <div class="govuk-notification-banner__content">
