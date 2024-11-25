@@ -25,7 +25,7 @@ OPTIONAL:
     <div id="{{ inputName }}-hint-1" class="govuk-hint">
         {{ hintText1 }}
     </div>
-    <input class="govuk-input" id="{{ inputName }}-1" name="{{ inputName }}-1" type="text" {% if hintText1 %}aria-describedby="{{ inputName }}-hint-1"{% endif %}>
+    <input class="govuk-input govuk-input--width-20" id="{{ inputName }}-1" name="{{ inputName }}-1" type="text" {% if hintText1 %}aria-describedby="{{ inputName }}-hint-1"{% endif %}>
 </div>
 
 <div class="govuk-form-group">
@@ -35,6 +35,6 @@ OPTIONAL:
     <div id="{{ inputName }}-hint-2" class="govuk-hint">
         {{ hintText2 }}
     </div>
-    <input class="govuk-input" id="{{ inputName }}-2" name="{{ inputName }}-2" type="text" {% if hintText2 %}aria-describedby="{{ inputName }}-hint-2"{% endif %}>
+    <input class="govuk-input govuk-input--width-20" id="{{ inputName }}-2" name="{{ inputName }}-2" type="text" {% if hintText2 %}aria-describedby="{{ inputName }}-hint-2"{% endif %}>
 </div>
 

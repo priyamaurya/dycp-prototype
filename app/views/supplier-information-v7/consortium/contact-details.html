@@ -16,19 +16,17 @@
 
         <form class="form" method="post">
 
-            {% set headingCaption=data['categoryOfConnectedPerson'] %}
-            {% set heading="Enter address for the consortium" %}
-            {% set description="Add context e.g. they should change this if it's a different address?" %}
-            
-            {% set overseasAddressUrl = "address-non-uk" %}
-           
+            {% set inputName="consortiumContactName" %}
+            {% set headingCaption="[My fab consortium]" %}
+            {% set heading="Enter contact details" %}
 
+            {% set label1="Name"%}
+            {% set label2="Email address"%}
 
-            {% include("../templates/address.html") %}
-
-            
+            {% set buttonCaption="Save" %}
+            {% include("../templates/two-text-inputs.html") %}
             {% include("../templates/button--submit.html") %}
-
+            
         </form>
 
     </div>

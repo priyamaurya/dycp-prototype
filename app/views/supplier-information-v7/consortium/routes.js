@@ -18,7 +18,7 @@ router.post('/add-another', function (req, res) {
 });
 
 router.post('/consortium-name', function (req, res) {
-    res.redirect('select-consortium-lead');
+    res.redirect('address');
 });
 
 
@@ -30,10 +30,15 @@ router.post('/select-consortium-lead', function (req, res) {
 });
 
 router.post('/address', function (req, res) {
-    res.redirect('overview');
+    res.redirect('contact-details');
 });
 
+
 router.post('/address-non-uk', function (req, res) {
+    res.redirect('contact-details');
+});
+
+router.post('/contact-details', function (req, res) {
     res.redirect('overview');
 });
 
