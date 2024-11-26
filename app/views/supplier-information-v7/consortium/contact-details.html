@@ -16,15 +16,13 @@
 
         <form class="form" method="post">
 
-            {% set inputName="consortiumContactName" %}
+            {% set inputName="consortiumContactEmail" %}
             {% set headingCaption="[My fab consortium]" %}
-            {% set heading="Enter contact details" %}
-
-            {% set label1="Name"%}
-            {% set label2="Email address"%}
+            {% set heading="Enter consortium email address" %}
+            {% set hintText="Where possible, use a shared inbox that other team members can access" %}
 
             {% set buttonCaption="Save" %}
-            {% include("../templates/two-text-inputs.html") %}
+            {% include("../templates/text-input--single.html") %}
             {% include("../templates/button--submit.html") %}
             
         </form>
