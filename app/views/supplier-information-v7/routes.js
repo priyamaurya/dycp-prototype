@@ -55,6 +55,15 @@ router.post('/org-type', function (req, res) {
   
 });
 
+router.post('/reg-org', function (req, res) {
+    res.redirect('/supplier-information-v7/has-ch-number');
+  
+});
+
+router.post('/join-existing-org', function (req, res) {
+    res.redirect('/supplier-information-v7/org-join-request');
+});
+
 router.post('/has-ch-number', function (req, res) {
   req.session.data["orgName"] = 'Ministry of Justice UK';
   if(req.body.chnoInput == "12345678"){
