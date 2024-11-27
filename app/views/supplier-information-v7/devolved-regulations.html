@@ -24,29 +24,38 @@
           </legend>
 
           <div id="waste-hint" class="govuk-hint">
-            Select all that apply
+            Where the contracting authority operates mainly in that part of the UK and its activities are not reserved.
           </div>
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-              <label class="govuk-label govuk-checkboxes__label" for="waste">
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="waste" name="waste" type="radio" value="carcasses">
+              <label class="govuk-label govuk-radios__label" for="waste">
                 Northern Ireland
               </label>
             </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="waste-2" name="waste" type="radio" value="mines">
+              <label class="govuk-label govuk-radios__label" for="waste-2">
                 Scotland
               </label>
             </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
-              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="waste-3" name="waste" type="radio" value="farm">
+              <label class="govuk-label govuk-radios__label" for="waste-3">
                 Wales
               </label>
             </div>
           </div>
+          <div>or</div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="waste-4" name="waste" type="radio" value="none">
+            <label class="govuk-label govuk-radios__label" for="none">
+              No devolved regulations apply
+            </label>
+          </div>
+        </div>
         </fieldset>
+      </div>
       </div>
 
         <button type="submit" class="govuk-button" data-module="govuk-button">
