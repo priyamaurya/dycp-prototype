@@ -56,15 +56,7 @@ router.post('/org-type', function (req, res) {
 });
 
 router.post('/reg-org', function (req, res) {
-  var orgType = req.body.orgType;
-  req.session.data.orgType = orgType;
-
-  if (orgType && orgType == "join" )
-  {
-    res.redirect('/supplier-information-v7/org-join-request');
-  } else {
-    res.redirect('/supplier-information-v7/has-ch-number');
-  }  
+    res.redirect('/supplier-information-v7/has-ch-number');  
 });
 
 router.post('/join-existing-org', function (req, res) {
