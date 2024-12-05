@@ -28,12 +28,21 @@
 
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Upload your organisation's audited accounts
+                            {% if (data['fileState']) == 'No' %}
+                                Title if not no
+                            {% else %}
+                                Upload your organisation's audited accounts
+                            {% endif %}
                         </h1>
                     </legend>
-                    
-                    <p class="govuk-body">Your organisation's most recent two financial years, or most recent financial year if you do not have two years.  </p>
+
+                    {% if (data['fileState']) == 'No' %}
+                        <!-- add text if no -->
+                    {% else %}
+                        <p class="govuk-body">Your organisation's most recent two financial years, or most recent financial year if you do not have two years.  </p>
     <p>
+                    {% endif %}
+                        
                     
                     <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                         <h2 class="govuk-heading-m">What files you can upload</h2>
