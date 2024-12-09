@@ -38,27 +38,33 @@
 
                     {% if (data['fileState']) == 'No' %}
                         <p class="govuk-body">Your most recent two financial years, or your most recent financial year if you do not have two years.  </p>
-                        <p class="govuk-body">If you do not have a full year of accounts, upload a relevant document that shows your organisation's financial standing.  </p>
+                        <p class="govuk-body">If you do not have a full year of accounts, upload a statement showing your organisation's financial standing.  </p>
                     {% else %}
                         <p class="govuk-body">Your most recent two financial years, or your most recent financial year if you do not have two years.  </p>
                     {% endif %}
                         
                     
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                        <h2 class="govuk-heading-m">What files you can upload</h2>
+                    <!--<legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                        <h2 class="govuk-heading-m">What you can upload</h2>
                         </legend>
-                        <p class="govuk-body">You can upload most file types. For example, scans, screenshots, PDF, Word, Excel, PowerPoint and ZIP files that are smaller than 25MB.
+                        <p class="govuk-body">Most image and file formats that are smaller than 25MB.
                         
                         {% if (data['fileState']) == 'No' %}
                             <p class="govuk-body">Give the file a descriptive name like 'non-audited-accounts-2020-2021.pdf' or 'financial-statements-2020-2021.pdf'. </p>
                         {% else %}
                             <p class="govuk-body">Give the file a descriptive name like 'audited-accounts-2020-2021.pdf'. </p>  
-                        {% endif %}
-                    </label>
+                        {% endif %}-->
+                    
 
                     <label class="govuk-label govuk-!-margin-top-6" for="fileUpload">
                         Upload a file
                     </label>
+                    <p class="govuk-body">We accept most image and file formats that are smaller than 25MB.
+                    {% if (data['fileState']) == 'No' %}
+                            <p class="govuk-body">Give the file a descriptive name like 'non-audited-accounts-2020-2021.pdf' or 'financial-statement-2020-2021.pdf'. </p>
+                        {% else %}
+                            <p class="govuk-body">Give the file a descriptive name like 'audited-accounts-2020-2021.pdf'. </p>  
+                        {% endif %}
                     <input class="govuk-file-upload" id="file-Upload1" name="fileUpload" type="file">
 
                 </fieldset>
