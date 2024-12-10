@@ -56,10 +56,19 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header">
-              {{ data['orgName'] }} {% if data['orgType'] == 'Buyer' %}<span
-                class="govuk-tag govuk-tag--light-blue govuk-!-font-size-16"
-                >Pending approval</span
-              >{% endif%}
+              {{ data['orgName'] }}
+              <span class="govuk-tag govuk-tag--light-blue govuk-!-font-size-16">Pending approval</span>
+            </th>
+            <td class="govuk-table__cell">
+              <a
+                class="govuk-link govuk-link--no-visited-state"
+                href="../org-dashboard">View</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">
+              Alpha Factory Limited
+              <span class="govuk-tag govuk-tag--yellow govuk-!-font-size-16">Request sent</span>
             </th>
             <td class="govuk-table__cell">
               <a
