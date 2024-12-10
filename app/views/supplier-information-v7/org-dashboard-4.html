@@ -48,13 +48,15 @@
 
     {% endif %}
 
+  </div>
+</div> 
 
-
-
-    <h1 class="govuk-heading-l">
-      <span class="govuk-caption-m"> PPON - 97465533 </span>
-      <span class="govuk-label--l">{{ data['orgName'] }}</span>
-    </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+      <h1 class="govuk-heading-xl govuk-!-padding-top-1">
+        <!-- <span class="govuk-caption-m"> PPON - 97465533 </span> -->
+        <span class="govuk-label--l">{{ data['orgName'] }}</span>
+      </h1>
 
     <h2 class="govuk-heading-m">Organisation details</h2>
 
@@ -202,6 +204,24 @@
       <p class="govuk-!-margin-top-3">Get procurement guidance on the  <a class="govuk-link" href="https://www.procurementpathway.civilservice.gov.uk/">Procurement Pathway service (opens in new tab)</a></p>
       {% endif %}
 
+  </div>
+  <div class="govuk-grid-column-one-third govuk-body">
+    <div class="govuk-!-padding-left-3 govuk-!-padding-top-3 govuk-!-padding-bottom-1 well">
+      <span class="govuk-caption-m">Random Limited PPON</span>
+      <h2 class="govuk-heading-m"> 
+        97465533
+      </h2>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is PPON?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Public Procurement Organisation Number is a unique identifier from Cabinet Office.
+        </div>
+      </details>
+    </div>
   </div>
 </div>
 
