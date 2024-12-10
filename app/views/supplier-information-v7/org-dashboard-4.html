@@ -49,7 +49,7 @@
     {% endif %}
 
   </div>
-</div> 
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-body">
@@ -68,7 +68,7 @@
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Organisation identifiers</dt>
+        <dt class="govuk-summary-list__key">Registry and number</dt>
         <dd class="govuk-summary-list__value">
           <ul class="govuk-list govuk-list--bullet govuk-list--spaced">
             <li>
@@ -174,14 +174,14 @@
 
       {% endif %}
 
-      
+
       <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
         <a class="govuk-link" href="user/add-another-user">Manage users</a>
         <p class="govuk-!-margin-top-3">View, add or remove users.</p>
       </div>
-      
+
       <hr class="govuk-section-break  govuk-section-break--visible govuk-section-break--m" />
-      
+
       {% if data['orgType'] == 'Buyer' and registeredAsBoth != 'yes' %}
       <div class="govuk-!-margin-top-3 govuk-!-font-weight-bold">
         <a class="govuk-link" href="org-dashboard-4?registeredAsBoth=yes&showSuccessBanner=yes">Register as a supplier</a>
@@ -196,7 +196,7 @@
           <a class="govuk-link" href="buyer-type?alternative-journey=yes">Register as a buyer</a>
           <p class="govuk-!-margin-top-3">If you also buy public sector goods, works, services or utilities.</p>
         </div>
-       
+
       {% endif %}
 
 
@@ -207,18 +207,18 @@
   </div>
   <div class="govuk-grid-column-one-third govuk-body">
     <div class="govuk-!-padding-left-3 govuk-!-padding-top-3 govuk-!-padding-bottom-1 well">
-      <span class="govuk-caption-m">Random Limited PPON</span>
-      <h2 class="govuk-heading-m"> 
-        97465533
+      <span class="govuk-caption-m">Public procurement organisation number (PPON)</span>
+      <h2 class="govuk-heading-m">
+        DRFI-1747-YZZC-EW
       </h2>
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            What is PPON?
+            Help with PPON
           </span>
         </summary>
         <div class="govuk-details__text">
-          Public Procurement Organisation Number is a unique identifier from Cabinet Office.
+          Every organisation that registers on the Find a Tender sevice is given a public procurement organisation number. You'll need to use the PPON in notices if your organisation has no other unique identifier. For example, a Companies House number.
         </div>
       </details>
     </div>
