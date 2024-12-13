@@ -154,7 +154,7 @@
 
 
 
-      {% if (data['userArray'].length <= 10) %} <fieldset class="govuk-fieldset" data-required
+      <fieldset class="govuk-fieldset" data-required
         data-error="Select yes if you need to add another user" aria-required="true">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h2 class="govuk-fieldset__heading">
@@ -178,10 +178,11 @@
           </div>
         </div>
         </fieldset>
+        {% if (data['userArray'].length <= 10) %} 
         {% else %}
-
-        <p class="govuk-!-margin-top-9">You cannot add more users</p>
         {% endif %}
+        <!-- <p class="govuk-!-margin-top-9">You cannot add more users</p> -->
+    
 
         <div class="govuk-button-group govuk-!-margin-top-6">
           <button class="govuk-button" data-module="govuk-button">

@@ -17,7 +17,8 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds govuk-body">
+
+  <div class="govuk-grid-column-full govuk-body">
 
     {% if showSuccessBanner == 'yes' %}
     <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -43,6 +44,8 @@
       </div>
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">Buyer registration pending approval</p>
+        <p>You must now <a href="mou">Review MoU (Memorandom of Understanding)</a> to use this service such as being able manage API keys for eSenders.</p>
+
       </div>
     </div>
 

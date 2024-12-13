@@ -1,0 +1,26 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <h1 class="govuk-heading-l">
+        You've successfully signed an MoU
+    </h1>
+    <p>
+        You'll receive an email with a copy of MoU.
+    </p>
+    <a href="org-dashboard-4">Go back organisation overview</a>
+  </div>
+</div>
+
+{% endblock %}

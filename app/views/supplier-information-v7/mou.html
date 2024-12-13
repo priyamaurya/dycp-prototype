@@ -27,21 +27,72 @@
 
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--l" for="declarationStatement">
-              Memorandom of Understanding (MoU)
+              Review and sign Memorandom of Understanding (MoU)
             </label>
           </h1>
-          <br>
-          <ul class="govuk-list govuk-list--bullet">
-            <li> I am authorised to make this declaration on behalf of the supplier and declare that to the best of my knowledge the answers submitted and information contained is correct and accurate at the time of declaration.</li>
-            <br>
-            <li> I declare that, upon request from the Contracting Authority and without delay I will provide the certificates or documentary evidence referred to in this information.</li>
-            <br>
-            <li>I understand that the information is required as per the regulations of the Procurement Act 2023 and may be used in the selection process to assess my suitability to participate further in this procurement.</li>
-            <br>
-            <li>I understand that a contracting authority with whom this information is shared may request further clarity or detail on information provided in this submission.</li>
-          </ul>
+          <p>
+            An MoU (Memorandum of Understanding) is an agreement that outlines the key terms, responsibilities, and expectations for using this service. It provides clear guidelines to ensure mutual understanding and compliance. 
+          </p>
 
-          <fieldset class="govuk-fieldset" data-required data-error="Check the box to agree to the above statements"
+          <p>
+            <a href="#">Download and review MoU (Feb 2024)</a> to proceed.
+          </p>
+
+
+          <div class="govuk-warning-text govuk-!-margin-top-6">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              This is a legally binding contract between the Cabinet Office and your organisation.
+            </strong>
+          </div>
+          
+
+          <div class="govuk-form-group govuk-!-margin-top-5">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend">
+                How would you like to proceed?
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mouQuestion" name="mouQuestion" type="radio" value="yes" data-aria-controls="conditional">
+                  <label class="govuk-label govuk-radios__label" for="mouQuestion">
+                    Sign the MoU on behalf of the department
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional">
+                  <p>
+                    I, Joe Bloggs, hereby confirm that I have reviewed the Memorandum of Understanding (MoU) and, being duly authorised, sign it on behalf of my organisation, Ministry of Justice.
+                  </p>
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="job-title">
+                      Your job title
+                    </label>
+                    <input class="govuk-input govuk-!-width-one-half" id="job-title" name="jobTitle" type="text" spellcheck="false" autocomplete="email">
+                  </div>
+                </div>
+
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="mouQuestion-2" name="mouQuestion" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="mouQuestion-2">
+                    Ask someone else to sign
+                    <div class="govuk-hint">
+                      Add user to this service
+                    </div>
+                  </label>
+                  
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="govuk-form-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Continue
+            </button>
+          </div>
+
+          <!-- <fieldset class="govuk-fieldset" data-required data-error="Check the box to agree to the above statements"
             aria-required="true">
 
             <div class="govuk-checkboxes__item govuk-!-margin-bottom-6">
@@ -53,11 +104,9 @@
             </div>
         </div>
 
-        <button class="govuk-button" data-module="govuk-button">
-          Continue
-        </button>
+ 
 
-        </fieldset>
+        </fieldset> -->
       </form>
     </div>
   </div>

@@ -68,9 +68,16 @@ router.post('/reg-org', function (req, res) {
     res.redirect('/supplier-information-v7/has-ch-number'); 
 });
 
-// router.post('/mou', function (req, res) {
-//   res.redirect('/supplier-information-v7/mou-person-name'); 
-// });
+router.post('/mou', function (req, res) {
+  console.log()
+
+  if(req.body.mouQuestion == 'no'){
+    res.redirect('user/add-another-user')
+  } else {
+    res.redirect('mou-done')
+  }
+
+});
 
 // router.post('/mou-person-name', function (req, res) {
 //   res.redirect('/supplier-information-v7/mou-person-role'); 
