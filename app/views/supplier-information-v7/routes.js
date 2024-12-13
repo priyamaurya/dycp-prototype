@@ -58,26 +58,27 @@ router.post('/org-type', function (req, res) {
 
 
 router.post('/reg-org', function (req, res) {
-    var orgType = req.body.orgType;
+    // var orgType = req.body.orgType;
 
-    if(orgType=="Buyer"){
-      res.redirect('/supplier-information-v7/mou'); 
-    } else {
-      res.redirect('/supplier-information-v7/has-ch-number'); 
-    }
+    // if(orgType=="Buyer"){
+    //   res.redirect('/supplier-information-v7/mou'); 
+    // } else {
+    //   res.redirect('/supplier-information-v7/has-ch-number'); 
+    // }
+    res.redirect('/supplier-information-v7/has-ch-number'); 
 });
 
-router.post('/mou', function (req, res) {
-  res.redirect('/supplier-information-v7/mou-person-name'); 
-});
+// router.post('/mou', function (req, res) {
+//   res.redirect('/supplier-information-v7/mou-person-name'); 
+// });
 
-router.post('/mou-person-name', function (req, res) {
-  res.redirect('/supplier-information-v7/mou-person-role'); 
-});
+// router.post('/mou-person-name', function (req, res) {
+//   res.redirect('/supplier-information-v7/mou-person-role'); 
+// });
 
-router.post('/mou-person-role', function (req, res) {
-  res.redirect('/supplier-information-v7/has-ch-number');
-});
+// router.post('/mou-person-role', function (req, res) {
+//   res.redirect('/supplier-information-v7/has-ch-number');
+// });
 
 
 router.post('/join-existing-org', function (req, res) {
