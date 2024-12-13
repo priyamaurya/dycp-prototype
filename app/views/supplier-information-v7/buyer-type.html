@@ -19,33 +19,55 @@
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Select your organisation type
+              Select your buyer organisation type
             </h1>
           </legend>
-
+          <p class="govuk-body">Read the <a href="https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-plan-phase/guidance-contracting-authority-definition-html" target="https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-plan-phase/guidance-contracting-authority-definition-html">contracting authority definition guidance (opens in new tab). </a>
+          </p>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="ca-type" name="ca-type" type="radio" value="type1" aria-describedby="ca-type-item-hint">
               <label class="govuk-label govuk-radios__label" for="ca-type">
-                Central government, public authority: UK, Scottish, Welsh and Northern Irish Executive
+                Central government - UK or devolved administrations  
               </label>
+
               <div id="ca-type-item-hint" class="govuk-hint govuk-radios__hint">
-                Includes arm's-length bodies:
-                <ul>
-                  <li>executive agencies (EA)</li>
-                  <li>non-departmental public bodies (NDPB)</li>
-                  <li>non-ministerial departments (NMD)</li>
-                <li>Trading Funds</li>
-                </ul>
+                Public authorities including arm's-length bodies and trading funds  
+                <!--<details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Show more
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    Includes arm's-length bodies such as:
+                    <ul>
+                      <li>executive agencies (EA)</li>
+                      <li>non-departmental public bodies (NDPB)</li>
+                      <li>non-ministerial departments (NMD)</li>
+                      <li>Trading Funds</li>
+                    </ul>
+                  </div>
+                </details>-->
+
               </div>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="ca-type-2" name="ca-type" type="radio" value="type2" aria-describedby="ca-type-2-item-hint">
               <label class="govuk-label govuk-radios__label" for="ca-type-2">
-                Regional and local government, public authority: UK, Scottish, Welsh and Northern Irish
+                Regional and local public authority - UK or devolved administrations 
               </label>
               <div id="ca-type-2-item-hint" class="govuk-hint govuk-radios__hint">
-                Includes:
+                Includes councils, charities, educational institutions, housing associations and blue light organisations 
+
+              <!--  <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Show more
+                      </span>
+                      </summary>
+                      <div class="govuk-details__text">
+                        Includes:
                 <ul>
                   <li>unitary authorities</li>
                   <li>county, district, borough and parish councils</li>
@@ -56,6 +78,8 @@
 
                 </ul>
               </div>
+            </details>-->
+              </div>
             </div>
 
           <div class="govuk-radios__item">
@@ -64,7 +88,7 @@
               Public undertaking
             </label>
             <div id="ca-type-3-item-hint" class="govuk-hint govuk-radios__hint">
-              Unlike a public authority, organisations that operate commercially and provide utility activities to the public. For example, Transport for Wales.
+              A commercial organisation subject to public oversight, providing utilities to the public. For example, transport networks operating commercially. 
             </div>
           </div>
           <div class="govuk-radios__item">
@@ -73,24 +97,25 @@
               Private utility
             </label>
             <div id="ca-type-4-item-hint" class="govuk-hint govuk-radios__hint">
-              For example, private companies that have been granted a special or exclusive right to provide utility activities to the public. Such as National Grid or British Gas.
+              A private company with a special or exclusive right to provide utilities to the public. For example, private companies supplying electricity. 
             </div>
           </div>
-          <div class="govuk-radios__item">
+          <!--<div class="govuk-radios__item">
             <input class="govuk-radios__input" id="ca-type-5" name="ca-type" type="radio" value="type5" data-aria-controls="conditional-ca-type-5">
             <label class="govuk-label govuk-radios__label" for="ca-type-5">
               Other
             </label>
             <div id="ca-type-5-item-hint" class="govuk-hint govuk-radios__hint">
-              For example, a utilities dynamic market by a non-contracting authority.
+              For example, a utilities dynamic market by a non-contracting authority
             </div>
           </div>
 
           <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-ca-type-5">
             <div class="govuk-form-group">
               <label class="govuk-label" for="other-buyer-type">
-                Enter type
+                Enter buyer type
               </label>
+
               <input class="govuk-input" id="other-buyer-type" name="otherBuyerType" aria-describedby="ca-type-5-item-hint">
             </div>
           </div>
@@ -98,8 +123,9 @@
 
         </div>
         </fieldset>
-      </div>
-
+      </div>-->
+<p></p>
+<p></p>
         <button type="submit" class="govuk-button" data-module="govuk-button">
             Continue
         </button>
