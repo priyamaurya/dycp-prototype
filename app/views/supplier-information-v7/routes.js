@@ -72,7 +72,7 @@ router.post('/mou', function (req, res) {
   console.log()
 
   if(req.body.mouQuestion == 'no'){
-    res.redirect('user/add-another-user')
+    res.redirect('user/user-details')
   } else {
     res.redirect('mou-done')
   }
