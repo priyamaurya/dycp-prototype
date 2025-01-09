@@ -38,12 +38,49 @@
       </ul>
     </div>
 
+
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-5">
+      <form>
+        <div class="govuk-grid-column-one-half govuk-!-margin-bottom-3">
+            <label class="govuk-label" for="one-half">
+              Search buyer organisation
+            </label>
+            <input class="govuk-input" id="one-half" name="oneHalf" type="text">
+        </div>
+        <div class="govuk-grid-column-one-half">
+          <label class="govuk-label" for="sort">
+            Status
+          </label>
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="published">All</option>
+            <option value="updated" selected>Approved</option>
+            <option value="views">Not approved</option>
+          </select>
+        </div>
+
+        <div class="govuk-grid-column-full">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Filter
+          </button>
+        </div>
+      </form>
+    </div>
+
     <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">There are 2 buyers</caption>
+      <caption class="govuk-table__caption govuk-table__caption--m">
+        There are 2 buyers
+      </caption>
+      
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header govuk-!-width-one-half"><a href="#">Organisation</a></th>
-          <th scope="col" class="govuk-table__header govuk-!-width-one-half">Status &amp; comments</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half">
+            <a href="#">Organisation</a>
+          </th>
+
+          <th scope="col" class="govuk-table__header govuk-!-width-one-half">
+            Status &amp; comments
+          </th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
