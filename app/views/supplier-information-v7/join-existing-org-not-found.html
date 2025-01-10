@@ -1,0 +1,29 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-body">
+    <h1 class="govuk-heading-l">
+      No matching organisation found
+    </h1>
+    <p class="govuk-body">
+      We couldn't find an organisation that matches the name you entered. <a href="#">Check the name and try again</a>.
+    </p>
+    <p>
+      Alternatively,  you can <a href="#">register a new organisation</a>.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -90,8 +90,12 @@ router.post('/mou', function (req, res) {
 
 router.post('/join-existing-org', function (req, res) {
   res.redirect('/supplier-information-v7/org-join-request');
-
 });
+
+router.post('/join-existing-org-name', function (req, res) {
+  res.redirect('/supplier-information-v7/join-existing-org-not-found');
+});
+
 
 router.post('/has-ch-number', function (req, res) {
   req.session.data["orgName"] = 'Ministry of Justice UK';
