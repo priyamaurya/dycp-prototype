@@ -144,7 +144,7 @@ router.post('/add-another-file-route', function (req, res) {
 router.post('/add-another-file', function (req, res) {
     delete req.session.data.editFile;
 
-    if (req.session.data.addAnotherFile == 'Yes') {
+    if (req.session.data.addAnother == 'Yes') {
         res.redirect('start');
     } else {
         let startQuestion = req.session.data.startQuestion;
@@ -154,7 +154,7 @@ router.post('/add-another-file', function (req, res) {
             res.redirect('../suppliers-b/account-home');
         }
         else {
-            res.redirect('../suppliers-d/account-home');
+            res.redirect('../supplier-information');
         }
     }
 });

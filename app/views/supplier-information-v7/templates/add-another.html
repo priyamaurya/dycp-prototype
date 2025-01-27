@@ -3,8 +3,11 @@
 {*% set secondHeading="Add another exclusion?" %*}
 {*% set placeholderListItem="[Exclusion]" %*}
 {*% set removeLink="#" %*}
--->
 
+Optional
+{*% set headingCaption="You have added [x] exclusions" %*}
+-->
+{% include "./heading-caption.html" %}
 <h1 class="govuk-heading-l">
     {{heading}}
 </h1>
@@ -17,12 +20,12 @@
                 {{placeholderListItem}}
               </dt>
               <dd class="govuk-summary-list__value">
-                &nbsp;
+                {{placeholderListItemValue}}
               </dd>
               <dd class="govuk-summary-list__actions">
                 <ul class="govuk-summary-list__actions-list">
                   <li class="govuk-summary-list__actions-list-item">
-                    <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> {{placeholderListItem}}</span></a>
+                    <a class="govuk-link" href="check-answers">View<span class="govuk-visually-hidden"> {{placeholderListItem}}</span></a>
                   </li>
                   <li class="govuk-summary-list__actions-list-item">
                     <a class="govuk-link" href="{{ removeLink }}">Remove<span class="govuk-visually-hidden"> [Connected person]</span></a>

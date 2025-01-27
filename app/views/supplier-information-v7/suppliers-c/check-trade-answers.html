@@ -15,73 +15,18 @@
 
     <form class="form" method="post">
 
-    
-      <h1 class="govuk-heading-l">Check your answers</h1>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+      {% set heading="Check your answers" %}
+      {% set headingCaption="Qualifications" %}
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Awarded by
-          </dt>
-          <dd class="govuk-summary-list__value">
+      {% set options=[] %}
+      {% set options=(options.push({k:"Awarded by", v:"Red Tractor Assurance"}), options) %}
+      {% set options=(options.push({k:"Reference number", v:"Yes; 7879929"}), options) %}
+      {% set options=(options.push({k:"Date awarded", v:"10 January 1989"}), options) %}
 
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['tradeType'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="trade-type">
-              Change<span class="govuk-visually-hidden">
-                who awarded by</span>
-            </a>
-          </dd>
-        </div>
+      {% include("../templates/check-answer.html") %}
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Reference number
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['tradeRef'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="trade-reference">
-              Change<span class="govuk-visually-hidden">
-                the reference number</span>
-            </a>
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date awarded
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['awardIssuedTradeDay'] }} / {{ data['awardIssuedTradeMonth'] }} / {{ data['awardIssuedTradeYear'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="awarded-trade-date">
-              Change<span class="govuk-visually-hidden">
-                Date awarded</span>
-            </a>
-          </dd>
-        </div>
-
-      </dl>
-
-      <div class="govuk-button-group govuk-!-margin-top-9">
-        <button class="govuk-button" data-module="govuk-button">
-          Save
-        </button>
-      </div>
-
-
+      {% set buttonCaption="Save" %}
+      {% include("../templates/button--submit.html") %}
 
     </form>
   </div>

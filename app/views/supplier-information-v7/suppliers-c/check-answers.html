@@ -15,75 +15,21 @@
 
     <form class="form" method="post">
 
-     
-      <h1 class="govuk-heading-l">Check your answers</h1>
-      <dl class="govuk-summary-list govuk-!-margin-bottom-3">
+      {% set heading="Check your answers" %}
+      {% set headingCaption="Qualifications" %}
 
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Qualification name
-          </dt>
-          <dd class="govuk-summary-list__value">
+      {% set options=[] %}
+      {% set options=(options.push({k:"Qualification name", v:"Some ISO qualification"}), options) %}
+      {% set options=(options.push({k:"Awarded by", v:"Red Tractor Assurance"}), options) %}
+      {% set options=(options.push({k:"Date awarded", v:"10 January 1989"}), options) %}
 
-          </dd>
-          <dd class="govuk-summary-list__value">            
-            {{ data['qualificationType'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="qualification-type">
-              Change<span class="govuk-visually-hidden">
-                Qualification name</span>
-            </a>
-          </dd>
-        </div>
-        
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Awarded by
-          </dt>
-          <dd class="govuk-summary-list__value">
+      {% include("../templates/check-answer.html") %}
 
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['qualifiedName'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="qualified-name">
-              Change<span class="govuk-visually-hidden">
-                Awarded by</span>
-            </a>
-          </dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Date awarded
-          </dt>
-          <dd class="govuk-summary-list__value">
-
-          </dd>
-          <dd class="govuk-summary-list__value">
-            {{ data['awardIssuedDay'] }} / {{ data['awardIssuedMonth'] }} / {{ data['awardIssuedYear'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="awarded-date">
-              Change<span class="govuk-visually-hidden">
-                Date awarded</span>
-            </a>
-          </dd>
-        </div>
-
-        
-
-      </dl>
-
-      <div class="govuk-button-group govuk-!-margin-top-9">
-        <button class="govuk-button" data-module="govuk-button">
-          Save
-        </button>
-      </div>
+      {% set buttonCaption="Save" %}
+      {% include("../templates/button--submit.html") %}
 
 
+  
 
     </form>
   </div>

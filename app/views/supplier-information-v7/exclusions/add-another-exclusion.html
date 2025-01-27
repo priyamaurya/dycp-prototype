@@ -15,10 +15,13 @@
   <div class="govuk-grid-column-full">
       <form class="form" method="post">
           
-          {% set heading="You have added [x] exclusions" %}
+          {% set heading="1 added" %}
+          {% set headingCaption="Exclusions" %}
           {% set secondHeading="Add another exclusion?" %}
-          {% set placeholderListItem="[Exclusion]" %}
+          {% set placeholderListItem="Random Limited" %}
+          {% set placeholderListItemValue="Adjustments for tax arrangements that are abusive" %}
           {% set removeLink="remove-exclusion" %}
+
 
           {% include("../templates/add-another.html") %}
 

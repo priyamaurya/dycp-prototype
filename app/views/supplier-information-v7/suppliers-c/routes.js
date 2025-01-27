@@ -162,7 +162,7 @@ router.post('/trade-question', function (req, res) {
   if (tradeQuestion == "Yes") {
     res.redirect('trade-type');
   } else {
-    res.redirect('non-individual-core-data');
+    res.redirect('../supplier-information');
   }
 })
 
@@ -308,11 +308,11 @@ router.post('/add-another-qualification-route', function (req, res) {
 router.post('/add-another-qualification', function (req, res) {
   delete req.session.data.editQualification;
 
-  if (req.session.data.addAnotherQualification == 'Yes') {
+  if (req.session.data.addAnother == 'Yes') {
     res.redirect('qualification-type');
   }
   else {
-    res.redirect('non-individual-core-data');
+    res.redirect('../supplier-information');
   }
 });
 
@@ -412,11 +412,11 @@ router.post('/add-another-trade-route', function (req, res) {
 router.post('/add-another-trade', function (req, res) {
   delete req.session.data.editTrade;
 
-  if (req.session.data.addAnotherTrade == 'Yes') {
+  if (req.session.data.addAnother == 'Yes') {
     res.redirect('trade-type');
   }
   else {
-    res.redirect('non-individual-core-data');
+    res.redirect('../supplier-information');
   }
 });
 
@@ -424,7 +424,7 @@ router.post('/add-another-trade', function (req, res) {
   delete req.session.data.editTrade;
 
   if (req.session.data.tradeCount == '10') {
-    res.redirect('non-individual-core-data');
+    res.redirect('../supplier-information');
   }
   else {
     res.redirect('trade-type');
