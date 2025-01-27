@@ -16,11 +16,11 @@
     <form class="form" method="post">
 
       {% set heading="Check your answers" %}
-      {% set headingCaption="Qualifications" %}
+      {% set headingCaption="Trade assurances" %}
 
       {% set options=[] %}
       {% set options=(options.push({k:"Awarded by", v:"Red Tractor Assurance"}), options) %}
-      {% set options=(options.push({k:"Reference number", v:"Yes; 7879929"}), options) %}
+      {% set options=(options.push({k:"Reference number", v:"7879929"}), options) %}
       {% set options=(options.push({k:"Date awarded", v:"10 January 1989"}), options) %}
 
       {% include("../templates/check-answer.html") %}
