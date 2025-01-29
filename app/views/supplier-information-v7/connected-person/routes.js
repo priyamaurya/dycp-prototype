@@ -12,7 +12,7 @@ var oRoute = {
   "/registered-company-ch-number-1": "registered-company-nature-of-control-1",
   "/registered-company-nature-of-control-1": "registered-company-registration-date-1",
   "/registered-company-registration-date-1": "registered-company-register-1",
-  "/registered-company-register-1": "check-your-answers",
+  "/registered-company-register-1": "check-answers",
 
   "/director-name-1": "director-address-1",
   "/director-address-1": "is-director-address-same-1",
@@ -20,20 +20,20 @@ var oRoute = {
   "/director-service-address-1": "director-legal-form-1",
   "/director-service-address-1-non-uk": "director-legal-form-1",
   "/director-legal-form-1": "director-ch-number-1",
-  "/director-ch-number-1": "check-your-answers",
+  "/director-ch-number-1": "check-answers",
 
   "/parent-company-name-1": "parent-company-address-1",
   "/parent-company-address-1": "is-parent-company-address-same-1",
   "/parent-company-address-1-non-uk": "is-parent-company-address-same-1",
   "/parent-company-service-address-1": "parent-company-ch-number-1",
   "/parent-company-service-address-1-non-uk": "parent-company-ch-number-1",
-  "/parent-company-ch-number-1": "check-your-answers",
+  "/parent-company-ch-number-1": "check-answers",
 
   "/taken-over-company-name-1": "taken-over-company-address-1",
   "/taken-over-company-address-1": "taken-over-company-ch-number-1",
   "/taken-over-company-address-1-non-uk": "taken-over-company-ch-number-1",
   "/taken-over-company-ch-number-1": "taken-over-company-insolvent-date-1",
-  "/taken-over-company-insolvent-date-1": "check-your-answers",
+  "/taken-over-company-insolvent-date-1": "check-answers",
 
   "/other-org-with-control-name-1": "other-org-with-control-address-1",
   "/other-org-with-control-address-1": "is-other-org-with-control-address-same-1",
@@ -43,23 +43,23 @@ var oRoute = {
   "/other-org-with-control-ch-equivalent-overseas-1": "other-org-with-control-nature-of-control-1",
   "/other-org-with-control-nature-of-control-1": "other-org-with-control-registration-date-1",
   "/other-org-with-control-registration-date-1": "other-org-with-control-legal-form-1",
-  "/other-org-with-control-legal-form-1": "check-your-answers",
+  "/other-org-with-control-legal-form-1": "check-answers",
 
   "/category-other-psc-details-1": "category-other-psc-address-1",
   "/category-other-psc-address-1": "category-other-psc-nature-of-control-1",
   "/category-other-psc-address-1-non-uk": "category-other-psc-nature-of-control-1",
   "/category-other-psc-nature-of-control-1": "category-other-psc-registration-date-1",
   "/category-other-psc-registration-date-1": "category-other-psc-register-1",
-  "/category-other-psc-register-1": "check-your-answers",
+  "/category-other-psc-register-1": "check-answers",
 
   "/category-other-director-details-1": "category-other-director-residency-1",
   "/category-other-director-residency-1": "category-other-director-address-1",
-  "/category-other-director-address-1": "check-your-answers",
+  "/category-other-director-address-1": "check-answers",
 
   "/category-other-indvidual-with-control-name-1": "category-other-indvidual-with-control-adress-1",
   "/category-other-indvidual-with-control-adress-1": "category-other-indvidual-with-control-nature-of-control-1",
   "/category-other-indvidual-with-control-nature-of-control-1": "category-other-indvidual-with-control-registration-date-1",
-  "/category-other-indvidual-with-control-registration-date-1": "check-your-answers",
+  "/category-other-indvidual-with-control-registration-date-1": "check-answers",
 
   //-------------------------
 
@@ -71,7 +71,7 @@ var oRoute = {
   "/registered-company-service-address-2-non-uk": "has-registered-company-legal-form-2",
   "/registered-company-ch-equivalent-overseas-2": "registered-company-nature-of-control-2",
   "/registered-company-nature-of-control-2": "registered-company-registration-date-2",
-  "/registered-company-register-2": "check-your-answers",
+  "/registered-company-register-2": "check-answers",
 
   "/director-name-2": "director-address-2",
   "/director-address-2": "is-director-address-same-2",
@@ -79,20 +79,20 @@ var oRoute = {
   "/director-service-address-2": "has-director-legal-form-2",
   "/director-service-address-2-non-uk": "has-director-legal-form-2",
   "/director-legal-form-2": "director-ch-number-2",
-  "/director-ch-equivalent-overseas-2": "check-your-answers",
+  "/director-ch-equivalent-overseas-2": "check-answers",
 
   "/parent-company-name-2": "parent-company-address-2",
   "/parent-company-address-2": "is-parent-company-address-same-2",
   "/parent-company-address-2-non-uk": "is-parent-company-address-same-2",
   "/parent-company-service-address-2": "parent-company-ch-number-2",
   "/parent-company-service-address-2-non-uk": "parent-company-ch-number-2",
-  "/parent-company-ch-equivalent-overseas-2": "check-your-answers",
+  "/parent-company-ch-equivalent-overseas-2": "check-answers",
 
   "/taken-over-company-name-2": "taken-over-company-address-2",
   "/taken-over-company-address-2": "taken-over-company-ch-number-2",
   "/taken-over-company-address-2-non-uk": "taken-over-company-ch-number-2",
   "/taken-over-company-ch-equivalent-overseas-2": "taken-over-company-insolvent-date-2",
-  "/taken-over-company-insolvent-date-2": "check-your-answers",
+  "/taken-over-company-insolvent-date-2": "check-answers",
 
   "/other-org-with-control-name-2": "other-org-with-control-address-2",
   "/other-org-with-control-address-2": "is-other-org-with-control-address-same-2",
@@ -102,28 +102,28 @@ var oRoute = {
   "/other-org-with-control-ch-equivalent-overseas-2": "other-org-with-control-nature-of-control-2",
   "/other-org-with-control-nature-of-control-2": "other-org-with-control-registration-date-2",
   "/other-org-with-control-register-2": "has-other-org-with-control-legal-form-2",
-  "/other-org-with-control-legal-form-2": "check-your-answers",
+  "/other-org-with-control-legal-form-2": "check-answers",
 
   "/category-other-psc-details-2": "category-other-psc-address-2",
   "/category-other-psc-address-2": "category-other-psc-nature-of-control-2",
   "/category-other-psc-address-2-non-uk": "category-other-psc-nature-of-control-2",
   "/category-other-psc-nature-of-control-2": "category-other-psc-registration-date-2",
-  "/category-other-psc-register-2": "check-your-answers",
+  "/category-other-psc-register-2": "check-answers",
 
   "/category-other-director-details-2": "category-other-director-residency-2",
   "/category-other-director-residency-2": "category-other-director-address-2",
-  "/category-other-director-address-2": "check-your-answers",
-  "/category-other-director-address-2-non-uk": "check-your-answers",
+  "/category-other-director-address-2": "check-answers",
+  "/category-other-director-address-2-non-uk": "check-answers",
 
   "/category-other-indvidual-with-control-name-2": "category-other-indvidual-with-control-adress-2",
   "/category-other-indvidual-with-control-adress-2": "category-other-indvidual-with-control-nature-of-control-2",
   "/category-other-indvidual-with-control-adress-2-non-uk": "category-other-indvidual-with-control-nature-of-control-2", 
   "/category-other-indvidual-with-control-nature-of-control-2": "category-other-indvidual-with-control-registration-date-2",
-  "/category-other-indvidual-with-control-registration-date-2": "check-your-answers",
+  "/category-other-indvidual-with-control-registration-date-2": "check-answers",
 
   //-------------------------
 
-  "/check-your-answers": "add-another-connected-person",
+  "/check-answers": "add-another-connected-person",
   "/remove-connected-person": "add-another-connected-person",
 };
 
@@ -431,7 +431,7 @@ router.post("/has-director-legal-form-2", function (req, res, next) {
 
 router.post("/director-ch-number-2", function (req, res, next) {
   if (req.body.hasCompaniesHouseNumber == "No") res.redirect("director-ch-equivalent-overseas-2");
-  else res.redirect("check-your-answers");
+  else res.redirect("check-answers");
 });
 
 router.post("/is-parent-company-address-same-2", function (req, res, next) {
@@ -441,7 +441,7 @@ router.post("/is-parent-company-address-same-2", function (req, res, next) {
 
 router.post("/parent-company-ch-number-2", function (req, res, next) {
   if (req.body.hasCompaniesHouseNumber == "No") res.redirect("parent-company-ch-equivalent-overseas-2");
-  else res.redirect("check-your-answers");
+  else res.redirect("check-answers");
 });
 
 router.post("/taken-over-company-ch-number-2", function (req, res, next) {
@@ -460,7 +460,7 @@ router.post("/other-org-with-control-ch-number-2", function (req, res, next) {
 });
 
 router.post("/has-other-org-with-control-legal-form-2", function (req, res, next) {
-  if (req.body.hasLegalForm == "No") res.redirect("check-your-answers");
+  if (req.body.hasLegalForm == "No") res.redirect("check-answers");
   else res.redirect("other-org-with-control-legal-form-2");
 });
 
@@ -478,12 +478,12 @@ router.post("/category-other-2", function (req, res, next) {
 });
 
 router.post("/registered-company-registration-date-2", function (req, res, next) {
-  if (req.body.isRequiredToRegisterAsPSC == "No") res.redirect("check-your-answers");
+  if (req.body.isRequiredToRegisterAsPSC == "No") res.redirect("check-answers");
   else res.redirect("registered-company-register-2");
 });
 
 router.post("/category-other-psc-registration-date-2", function (req, res, next) {
-  if (req.body.isRequiredToRegisterAsPSC == "No") res.redirect("check-your-answers");
+  if (req.body.isRequiredToRegisterAsPSC == "No") res.redirect("check-answers");
   else res.redirect("category-other-psc-register-2");
 });
 
