@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const path = require('node:path')
+const parseResxFile = require(path.resolve(__dirname, 'parseResx'))
 
 // API
 const axios = require('axios');
@@ -26,7 +27,18 @@ router.get('/*', function(req,res, next){
     req.session.data["emailAddress"] = 'info@randomlimited.co.uk';
     req.session.data["supplierArray"] = 'Consortium supplier 1';
     req.session.data["supplierShareCode"] = '6789ABCFD';
-  } 
+  }
+
+  // TO DO - move parsed data to an object that can be accessed globally
+  // using the key eg session
+  
+  parseResxFile()
+      .then((parsedData) => {
+        let obj = parsedData.find(o => o.key === 'Supplementary_Index_Title');
+        console.log(obj.value)
+        // console.log("Parsed .resx Data:", JSON.stringify(parsedData, null, 2));
+      })
+      .catch((error) => console.error("Parsing Error:", error));
   
 
   // else {
