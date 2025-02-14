@@ -64,7 +64,7 @@ router.post('/org-type', function (req, res) {
     res.redirect('/supplier-information-v7/has-ch-number');
   }
 
-  
+
 });
 
 
@@ -73,11 +73,22 @@ router.post('/reg-org', function (req, res) {
     // var orgType = req.body.orgType;
 
     // if(orgType=="Buyer"){
-    //   res.redirect('/supplier-information-v7/mou'); 
+    //   res.redirect('/supplier-information-v7/mou');
     // } else {
-    //   res.redirect('/supplier-information-v7/has-ch-number'); 
+    //   res.redirect('/supplier-information-v7/has-ch-number');
     // }
-    res.redirect('/supplier-information-v7/has-ch-number'); 
+    res.redirect('/supplier-information-v7/has-ch-number');
+});
+
+router.post('/request-to-join-buyer-supplier', function (req, res) {
+    // var orgType = req.body.orgType;
+
+    // if(orgType=="Buyer"){
+    //   res.redirect('/supplier-information-v7/mou');
+    // } else {
+    //   res.redirect('/supplier-information-v7/has-ch-number');
+    // }
+    res.redirect('/supplier-information-v7/join-existing-org-name');
 });
 
 router.post('/mou', function (req, res) {
@@ -92,7 +103,7 @@ router.post('/mou', function (req, res) {
 });
 
 // router.post('/mou-person-name', function (req, res) {
-//   res.redirect('/supplier-information-v7/mou-person-role'); 
+//   res.redirect('/supplier-information-v7/mou-person-role');
 // });
 
 // router.post('/mou-person-role', function (req, res) {
@@ -140,14 +151,14 @@ router.post('/org-name-match', function (req, res) {
 // router.get('/org-address-uk', function (req, res) {
 //   res.render('supplier-information-v7/org-address-uk', {orgType: req.session.data.orgType});
 // });
-  
+
 router.post('/org-email', function (req, res) {
   if (req.session.data.orgType.toLowerCase()  == 'buyer'){
     res.redirect('/supplier-information-v7/buyer-type');
   } else {
-    res.redirect('/supplier-information-v7/org-overview'); 
+    res.redirect('/supplier-information-v7/org-overview');
   }
-}); 
+});
 
 
 router.get('/buyer-type', function (req, res) {
@@ -159,7 +170,7 @@ router.get('/buyer-type', function (req, res) {
     req.session.data['alternativeJourney'] = 'no';
 
   res.render('supplier-information-v7/buyer-type');
-}); 
+});
 
 
 
@@ -202,7 +213,7 @@ router.post('/do-devolved-regulations-apply', function (req, res) {
     else
       res.redirect('/supplier-information-v7/org-overview');
   }
-  
+
 });
 
 router.post('/devolved-regulations', function (req, res) {
@@ -215,9 +226,9 @@ router.post('/devolved-regulations', function (req, res) {
 
 router.post('/buyer-overview', function (req, res) {
   if(req.session.data['alternativeJourney'] = 'yes')
-    res.redirect('/supplier-information-v7/org-dashboard-4?registeredAsBoth=yes'); 
+    res.redirect('/supplier-information-v7/org-dashboard-4?registeredAsBoth=yes');
   else
-    res.redirect('/supplier-information-v7/org-dashboard'); 
+    res.redirect('/supplier-information-v7/org-dashboard');
   //-3?registered-as-buyer=yes#buyer-details
 });
 
@@ -227,10 +238,10 @@ router.post('/buyer-overview', function (req, res) {
 // hack
 router.get('/org-dashboard', function (req, res) {
 
-  
+
 
   req.session.data.startQuestion = "Company"; // adding this line as there's no page that tells that the user is an individual
-  
+
   var sessionData = req.session.data;
   var userArray = sessionData.userArray || [];
 
@@ -239,7 +250,7 @@ router.get('/org-dashboard', function (req, res) {
   if (userArray.length == 0){
       var user = {
         id: "1",
-        firstName: "Laura", 
+        firstName: "Laura",
         lastName: "Brown",
         emailAddress: "laura.brown@capita.com",
         userType: "Admin"
@@ -252,7 +263,7 @@ router.get('/org-dashboard', function (req, res) {
   } else {
     res.render('supplier-information-v7/org-dashboard');
   }
-  
+
 });
 
 router.get('/org-dashboard-redirect', function (req, res) {
