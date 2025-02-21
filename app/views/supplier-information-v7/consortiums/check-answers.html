@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+  {% include("includes/header-with-nav.html") %}
+{% endblock %}
+
+{% block beforeContent %}
+    {% include("includes/phase-banner.html") %}
+    {% include("includes/back-link.html") %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <form class="form" method="post">
+
+            {% set heading="Check your answers" %}
+            {% set headingCaption="Consortium" %}
+
+            {% set options=[] %}
+            {% set options=(options.push({k:"Consortium name", v:"My Little Consortium"}), options) %}
+            {% set options=(options.push({k:"Postal address", v:"1 Consortium Lane"}), options) %}
+            {% set options=(options.push({k:"Email address", v:"my.little@consortium.com"}), options) %}
+
+
+            {% include("../templates/check-answer.html") %}
+
+            {% set buttonCaption="Save" %}
+            {% include("../templates/button--submit.html") %}
+
+
+        </form>
+
+</div>
+
+{% endblock %}
