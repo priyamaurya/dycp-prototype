@@ -39,6 +39,10 @@ router.post('/address-non-uk', function (req, res) {
 });
 
 router.post('/contact-details', function (req, res) {
+    res.redirect('check-answers-1');
+});
+
+router.post('/check-answers-1', function (req, res) {
     res.redirect('overview');
 });
 
@@ -64,6 +68,3 @@ router.post('/remove-organisation', function (req, res) {
 
 
 module.exports = router
-
-
-

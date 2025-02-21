@@ -17,12 +17,12 @@
         <form class="form" method="post">
 
             {% set heading="Check your answers" %}
-            {% set headingCaption="Consortium" %}
+            {% set headingCaption="My fab consortium" %}
 
             {% set options=[] %}
-            {% set options=(options.push({k:"Consortium name", v:"My Little Consortium"}), options) %}
-            {% set options=(options.push({k:"Postal address", v:"1 Consortium Lane"}), options) %}
-            {% set options=(options.push({k:"Email address", v:"my.little@consortium.com"}), options) %}
+            {% set options=(options.push({k:"Consortium name", v:"My fab consortium"}), options) %}
+            {% set options=(options.push({k:"Postal address", v:"10 Downing Street", v1:"London", v2:"SW1 1WS"}), options) %}
+            {% set options=(options.push({k:"Email address", v:"joe.blog@randomlimited.co.uk"}), options) %}
 
 
             {% include("../templates/check-answer.html") %}
