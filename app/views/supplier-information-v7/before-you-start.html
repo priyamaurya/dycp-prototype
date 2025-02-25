@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %} {% block header %} {%
+  include("includes/header-with-nav.html") %} {% endblock %} {% block
+  beforeContent %} {% include("includes/phase-banner.html") %} {%
+  include("includes/back-link.html") %} {% endblock %} {% block content %}
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-l">Prepare to complete your supplier information</h1>
+          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                  What supplier information is
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+              <p class="govuk-body">Suppliers must provide contracting authorities with certain information under the Procurement Act 2024 if they want to bid on a public procurement.</p>
+              <p class="govuk-body">Under previous legislation suppliers provided information by completing parts 1 and 2 of the Supplier Selection Questionnaire (PPN 8/16).</p>
+              <p class="govuk-body">The supplier information section of this service replaces the supplier questionnaire. It allows suppliers to fill out the required information and create a share code to supply to eSenders when bidding on a procurement.</p>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                  When to update your supplier information
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+              <p class="govuk-body">You’ll be asked for your supplier information, often in the form of a share code, when bidding for public procurement.</p>
+              <p class="govuk-body">Your supplier information is saved in this service. You only need to update it when information changes.</p>
+              <p class="govuk-body">If you've created a share code and then go on to update your supplier information, you’ll need to create a new share code.</p>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                  When your information is saved
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+              <p class="govuk-body">You don’t have to enter your supplier information in one go but your information is only saved when you click a ‘save’ button.</p>
+              <p class="govuk-body">In some sections, you can save after one or 2 pages. In other sections, it may be 10 or more pages before you can save your information.</p>
+              <p class="govuk-body">If you start a section but haven’t clicked the ‘save’ button, your information will be lost if you:</p>
+              <ul class="govuk-list">
+                <li>close your browser</li>
+                <li>navigate away from the service</li>
+                <li>leave the page open for more than an hour</li>
+              </ul>
+            </div>
+          </div>
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                  The information you need for each section
+                </span>
+              </h2>
+            </div>
+            <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+              <h3 class="govuk-heading-m">Your organistion</h3>
+              <p class="govuk-body">Each of these sections can be saved independently of the ‘Your organisation’ section. You can complete one and save it and then come back to complete another.</p>
+              <p class="govuk-body">Where a question isn’t relevant, you need to answer ‘no’ to complete the section.</p>
+                <ul class="govuk-list">
+                  <li>The name of your organisation or the name you trade under</li>
+                  <li>Your organisation’s registered address</li>
+                  <li>Your business postal address, if different or if you aren’t a registered company</li>
+                  <li>A registry number if you have one, for example a Companies House number or a Charity number</li>
+                  <li>Your VAT number, if you have one</li>
+                  <li>If your organisation is a:</li>
+                      <li>small or medium-sized enterprise (SME)</li>
+                      <li>voluntary, community and social enterprise (VCSE)</li>
+                      <li>supported employment provider</li>
+                      <li>public service mutual</li>
+                  <li>The legal formation of your company and the law that defines it. For example, a private limited company under the Companies Act 2006.</li>
+                </ul>
+
+              <h3 class="govuk-heading-m">People connected to your organisation</h3>
+              <p class="govuk-body">A 'connected person' is someone who influences or controls your company. It includes ‘people of significant control’ and any other individual, group or company that has a declarable interest in your business.</p>
+              <p class="govuk-body">For example, a director, a trust, a majority shareholder or a parent or subsidiary company.</p>
+              <p class="govuk-body">You need to add one connected person at a time. The information you complete will depend on who the ‘person’ is and how they’re connected to your organisation.</p>
+              <p class="govuk-body">For organisations you need:</p>
+                <ul class="govuk-list">
+                  <li>The name of the connected organisation</li>
+                  <li>Its registered address</li>
+                  <li>Its business postal address, if different</li>
+                  <li>Its company number if registered with Companies House, or non-UK equivalent</li>
+                  <li>How the organisation is connected to yours. For example, owns shares or has voting rights.</li>
+                </ul>
+              <p class="govuk-body">For individuals, trusts and trustees</p>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-!-margin-top-3">
+            <a class="govuk-link" href="supplier-information">Back to your supplier information</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  {% endblock %}

@@ -205,6 +205,19 @@
               </div>
             </li>
           </ul> -->
+          <h2 class="govuk-heading-m govuk-!-margin-top-5">Before you start</h2>
+          <ul class="govuk-task-list">
+            <li class="govuk-task-list__item govuk-task-list__item--with-link">
+              <div class="govuk-task-list__name-and-hint">
+                <a class="govuk-link govuk-task-list__link" href="before-you-start" aria-describedby="prepare-application-1-status">
+                  Prepare to complete your supplier information
+                </a>
+              </div>
+
+            </li>
+          </ul>
+
+
           <h2 class="govuk-heading-m govuk-!-margin-top-5">Complete your supplier information</h2>
 
           {% if data.company.registered_office_address.address_line_1 is defined %} {%
@@ -250,7 +263,7 @@
             <li class="govuk-task-list__item govuk-task-list__item--with-link">
               <div class="govuk-task-list__name-and-hint">
                 <a class="govuk-link govuk-task-list__link" href="{{ href }}" aria-describedby="prepare-application-2-status">
-                  People connected to your organisation 
+                  People connected to your organisation
                 </a>
               </div>
               <div class="govuk-task-list__status" id="prepare-application-2-status">
@@ -401,8 +414,7 @@
             Create share code
           </a>-->
           <div class="govuk-!-margin-top-3">
-              <a class="govuk-link" href="org-dashboard"
-                >Back to organisation details</a>
+              <a class="govuk-link" href="org-dashboard">Back to organisation details</a>
             </div>
           </div>
         </div>
