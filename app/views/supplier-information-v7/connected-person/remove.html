@@ -18,12 +18,12 @@
 
             {% set inputName="removeConnectedPerson" %}
             {% set heading="Are you sure you want to remove this connected person?" %}
-            {% set revealLabel = "When was the connected person no longer associated to your organisation?" %}
+            {% set revealLabel = "When did the connected person stop being associated with your organisation?" %}
 
-            {% include("../templates/radio-yes-no-reveal-date.html") %}
-        
+            {% include("../templates/radio-yes-no-reveal-date-extra-yes.html") %}
+
             {% include("../templates/button--submit.html") %}
-            
+
         </form>
 
     </div>
