@@ -20,10 +20,10 @@
           aria-required="true">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                   <h1 class="govuk-fieldset__heading">Do you know the law under which your organisation is registered?</h1>                   
+                   <h1 class="govuk-fieldset__heading">Do you know the law under which your organisation is registered?</h1>
           </legend>
           <div id="egalForm-hint" class="govuk-hint">
-            For example, the most common law in the UK is the Companies Act 2006
+            For example, the most common company law in the UK is the Companies Act 2006
           </div>
 
           <div id="legalForm-hint" class="govuk-hint govuk-!-margin-bottom-6">
@@ -38,7 +38,7 @@
             {% if data['legalForm'] == 'Financial mutuals' %} In the UK the law for Financial Mutuals is the Building Societies Act 1986 {% endif %}
             {% if data['legalForm'] == 'Other :' %} In the UK the most common law is the Companies Act 2006  {% endif %}
           </div>
-          
+
           <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="lawReg" name="lawReg" type="radio" value="Yes"  data-aria-controls="conditional-law-yes">
