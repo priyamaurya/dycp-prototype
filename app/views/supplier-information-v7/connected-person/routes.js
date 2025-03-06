@@ -39,7 +39,7 @@ var oRoute = {
   "/other-org-with-control-address-1": "is-other-org-with-control-address-same-1",
   "/other-org-with-control-address-1-non-uk": "is-other-org-with-control-address-same-1",
   "/other-org-with-control-service-address-1": "other-org-with-control-ch-number-1",
-  "/other-org-with-control-service-address-1-non-uk": "other-org-with-control-ch-number-1",  
+  "/other-org-with-control-service-address-1-non-uk": "other-org-with-control-ch-number-1",
   "/other-org-with-control-ch-equivalent-overseas-1": "other-org-with-control-nature-of-control-1",
   "/other-org-with-control-nature-of-control-1": "other-org-with-control-registration-date-1",
   "/other-org-with-control-registration-date-1": "other-org-with-control-legal-form-1",
@@ -117,7 +117,7 @@ var oRoute = {
 
   "/category-other-indvidual-with-control-name-2": "category-other-indvidual-with-control-adress-2",
   "/category-other-indvidual-with-control-adress-2": "category-other-indvidual-with-control-nature-of-control-2",
-  "/category-other-indvidual-with-control-adress-2-non-uk": "category-other-indvidual-with-control-nature-of-control-2", 
+  "/category-other-indvidual-with-control-adress-2-non-uk": "category-other-indvidual-with-control-nature-of-control-2",
   "/category-other-indvidual-with-control-nature-of-control-2": "category-other-indvidual-with-control-registration-date-2",
   "/category-other-indvidual-with-control-registration-date-2": "check-answers",
 
@@ -183,6 +183,15 @@ var oViews = {
   "/category-other-1": "category.html",
 
   "/category-other-psc-details-1": "person.html",
+  "/category-other-psc-address-1": "address.html",
+  "/category-other-psc-address-1-non-uk": "address-non-uk.html",
+  "/category-other-psc-nature-of-control-1": "nature-of-control.html",
+  "/category-other-psc-registration-date-1": "date.html",
+  "/category-other-psc-register-1": "register-name.html",
+
+  "/category-other-11": "category.html",
+
+  "/category-other-psc-details-1": "trust.html",
   "/category-other-psc-address-1": "address.html",
   "/category-other-psc-address-1-non-uk": "address-non-uk.html",
   "/category-other-psc-nature-of-control-1": "nature-of-control.html",
@@ -284,6 +293,28 @@ var oViews = {
   "/category-other-indvidual-with-control-registration-date-2": "is-required-to-register.html",
   "/category-other-indvidual-with-control-legal-form-2": "legal-formation.html",
 
+  "/category-other-22": "category.html",
+
+  "/category-other-psc-details-2": "trust.html",
+  "/category-other-psc-address-2": "address.html",
+  "/category-other-psc-address-2-non-uk": "address-non-uk.html",
+  "/category-other-psc-nature-of-control-2": "nature-of-control.html",
+  "/category-other-psc-registration-date-2": "is-required-to-register.html",
+  "/category-other-psc-register-2": "register-name.html",
+
+  "/category-other-director-details-2": "trust.html",
+  "/category-other-director-residency-2": "residency.html",
+  "/category-other-director-address-2": "address.html",
+  "/category-other-director-address-2-non-uk": "address-non-uk.html",
+
+  "/category-other-indvidual-with-control-name-2": "trust.html",
+  "/category-other-indvidual-with-control-adress-2": "address.html",
+  "/category-other-indvidual-with-control-adress-2-non-uk": "address-non-uk.html",
+  "/category-other-indvidual-with-control-ch-equivalent-overseas-2": "companies-house-number",
+  "/category-other-indvidual-with-control-nature-of-control-2": "nature-of-control.html",
+  "/category-other-indvidual-with-control-registration-date-2": "is-required-to-register.html",
+  "/category-other-indvidual-with-control-legal-form-2": "legal-formation.html",
+
   //-------
 
   "/add-another-connected-person": "add-another.html",
@@ -307,8 +338,11 @@ router.post("/cp-type-1", function (req, res, next) {
     case "Individual":
       res.redirect("category-other-1");
       break;
-    case "Trustee or trust":
+    case "Trustee":
       res.redirect("category-other-1");
+      break;
+    case "Trust":
+        res.redirect("category-other-11");
       break;
     default:
       res.redirect("category-org-1");
@@ -320,8 +354,11 @@ router.post("/cp-type-2", function (req, res, next) {
     case "Individual":
       res.redirect("category-other-2");
       break;
-    case "Trustee or trust":
+    case "Trustee":
       res.redirect("category-other-2");
+      break;
+    case "Trust":
+      res.redirect("category-other-22");
       break;
     default:
       res.redirect("category-org-2");
@@ -373,6 +410,19 @@ router.post("/other-org-with-control-ch-number-1", function (req, res, next) {
 });
 
 router.post("/category-other-1", function (req, res, next) {
+  switch (req.body.categoryOfConnectedPerson) {
+    case "director or individual with the same responsibilities":
+      res.redirect("category-other-director-details-1");
+      break;
+    case "any other individual with significant influence or control":
+      res.redirect("category-other-indvidual-with-control-name-1");
+      break;
+    default:
+      res.redirect("category-other-psc-details-1");
+  }
+});
+
+router.post("/category-other-11", function (req, res, next) {
   switch (req.body.categoryOfConnectedPerson) {
     case "director or individual with the same responsibilities":
       res.redirect("category-other-director-details-1");
@@ -465,6 +515,19 @@ router.post("/has-other-org-with-control-legal-form-2", function (req, res, next
 });
 
 router.post("/category-other-2", function (req, res, next) {
+  switch (req.body.categoryOfConnectedPerson) {
+    case "director or individual with the same responsibilities":
+      res.redirect("category-other-director-details-2");
+      break;
+    case "any other individual with significant influence or control":
+      res.redirect("category-other-indvidual-with-control-name-2");
+      break;
+    default:
+      res.redirect("category-other-psc-details-2");
+  }
+});
+
+router.post("/category-other-22", function (req, res, next) {
   switch (req.body.categoryOfConnectedPerson) {
     case "director or individual with the same responsibilities":
       res.redirect("category-other-director-details-2");

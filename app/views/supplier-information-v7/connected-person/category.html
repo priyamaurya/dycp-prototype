@@ -44,11 +44,11 @@
 
             {% endif %}
 
-            
+
 
             <!-- options for individual -->
 
-            {% if page == "/category-other-1" or page == "/category-other-2" %}
+            {% if page == "/category-other-1" or page == "/category-other-11" or page == "/category-other-2" or page == "/category-other-22" %}
 
                 {% set options=(options.push("person with significant control"), options) %}
 
@@ -62,7 +62,7 @@
 
             {% include("../templates/radios.html") %}
             {% include("../templates/button--submit.html") %}
-            
+
         </form>
 
     </div>

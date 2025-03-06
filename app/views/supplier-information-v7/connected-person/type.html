@@ -29,11 +29,13 @@
 
             {% set options=(options.push("Individual"), options) %}
 
-            {% set options=(options.push("Trustee or trust"), options) %}
+            {% set options=(options.push("Trustee"), options) %}
+
+              {% set options=(options.push("Trust"), options) %}
 
             {% include("../templates/radios.html") %}
             {% include("../templates/button--submit.html") %}
-            
+
         </form>
 
     </div>
