@@ -1,0 +1,145 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  When is your activity going to happen? – Arts Council application
+{% endblock %}
+
+{% block content %}
+
+<a href="/previous-page" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      When is your activity going to happen?
+    </h1>
+
+    <p class="govuk-body">
+      Tell us the start and end dates of your activity.
+    </p>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with activity dates
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          You must allow enough time to plan your activity and for us to process your application.
+        </p>
+        <p class="govuk-body">
+          We cannot fund any goods or services that you have bought, ordered or contracted
+          before we make a decision on your application.
+        </p>
+      </div>
+    </details>
+
+    <form action="/activity-dates/next" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="activity-start-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Activity start date
+          </legend>
+          <div id="activity-start-hint" class="govuk-hint">
+            For example, 27 3 2026
+          </div>
+
+          <div class="govuk-date-input" id="activity-start-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="activity-start-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="activity-start-day" name="activityStartDay" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="activity-start-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="activity-start-month" name="activityStartMonth" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="activity-start-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                       id="activity-start-year" name="activityStartYear" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="activity-end-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Activity end date
+          </legend>
+          <div id="activity-end-hint" class="govuk-hint">
+            For example, 30 9 2026
+          </div>
+
+          <div class="govuk-date-input" id="activity-end-date">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="activity-end-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="activity-end-day" name="activityEndDay" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="activity-end-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="activity-end-month" name="activityEndMonth" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="activity-end-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                       id="activity-end-year" name="activityEndYear" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+ <div class="govuk-button-group">
+      <a href="/how-did-you-hear.html"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

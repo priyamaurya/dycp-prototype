@@ -1,0 +1,170 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Declaration – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<a href="/finance/amount-requested" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Declaration
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Data protection and freedom of information
+    </h2>
+
+    <p class="govuk-body">
+      We are committed to being as open as possible about how we assess and make decisions on
+      Developing Your Creative Practice applications, and how we use information from your
+      application form and other documents you give us.
+    </p>
+
+    <p class="govuk-body">
+      We handle any personal data you provide in line with UK data protection law. For more
+      information about the personal data that we collect, what we use it for, and your data
+      protection rights, please read our
+      <a href="#" class="govuk-link">Privacy notice</a>.
+    </p>
+
+    <p class="govuk-body">
+      As a public organisation we also have to follow the Freedom of Information Act 2000.
+      You must read the Freedom of Information guidance on our website before you sign your application.
+    </p>
+
+    <details class="govuk-details govuk-!-margin-bottom-6" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          How we may use the information in your application
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          By signing this application form, you acknowledge that we may:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>use your information to decide whether to offer you a grant</li>
+          <li>share information with individuals or organisations who help us assess and monitor grants</li>
+          <li>hold your data in our database and use it for statistical purposes</li>
+          <li>publish information about grants awarded, including the amount and a summary of the activity</li>
+          <li>carry out checks on the personal and financial information you provide to prevent fraud</li>
+        </ul>
+      </div>
+    </details>
+
+    <form action="/declaration" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="declarant-name">
+          Name
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds"
+               id="declarant-name"
+               name="declarantName"
+               type="text"
+               autocomplete="name">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Date of birth
+          </legend>
+          <div id="dob-hint" class="govuk-hint">
+            For example, 27 3 1985.
+          </div>
+
+          <div class="govuk-date-input" id="declarant-dob">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="dob-day" name="dobDay" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2"
+                       id="dob-month" name="dobMonth" type="text" inputmode="numeric">
+              </div>
+            </div>
+
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4"
+                       id="dob-year" name="dobYear" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Confirm the statements below
+          </legend>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="confirm-true"
+                     name="confirmTrue"
+                     type="checkbox"
+                     value="yes">
+              <label class="govuk-checkboxes__label" for="confirm-true">
+                I confirm that, as far as I know, the information in this application is true and correct.
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="confirm-age"
+                     name="confirmAge"
+                     type="checkbox"
+                     value="yes">
+              <label class="govuk-checkboxes__label" for="confirm-age">
+                I confirm that I am 18 years old or over (or will be at the time of accepting any grant offer made).
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+     <div class="govuk-button-group govuk-!-margin-top-6">
+      <a href="/check-your-answers"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+       Continue
+      </a>
+
+      <a href="/eligibility/supported-disciplines"
+         class="govuk-button govuk-button--secondary"
+         role="button">
+        Back
+      </a>
+    </div>
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Application submitted – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {# Panel component #}
+    {{ govukPanel({
+      titleText: "Application submitted",
+      html: "Your application has been successfully completed."
+    }) }}
+
+    <p class="govuk-body">
+      Thank you for submitting your application for Developing Your Creative Practice.
+    </p>
+
+    <p class="govuk-body">
+      We will review your application and inform you of the outcome in due course.
+    </p>
+
+    <p class="govuk-body">
+      If you have any questions in the meantime, please contact us at
+      <a href="mailto:enquiries@artscouncil.org.uk" class="govuk-link">
+        enquiries@artscouncil.org.uk
+      </a>.
+    </p>
+
+    <h2 class="govuk-heading-m">
+      What do you want to do next?
+    </h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/start-application" class="govuk-link">Return to the start page</a></li>
+      <li><a href="/manage-prototype" class="govuk-link">View another prototype journey</a></li>
+    </ul>
+
+  </div>
+</div>
+
+{% endblock %}

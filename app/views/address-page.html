@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Address information – Arts Council application
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Address information
+    </h1>
+
+    <form  method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="address-name">
+          Address name or number
+        </label>
+        <input class="govuk-input govuk-!-width-full" id="address-name" name="addressName" type="text" autocomplete="address-line1">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="street">
+          Street
+        </label>
+        <input class="govuk-input govuk-!-width-full" id="street" name="street" type="text" autocomplete="address-line2">
+      </div>
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="town">
+          Town or city
+        </label>
+        <input class="govuk-input govuk-!-width-full" id="town" name="town" type="text" autocomplete="address-level2">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="postcode">
+          Postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text" autocomplete="postal-code">
+      </div>
+
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="mobile-number">
+          Mobile number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="mobile-number" name="mobileNumber" type="tel">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email-address">
+          Email address
+        </label>
+        <div id="email-hint" class="govuk-hint">
+          Use the organisation email address if you are applying on behalf of an organisation.
+        </div>
+        <input class="govuk-input govuk-input--width-20" id="email-address" name="emailAddress" type="email" aria-describedby="email-hint" autocomplete="email">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="website-address">
+          Website address
+        </label>
+        <input class="govuk-input govuk-!-width-full" id="website-address" name="websiteAddress" type="url">
+      </div>
+
+     
+<div class="govuk-button-group">
+
+  <a href="/start-application.html"
+     role="button"
+     draggable="false"
+     class="govuk-button"
+     data-module="govuk-button">
+     Continue
+  </a>
+
+  <a href="/start-application.html" class="govuk-button govuk-button--secondary" role="button">
+     Back
+  </a>
+
+</div>
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

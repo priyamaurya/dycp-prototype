@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Who can apply – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Who can apply?
+    </h1>
+
+    <details class="govuk-details govuk-!-margin-bottom-6" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with who can apply
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          You might be a sole trader, a member of a company or of an organisation, but if you make
+          an application to this programme you must do so in your capacity as an individual.
+        </p>
+        <p class="govuk-body">
+          If your application is successful, you will need to receive the grant in your
+          <strong>personal bank account</strong> and not the bank account of your business,
+          company or organisation.
+        </p>
+      </div>
+    </details>
+
+    <form action="/eligibility/who-can-apply" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="who-can-apply-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you confirm that you’re applying in your capacity as an individual and that,
+            if successful, you will receive the grant in your personal bank account?
+          </legend>
+
+          <div id="who-can-apply-hint" class="govuk-hint">
+            Choose one option that applies.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="who-can-apply-yes"
+                     name="applyAsIndividual"
+                     type="radio"
+                     value="yes">
+              <label class="govuk-radios__label" for="who-can-apply-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="who-can-apply-no"
+                     name="applyAsIndividual"
+                     type="radio"
+                     value="no">
+              <label class="govuk-radios__label" for="who-can-apply-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+    <div class="govuk-button-group">
+      <a href="/eligibility-supported-disciplines.html"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

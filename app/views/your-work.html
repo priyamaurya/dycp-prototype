@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your work – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<a href="/previous-question" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Your work
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Tell us about yourself and your creative practice
+    </h2>
+
+    <p class="govuk-body">
+      Think about:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the main focus of your creative or cultural activities</li>
+      <li>your main creative achievements to date – for example, exhibitions, productions, publications</li>
+      <li>any important commissions you’ve received</li>
+      <li>important pieces of work you’ve completed</li>
+      <li>if you’ve worked with any established creative or cultural partners</li>
+      <li>any other information relevant to your track record</li>
+      <li>whether you have shown that you’re at the right stage in your practice to make a step change and benefit from a development opportunity</li>
+    </ul>
+
+    <p class="govuk-body">
+      You can use up to <strong>1,800 characters</strong> to answer this question.
+    </p>
+
+    <form action="/your-work" method="post">
+
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1800">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="your-work-description">
+            Tell us about yourself and your creative practice
+          </label>
+          <div id="your-work-description-hint" class="govuk-hint">
+            Include your main creative activities, achievements and any important commissions or partnerships.
+          </div>
+          <textarea class="govuk-textarea govuk-js-character-count"
+                    id="your-work-description"
+                    name="yourWorkDescription"
+                    rows="10"
+                    aria-describedby="your-work-description-hint your-work-description-info"></textarea>
+        </div>
+        <div id="your-work-description-info" class="govuk-hint govuk-character-count__message">
+          You have 1,800 characters remaining.
+        </div>
+      </div>
+
+      <div class="govuk-button-group">
+      <a href="/your-development.html"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Amount requested – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<a href="/finance-intro" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Amount requested
+    </h1>
+
+    <form action="/finance/amount-requested" method="post">
+
+      {# Total amount requested #}
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="total-amount-requested">
+          Please tell us the total amount you are requesting from us, including any personal access costs
+        </label>
+        <div id="total-amount-requested-hint" class="govuk-hint">
+          Enter the total amount in pounds.
+        </div>
+
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-10"
+                 id="total-amount-requested"
+                 name="totalAmountRequested"
+                 type="text"
+                 spellcheck="false"
+                 inputmode="decimal"
+                 aria-describedby="total-amount-requested-hint">
+        </div>
+      </div>
+
+      {# Personal access costs #}
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="personal-access-costs">
+          How much of this request is for your personal access costs?
+        </label>
+        <div id="personal-access-costs-hint" class="govuk-hint">
+          Enter the amount in pounds.
+        </div>
+
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-10"
+                 id="personal-access-costs"
+                 name="personalAccessCosts"
+                 type="text"
+                 spellcheck="false"
+                 inputmode="decimal"
+                 aria-describedby="personal-access-costs-hint">
+        </div>
+      </div>
+
+      <p class="govuk-body">
+        If you, or the people you’re working with are:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>deaf</li>
+        <li>disabled</li>
+        <li>neurodivergent</li>
+        <li>experience learning difficulties</li>
+        <li>have a mental health condition</li>
+        <li>a long-term health condition</li>
+      </ul>
+
+      <p class="govuk-body">
+        There may be extra costs relating to your access needs. These could be to help you deliver your project
+        or for the online management of your grant. Examples include the costs of a BSL interpreter, a notetaker,
+        a specialist tutor or admin support, or counselling costs for your project.
+      </p>
+
+      {# National Lottery objection question #}
+      <div class="govuk-form-group govuk-!-margin-top-6">
+        <fieldset class="govuk-fieldset" aria-describedby="lottery-objection-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Do you, or does your organisation, object to receiving National Lottery funding for religious reasons?
+          </legend>
+
+          <div id="lottery-objection-hint" class="govuk-hint">
+            Choose one option that applies.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="lottery-objection-yes"
+                     name="lotteryObjection"
+                     type="radio"
+                     value="yes">
+              <label class="govuk-radios__label" for="lottery-objection-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="lottery-objection-no"
+                     name="lotteryObjection"
+                     type="radio"
+                     value="no">
+              <label class="govuk-radios__label" for="lottery-objection-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+<div class="govuk-button-group">
+      <a href="/start-application"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

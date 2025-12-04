@@ -1,0 +1,211 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<a href="/finance/amount-requested" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Check your answers before you submit your application
+    </h1>
+
+    <p class="govuk-body">
+      Make sure the information below is correct before you submit your application.
+    </p>
+
+    {# --- ABOUT YOU AND ELIGIBILITY --- #}
+    <h2 class="govuk-heading-m">About you and eligibility</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you based (living) in England?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['basedInEngland'] or 'Not answered' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/eligibility/section-one">
+            Change<span class="govuk-visually-hidden"> where you live</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you applying as an individual and using a personal bank account?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['applyAsIndividual'] or 'Not answered' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/who-can-apply">
+            Change<span class="govuk-visually-hidden"> how you are applying</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Does your activity focus on our supported disciplines?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['supportedDisciplines'] or 'Not answered' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/eligibility/supported-disciplines">
+            Change<span class="govuk-visually-hidden"> supported disciplines answer</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    {# --- YOUR WORK & DEVELOPMENT --- #}
+    <h2 class="govuk-heading-m">Your work and development</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your work
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['yourWorkDescription'] or 'Not answered' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/your-work">
+            Change<span class="govuk-visually-hidden"> your work description</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Your development
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['yourDevelopmentDescription'] or 'Not answered' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/your-development">
+            Change<span class="govuk-visually-hidden"> your development description</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Activity focus
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['activityFocus'] or 'Not answered' }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/activity-focus">
+            Change<span class="govuk-visually-hidden"> activity focus</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    {# --- DATES & FINANCE --- #}
+    <h2 class="govuk-heading-m">Activity dates and finance</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Activity start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['activityStartDay'] }} {{ data['activityStartMonth'] }} {{ data['activityStartYear'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/activity-dates">
+            Change<span class="govuk-visually-hidden"> activity start date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Activity end date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['activityEndDay'] }} {{ data['activityEndMonth'] }} {{ data['activityEndYear'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/activity-dates">
+            Change<span class="govuk-visually-hidden"> activity end date</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total amount requested
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['totalAmountRequested'] %}
+            £{{ data['totalAmountRequested'] }}
+          {% else %}
+            Not answered
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/finance/amount-requested">
+            Change<span class="govuk-visually-hidden"> total amount requested</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Personal access costs
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {% if data['personalAccessCosts'] %}
+            £{{ data['personalAccessCosts'] }}
+          {% else %}
+            Not answered
+          {% endif %}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/finance/amount-requested">
+            Change<span class="govuk-visually-hidden"> personal access costs</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+   <div class="govuk-button-group govuk-!-margin-top-6">
+      <a href="/application-complete.html"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+       Continue
+      </a>
+
+      <a href="/eligibility/supported-disciplines"
+         class="govuk-button govuk-button--secondary"
+         role="button">
+        Back
+      </a>
+    </div>
+
+
+  </div>
+</div>
+
+{% endblock %}

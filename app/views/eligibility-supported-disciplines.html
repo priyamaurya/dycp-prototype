@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Supported disciplines – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<a href="/eligibility/previous-question" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Are you applying for funding towards an activity that focuses on one or more of our supported disciplines?
+    </h1>
+
+    <form id="supportedDisciplinesForm" action="#" method="post">
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby="supported-disciplines-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Choose one option that applies.
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="supported-disciplines-yes"
+                     name="supportedDisciplines"
+                     type="radio"
+                     value="yes">
+              <label class="govuk-radios__label" for="supported-disciplines-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="supported-disciplines-no"
+                     name="supportedDisciplines"
+                     type="radio"
+                     value="no">
+              <label class="govuk-radios__label" for="supported-disciplines-no">
+                No
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="button"
+                id="continueBtn"
+                class="govuk-button"
+                data-module="govuk-button">
+          Continue
+        </button>
+
+        <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+          Back
+        </a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+
+<script>
+  document.getElementById('continueBtn').addEventListener('click', function () {
+    const selected = document.querySelector('input[name="supportedDisciplines"]:checked');
+
+    if (!selected) {
+      alert("Please select an option before continuing.");
+      return;
+    }
+
+    if (selected.value === "yes") {
+      window.location.href = "/activity-appears-eligible";
+    } else {
+      window.location.href = "/activity-appears-ineligible";
+    }
+  });
+</script>
+
+{% endblock %}

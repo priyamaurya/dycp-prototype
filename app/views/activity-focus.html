@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Activity focus – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<a href="/previous-question" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Activity focus
+    </h1>
+
+    <p class="govuk-body">
+      What do you want to focus on? If your application is successful, we will ask you to reflect on this 
+      at the end of your project as part of your final activity report.
+    </p>
+
+    <form action="/activity-focus" method="post">
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset" aria-describedby="activity-focus-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Tick as many as you feel are relevant to your project
+          </legend>
+
+          <div id="activity-focus-hint" class="govuk-hint">
+            Choose all options that apply.
+          </div>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="focus-new-networks"
+                     name="activityFocus"
+                     type="checkbox"
+                     value="new-networks">
+              <label class="govuk-checkboxes__label" for="focus-new-networks">
+                Building new networks for future development/presentation of work
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="focus-creating-new-work"
+                     name="activityFocus"
+                     type="checkbox"
+                     value="creating-new-work">
+              <label class="govuk-checkboxes__label" for="focus-creating-new-work">
+                Creating new work
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="focus-collaborators"
+                     name="activityFocus"
+                     type="checkbox"
+                     value="new-collaborators">
+              <label class="govuk-checkboxes__label" for="focus-collaborators">
+                Experiment with new collaborators
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="focus-international-travel"
+                     name="activityFocus"
+                     type="checkbox"
+                     value="international-travel">
+              <label class="govuk-checkboxes__label" for="focus-international-travel">
+                International travel to explore other practice or work with mentors
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="focus-professional-development"
+                     name="activityFocus"
+                     type="checkbox"
+                     value="professional-development">
+              <label class="govuk-checkboxes__label" for="focus-professional-development">
+                Professional development activities
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input"
+                     id="focus-research-development"
+                     name="activityFocus"
+                     type="checkbox"
+                     value="research-and-development">
+              <label class="govuk-checkboxes__label" for="focus-research-development">
+                Research and development time to explore practice and take risks
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+
+      </div>
+
+ <div class="govuk-button-group">
+      <a href="/start-application"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

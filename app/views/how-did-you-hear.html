@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  How did you hear about Developing Your Creative Practice? – Arts Council application
+{% endblock %}
+
+{% block content %}
+
+<a href="/previous-question" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      How did you hear about Developing Your Creative Practice?
+    </h1>
+
+    <form action="/how-did-you-hear" method="post">
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="how-did-you-hear">
+          How did you hear about Developing Your Creative Practice?
+        </label>
+        <div id="how-did-you-hear-hint" class="govuk-hint">
+          Select the option that best describes how you heard about the programme.
+        </div>
+
+        <select class="govuk-select"
+                id="how-did-you-hear"
+                name="howDidYouHear"
+                aria-describedby="how-did-you-hear-hint">
+          <option value="">Select an option</option>
+          <option value="member-of-arts-council-staff">From a member of Arts Council staff</option>
+          <option value="briefing-about-funding">From a briefing about Arts Council funding</option>
+          <option value="ace-website">From ACE website</option>
+          <option value="social-media">From social media</option>
+          <option value="another-creative-practitioner">From another creative practitioner</option>
+          <option value="arts-creative-organisation">From an arts/creative organisation</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+    <div class="govuk-button-group">
+      <a href="/activity-focus.html"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

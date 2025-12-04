@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Eligibility questions – section one – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Eligibility questions – section one
+    </h1>
+
+    <p class="govuk-body">
+      The following questions allow us to check your application against some basic criteria for the programme.
+    </p>
+
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-warning-text__assistive">Important</span>
+        You cannot apply to this programme as an organisation.
+      </strong>
+    </div>
+
+    <!-- DETAILS COMPONENT ADDED HERE -->
+    <details class="govuk-details govuk-!-margin-bottom-6" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with your residency
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          You can be temporarily living outside England but still be eligible if you have a home
+          address in England and are defined by HM Revenue and Customs (HMRC) as
+          <strong>‘resident in the UK’ for tax</strong>.
+        </p>
+      </div>
+    </details>
+    <!-- END DETAILS -->
+
+    <form action="/eligibility/section-one" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="based-england-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Are you based (living) in England?
+          </legend>
+
+          <div id="based-england-hint" class="govuk-hint">
+            Choose one option that applies.
+          </div>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="based-england-yes"
+                     name="basedInEngland"
+                     type="radio"
+                     value="yes">
+              <label class="govuk-radios__label" for="based-england-yes">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input"
+                     id="based-england-no"
+                     name="basedInEngland"
+                     type="radio"
+                     value="no">
+              <label class="govuk-radios__label" for="based-england-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+     <div class="govuk-button-group">
+      <a href="/who-can-apply.html"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

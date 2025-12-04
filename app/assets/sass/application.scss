@@ -61,3 +61,18 @@ footer {
 .well {
     background-color: govuk-colour("light-grey");
 }
+
+.app-header--custom-logo .govuk-header__logo {
+  display: flex;
+  align-items: center;
+}
+
+.app-header--custom-logo img {
+  max-height: 40px;
+}
+
+.app-header--custom-logo .app-header__org-logo {
+  max-height: 40px;
+  width: auto;
+  margin-right: 10px;
+}

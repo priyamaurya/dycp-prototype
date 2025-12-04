@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your development – Developing Your Creative Practice
+{% endblock %}
+
+{% block content %}
+
+<a href="/your-work" class="govuk-back-link">Back</a>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Your development
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Tell us about the developmental opportunity you want to undertake, what you hope to get out of it, and how you will go about it
+    </h2>
+
+    <p class="govuk-body">
+      Think about:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>how you will seek out opportunities that will benefit your development</li>
+      <li>how ambitious your activity is – we can fund small, one-off opportunities (such as a research trip), but we are more interested in supporting extended periods of development that give you time to really explore and work in new ways</li>
+      <li>how you will manage the activity successfully, and whether what you want to do is realistic and well planned</li>
+      <li>whether you have plans in place to access the networks you want to work with</li>
+    </ul>
+
+    <p class="govuk-body">
+      You can use up to <strong>1,500 characters</strong> to answer this question.
+    </p>
+
+    <form action="/your-development" method="post">
+
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="1500">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="your-development-description">
+            Describe the developmental opportunity and how you will approach it
+          </label>
+          <div id="your-development-description-hint" class="govuk-hint">
+            Include what you plan to do, why it is important now, and how it will support your long-term development.
+          </div>
+          <textarea class="govuk-textarea govuk-js-character-count"
+                    id="your-development-description"
+                    name="yourDevelopmentDescription"
+                    rows="10"
+                    aria-describedby="your-development-description-hint your-development-description-info"></textarea>
+        </div>
+        <div id="your-development-description-info" class="govuk-hint govuk-character-count__message">
+          You have 1,500 characters remaining.
+        </div>
+      </div>
+
+     <div class="govuk-button-group">
+      <a href="/start-application"
+         role="button"
+         draggable="false"
+         class="govuk-button"
+         data-module="govuk-button">
+        Continue
+      </a>
+
+      <a href="/start-application" class="govuk-button govuk-button--secondary" role="button">
+        Back
+      </a>
+    </div>
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
