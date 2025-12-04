@@ -29,7 +29,7 @@
           Are you based (living) in England?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['basedInEngland'] or 'Not answered' }}
+          {{ data['basedInEngland'] or 'Yes' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/eligibility/section-one">
@@ -43,7 +43,7 @@
           Are you applying as an individual and using a personal bank account?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['applyAsIndividual'] or 'Not answered' }}
+          {{ data['applyAsIndividual'] or 'Yes' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/who-can-apply">
@@ -57,7 +57,7 @@
           Does your activity focus on our supported disciplines?
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['supportedDisciplines'] or 'Not answered' }}
+          {{ data['supportedDisciplines'] or 'Yes' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/eligibility/supported-disciplines">
@@ -78,7 +78,7 @@
           Your work
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['yourWorkDescription'] or 'Not answered' }}
+          {{ data['yourWorkDescription'] or 'Good work' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/your-work">
@@ -92,7 +92,7 @@
           Your development
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['yourDevelopmentDescription'] or 'Not answered' }}
+          {{ data['yourDevelopmentDescription'] or 'Development' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/your-development">
@@ -106,7 +106,7 @@
           Activity focus
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['activityFocus'] or 'Not answered' }}
+          {{ data['activityFocus'] or 'Yes' }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/activity-focus">
@@ -127,7 +127,7 @@
           Activity start date
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['activityStartDay'] }} {{ data['activityStartMonth'] }} {{ data['activityStartYear'] }}
+         15/10/2025
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/activity-dates">
@@ -141,7 +141,7 @@
           Activity end date
         </dt>
         <dd class="govuk-summary-list__value">
-          {{ data['activityEndDay'] }} {{ data['activityEndMonth'] }} {{ data['activityEndYear'] }}
+      07/10/2025
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="/activity-dates">
@@ -158,7 +158,7 @@
           {% if data['totalAmountRequested'] %}
             £{{ data['totalAmountRequested'] }}
           {% else %}
-            Not answered
+            Yes
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
@@ -176,7 +176,7 @@
           {% if data['personalAccessCosts'] %}
             £{{ data['personalAccessCosts'] }}
           {% else %}
-            Not answered
+            Yes
           {% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
